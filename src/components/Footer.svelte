@@ -3,10 +3,10 @@
 
   let songInfo = "Loading...";
   let pageViews = 0;
+  let screenSize = window.innerWidth;
 
   window.onresize = displayWindowSize;
   window.onload = displayWindowSize;
-  let screenSize = window.innerWidth;
 
   async function getDiscordInfo() {
     const getDataRequest = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
@@ -20,10 +20,10 @@
     } else {
       const { song, artist, track_id: songId } = spotify;
 
-      const songName = song.length > 15 ? song.slice(0, 15) + "..." : song;
-      const songArtist = artist.length > 10 ? artist.slice(0, 10) + "..." : artist;
+      const songName = song.length > 15 ? song.slice(0, 15).trimEnd() + "..." : song;
+      const songArtist = artist.length > 10 ? artist.slice(0, 10).trimEnd() + "..." : artist;
 
-      songInfo = `<a href="https://open.spotify.com/track/${songId}" target="_blank">${songName} - ${songArtist}</a>`;
+      songInfo = `<a href="https://open.spotify.com/track/${songId}" target="_blank">${songName} [${songArtist}]</a>`;
     }
   }
 
@@ -35,16 +35,29 @@
     const getVisitorData = await fetch("https://cloudflare.com/cdn-cgi/trace");
     const response = await getVisitorData.text();
 
-    let ipSum = 1;
-    const [visitorIpMatch] = response.match(/ip=.*\d/);
-    const visitorIp = visitorIpMatch.slice(3).split(".");
+    let numRange = 0;
+
+    const [visitorIpMatch] = response?.match(/ip=.*\d/);
+    const visitorIp = visitorIpMatch?.slice(3)?.split(".");
+
+    if (!visitorIp) return;
 
     for (let i = 0; i < visitorIp.length; i++) {
-      ipSum = ipSum * parseInt(visitorIp[i]);
+      numRange = numRange + parseInt(visitorIp[i]);
     }
 
-    console.log(ipSum, window.location.pathname);
-    // pageViews
+    const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
+      method: "POST",
+      headers: {
+        Accept: "application.json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ numRange, path: window.location.pathname }),
+    });
+
+    const { views } = await counterRequest.json();
+
+    pageViews = views;
   }
 
   onMount(async () => {
@@ -59,6 +72,7 @@
   <div class="flex justify-between mx-5 pb-1 mt-5">
     <p>Ukraine, Kyiv</p>
     <p>{pageViews} views</p>
+
     {#if screenSize >= 580}
       <p class="flex items-center space-x-2">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,7 +88,7 @@
             </clipPath>
           </defs>
         </svg>
-        <span class="break-all">{@html songInfo}</span>
+        <span class="break-all hover:text-[#ED4245] duration-500">{@html songInfo}</span>
       </p>
     {/if}
   </div>
