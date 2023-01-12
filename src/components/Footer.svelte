@@ -32,19 +32,21 @@
   }
 
   async function viewerCounter() {
-    const getVisitorData = await fetch("https://cloudflare.com/cdn-cgi/trace");
-    const response = await getVisitorData.text();
+    let numRange = 1;
 
-    let numRange = 0;
+    try {
+      const getVisitorData = await fetch("https://cloudflare.com/cdn-cgi/trace");
+      const response = await getVisitorData.text();
 
-    const [visitorIpMatch] = response?.match(/ip=.*\d/);
-    const visitorIp = visitorIpMatch?.slice(3)?.split(".");
+      const [visitorIpMatch] = response?.match(/ip=.*\d/);
+      const visitorIp = visitorIpMatch?.slice(3)?.split(".");
 
-    if (!visitorIp) return;
+      if (!visitorIp) return;
 
-    for (let i = 0; i < visitorIp.length; i++) {
-      numRange = numRange + parseInt(visitorIp[i]);
-    }
+      for (let i = 0; i < visitorIp.length; i++) {
+        numRange = numRange + parseInt(visitorIp[i]);
+      }
+    } catch {}
 
     const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
       method: "POST",
