@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { Link } from "svelte-navigator";
 
   interface Links {
     name: string;
@@ -27,20 +28,19 @@
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'}">
   {#if !isMainPage}
-    <a class="hover:text-[#ED4245] duration-500 text-2xl text-white" href="/">> Home</a>
+    <Link class="hover:text-[#ED4245] duration-500 text-2xl text-white" to="/">> Home</Link>
   {/if}
 
   <div class="flex-none z-10">
-    <div class="dropdown dropdown-hover dropdown-end drop-shadow-2xl">
+    <div class="dropdown dropdown-end">
       <!-- svelte-ignore a11y-label-has-associated-control -->
-      <label class="hover:text-[#ED4245] text-white text-2xl duration-500">[Menu]</label>
-
+      <label tabindex="-1" class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none">[Menu]</label>
       <ul class="dropdown-content menu p-2 bg-[#1C2125] w-48 rounded-none space-y-0.5">
         {#each links as { name, url }}
-          <a
+          <Link
             class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
             target={url.startsWith("/") ? "_self" : "_blank"}
-            href={url}>{name}</a
+            to={url}>{name}</Link
           >
         {/each}
       </ul>
