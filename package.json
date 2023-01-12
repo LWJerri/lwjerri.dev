@@ -32,6 +32,7 @@
     "vite": "^4.0.4"
   },
   "dependencies": {
+    "@vercel/analytics": "^0.1.6",
     "daisyui": "^2.46.1",
     "svelte-navigator": "^3.2.2",
     "tslib": "^2.4.1"

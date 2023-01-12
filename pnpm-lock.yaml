@@ -3,6 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   "@sveltejs/vite-plugin-svelte": ^2.0.2
   "@tsconfig/svelte": ^3.0.0
+  "@vercel/analytics": ^0.1.6
   autoprefixer: ^10.4.13
   daisyui: ^2.46.1
   postcss: ^8.4.21
@@ -17,6 +18,7 @@ specifiers:
   vite: ^4.0.4
 
 dependencies:
+  "@vercel/analytics": 0.1.6
   daisyui: 2.46.1_gbtt6ss3tbiz4yjtvdr6fbrj44
   svelte-navigator: 3.2.2_atrrhq7vg4ekua4nnyrpuardle
   tslib: 2.4.1
@@ -322,6 +324,13 @@ packages:
     dependencies:
       "@types/node": 18.0.0
     dev: true
+
+  /@vercel/analytics/0.1.6:
+    resolution:
+      { integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ== }
+    peerDependencies:
+      react: ^16.8||^17||^18
+    dev: false
 
   /acorn-node/1.8.2:
     resolution:
