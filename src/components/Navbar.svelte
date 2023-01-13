@@ -7,19 +7,21 @@
     url: string;
   }
 
-  let links = [
+  const builtIt = [
     { name: "My projects", url: "/projects" },
     { name: "About me", url: "/about" },
   ] as Array<Links>;
+
+  let customLinks = [] as Array<Links>;
 
   onMount(async () => {
     const gistRequest = await fetch("https://api.lwjerri.dev/data");
     const { navBarLinks } = await gistRequest.json();
 
-    links = [...links] as Array<Links>;
+    customLinks = [...customLinks] as Array<Links>;
 
     navBarLinks.map(({ name, url }) => {
-      return links.push({ name, url });
+      return customLinks.push({ name, url });
     });
   });
 
@@ -36,10 +38,15 @@
       <!-- svelte-ignore a11y-label-has-associated-control -->
       <label tabindex="-1" class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none">[Menu]</label>
       <ul class="dropdown-content menu p-2 bg-[#1C2125] w-48 rounded-none space-y-0.5">
-        {#each links as { name, url }}
+        {#each builtIt as { name, url }}
+          <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white" to={url}>{name}</Link>
+        {/each}
+
+        {#each customLinks as { name, url }}
           <a
             class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
-            target={url.startsWith("/") ? "_self" : "_blank"}
+            target="_blank"
+            rel="noreferrer"
             href={url}>{name}</a
           >
         {/each}
