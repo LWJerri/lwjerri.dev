@@ -3,9 +3,7 @@ import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 function getConnectionSpeed() {
-  return navigator?.["connection"] && navigator["connection"]?.effectiveType
-    ? navigator["connection"]["effectiveType"]
-    : "";
+  return navigator?.["connection"]?.["effectiveType"] ?? "";
 }
 
 function sendToAnalytics(metric, options) {
@@ -23,6 +21,8 @@ function sendToAnalytics(metric, options) {
     value: metric.value.toString(), // 60.20000000298023
     speed: getConnectionSpeed(), // 4g
   };
+
+  console.log(body);
 
   if (options.debug) {
     console.log("[Analytics]", metric.name, JSON.stringify(body, null, 2));

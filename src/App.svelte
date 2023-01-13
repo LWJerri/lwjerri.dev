@@ -8,6 +8,8 @@
 
   const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
+  console.log(analyticsId);
+
   webVitals({
     path: window.location.pathname,
     analyticsId,
