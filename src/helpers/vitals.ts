@@ -10,8 +10,7 @@ async function sendToAnalytics(metric, options) {
     href: location.href,
     event_name: metric.name,
     value: metric.value.toString(),
-    // @ts-ignore
-    speed: navigator?.connection?.effectiveType ?? "",
+    speed: navigator?.["connection"]?.effectiveType ?? "",
   };
 
   console.log(body);
