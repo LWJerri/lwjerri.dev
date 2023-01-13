@@ -9,14 +9,14 @@ async function sendToAnalytics(metric, options) {
   );
 
   const body = {
-    dsn: options.analyticsId, // qPgJqYH9LQX5o31Ormk8iWhCxZO
-    id: metric.id, // v2-1653884975443-1839479248192
-    page, // /blog/[slug]
-    href: location.href, // https://my-app.vercel.app/blog/my-test
-    event_name: metric.name, // TTFB
-    value: metric.value.toString(), // 60.20000000298023
+    dsn: options.analyticsId,
+    id: metric.id,
+    page,
+    href: location.href,
+    event_name: metric.name,
+    value: metric.value.toString(),
     // @ts-ignore
-    speed: navigator?.connection?.effectiveType ?? "", // 4g
+    speed: navigator?.connection?.effectiveType ?? "",
   };
 
   console.log(body);
@@ -26,7 +26,6 @@ async function sendToAnalytics(metric, options) {
   }
 
   const blob = new Blob([new URLSearchParams(JSON.stringify(body)).toString()], {
-    // This content type is necessary for `sendBeacon`
     type: "application/x-www-form-urlencoded",
   });
   if (navigator.sendBeacon) {
@@ -41,8 +40,6 @@ async function sendToAnalytics(metric, options) {
 }
 
 export function webVitals(options) {
-  console.log(options);
-
   try {
     getFID(async (metric) => await sendToAnalytics(metric, options));
     getTTFB(async (metric) => await sendToAnalytics(metric, options));
