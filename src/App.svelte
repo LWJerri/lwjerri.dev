@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "dotenv/config";
   import { Route, Router } from "svelte-navigator";
   import Main from "./pages/Main.svelte";
   import Projects from "./pages/Projects.svelte";
@@ -6,7 +7,7 @@
 
   import { webVitals } from "./helpers/vitals";
 
-  const analyticsId = process.env.env.VERCEL_ANALYTICS_ID;
+  const analyticsId = process.env.VERCEL_ANALYTICS_ID;
 
   console.log(analyticsId);
 
