@@ -3,8 +3,7 @@ import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 function getConnectionSpeed() {
-  // @ts-ignore
-  return "connection" in navigator && navigator["connection"] && "effectiveType" in navigator["connection"]
+  return navigator?.["connection"] && navigator["connection"]?.effectiveType
     ? navigator["connection"]["effectiveType"]
     : "";
 }
