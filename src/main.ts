@@ -1,8 +1,8 @@
 import App from "./App.svelte";
 import "./index.css";
-// import { inject } from "@vercel/analytics";
+import { inject } from "@vercel/analytics";
 
-// inject();
+inject();
 
 const app = new App({
   target: document.getElementById("app"),
