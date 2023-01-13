@@ -4,9 +4,9 @@
   import { onMount } from "svelte";
   import { webVitals } from "../helpers/vitals";
 
-  webVitals({
-    path: window.location.pathname,
-  });
+  const {
+    location: { pathname: path },
+  } = window;
 
   interface Projects {
     name: string;
@@ -20,6 +20,8 @@
   let projects = [] as Array<Projects>;
 
   onMount(async () => {
+    webVitals({ path });
+
     await projectsList();
 
     const anchor = window.location.hash.slice(1);

@@ -6,9 +6,9 @@
   import Image from "../../public/me.png";
   import { webVitals } from "../helpers/vitals";
 
-  webVitals({
-    path: window.location.pathname,
-  });
+  const {
+    location: { pathname: path },
+  } = window;
 
   interface SocialLinks {
     name: string;
@@ -21,6 +21,8 @@
   let links = [] as Array<SocialLinks>;
 
   onMount(async () => {
+    webVitals({ path });
+
     await dataLoader();
 
     const anchor = window.location.hash.slice(1);

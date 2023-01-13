@@ -6,9 +6,9 @@
   import emojisList from "../helpers/emojis.json";
   import { webVitals } from "../helpers/vitals";
 
-  webVitals({
-    path: window.location.pathname,
-  });
+  const {
+    location: { pathname: path },
+  } = window;
 
   const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
   const calculateTime = new Date().getTime() - new Date("2005-04-28").getTime();
@@ -18,6 +18,8 @@
   let emoji = "";
 
   onMount(async () => {
+    webVitals({ path });
+
     emoji = screenSize >= 600 ? emojisList[Math.floor(Math.random() * emojisList.length)] : emoji;
   });
 </script>
