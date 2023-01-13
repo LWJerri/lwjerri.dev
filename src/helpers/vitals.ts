@@ -2,12 +2,7 @@ import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
-function sendToAnalytics(metric, options) {
-  console.log(
-    //Object.entries(options.params).reduce((acc, [key, value]) => acc.replace(value, `[${key}]`), options.path),
-    options.params,
-  );
-
+async function sendToAnalytics(metric, options) {
   const page = Object.entries(options.params).reduce(
     (acc, [key, value]) => acc.replace(value, `[${key}]`),
     options.path,
@@ -37,7 +32,7 @@ function sendToAnalytics(metric, options) {
   if (navigator.sendBeacon) {
     navigator.sendBeacon(vitalsUrl, blob);
   } else
-    fetch(vitalsUrl, {
+    await fetch(vitalsUrl, {
       body: blob,
       method: "POST",
       credentials: "omit",
@@ -46,12 +41,14 @@ function sendToAnalytics(metric, options) {
 }
 
 export function webVitals(options) {
+  console.log(options);
+
   try {
-    getFID((metric) => sendToAnalytics(metric, options));
-    getTTFB((metric) => sendToAnalytics(metric, options));
-    getLCP((metric) => sendToAnalytics(metric, options));
-    getCLS((metric) => sendToAnalytics(metric, options));
-    getFCP((metric) => sendToAnalytics(metric, options));
+    getFID(async (metric) => await sendToAnalytics(metric, options));
+    getTTFB(async (metric) => await sendToAnalytics(metric, options));
+    getLCP(async (metric) => await sendToAnalytics(metric, options));
+    getCLS(async (metric) => await sendToAnalytics(metric, options));
+    getFCP(async (metric) => await sendToAnalytics(metric, options));
   } catch (err) {
     console.error("[Analytics]", err);
   }
