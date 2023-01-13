@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   "@sveltejs/vite-plugin-svelte": ^2.0.2
   "@tsconfig/svelte": ^3.0.0
-  "@vercel/analytics": ^0.1.6
+  "@vercel/analytics": ^0.1.7
   autoprefixer: ^10.4.13
   daisyui: ^2.46.1
   postcss: ^8.4.21
@@ -16,14 +16,14 @@ specifiers:
   tslib: ^2.4.1
   typescript: ^4.9.4
   vite: ^4.0.4
-  web-vitals: ^2.1.4
+  web-vitals: ^3.1.1
 
 dependencies:
-  "@vercel/analytics": 0.1.6
+  "@vercel/analytics": 0.1.7
   daisyui: 2.46.1_gbtt6ss3tbiz4yjtvdr6fbrj44
   svelte-navigator: 3.2.2_atrrhq7vg4ekua4nnyrpuardle
   tslib: 2.4.1
-  web-vitals: 2.1.4
+  web-vitals: 3.1.1
 
 devDependencies:
   "@sveltejs/vite-plugin-svelte": 2.0.2_svelte@3.55.1+vite@4.0.4
@@ -327,9 +327,9 @@ packages:
       "@types/node": 18.0.0
     dev: true
 
-  /@vercel/analytics/0.1.6:
+  /@vercel/analytics/0.1.7:
     resolution:
-      { integrity: sha512-zNd5pj3iDvq8IMBQHa1YRcIteiw6ZiPB8AsONHd8ieFXlNpLqhXfIYnf4WvTfZ7S1NSJ++mIM14aJnNac/VMXQ== }
+      { integrity: sha512-vaHVFggK1lPBbm73NRONI/D6oBM/Ot1zIXI9IpjxgUsvQMZrO4JpPEIDvGihgnAWbzH7LfpjOOJccxRoaDRtDA== }
     peerDependencies:
       react: ^16.8||^17||^18
     dev: false
@@ -1287,9 +1287,9 @@ packages:
       vite: 4.0.4
     dev: true
 
-  /web-vitals/2.1.4:
+  /web-vitals/3.1.1:
     resolution:
-      { integrity: sha512-sVWcwhU5mX6crfI5Vd2dC4qchyTqxV8URinzt25XqVh+bHEPGH4C3NPrNionCP7Obx59wrYEbNlw4Z8sjALzZg== }
+      { integrity: sha512-qvllU+ZeQChqzBhZ1oyXmWsjJ8a2jHYpH8AMaVuf29yscOPZfTQTjQFRX6+eADTdsDE8IanOZ0cetweHMs8/2A== }
     dev: false
 
   /wrappy/1.0.2:
