@@ -6,7 +6,7 @@
 
   import { webVitals } from "./helpers/vitals";
 
-  const analyticsId = import.meta.env.PUBLIC_VERCEL_ANALYTICS_ID;
+  const analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
   webVitals({
     path: window.location.pathname,
