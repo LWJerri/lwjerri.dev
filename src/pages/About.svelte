@@ -4,6 +4,11 @@
   import { lazyLoad } from "../helpers/lazyLoad";
   import { onMount } from "svelte";
   import Image from "../../public/me.png";
+  import { webVitals } from "../helpers/vitals";
+
+  webVitals({
+    path: window.location.pathname,
+  });
 
   interface SocialLinks {
     name: string;

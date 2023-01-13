@@ -4,7 +4,7 @@ const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 async function sendToAnalytics(metric, options) {
   const body = {
-    dsn: options.analyticsId,
+    dsn: "bTQvhbfRngOGjjkpiehTPdhT0Ya",
     id: metric.id,
     page: options.path,
     href: location.href,
@@ -20,9 +20,10 @@ async function sendToAnalytics(metric, options) {
     console.log("[Analytics]", metric.name, JSON.stringify(body, null, 2));
   }
 
-  const blob = new Blob([new URLSearchParams(JSON.stringify(body)).toString()], {
+  const blob = new Blob([new URLSearchParams(body).toString()], {
     type: "application/x-www-form-urlencoded",
   });
+
   if (navigator.sendBeacon) {
     navigator.sendBeacon(vitalsUrl, blob);
   } else

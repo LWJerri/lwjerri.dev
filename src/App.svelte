@@ -3,15 +3,6 @@
   import Main from "./pages/Main.svelte";
   import Projects from "./pages/Projects.svelte";
   import About from "./pages/About.svelte";
-
-  import { webVitals } from "./helpers/vitals";
-
-  const analyticsId = "nwbWwEHhI8dByHhZvbjoeT1Px";
-
-  webVitals({
-    path: window.location.pathname,
-    analyticsId,
-  });
 </script>
 
 <Router>

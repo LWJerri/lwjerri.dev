@@ -4,6 +4,11 @@
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
   import emojisList from "../helpers/emojis.json";
+  import { webVitals } from "../helpers/vitals";
+
+  webVitals({
+    path: window.location.pathname,
+  });
 
   const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
   const calculateTime = new Date().getTime() - new Date("2005-04-28").getTime();

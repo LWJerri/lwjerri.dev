@@ -2,6 +2,11 @@
   import Navbar from "../components/Navbar.svelte";
   import Footer from "../components/Footer.svelte";
   import { onMount } from "svelte";
+  import { webVitals } from "../helpers/vitals";
+
+  webVitals({
+    path: window.location.pathname,
+  });
 
   interface Projects {
     name: string;

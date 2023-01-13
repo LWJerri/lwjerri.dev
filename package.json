@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "1.1.6",
+  "version": "1.2.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -34,7 +34,6 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.7",
     "daisyui": "^2.46.1",
-    "dotenv": "^16.0.3",
     "svelte-navigator": "^3.2.2",
     "tslib": "^2.4.1",
     "web-vitals": "^3.1.1"
