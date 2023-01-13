@@ -37,10 +37,10 @@
       <label tabindex="-1" class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none">[Menu]</label>
       <ul class="dropdown-content menu p-2 bg-[#1C2125] w-48 rounded-none space-y-0.5">
         {#each links as { name, url }}
-          <Link
+          <a
             class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
             target={url.startsWith("/") ? "_self" : "_blank"}
-            to={url}>{name}</Link
+            href={url}>{name}</a
           >
         {/each}
       </ul>
