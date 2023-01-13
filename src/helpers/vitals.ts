@@ -3,15 +3,10 @@ import { getCLS, getFCP, getFID, getLCP, getTTFB } from "web-vitals";
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
 async function sendToAnalytics(metric, options) {
-  const page = Object.entries(options.params).reduce(
-    (acc, [key, value]) => acc.replace(value, `[${key}]`),
-    options.path,
-  );
-
   const body = {
     dsn: options.analyticsId,
     id: metric.id,
-    page,
+    page: options.path,
     href: location.href,
     event_name: metric.name,
     value: metric.value.toString(),
