@@ -13,8 +13,6 @@ async function sendToAnalytics(metric, options) {
     speed: navigator?.["connection"]?.effectiveType ?? "",
   };
 
-  console.log(body);
-
   if (options.debug) {
     console.log("[Analytics]", metric.name, JSON.stringify(body, null, 2));
   }

@@ -34,8 +34,6 @@
 
   function displayWindowSize() {
     screenSize = window.innerWidth;
-
-    console.log(screenSize, window.innerWidth);
   }
 
   async function viewerCounter() {
