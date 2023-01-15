@@ -17,7 +17,7 @@
     github?: string;
   }
 
-  let projects = [] as Array<Projects>;
+  $: projects = [] as Array<Projects>;
 
   onMount(async () => {
     webVitals({ path });
@@ -69,6 +69,10 @@
     }, 2000);
   }
 </script>
+
+<svelte:head>
+  <title>Andrey Zontov - [Projects]</title>
+</svelte:head>
 
 <div class="flex flex-col min-h-screen justify-between bg-[#0C0E10] scroll-smooth" style="font-family: Monocraft;">
   <div>

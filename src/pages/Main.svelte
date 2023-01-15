@@ -14,8 +14,8 @@
   const calculateTime = new Date().getTime() - new Date("2005-04-28").getTime();
   const year = Math.floor(calculateTime / oneYearToMs);
 
-  let screenSize = window.innerWidth;
-  let emoji = "";
+  $: screenSize = window.innerWidth;
+  $: emoji = "";
 
   onMount(async () => {
     webVitals({ path });
@@ -23,6 +23,10 @@
     emoji = screenSize >= 600 ? emojisList[Math.floor(Math.random() * emojisList.length)] : emoji;
   });
 </script>
+
+<svelte:head>
+  <title>Andrey Zontov</title>
+</svelte:head>
 
 <div class="flex flex-col h-screen justify-between bg-[#0C0E10] scroll-smooth" style="font-family: Monocraft;">
   <Navbar />

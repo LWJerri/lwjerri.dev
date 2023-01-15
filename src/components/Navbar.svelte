@@ -12,7 +12,7 @@
     { name: "About me", url: "/about" },
   ] as Array<Links>;
 
-  let customLinks = [] as Array<Links>;
+  $: customLinks = [] as Array<Links>;
 
   onMount(async () => {
     const gistRequest = await fetch("https://api.lwjerri.dev/data");

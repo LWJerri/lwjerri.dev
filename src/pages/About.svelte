@@ -16,9 +16,9 @@
     url: string;
   }
 
-  let languages = [] as Array<string>;
-  let technologies = [] as Array<string>;
-  let links = [] as Array<SocialLinks>;
+  $: languages = [] as Array<string>;
+  $: technologies = [] as Array<string>;
+  $: links = [] as Array<SocialLinks>;
 
   onMount(async () => {
     webVitals({ path });
@@ -72,6 +72,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Andrey Zontov - [About]</title>
+</svelte:head>
+
 <div class="flex flex-col justify-between bg-[#0C0E10] scroll-smooth" style="font-family: Monocraft;">
   <Navbar />
 
@@ -87,7 +91,29 @@
         >
       </h1>
 
-      <img use:lazyLoad={Image} class="mx-auto" width="720" alt="ME" />
+      <div class="group relative block">
+        <div>
+          <img
+            alt="PHOTO_WITH_ME"
+            src="https://cdn.discordapp.com/attachments/744280865588248779/1064195941948731512/image.png"
+            class="rounded-md absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+          />
+
+          <div class="relative p-8">
+            <p class="text-2xl font-bold text-white">Me, but very young ;)</p>
+
+            <div class="mt-96">
+              <div
+                class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+              >
+                <p class="text-sm text-white">
+                  This photo was taken in kindergarten for the new year, where I played the role of a clown.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <div>
         <a
@@ -116,16 +142,14 @@
           on:click={(event) => handleAnchorClick(event, "story-about-nickname")}>[#]</a
         >
         <p class="text-white">
-          A little history about my nickname <span class="text-[#ED4245]">LWJerri</span>. It was in 2016, I had a weak
-          computer at the time and I always logged into the game Minecraft, but that day I decided to install the latest
-          version of the game, after which it crashed because of an error in the library LWGL. I sat for a long time,
-          looking at this error and for some reason decided to perpetuate it by taking the first two letters from that
-          library - <span class="text-[#ED4245]">LW</span>. This was not enough, the nickname came out too short and not
-          unique, so I remembered my favorite cartoon Tom and Jerry and my most favorite character from this cartoon -
-          little mouse Jerry. In those years my English was not very good and I made a mistake by writing
-          <span class="text-[#ED4245]">Jerri</span>
-          instead of Jerry to the prefix "LW". That's how the unique nickname
-          <span class="text-[#ED4245]">LWJerri</span> came about.
+          A little history about my nickname LWJerri. It was in 2016, I had a weak computer at the time and I always
+          logged into the game Minecraft, but that day I decided to install the latest version of the game, after which
+          it crashed because of an error in the library LWGL. I sat for a long time, looking at this error and for some
+          reason decided to perpetuate it by taking the first two letters from that library - LW. This was not enough,
+          the nickname came out too short and not unique, so I remembered my favorite cartoon Tom and Jerry and my most
+          favorite character from this cartoon - little mouse Jerry. In those years my English was not very good and I
+          made a mistake by writing Jerri instead of Jerry to the prefix "LW". That's how the unique nickname LWJerri
+          came about.
         </p>
       </div>
     </div>
@@ -183,10 +207,3 @@
 
   <Footer />
 </div>
-
-<style>
-  img {
-    opacity: 0;
-    transition: all 5s ease;
-  }
-</style>

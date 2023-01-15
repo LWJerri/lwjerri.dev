@@ -1,14 +1,16 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
-  let songInfo = "Loading...";
-  let pageViews = 0;
-  let screenSize = window.innerWidth;
+  $: songInfo = "Loading...";
+  $: pageViews = 0;
+  $: screenSize = window.innerWidth;
 
   window.onresize = displayWindowSize;
   window.onload = displayWindowSize;
 
   async function getDiscordInfo() {
+    displayWindowSize();
+
     const getDataRequest = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
 
     const {
@@ -20,15 +22,20 @@
     } else {
       const { song, artist, track_id: songId } = spotify;
 
-      const songName = song.length > 15 ? song.slice(0, 15).trimEnd() + "..." : song;
-      const songArtist = artist.length > 10 ? artist.slice(0, 10).trimEnd() + "..." : artist;
+      const songText = (string: string) => {
+        return screenSize < 1024 && string.length > 15 ? string.slice(0, 15).trimEnd() + "..." : string;
+      };
 
-      songInfo = `<a href="https://open.spotify.com/track/${songId}" target="_blank">${songName} [${songArtist}]</a>`;
+      songInfo = `<a href="https://open.spotify.com/track/${songId}" target="_blank">${songText(song)} [${songText(
+        artist,
+      )}]</a>`;
     }
   }
 
   function displayWindowSize() {
     screenSize = window.innerWidth;
+
+    console.log(screenSize, window.innerWidth);
   }
 
   async function viewerCounter() {
@@ -72,10 +79,26 @@
 
 <div class="w-full">
   <div class="flex justify-between mx-5 pb-1 mt-5">
-    <p>Ukraine, Kyiv</p>
-    <p>{pageViews} views</p>
+    <a
+      class="hover:text-[#ED4245] duration-500"
+      href="https://www.google.com/maps/place/Kyiv"
+      target="_blank"
+      rel="noreferrer">Ukraine, Kyiv</a
+    >
 
-    {#if screenSize >= 580}
+    <div class="flex items-center space-x-2">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M8 6H16V8H8V6ZM4 10V8H8V10H4ZM2 12V10H4V12H2ZM2 14V12H0V14H2ZM4 16H2V14H4V16ZM8 18H4V16H8V18ZM16 18V20H8V18H16ZM20 16V18H16V16H20ZM22 14V16H20V14H22ZM22 12H24V14H22V12ZM20 10H22V12H20V10ZM20 10V8H16V10H20ZM10 11H14V15H10V11Z"
+          fill="#D9D9D9"
+        />
+      </svg>
+      <p>{pageViews} views</p>
+    </div>
+
+    {#if screenSize >= 594}
       <p class="flex items-center space-x-2">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_9_216)">
