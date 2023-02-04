@@ -1,4 +1,4 @@
 module.exports = {
-  content: ["./src/**/*.{svelte,js,ts}"],
+  content: ["./src/**/*.{html,js,svelte,ts}"],
   plugins: [require("daisyui")],
 };
