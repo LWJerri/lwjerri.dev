@@ -1,4 +1,3 @@
-// See how the options work here: https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
 let options = {
   root: null,
   rootMargin: "0px",
