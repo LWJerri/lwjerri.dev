@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import MyImage from "../../public/assets/me.png";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
   import { webVitals } from "../helpers/vitals";
@@ -93,7 +94,7 @@
         <div>
           <img
             alt="PHOTO_WITH_ME"
-            src="https://cdn.discordapp.com/attachments/744280865588248779/1064195941948731512/image.png"
+            src={MyImage}
             class="rounded-md absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
           />
 
