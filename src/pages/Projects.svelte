@@ -29,7 +29,7 @@
     if (anchor) {
       const findElement = document.getElementById(anchor);
 
-      findElement.getElementsByTagName("input")[0].checked = true;
+      findElement.getElementsByTagName("details")[0].open = true;
 
       if (findElement) {
         window.scrollTo({
@@ -53,7 +53,7 @@
     const link = event.currentTarget;
     const anchor = new URL(link.href).hash;
 
-    const findBtns = document.getElementById(anchor.slice(1)).children[2].children[2];
+    const findBtns = document.getElementById(anchor.slice(1)).children[0].children[3];
     const findShareBtn = findBtns.children[findBtns.children.length - 1];
 
     const {
@@ -82,12 +82,12 @@
       {#each projects as { name, description, stack, emoji, url, github }, id}
         {@const isHaveBigDescription = description.length > 45}
 
-        <div class="max-w-screen-md">
-          <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
+        <div class="max-w-screen-md" id="project-{id}">
+          <details class="rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex items-center justify-center cursor-pointer">
-              <div class="text-2xl md:text-4xl select-none">{emoji ?? ""}</div>
+              <div class="hidden sm:block text-4xl select-none">{emoji ?? ""}</div>
               <div>
-                <span class="text-xl text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
+                <span class="text-xl select-none text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
                   >{!description.length
                     ? "Description will be added soon."
                     : isHaveBigDescription
@@ -97,7 +97,7 @@
               </div>
 
               <svg
-                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
