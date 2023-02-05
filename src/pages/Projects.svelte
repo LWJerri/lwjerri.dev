@@ -81,9 +81,11 @@
     <div class="flex flex-col space-y-5 place-items-center">
       {#each projects as { name, description, stack, emoji, url, github }, id}
         {@const isHaveBigDescription = description.length > 45}
+        <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+        <!-- svelte-ignore a11y-positive-tabindex -->
         <div
           id="project-{id}"
-          tabindex="-1"
+          tabindex="1"
           class="w-full md:w-11/12 lg:w-10/12 xl:w-1/2 collapse collapse-arrow bg-[#1D2123] rounded-none"
         >
           <input class="checkbox-panel" type="checkbox" />
