@@ -80,6 +80,7 @@
 
     <div class="flex flex-col space-y-5 place-items-center">
       {#each projects as { name, description, stack, emoji, url, github }, id}
+        {@const isHaveBigDescription = description.length > 45}
         <div
           id="project-{id}"
           tabindex="-1"
@@ -94,7 +95,7 @@
                 <span class="text-xl text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
                   >{!description.length
                     ? "Description will be added soon."
-                    : description.length > 45
+                    : isHaveBigDescription
                     ? description.slice(0, 45) + "..."
                     : description}</span
                 >
@@ -103,7 +104,7 @@
           </div>
 
           <div class="collapse-content">
-            <p>{description}</p>
+            <p>{isHaveBigDescription && description ? "..." + description.slice(45) : description}</p>
 
             <div class="flex mt-6 text-[#22B8CF]">
               {stack.join(", ")}
