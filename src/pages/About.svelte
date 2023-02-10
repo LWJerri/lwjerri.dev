@@ -194,7 +194,7 @@
         below to contact me.
       </p>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4">
+      <div class="grid text-white grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4">
         {#each links as { name, icon, url }}
           <a href={url} target="_blank" rel="noreferrer" class="hover:text-[#ED4245] duration-500"
             ><div class="flex items-center text-lg space-x-2">

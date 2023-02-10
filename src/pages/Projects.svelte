@@ -105,7 +105,7 @@
         <div class="max-w-screen-md" id="project-{id}">
           <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex items-center justify-center cursor-pointer">
-              <div class="hidden sm:block text-4xl select-none">{emoji ?? ""}</div>
+              <div class="hidden sm:block text-4xl select-none text-white">{emoji ?? ""}</div>
               <div>
                 <span class="text-xl select-none text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
                   >{shortDescription}</span
@@ -113,7 +113,7 @@
               </div>
 
               <svg
-                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
+                class="ml-1.5 h-5 w-5 text-white flex-shrink-0 transition duration-500 group-open:-rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -123,7 +123,7 @@
               </svg>
             </summary>
 
-            <p>{longDescription}</p>
+            <p class="text-[#6e767c]">{longDescription}</p>
 
             <div class="flex mt-6 text-[#22B8CF]">
               {stack.join(", ")}
