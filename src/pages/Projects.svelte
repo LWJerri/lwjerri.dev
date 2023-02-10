@@ -17,12 +17,12 @@
     github?: string;
   }
 
-  $: projects = [] as Array<Projects>;
+  $: projectsData = { isError: false, projects: [] } as { isError: boolean; projects: Array<Projects> };
 
   onMount(async () => {
     webVitals({ path });
 
-    await projectsList();
+    await projectsListRequest();
 
     const anchor = window.location.hash.slice(1);
 
@@ -40,11 +40,22 @@
     }
   });
 
-  async function projectsList() {
-    const projectsListRequest = await fetch("https://api.lwjerri.dev/data");
-    const { projects: requestsListWithProjects } = await projectsListRequest.json();
+  async function projectsListRequest() {
+    try {
+      const dataRequest = await fetch("https://api.lwjerri.dev/data");
+      const { projects: listWithProjects } = await dataRequest.json();
 
-    projects = [...requestsListWithProjects];
+      projectsData.projects = [...listWithProjects];
+    } catch {
+      projectsData.isError = true;
+      projectsData.projects = [
+        {
+          name: "Empty :c",
+          description: "Can't load all projects. Please, refresh page!",
+          stack: ["Whoops!", "Errrrrrorrr!"],
+        },
+      ];
+    }
   }
 
   function handleAnchorClick(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
@@ -79,20 +90,25 @@
     <Navbar />
 
     <div class="flex flex-col space-y-5 place-items-center">
-      {#each projects as { name, description, stack, emoji, url, github }, id}
-        {@const isHaveBigDescription = description.length > 45}
+      {#each projectsData.projects as { name, description, stack, emoji, url, github }, id}
+        {@const isLongDescription = description.length > 45 && description.length > 48}
+        {@const { isError } = projectsData}
+
+        {@const shortDescription = !description.length
+          ? "Description will be added soon."
+          : isLongDescription
+          ? description.slice(0, 45) + "..."
+          : description}
+
+        {@const longDescription = isLongDescription ? "..." + description.slice(45) : ""}
 
         <div class="max-w-screen-md" id="project-{id}">
-          <details class="rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
+          <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex items-center justify-center cursor-pointer">
               <div class="hidden sm:block text-4xl select-none">{emoji ?? ""}</div>
               <div>
                 <span class="text-xl select-none text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
-                  >{!description.length
-                    ? "Description will be added soon."
-                    : isHaveBigDescription
-                    ? description.slice(0, 45) + "..."
-                    : description}</span
+                  >{shortDescription}</span
                 >
               </div>
 
@@ -107,7 +123,7 @@
               </svg>
             </summary>
 
-            <p>{isHaveBigDescription && description ? "..." + description.slice(45) : description}</p>
+            <p>{longDescription}</p>
 
             <div class="flex mt-6 text-[#22B8CF]">
               {stack.join(", ")}
@@ -126,13 +142,13 @@
                 >
               {/if}
 
-              <a
-                class="hover:text-[#ED4245] text-white duration-500 outline-none"
-                target="_self"
-                rel="noreferrer"
-                href="#project-{id}"
-                on:click={(event) => handleAnchorClick(event)}>[Share]</a
-              >
+              {#if !isError}<a
+                  class="hover:text-[#ED4245] text-white duration-500 outline-none"
+                  target="_self"
+                  rel="noreferrer"
+                  href="#project-{id}"
+                  on:click={(event) => handleAnchorClick(event)}>[Share]</a
+                >{/if}
             </div>
           </details>
         </div>
