@@ -41,12 +41,14 @@
   });
 
   async function dataLoader() {
-    const gistRequest = await fetch("https://api.lwjerri.dev/data");
-    const response = await gistRequest.json();
+    try {
+      const gistRequest = await fetch("https://api.lwjerri.dev/data");
+      const response = await gistRequest.json();
 
-    links = response.socialLinks;
-    technologies = response.techologies;
-    languages = response.languages;
+      links = response.socialLinks;
+      technologies = response.techologies;
+      languages = response.languages;
+    } catch {}
   }
 
   function handleAnchorClick(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {

@@ -15,14 +15,16 @@
   $: customLinks = [] as Array<Links>;
 
   onMount(async () => {
-    const gistRequest = await fetch("https://api.lwjerri.dev/data");
-    const { navBarLinks } = await gistRequest.json();
+    try {
+      const gistRequest = await fetch("https://api.lwjerri.dev/data");
+      const { navBarLinks } = await gistRequest.json();
 
-    customLinks = [...customLinks] as Array<Links>;
+      customLinks = [...customLinks] as Array<Links>;
 
-    navBarLinks.map(({ name, url }) => {
-      return customLinks.push({ name, url });
-    });
+      navBarLinks.map(({ name, url }) => {
+        return customLinks.push({ name, url });
+      });
+    } catch {}
   });
 
   const isMainPage = window.location.pathname === "/";

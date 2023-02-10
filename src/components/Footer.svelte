@@ -1,9 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  interface LynardAPI {
+    data: { listening_to_spotify: boolean; spotify: { song: string; artist: string; track_id: string } };
+  }
+
   $: songInfo = "Loading...";
   $: pageViews = 0;
   $: screenSize = window.innerWidth;
+  $: getDataRequest = { data: { listening_to_spotify: false } } as LynardAPI;
 
   window.onresize = displayWindowSize;
   window.onload = displayWindowSize;
@@ -11,11 +16,14 @@
   async function getDiscordInfo() {
     displayWindowSize();
 
-    const getDataRequest = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+    try {
+      const lynardAPI = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+      getDataRequest = await lynardAPI.json();
+    } catch {}
 
     const {
       data: { listening_to_spotify: isPlaying, spotify },
-    } = await getDataRequest.json();
+    } = getDataRequest;
 
     if (!isPlaying) {
       songInfo = "Not playing anything.";
@@ -53,18 +61,20 @@
       }
     } catch {}
 
-    const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
-      method: "POST",
-      headers: {
-        Accept: "application.json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ numRange, path: window.location.pathname }),
-    });
+    try {
+      const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
+        method: "POST",
+        headers: {
+          Accept: "application.json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ numRange, path: window.location.pathname }),
+      });
 
-    const { views } = await counterRequest.json();
+      const { views } = await counterRequest.json();
 
-    pageViews = views;
+      pageViews = views;
+    } catch {}
   }
 
   onMount(async () => {
