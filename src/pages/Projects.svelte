@@ -17,19 +17,19 @@
     github?: string;
   }
 
-  $: projects = [] as Array<Projects>;
+  $: projectsData = { isError: false, projects: [] } as { isError: boolean; projects: Array<Projects> };
 
   onMount(async () => {
     webVitals({ path });
 
-    await projectsList();
+    await projectsListRequest();
 
     const anchor = window.location.hash.slice(1);
 
     if (anchor) {
       const findElement = document.getElementById(anchor);
 
-      findElement.getElementsByTagName("input")[0].checked = true;
+      findElement.getElementsByTagName("details")[0].open = true;
 
       if (findElement) {
         window.scrollTo({
@@ -40,11 +40,22 @@
     }
   });
 
-  async function projectsList() {
-    const projectsListRequest = await fetch("https://api.lwjerri.dev/data");
-    const { projects: requestsListWithProjects } = await projectsListRequest.json();
+  async function projectsListRequest() {
+    try {
+      const dataRequest = await fetch("https://api.lwjerri.dev/data");
+      const { projects: listWithProjects } = await dataRequest.json();
 
-    projects = [...requestsListWithProjects];
+      projectsData.projects = [...listWithProjects];
+    } catch {
+      projectsData.isError = true;
+      projectsData.projects = [
+        {
+          name: "Empty :c",
+          description: "Can't load all projects. Please, refresh page!",
+          stack: ["Whoops!", "Errrrrrorrr!"],
+        },
+      ];
+    }
   }
 
   function handleAnchorClick(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
@@ -53,7 +64,7 @@
     const link = event.currentTarget;
     const anchor = new URL(link.href).hash;
 
-    const findBtns = document.getElementById(anchor.slice(1)).children[2].children[2];
+    const findBtns = document.getElementById(anchor.slice(1)).children[0].children[3];
     const findShareBtn = findBtns.children[findBtns.children.length - 1];
 
     const {
@@ -79,37 +90,46 @@
     <Navbar />
 
     <div class="flex flex-col space-y-5 place-items-center">
-      {#each projects as { name, description, stack, emoji, url, github }, id}
-        <div
-          id="project-{id}"
-          tabindex="-1"
-          class="w-full md:w-11/12 lg:w-10/12 xl:w-1/2 collapse collapse-arrow bg-[#1D2123] rounded-none"
-        >
-          <input class="checkbox-panel" type="checkbox" />
+      {#each projectsData.projects as { name, description, stack, emoji, url, github }, id}
+        {@const isLongDescription = description.length > 45 && description.length > 48}
+        {@const { isError } = projectsData}
 
-          <div class="collapse-title">
-            <div class="flex items-center space-x-2">
-              <div class="text-4xl select-noqne">{emoji ?? ""}</div>
+        {@const shortDescription = !description.length
+          ? "Description will be added soon."
+          : isLongDescription
+          ? description.slice(0, 45) + "..."
+          : description}
+
+        {@const longDescription = isLongDescription ? "..." + description.slice(45) : ""}
+
+        <div class="max-w-screen-md" id="project-{id}">
+          <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex items-center justify-center cursor-pointer">
+              <div class="hidden sm:block text-4xl select-none text-white">{emoji ?? ""}</div>
               <div>
-                <span class="text-xl text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
-                  >{!description.length
-                    ? "Description will be added soon."
-                    : description.length > 45
-                    ? description.slice(0, 45) + "..."
-                    : description}</span
+                <span class="text-xl select-none text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
+                  >{shortDescription}</span
                 >
               </div>
-            </div>
-          </div>
 
-          <div class="collapse-content">
-            <p>{description}</p>
+              <svg
+                class="ml-1.5 h-5 w-5 text-white flex-shrink-0 transition duration-500 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+
+            <p class="text-[#6e767c]">{longDescription}</p>
 
             <div class="flex mt-6 text-[#22B8CF]">
               {stack.join(", ")}
             </div>
 
-            <div class="w-full flex flex-row justify-end space-x-2 text-xl">
+            <div class="w-full flex flex-row justify-end space-x-2 text-xl select-none">
               {#if url}
                 <a class="hover:text-[#ED4245] text-white duration-500" target="_blank" rel="noreferrer" href={url}
                   >[URL]</a
@@ -122,15 +142,15 @@
                 >
               {/if}
 
-              <a
-                class="hover:text-[#ED4245] text-white duration-500 outline-none"
-                target="_self"
-                rel="noreferrer"
-                href="#project-{id}"
-                on:click={(event) => handleAnchorClick(event)}>[Share]</a
-              >
+              {#if !isError}<a
+                  class="hover:text-[#ED4245] text-white duration-500 outline-none"
+                  target="_self"
+                  rel="noreferrer"
+                  href="#project-{id}"
+                  on:click={(event) => handleAnchorClick(event)}>[Share]</a
+                >{/if}
             </div>
-          </div>
+          </details>
         </div>
       {/each}
     </div>

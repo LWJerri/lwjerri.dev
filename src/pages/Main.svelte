@@ -25,7 +25,7 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov</title>
+  <title>Andrey Zontov aka. LWJerri</title>
 </svelte:head>
 
 <div class="flex flex-col h-screen justify-between bg-[#0C0E10] scroll-smooth" style="font-family: Monocraft;">

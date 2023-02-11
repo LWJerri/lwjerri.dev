@@ -1,9 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
 
+  interface LynardAPI {
+    data: { listening_to_spotify: boolean; spotify: { song: string; artist: string; track_id: string } };
+  }
+
   $: songInfo = "Loading...";
   $: pageViews = 0;
   $: screenSize = window.innerWidth;
+  $: getDataRequest = { data: { listening_to_spotify: false } } as LynardAPI;
 
   window.onresize = displayWindowSize;
   window.onload = displayWindowSize;
@@ -11,11 +16,14 @@
   async function getDiscordInfo() {
     displayWindowSize();
 
-    const getDataRequest = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+    try {
+      const lynardAPI = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+      getDataRequest = await lynardAPI.json();
+    } catch {}
 
     const {
       data: { listening_to_spotify: isPlaying, spotify },
-    } = await getDataRequest.json();
+    } = getDataRequest;
 
     if (!isPlaying) {
       songInfo = "Not playing anything.";
@@ -53,18 +61,20 @@
       }
     } catch {}
 
-    const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
-      method: "POST",
-      headers: {
-        Accept: "application.json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ numRange, path: window.location.pathname }),
-    });
+    try {
+      const counterRequest = await fetch("https://api.lwjerri.dev/counter", {
+        method: "POST",
+        headers: {
+          Accept: "application.json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ numRange, path: window.location.pathname }),
+      });
 
-    const { views } = await counterRequest.json();
+      const { views } = await counterRequest.json();
 
-    pageViews = views;
+      pageViews = views;
+    } catch {}
   }
 
   onMount(async () => {
@@ -78,7 +88,7 @@
 <div class="w-full">
   <div class="flex justify-between mx-5 pb-1 mt-5">
     <a
-      class="hover:text-[#ED4245] duration-500"
+      class="hover:text-[#ED4245] text-white duration-500"
       href="https://www.google.com/maps/place/Kyiv"
       target="_blank"
       rel="noreferrer">Ukraine, Kyiv</a
@@ -93,11 +103,11 @@
           fill="#D9D9D9"
         />
       </svg>
-      <p>{pageViews} views</p>
+      <p class="text-white">{pageViews} views</p>
     </div>
 
     {#if screenSize >= 594}
-      <p class="flex items-center space-x-2">
+      <p class="flex items-center space-x-2 text-white">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_9_216)">
             <path

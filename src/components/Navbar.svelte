@@ -7,25 +7,35 @@
     url: string;
   }
 
-  const builtIt = [
+  const builtIn = [
     { name: "My projects", url: "/projects" },
     { name: "About me", url: "/about" },
   ] as Array<Links>;
 
   $: customLinks = [] as Array<Links>;
+  $: isActive = false;
+  let dropdownElement;
 
   onMount(async () => {
-    const gistRequest = await fetch("https://api.lwjerri.dev/data");
-    const { navBarLinks } = await gistRequest.json();
+    try {
+      const gistRequest = await fetch("https://api.lwjerri.dev/data");
+      const { navBarLinks } = await gistRequest.json();
 
-    customLinks = [...customLinks] as Array<Links>;
+      customLinks = [...customLinks] as Array<Links>;
 
-    navBarLinks.map(({ name, url }) => {
-      return customLinks.push({ name, url });
-    });
+      navBarLinks.map(({ name, url }) => {
+        return customLinks.push({ name, url });
+      });
+    } catch {}
   });
 
   const isMainPage = window.location.pathname === "/";
+
+  document.addEventListener("click", function (event) {
+    if (!dropdownElement.contains(event.target)) {
+      isActive = false;
+    }
+  });
 </script>
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'}">
@@ -33,24 +43,33 @@
     <Link class="hover:text-[#ED4245] duration-500 text-2xl text-white" to="/">> Home</Link>
   {/if}
 
-  <div class="flex-none z-10">
-    <div class="dropdown dropdown-end">
-      <!-- svelte-ignore a11y-label-has-associated-control -->
-      <label tabindex="-1" class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none">[Menu]</label>
-      <ul class="dropdown-content menu p-2 bg-[#1C2125] w-48 rounded-none space-y-0.5">
-        {#each builtIt as { name, url }}
-          <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white" to={url}>{name}</Link>
-        {/each}
+  <div class="inline-flex items-stretch" bind:this={dropdownElement}>
+    <div class="relative">
+      <button
+        on:click={() => (isActive = !isActive)}
+        class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none select-none">[Menu]</button
+      >
 
-        {#each customLinks as { name, url }}
-          <a
-            class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
-            target="_blank"
-            rel="noreferrer"
-            href={url}>{name}</a
-          >
-        {/each}
-      </ul>
+      {#if isActive}
+        <div
+          class="z-10  flex flex-col right-0 absolute origin-top-right w-48 p-2 bg-[#1C2125] space-y-0.5"
+          role="menu"
+        >
+          {#each builtIn as { name, url }}
+            <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white" to={url}>{name}</Link
+            >
+          {/each}
+
+          {#each customLinks as { name, url }}
+            <a
+              class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
+              target="_blank"
+              rel="noreferrer"
+              href={url}>{name}</a
+            >
+          {/each}
+        </div>
+      {/if}
     </div>
   </div>
 </div>

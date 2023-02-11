@@ -7,8 +7,8 @@
 
 <Router>
   <main>
-    <Route path="/about" component={About} />
-    <Route path="/projects" component={Projects} />
+    <Route path="/about" component={About} primary={false} />
+    <Route path="/projects" component={Projects} primary={false} />
     <Route component={Main} />
   </main>
 </Router>
