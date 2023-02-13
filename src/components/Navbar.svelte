@@ -40,7 +40,7 @@
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'}">
   {#if !isMainPage}
-    <Link class="hover:text-[#ED4245] duration-500 text-2xl text-white" to="/">> Home</Link>
+    <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl text-white" to="/">> Home</Link>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this={dropdownElement}>
