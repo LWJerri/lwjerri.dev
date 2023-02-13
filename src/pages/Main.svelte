@@ -36,7 +36,7 @@
       <div class="text-white">
         <h1 class="text-5xl font-bold outline-none">
           Hey {emoji ?? "^-^"} I'm Andrey,<br />
-          <span style="color: #5865F2;">a developer</span>
+          <span class="text-[#5865F2]">a developer</span>
         </h1>
 
         <p class="mt-5 text-2xl">

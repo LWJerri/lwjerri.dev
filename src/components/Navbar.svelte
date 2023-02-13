@@ -52,7 +52,7 @@
 
       {#if isActive}
         <div
-          class="z-10  flex flex-col right-0 absolute origin-top-right w-48 p-2 bg-[#1C2125] space-y-0.5"
+          class="z-10 shadow-2xl flex flex-col right-0 absolute origin-top-right w-48 p-2 pl-3 bg-[#1C2125] space-y-0.5 rounded-md"
           role="menu"
         >
           {#each builtIn as { name, url }}
