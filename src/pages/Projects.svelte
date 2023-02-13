@@ -89,7 +89,7 @@
   <div>
     <Navbar />
 
-    <div class="flex flex-col space-y-5 place-items-center">
+    <div class="flex text-white flex-col space-y-5 place-items-center">
       {#each projectsData.projects as { name, description, stack, emoji, url, github }, id}
         {@const isLongDescription = description.length > 45 && description.length > 48}
         {@const { isError } = projectsData}
@@ -105,15 +105,15 @@
         <div class="max-w-screen-md" id="project-{id}">
           <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
             <summary class="flex items-center justify-center cursor-pointer">
-              <div class="hidden sm:block text-4xl select-none text-white">{emoji ?? ""}</div>
+              <div class="hidden sm:block text-4xl select-none">{emoji ?? ""}</div>
               <div>
-                <span class="text-xl select-none text-white">{name}</span><br /><span class="text-lg text-[#3F4549]"
+                <span class="text-xl select-none">{name}</span><br /><span class="text-lg text-[#3F4549]"
                   >{shortDescription}</span
                 >
               </div>
 
               <svg
-                class="ml-1.5 h-5 w-5 text-white flex-shrink-0 transition duration-500 group-open:-rotate-180"
+                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -131,19 +131,15 @@
 
             <div class="w-full flex flex-row justify-end space-x-2 text-xl select-none">
               {#if url}
-                <a class="hover:text-[#ED4245] text-white duration-500" target="_blank" rel="noreferrer" href={url}
-                  >[URL]</a
-                >
+                <a class="hover:text-[#ED4245] duration-500" target="_blank" rel="noreferrer" href={url}>[URL]</a>
               {/if}
 
               {#if github}
-                <a class="hover:text-[#ED4245] text-white duration-500" target="_blank" rel="noreferrer" href={github}
-                  >[GitHub]</a
-                >
+                <a class="hover:text-[#ED4245] duration-500" target="_blank" rel="noreferrer" href={github}>[GitHub]</a>
               {/if}
 
               {#if !isError}<a
-                  class="hover:text-[#ED4245] text-white duration-500 outline-none"
+                  class="hover:text-[#ED4245] duration-500 outline-none"
                   target="_self"
                   rel="noreferrer"
                   href="#project-{id}"

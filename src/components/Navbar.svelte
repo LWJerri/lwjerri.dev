@@ -38,16 +38,16 @@
   });
 </script>
 
-<div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'}">
+<div class="navbar text-white flex {isMainPage ? 'justify-end' : 'justify-between'}">
   {#if !isMainPage}
-    <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl text-white" to="/">> Home</Link>
+    <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl" to="/">> Home</Link>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this={dropdownElement}>
     <div class="relative">
       <button
         on:click={() => (isActive = !isActive)}
-        class="hover:text-[#ED4245] text-white text-2xl duration-500 outline-none select-none">[Menu]</button
+        class="hover:text-[#ED4245] text-2xl duration-500 outline-none select-none">[Menu]</button
       >
 
       {#if isActive}
@@ -56,13 +56,12 @@
           role="menu"
         >
           {#each builtIn as { name, url }}
-            <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white" to={url}>{name}</Link
-            >
+            <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg" to={url}>{name}</Link>
           {/each}
 
           {#each customLinks as { name, url }}
             <a
-              class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg text-white"
+              class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg"
               target="_blank"
               rel="noreferrer"
               href={url}>{name}</a

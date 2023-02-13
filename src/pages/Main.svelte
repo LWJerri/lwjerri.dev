@@ -31,9 +31,9 @@
 <div class="flex flex-col h-screen justify-between bg-[#0C0E10] scroll-smooth" style="font-family: Monocraft;">
   <Navbar />
 
-  <div class="hero flex items-center justify-center h-screen">
+  <div class="hero text-white flex items-center justify-center h-screen">
     <div class="hero-content text-center">
-      <div class="text-white">
+      <div>
         <h1 class="text-5xl font-bold outline-none">
           Hey {emoji ?? "^-^"} I'm Andrey,<br />
           <span class="text-[#5865F2]">a developer</span>
@@ -44,8 +44,8 @@
         </p>
 
         <div class="mt-10">
-          <Link class="hover:text-[#ED4245] text-white text-2xl duration-500" to="/projects">[Projects]</Link>
-          <Link class="hover:text-[#ED4245] text-white text-2xl duration-500" to="/about">[About]</Link>
+          <Link class="hover:text-[#ED4245] text-2xl duration-500" to="/projects">[Projects]</Link>
+          <Link class="hover:text-[#ED4245] text-2xl duration-500" to="/about">[About]</Link>
         </div>
       </div>
     </div>

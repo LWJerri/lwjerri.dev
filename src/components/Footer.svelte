@@ -85,10 +85,10 @@
   });
 </script>
 
-<div class="w-full">
+<div class="w-full text-white">
   <div class="flex justify-between mx-5 pb-1 mt-5">
     <a
-      class="hover:text-[#ED4245] text-white duration-500"
+      class="hover:text-[#ED4245] duration-500"
       href="https://www.google.com/maps/place/Kyiv"
       target="_blank"
       rel="noreferrer">Ukraine, Kyiv</a
@@ -103,11 +103,11 @@
           fill="#D9D9D9"
         />
       </svg>
-      <p class="text-white">{pageViews} views</p>
+      <p>{pageViews} views</p>
     </div>
 
     {#if screenSize >= 594}
-      <p class="flex items-center space-x-2 text-white">
+      <p class="flex items-center space-x-2">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clip-path="url(#clip0_9_216)">
             <path
