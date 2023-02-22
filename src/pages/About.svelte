@@ -153,7 +153,7 @@
         able to cook is very important to me, even though I'm not really into it.
       </p>
 
-      <div class="divider text-[#5865F2] uppercase">Background edutcation</div>
+      <div class="divider text-[#5865F2] uppercase">Background education</div>
 
       <p>
         <a
