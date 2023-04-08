@@ -10,12 +10,11 @@
   <title>Andrey Zontov aka. LWJerri</title>
 </svelte:head>
 
-<div class="hero text-white flex items-center justify-center">
+<div class="hero flex items-center justify-center">
   <div class="hero-content text-center">
     <div class="text-center">
-      <h1 class="text-5xl font-bold outline-none">
-        <p>Yo <span class="hidden sm:inline">{emoji}</span> I'm Andrey,</p>
-        <p class="text-[#5865F2]">a developer</p>
+      <h1 class="text-5xl text-[#5865F2] font-bold outline-none">
+        <p>Andrey Zontov <span class="hidden sm:inline">{emoji}</span></p>
       </h1>
 
       <p class="mt-5 text-2xl">
