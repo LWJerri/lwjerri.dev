@@ -44,7 +44,7 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov - [About me]</title>
+  <title>Andrey Zontov - About me</title>
 </svelte:head>
 
 <div class="flex text-white flex-col space-y-16 max-w-4xl px-5 mx-auto scroll-smooth">
@@ -198,11 +198,16 @@
       best as possible and satisfied my desires.
     </p>
 
-    <h2 class="text-[#ED4245] text-xl">Languages</h2>
-    <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
+    <div class="space-y-2">
+      <h2 class="text-[#ED4245] text-xl">Languages</h2>
+      <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
+      <p class="text-right">* - have only a basic knowledge.</p>
+    </div>
 
-    <h2 class="text-[#ED4245] text-xl">Technologies</h2>
-    <p class="text-[#22B8CF]">{data.technologies.join(", ")}</p>
+    <div class="space-y-2">
+      <h2 class="text-[#ED4245] text-xl">Technologies</h2>
+      <p class="text-[#22B8CF]">{data.technologies.join(", ")}</p>
+    </div>
   </div>
 
   <div class="space-y-5">
