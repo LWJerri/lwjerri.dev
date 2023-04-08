@@ -9,7 +9,7 @@ const socialLinks = [
   {
     name: "Email",
     icon: "<svg width='52' height='45' viewBox='0 0 52 45' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M8.57136 8.57141H42.8571C45.2142 8.57141 47.1428 10.5 47.1428 12.8571V38.5714C47.1428 40.9286 45.2142 42.8571 42.8571 42.8571H8.57136C6.21422 42.8571 4.28564 40.9286 4.28564 38.5714V12.8571C4.28564 10.5 6.21422 8.57141 8.57136 8.57141Z' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/><path d='M47.1428 12.8571L25.7142 27.8571L4.28564 12.8571' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/></svg>",
-    url: "mailto:loginmanx@gmail.com",
+    url: "mailto:hello@lwjerri.dev",
   },
   {
     name: "GitHub",
