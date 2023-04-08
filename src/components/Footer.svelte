@@ -10,7 +10,7 @@
     };
   }
 
-  export let currentPageViews = 0;
+  export let pageViews = 0;
 
   $: lynardResponse = <LynardAPI>{};
   $: songText = "Loading...";
@@ -69,7 +69,7 @@
         />
       </svg>
 
-      <p>{currentPageViews} views</p>
+      <p>{pageViews} views</p>
     </div>
 
     <div class="hidden sm:block">

@@ -7,7 +7,7 @@
     url: string;
   }
 
-  export let navBarLinks: Links[] = [];
+  export let externalNavbarLinks: Links[] = [];
 
   const defaultURLs: Links[] = [
     { name: "My projects", url: "/projects" },
@@ -21,7 +21,7 @@
   let dropdownElement: HTMLDivElement;
 
   onMount(async () => {
-    navBarLinks.map(({ name, url }) => customLinks.push({ name, url }));
+    externalNavbarLinks.map(({ name, url }) => customLinks.push({ name, url }));
 
     document.addEventListener("click", function (event) {
       if (!dropdownElement?.contains(event?.target as any)) {
