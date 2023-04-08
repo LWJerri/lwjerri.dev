@@ -25,7 +25,7 @@
         findElement.getElementsByTagName("details")[0].open = true;
 
         if (findElement) {
-          window.scrollTo({ top: findElement.offsetTop, behavior: "smooth" });
+          window.scrollTo({ top: findElement.offsetTop, behavior: "auto" });
         }
       }
     }
@@ -58,7 +58,7 @@
   <title>Andrey Zontov - My projects</title>
 </svelte:head>
 
-<div class="flex flex-col space-y-5 place-items-center scroll-smooth">
+<div class="flex flex-col space-y-5 place-items-center">
   {#each projects as { name, description, stack, emoji, url, github }, id}
     {@const isLongDescription = description.length > 45 && description.length > 48}
 

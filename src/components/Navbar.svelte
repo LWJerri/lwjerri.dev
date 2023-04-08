@@ -31,7 +31,7 @@
   });
 </script>
 
-<div class="navbar text-white flex {isMainPage ? 'justify-end' : 'justify-between'}">
+<div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'}">
   {#if !isMainPage}
     <a class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl" href="/">> Home</a>
   {/if}

@@ -54,7 +54,7 @@
   });
 </script>
 
-<div class="w-full text-white">
+<div class="w-full">
   <div class="flex justify-between mx-1 md:mx-5 pb-1 mt-5">
     <a class="hover:text-[#ED4245] duration-500" href={cityData.url} target="_blank" rel="noreferrer">{cityData.name}</a
     >
@@ -80,7 +80,7 @@
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="fill-current text-white group-hover:text-[#1ed760] duration-500"
+          class="fill-current group-hover:text-[#1ed760] duration-500"
         >
           <g clip-path="url(#clip0_9_216)">
             <path
