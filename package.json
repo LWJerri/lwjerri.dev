@@ -1,7 +1,7 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.0.0",
-  "description": "Source code of my personal website made based on Vite + SvelteKit using TailwindCSS + daisyUI.",
+  "version": "2.1.0",
+  "description": "My personal website, which is powered by SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
@@ -36,7 +36,6 @@
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
     "daisyui": "^2.51.5",
-    "ioredis": "^5.3.1",
-    "web-vitals": "^3.3.1"
+    "ioredis": "^5.3.1"
   }
 }
