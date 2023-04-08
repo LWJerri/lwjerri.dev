@@ -13,7 +13,7 @@
 
   export let data: PageData;
 
-  let projectsList: Project[] = data.projectsList;
+  let projects: Project[] = data.projects;
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -55,11 +55,11 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov - [My projects]</title>
+  <title>Andrey Zontov - My projects</title>
 </svelte:head>
 
-<div class="flex text-white flex-col space-y-5 place-items-center scroll-smooth">
-  {#each projectsList as { name, description, stack, emoji, url, github }, id}
+<div class="flex flex-col space-y-5 place-items-center scroll-smooth">
+  {#each projects as { name, description, stack, emoji, url, github }, id}
     {@const isLongDescription = description.length > 45 && description.length > 48}
 
     {@const shortDescription = !description.length

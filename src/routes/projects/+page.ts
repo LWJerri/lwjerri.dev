@@ -9,7 +9,7 @@ interface Project {
   github?: string;
 }
 
-const projectsList: Project[] = [
+const projects: Project[] = [
   {
     name: "DUTCalendarTracker",
     description:
@@ -103,7 +103,7 @@ const projectsList: Project[] = [
     name: "lwjerri.dev",
     description: "Source code of my personal website made based on Vite + SvelteKit using TailwindCSS + daisyUI.",
     stack: ["Vercel", "pnpm", "SvelteKit", "TailwindCSS", "TypeScript", "Vite", "daisyUI"],
-    emoji: "⭐",
+    emoji: "✨",
     url: "https://lwjerri.dev",
     github: "https://github.com/LWJerri/lwjerri.dev",
   },
@@ -248,5 +248,5 @@ const projectsList: Project[] = [
 ];
 
 export const load = (() => {
-  return { projectsList };
+  return { projects };
 }) satisfies PageLoad;
