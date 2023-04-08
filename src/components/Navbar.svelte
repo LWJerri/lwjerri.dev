@@ -1,62 +1,59 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import { Link } from "svelte-navigator";
 
   interface Links {
     name: string;
     url: string;
   }
 
-  const builtIn = [
-    { name: "My projects", url: "/projects" },
-    { name: "About me", url: "/about" },
-  ] as Array<Links>;
+  export let navBarLinks: Links[] = [];
 
-  $: customLinks = [] as Array<Links>;
-  $: isActive = false;
-  let dropdownElement;
+  const defaultURLs: Links[] = [
+    { name: "My projects", url: "/projects" },
+    { name: "About me ", url: "/about" },
+  ];
+
+  $: isMainPage = $page.url.pathname === "/";
+  $: isDropdownActive = false;
+
+  let customLinks: Links[] = [];
+  let dropdownElement: HTMLDivElement;
 
   onMount(async () => {
-    try {
-      const gistRequest = await fetch("https://api.lwjerri.dev/data");
-      const { navBarLinks } = await gistRequest.json();
+    navBarLinks.map(({ name, url }) => customLinks.push({ name, url }));
 
-      customLinks = [...customLinks] as Array<Links>;
-
-      navBarLinks.map(({ name, url }) => {
-        return customLinks.push({ name, url });
-      });
-    } catch {}
-  });
-
-  const isMainPage = window.location.pathname === "/";
-
-  document.addEventListener("click", function (event) {
-    if (!dropdownElement.contains(event.target)) {
-      isActive = false;
-    }
+    document.addEventListener("click", function (event) {
+      if (!dropdownElement?.contains(event?.target as any)) {
+        isDropdownActive = false;
+      }
+    });
   });
 </script>
 
 <div class="navbar text-white flex {isMainPage ? 'justify-end' : 'justify-between'}">
   {#if !isMainPage}
-    <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl" to="/">> Home</Link>
+    <a class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-2xl" href="/">> Home</a>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this={dropdownElement}>
     <div class="relative">
       <button
-        on:click={() => (isActive = !isActive)}
+        on:click={() => (isDropdownActive = !isDropdownActive)}
         class="hover:text-[#ED4245] text-2xl duration-500 outline-none select-none">[Menu]</button
       >
 
-      {#if isActive}
+      {#if isDropdownActive}
         <div
           class="z-10 shadow-2xl flex flex-col right-0 absolute origin-top-right w-48 p-2 pl-3 bg-[#1C2125] space-y-0.5 rounded-md"
           role="menu"
         >
-          {#each builtIn as { name, url }}
-            <Link class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg" to={url}>{name}</Link>
+          {#each defaultURLs as { name, url }}
+            <a
+              class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg"
+              href={url}
+              on:click={() => (isDropdownActive = !isDropdownActive)}>{name}</a
+            >
           {/each}
 
           {#each customLinks as { name, url }}
@@ -64,7 +61,8 @@
               class="hover:text-[#ED4245] hover:translate-x-2 duration-500 text-lg"
               target="_blank"
               rel="noreferrer"
-              href={url}>{name}</a
+              href={url}
+              on:click={() => (isDropdownActive = !isDropdownActive)}>{name}</a
             >
           {/each}
         </div>

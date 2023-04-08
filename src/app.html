@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
+    <meta charset="utf-8" />
+    <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LWJerri</title>
 
@@ -22,12 +22,14 @@
     <style>
       @font-face {
         font-family: Monocraft;
-        src: url("./assets/Monocraft.otf");
+        src: url("%sveltekit.assets%/Monocraft.otf");
       }
     </style>
+
+    %sveltekit.head%
   </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+
+  <body data-sveltekit-preload-data="hover" style="font-family: Monocraft">
+    <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>
