@@ -1,5 +1,7 @@
 <script lang="ts">
   import { dev } from "$app/environment";
+  import { beforeNavigate } from "$app/navigation";
+  import { updated } from "$app/stores";
   import { inject } from "@vercel/analytics";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
@@ -7,6 +9,12 @@
   import type { LayoutData } from "./$types";
 
   inject({ mode: dev ? "development" : "production" });
+
+  beforeNavigate(({ willUnload, to }) => {
+    if ($updated && !willUnload && to?.url) {
+      location.href = to.url.href;
+    }
+  });
 
   export let data: LayoutData;
 </script>
