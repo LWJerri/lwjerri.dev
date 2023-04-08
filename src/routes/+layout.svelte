@@ -11,10 +11,10 @@
   export let data: LayoutData;
 </script>
 
-<div class="min-h-screen bg-[#0C0E10] scroll-smooth flex flex-col justify-between">
-  <Navbar navBarLinks={data.navbarLinks} />
+<div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
+  <Navbar externalNavbarLinks={data.externalNavbarLinks} />
 
   <slot />
 
-  <Footer currentPageViews={data.currentPageViews} />
+  <Footer pageViews={data.pageViews} />
 </div>
