@@ -6,11 +6,18 @@ interface PageView {
   devices: number;
 }
 
+interface NavbarLink {
+  name: string;
+  url: string;
+}
+
 export const load = (async ({ url, fetch }) => {
-  const [pageViewsRequest, navbarLinks] = await Promise.all([fetch("/api/page-views"), fetch("/api/navbar")]);
+  const [pageViewsRequest, navbarLinksRequest] = await Promise.all([fetch("/api/page-views"), fetch("/api/navbar")]);
+
   const pageViewsResponse: PageView[] = await pageViewsRequest.json();
+  const externalNavbarLinks: NavbarLink[] = await navbarLinksRequest.json();
 
-  const currentPageViews = pageViewsResponse.find(({ key }) => key === url.pathname)?.total ?? 0;
+  const pageViews = pageViewsResponse.find(({ key }) => key === url.pathname)?.total ?? 0;
 
-  return { currentPageViews, navbarLinks: navbarLinks.json() };
+  return { pageViews, externalNavbarLinks };
 }) satisfies LayoutServerLoad;

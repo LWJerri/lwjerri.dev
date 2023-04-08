@@ -1,11 +1,12 @@
 import type { PageLoad } from "./$types";
 
+export const prerender = true;
+
 const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
-const calculateTime = new Date().getTime() - new Date("2005-04-28").getTime();
-const year = Math.floor(calculateTime / oneYearToMs);
+const calculateDate = new Date().getTime() - new Date("2005-04-28").getTime();
+const year = Math.floor(calculateDate / oneYearToMs);
 
 const emojis = [
-  "(＾3＾♪",
   "(゜o゜;",
   "(@_@)",
   "(・o・)",
