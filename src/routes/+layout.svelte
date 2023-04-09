@@ -1,7 +1,8 @@
 <script lang="ts">
-  import { dev } from "$app/environment";
+  import { browser, dev } from "$app/environment";
   import { beforeNavigate } from "$app/navigation";
-  import { updated } from "$app/stores";
+  import { page, updated } from "$app/stores";
+  import { webVitals } from "$lib/vitals";
   import { inject } from "@vercel/analytics";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
@@ -15,6 +16,16 @@
       location.href = to.url.href;
     }
   });
+
+  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+  $: if (browser && analyticsId) {
+    webVitals({
+      path: $page.url.pathname,
+      params: $page.params,
+      analyticsId,
+    });
+  }
 
   export let data: LayoutData;
 </script>
