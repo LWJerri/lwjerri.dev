@@ -8,7 +8,7 @@ const config = {
     adapter: adapter({
       envVarsInUse: ["VERCEL_TOKEN", "REDIS_USERNAME", "REDIS_PASSWORD", "REDIS_HOST", "REDIS_PORT"],
       runtime: "nodejs18.x",
-      // split: true,
+      split: true,
     }),
     version: { name: String(Date.now()), pollInterval: 1000 * 60 },
   },
