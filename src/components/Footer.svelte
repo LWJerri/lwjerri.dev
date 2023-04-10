@@ -54,7 +54,7 @@
   });
 </script>
 
-<div class="w-full">
+<div class="w-full select-none">
   <div class="flex justify-between mx-1 md:mx-5 pb-1 mt-5">
     <a class="hover:text-[#ED4245] duration-500" href={cityData.url} target="_blank" rel="noreferrer">{cityData.name}</a
     >

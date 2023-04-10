@@ -51,7 +51,7 @@
         <span class="text-[#ED4245]">About</span>
 
         <a
-          class="hover:text-[#ED4245] duration-500 outline-none"
+          class="hover:text-[#ED4245] duration-500 outline-none select-none"
           href="#about"
           id="about"
           on:click={(event) => handleAnchorClick(event, "about")}>[#]</a
@@ -64,7 +64,7 @@
         <img
           alt="PHOTO_WITH_ME"
           src="me.png"
-          class="rounded-md absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
+          class="rounded-md select-none absolute inset-0 w-full h-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
         />
 
         <div class="relative p-8">
@@ -85,7 +85,7 @@
 
     <p>
       <a
-        class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex items-baseline"
+        class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex select-none items-baseline"
         href="#bio"
         id="bio"
         on:click={(event) => handleAnchorClick(event, "bio")}>[#]</a
@@ -105,7 +105,7 @@
 
     <p>
       <a
-        class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex items-baseline"
+        class="hover:text-[#ED4245] font-bold duration-500 outline-none select-none inline-flex items-baseline"
         href="#hobbies-and-interests"
         id="hobbies-and-interests"
         on:click={(event) => handleAnchorClick(event, "hobbies-and-interests")}>[#]</a
@@ -120,7 +120,7 @@
 
     <p>
       <a
-        class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex items-baseline"
+        class="hover:text-[#ED4245] font-bold duration-500 outline-none select-none inline-flex items-baseline"
         href="#school-knowledge"
         id="school-knowledge"
         on:click={(event) => handleAnchorClick(event, "school-knowledge")}>[#]</a
@@ -137,7 +137,7 @@
     <div class="space-y-10">
       <p>
         <a
-          class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex items-baseline"
+          class="hover:text-[#ED4245] font-bold duration-500 outline-none select-none inline-flex items-baseline"
           href="#best-projects"
           id="best-projects"
           on:click={(event) => handleAnchorClick(event, "best-projects")}>[#]</a
@@ -161,7 +161,7 @@
 
     <p>
       <a
-        class="hover:text-[#ED4245] font-bold duration-500 outline-none inline-flex items-baseline"
+        class="hover:text-[#ED4245] font-bold duration-500 outline-none select-none inline-flex items-baseline"
         href="#story-about-nickname"
         id="story-about-nickname"
         on:click={(event) => handleAnchorClick(event, "story-about-nickname")}>[#]</a
@@ -184,7 +184,7 @@
         <span class="text-[#ED4245]">What I use</span>
       </div>
       <a
-        class="hover:text-[#ED4245] duration-500 outline-none"
+        class="hover:text-[#ED4245] duration-500 select-none outline-none"
         href="#what-I-use"
         id="what-I-use"
         on:click={(event) => handleAnchorClick(event, "what-I-use")}>[#]</a
@@ -198,7 +198,7 @@
     <div class="space-y-2">
       <h2 class="text-[#ED4245] text-xl">Languages</h2>
       <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
-      <p class="text-right">* - have only a basic knowledge.</p>
+      <p class="text-right">* - only a basic knowledge.</p>
     </div>
 
     <div class="space-y-2">
@@ -211,7 +211,7 @@
     <h1 class="text-4xl text-center sm:flex sm:items-center sm:space-x-2">
       <span class="text-[#ED4245]">Socials</span>
       <a
-        class="hover:text-[#ED4245] duration-500 outline-none"
+        class="hover:text-[#ED4245] duration-500 select-none outline-none"
         href="#contact"
         id="contact"
         on:click={(event) => handleAnchorClick(event, "contact")}>[#]</a
@@ -222,7 +222,7 @@
       below to contact me.
     </p>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4">
+    <div class="grid select-none grid-cols-1 sm:grid-cols-2 md:grid-cols-3 grid-flow-row gap-4">
       {#each data.socialLinks as { name, icon, url }}
         <a href={url} target="_blank" rel="noreferrer" class="hover:text-[#ED4245] duration-500"
           ><div class="flex items-center text-lg space-x-2">

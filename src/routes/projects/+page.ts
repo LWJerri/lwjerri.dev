@@ -4,6 +4,7 @@ interface Project {
   name: string;
   description: string;
   stack: string[];
+  closed?: boolean;
   emoji?: string;
   url?: string;
   github?: string;
@@ -107,22 +108,18 @@ const projects: Project[] = [
     url: "https://lwjerri.dev",
     github: "https://github.com/LWJerri/lwjerri.dev",
   },
-  // {
-  //   name: "MagnifyAI",
-  //   description: "",
-  //   stack: [""],
-  // },
   {
-    name: "lwjerri.js.org [Deprecated]",
+    name: "lwjerri.js.org",
     description:
       "Project with my old website, hosted by GitHub Pages. This is my first personal frontend project with Node.js as a base and other tools for frontend development.",
     stack: ["TravisCI", "GitHub Pages", "Svelte", "Vite", "TailwindCSS", "HTML5", "CSS3", "JavaScript"],
+    closed: true,
     emoji: "💾",
     url: "https://lwjerri.github.io",
     github: "https://github.com/LWJerri/lwjerri.github.io",
   },
   {
-    name: "GTAV [Deprecated]",
+    name: "GTAV",
     description:
       "Modern platform for GTA V mods creators for upload ans share mods. Users can create accounts, upload mods, like mods, add to favourites, share and comment.",
     stack: [
@@ -139,10 +136,11 @@ const projects: Project[] = [
       "Vite",
       "daisyUI",
     ],
+    closed: true,
     emoji: "📸",
   },
   {
-    name: "Riddea [Deprecated]",
+    name: "Riddea",
     description:
       "Telegram bot for view random anime images and uploads your custom images. Users could both upload their own images and browse other images using different APIs.",
     stack: [
@@ -157,20 +155,22 @@ const projects: Project[] = [
       "Telegraf.js",
       "TypeORM",
     ],
+    closed: true,
     emoji: "🔑",
     github: "https://github.com/LWJerri/Riddea",
   },
   {
-    name: "Riddea Web [Deprecated]",
+    name: "Riddea Web",
     description:
       "The web part for the bot. You could browse your own or someone else's collection of images on the website.",
     stack: ["nginx", "Svelte", "TypeScript", "Vite", "nanostores", "Docker", "CapRover"],
+    closed: true,
     emoji: "📰",
     url: "https://riddea.ml",
     github: "https://github.com/LWJerri/Riddea",
   },
   {
-    name: "Lequille [Deprecated]",
+    name: "Lequille",
     description:
       "Private Discord bot developed special for my classroom server & telegram group. This bot has one important role - it links the discord and telegram chats and sends messages, photos, videos etc. between the chats. There is also a tier system, creating voice channels and a bunch of minor features.",
     stack: [
@@ -184,10 +184,11 @@ const projects: Project[] = [
       "PostgreSQL",
       "TypeScript",
     ],
+    closed: true,
     emoji: "🤖",
   },
   {
-    name: "Modestal [Deprecated]",
+    name: "Modestal",
     description:
       "Private Discord bot developed special for Twitch streamers Modestal. Chat moderation, stream start notification, ranking system and much more. The project is not currently in development.",
     stack: [
@@ -200,47 +201,54 @@ const projects: Project[] = [
       "PostgreSQL",
       "MySQL [In the past]",
     ],
+    closed: true,
     emoji: "🪣",
   },
   {
-    name: "AllStarz [Deprecated]",
+    name: "AllStarz",
     description:
       "Private Discord bot for the closed NFT trading community. This bot manages the monthly user subscription for NFT creators.",
     stack: ["Docker", "CapRover", "discord.js", "PostgreSQL", "TypeORM", "TypeScript", "Stripe"],
+    closed: true,
     emoji: "💰",
   },
   {
-    name: "LoonaSoftBot [Deprecated]",
+    name: "LoonaSoftBot",
     description:
       "Special Telegram bot developer for LoonaSoft channel. This bot acts as a subscription manager and processes requests to join the channel.",
     stack: ["GitLab", "Docker", "CapRover", "Stripe", "grammY", "Prisma", "TypeScript"],
+    closed: true,
     emoji: "🌼",
   },
   {
-    name: "ManageGift Web [Deprecated]",
+    name: "ManageGift Web",
     description:
       "Design for the website of one Discord bot. The site contained information about the bot, the staff, a list of all the teams and some information that was loaded as the page progressed.",
     stack: ["PHP", "JavaScript", "HTML5", "CSS", "OpenServer"],
+    closed: true,
     emoji: "📃",
   },
   {
-    name: "VilStats [Deprecated]",
+    name: "VilStats",
     description:
       "Windows application for manage information about human stats. This application allows you to do full CRUD with human data through a simple UI interface.",
     stack: ["JavaScript", "PHP", "OpenServer", "HTML5", "CSS"],
+    closed: true,
     emoji: "📗",
   },
   {
-    name: "Openner [Deprecated]",
+    name: "Openner",
     description:
       "Private Discord bot developed special for YouTube & Twitch streamer Oxyas. This bot maintains statistics on messages sent, moderates chat, notifies about the beginning of the stream on Twitch and new videos on YouTube. Performs small things like assigning roles, creating private voice channels, etc. It's also one of my first bots, so I was just starting to learn programming at the time.",
     stack: ["discord.js", "discord-logs"],
+    closed: true,
     emoji: "💿",
   },
   {
-    name: "telegraf-rate-limiter [Deprecated]",
+    name: "telegraf-rate-limiter",
     description: "An easy member message rate limiter for the telegraf.js framework.",
     stack: ["telegraf.js", "npmjs.org"],
+    closed: true,
     emoji: "📦",
     url: "https://www.npmjs.com/package/@lwjerri/telegraf-rate-limiter",
     github: "https://github.com/LWJerri/telegraf-rate-limiter",
