@@ -2,7 +2,7 @@
 
 This repository contains code that relates to my personal website with information about me, my projects, etc. Vercel is used for hosting, so some features, such as displaying the number of page views, and page metrics, may not work on other hosts.
 
-## Screenshot
+## Screenshots
 
 ![Screenshot #1](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/1.png)
 ![Screenshot #2](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/2.png)
