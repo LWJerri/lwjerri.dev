@@ -4,12 +4,12 @@ This repository contains code that relates to my personal website with informati
 
 ## Screenshot
 
-![Screenshot #1](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/1.png?raw=true)
-![Screenshot #2](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/2.png?raw=true)
-![Screenshot #3](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/3.png?raw=true)
-![Screenshot #4](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/4.png?raw=true)
-![Screenshot #5](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/5.png?raw=true)
-![Screenshot #6](https://github.com/LWJerri/lwjerri.dev/tree/master/screenshot/6.png?raw=true)
+![Screenshot #1](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/1.png)
+![Screenshot #2](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/2.png)
+![Screenshot #3](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/3.png)
+![Screenshot #4](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/4.png)
+![Screenshot #5](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/5.png)
+![Screenshot #6](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/6.png)
 
 ## LICENSE
 
