@@ -11,6 +11,8 @@
 
   inject({ mode: dev ? "development" : "production" });
 
+  $: console.log($updated);
+
   beforeNavigate(({ willUnload, to }) => {
     if ($updated && !willUnload && to?.url) {
       location.href = to.url.href;
