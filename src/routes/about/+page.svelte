@@ -198,7 +198,7 @@
     <div class="space-y-2">
       <h2 class="text-[#ED4245] text-xl">Languages</h2>
       <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
-      <p class="text-right">* - only a basic knowledge.</p>
+      <p class="text-right">* - have a basic knowledge.</p>
     </div>
 
     <div class="space-y-2">
