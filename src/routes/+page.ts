@@ -4,7 +4,7 @@ export const prerender = "auto";
 
 const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
 const calculateDate = new Date().getTime() - new Date("2005-04-28").getTime();
-const year = Math.floor(calculateDate / oneYearToMs);
+const year = (calculateDate / oneYearToMs).toFixed(3);
 
 const emojis = [
   "(゜o゜;",
