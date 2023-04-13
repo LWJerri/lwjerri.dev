@@ -10,7 +10,7 @@ const config = {
       runtime: "nodejs18.x",
       split: false,
     }),
-    version: { name: String(Date.now()), pollInterval: 1000 * 60 },
+    version: { name: String(Date.now()), pollInterval: 1000 * 10 },
   },
 };
 
