@@ -11,7 +11,9 @@
 
   inject({ mode: dev ? "development" : "production" });
 
-  $: console.log($updated);
+  $: if ($updated) {
+    window.location.reload();
+  }
 
   beforeNavigate(({ willUnload, to }) => {
     if ($updated && !willUnload && to?.url) {
