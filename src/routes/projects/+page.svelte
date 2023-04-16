@@ -60,7 +60,7 @@
 </svelte:head>
 
 <div class="max-w-screen-md space-y-5 mx-auto">
-  <p class="text-right select-none">🔒 - project closed</p>
+  <p class="text-center text-[#5865F2]">The 🔒 sign means that the project is closed.</p>
 
   <div class="flex flex-col place-items-center space-y-5">
     {#each projects as { name, description, stack, emoji, url, github, closed }, id}
