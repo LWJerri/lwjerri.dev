@@ -8,50 +8,30 @@ interface PageView {
   devices: number;
 }
 
-const allowedPagesList = ["/", "/projects", "/about"];
+const VERCEL_URL = "https://vercel.com/api/web/insights/stats";
+const REDIS_KEY = "pagesViewsStats";
 
 export const GET = (async () => {
-  const getCacheKey = await redisClient.get("pagesViewsCache");
+  let getCacheData = await redisClient.get(REDIS_KEY);
 
-  if (!getCacheKey) {
-    await redisClient.set("pagesViewsCache", Date.now(), "EX", 60 * 60);
+  if (!getCacheData) {
+    const preOneYearAgo = new Date();
+    preOneYearAgo.setFullYear(preOneYearAgo.getFullYear() - 1);
 
-    const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 6);
+    const oneYearAgo = preOneYearAgo.toISOString();
+    const currentDate = new Date().toISOString();
 
     const vercelRequest = await fetch(
-      `https://vercel.com/api/web/insights/stats/path?from=${threeMonthsAgo.toISOString()}&to=${new Date().toISOString()}&projectId=${PROJECT_ID}&environment=production`,
-      {
-        headers: {
-          Authorization: `Bearer ${VERCEL_TOKEN}`,
-        },
-      },
+      `${VERCEL_URL}/path?from=${oneYearAgo}&to=${currentDate}&projectId=${PROJECT_ID}`,
+      { headers: { Authorization: `Bearer ${VERCEL_TOKEN}` } },
     );
 
-    const { data: vercelResponse } = await vercelRequest.json();
-    const allowedPages: PageView[] = vercelResponse.filter((view: PageView) => allowedPagesList.includes(view.key));
+    const { data: vercelResponse }: { data: PageView[] } = await vercelRequest.json();
 
-    const findKeyInRedis = await redisClient.get("pagesViewsStats");
+    await redisClient.set(REDIS_KEY, JSON.stringify(vercelResponse), "EX", 60 * 60);
 
-    if (!findKeyInRedis) {
-      await redisClient.set("pagesViewsStats", JSON.stringify(allowedPages));
-    } else {
-      const dataFromRedis: PageView[] = JSON.parse(findKeyInRedis);
-
-      const updatedList = dataFromRedis.map((viewRedis) => {
-        const matchingEntry = allowedPages.find((viewFilter) => viewFilter.key === viewRedis.key);
-
-        const total = viewRedis.total + (matchingEntry!.total - viewRedis.total);
-        const devices = viewRedis.devices + (matchingEntry!.devices - viewRedis.devices);
-
-        return matchingEntry && viewRedis.total < total ? { ...viewRedis, total, devices } : viewRedis;
-      });
-
-      await redisClient.set("pagesViewsStats", JSON.stringify(updatedList));
-    }
+    getCacheData = await redisClient.get(REDIS_KEY);
   }
 
-  const dataFromRedis = await redisClient.get("pagesViewsStats");
-
-  return new Response(dataFromRedis);
+  return new Response(getCacheData);
 }) satisfies RequestHandler;
