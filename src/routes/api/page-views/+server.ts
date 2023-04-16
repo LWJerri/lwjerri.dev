@@ -10,7 +10,7 @@ interface PageView {
 
 const allowedPagesList = ["/", "/projects", "/about"];
 
-export const GET = (async ({ setHeaders }) => {
+export const GET = (async () => {
   const getCacheKey = await redisClient.get("pagesViewsCache");
 
   if (!getCacheKey) {
@@ -52,8 +52,6 @@ export const GET = (async ({ setHeaders }) => {
   }
 
   const dataFromRedis = await redisClient.get("pagesViewsStats");
-
-  setHeaders({ "cache-control": "max-age=3600" });
 
   return new Response(dataFromRedis);
 }) satisfies RequestHandler;
