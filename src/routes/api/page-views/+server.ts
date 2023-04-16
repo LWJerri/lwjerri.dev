@@ -22,7 +22,7 @@ export const GET = (async () => {
     const currentDate = new Date().toISOString();
 
     const vercelRequest = await fetch(
-      `${VERCEL_URL}/path?from=${oneYearAgo}&to=${currentDate}&projectId=${PROJECT_ID}`,
+      `${VERCEL_URL}/path?from=${oneYearAgo}&to=${currentDate}&projectId=${PROJECT_ID}&environment=production`,
       { headers: { Authorization: `Bearer ${VERCEL_TOKEN}` } },
     );
 
