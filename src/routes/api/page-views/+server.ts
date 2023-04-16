@@ -17,7 +17,7 @@ export const GET = (async () => {
     await redisClient.set("pagesViewsCache", Date.now(), "EX", 60 * 60);
 
     const threeMonthsAgo = new Date();
-    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 3);
+    threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 6);
 
     const vercelRequest = await fetch(
       `https://vercel.com/api/web/insights/stats/path?from=${threeMonthsAgo.toISOString()}&to=${new Date().toISOString()}&projectId=${PROJECT_ID}&environment=production`,
