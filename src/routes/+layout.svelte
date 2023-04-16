@@ -4,6 +4,7 @@
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
   import { inject } from "@vercel/analytics";
+  import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
@@ -35,6 +36,22 @@
 </script>
 
 <div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
+  {#if new Date().getMonth() === 3 && new Date().getDate() === 28}
+    <div
+      style="position:fixed;top:-50px;left:0;height:100vh;width:100vw;display:flex;justify-content:center;overflow:hidden;pointer-events:none;"
+    >
+      <Confetti
+        x={[-5, 5]}
+        y={[0, 0.1]}
+        delay={[500, 2000]}
+        infinite
+        duration="20000"
+        amount="150"
+        fallDistance="100vh"
+      />
+    </div>
+  {/if}
+
   <Navbar externalNavbarLinks={data.externalNavbarLinks} />
 
   <slot />
