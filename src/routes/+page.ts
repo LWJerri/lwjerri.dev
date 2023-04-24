@@ -1,11 +1,18 @@
+import dayjs from "dayjs";
+import timezone from "dayjs/plugin/timezone";
+import utc from "dayjs/plugin/utc";
 import type { PageLoad } from "./$types";
+
+dayjs.extend(utc);
+dayjs.extend(timezone);
+
+dayjs.tz.setDefault("Europe/Kiev");
 
 export const prerender = "auto";
 
-const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
-const kyivTime = new Date().toLocaleString("en-US", { timeZone: "Europe/Kiev" });
-const calculateDate = new Date(kyivTime).getTime() - new Date("2005-04-28").getTime();
-const year = (calculateDate / oneYearToMs).toFixed(3);
+const today = dayjs();
+const birthdateObj = dayjs(new Date("2005-04-28").getTime()).utc().tz();
+const myAge = today.diff(birthdateObj, "year", true).toFixed(3);
 
 const emojis = [
   "(゜o゜;",
@@ -41,5 +48,5 @@ const emojis = [
 ];
 
 export const load = (() => {
-  return { year, emojis };
+  return { myAge, emojis };
 }) satisfies PageLoad;

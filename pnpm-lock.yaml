@@ -2,11 +2,14 @@ lockfileVersion: "6.0"
 
 dependencies:
   "@vercel/analytics":
-    specifier: ^0.1.11
-    version: 0.1.11(react@18.2.0)
+    specifier: ^1.0.0
+    version: 1.0.0(react@18.2.0)
   daisyui:
     specifier: ^2.51.5
     version: 2.51.5(autoprefixer@10.4.14)(postcss@8.4.21)
+  dayjs:
+    specifier: ^1.11.7
+    version: 1.11.7
   ioredis:
     specifier: ^5.3.1
     version: 5.3.1
@@ -647,9 +650,9 @@ packages:
       { integrity: sha512-SnHmG9wN1UVmagJOnyo/qkk0Z7gejYxOYYmaAwr5u2yFYfsupN3sg10kyzN8Hep/2zbHxCnsumxOoRIRMBwKCg== }
     dev: true
 
-  /@vercel/analytics@0.1.11(react@18.2.0):
+  /@vercel/analytics@1.0.0(react@18.2.0):
     resolution:
-      { integrity: sha512-mj5CPR02y0BRs1tN3oZcBNAX9a8NxsIUl9vElDPcqxnMfP0RbRc9fI9Ud7+QDg/1Izvt5uMumsr+6YsmVHcyuw== }
+      { integrity: sha512-RQmj7pv82JwGDHrnKeRc6TtSw2U7rWNubc2IH0ernTzWTj02yr9zvIYiYJeztsBzrJtWv7m8Nz6vxxb+cdEtJw== }
     peerDependencies:
       react: ^16.8||^17||^18
     dependencies:
@@ -937,6 +940,11 @@ packages:
       tailwindcss: 3.3.1(postcss@8.4.21)
     transitivePeerDependencies:
       - ts-node
+    dev: false
+
+  /dayjs@1.11.7:
+    resolution:
+      { integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ== }
     dev: false
 
   /debug@4.3.4:
