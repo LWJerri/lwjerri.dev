@@ -3,7 +3,8 @@ import type { PageLoad } from "./$types";
 export const prerender = "auto";
 
 const oneYearToMs = 1000 * 60 * 60 * 24 * 365;
-const calculateDate = new Date().getTime() - new Date("2005-04-28").getTime();
+const kyivTime = new Date().toLocaleString("en-US", { timeZone: "Europe/Kiev" });
+const calculateDate = new Date(kyivTime).getTime() - new Date("2005-04-28").getTime();
 const year = (calculateDate / oneYearToMs).toFixed(3);
 
 const emojis = [
