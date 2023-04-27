@@ -57,6 +57,8 @@
           on:click={(event) => handleAnchorClick(event, "about")}>[#]</a
         >
       </h1>
+
+      <a class="hover:text-[#ED4245] text-xl duration-500" href="Andrey_Zontov.pdf">[Curriculum Vitae]</a>
     </div>
 
     <div class="group relative block">
@@ -142,7 +144,7 @@
           id="best-projects"
           on:click={(event) => handleAnchorClick(event, "best-projects")}>[#]</a
         >
-        A little about my outstanding projects. I would like to put <span class="text-[#22B8CF]">PorychBot</span> at the
+        A little about my outstanding projects. I would like to put <span class="text-[#22B8CF]">PoruchBot</span> at the
         top of the list, as this project was developed and supported by the charity organization Spilka Poruch. This project
         includes a bot and CRM of its own design to facilitate the work of volunteers. The bot performs one of the key roles
         in some records, taking on a heavy workload.
