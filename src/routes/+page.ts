@@ -13,7 +13,9 @@ export const prerender = "auto";
 const today = dayjs();
 const birthdateObj = dayjs(new Date("2005-04-28").getTime()).utc().tz();
 const myAge = Math.trunc(today.diff(birthdateObj, "year", true) * Math.pow(10, 3)) / Math.pow(10, 3);
-// Code from `myAge` constant: https://stackoverflow.com/a/48100007
+
+// const myAge = today.diff(birthdateObj, "year", true).toFixed(3);
+// Code for `myAge` constant: https://stackoverflow.com/a/48100007
 
 const emojis = [
   "(゜o゜;",
