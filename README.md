@@ -4,12 +4,10 @@ This repository contains code that relates to my personal website with informati
 
 ## Screenshots
 
-![Screenshot #1](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/1.png)
-![Screenshot #2](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/2.png)
-![Screenshot #3](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/3.png)
-![Screenshot #4](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/4.png)
-![Screenshot #5](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/5.png)
-![Screenshot #6](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/6.png)
+![Screenshot #1](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/main.png)
+![Screenshot #2](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/projects.png)
+![Screenshot #3](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/about-1.png)
+![Screenshot #4](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/about-2.png)
 
 ## LICENSE
 
