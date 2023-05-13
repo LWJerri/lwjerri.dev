@@ -6,7 +6,7 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      envVarsInUse: ["VERCEL_TOKEN", "REDIS_USERNAME", "REDIS_PASSWORD", "REDIS_HOST", "REDIS_PORT"],
+      envVarsInUse: ["VERCEL_TOKEN", "PROJECT_ID", "KV_REST_API_URL", "KV_REST_API_TOKEN"],
       runtime: "nodejs18.x",
       split: false,
     }),
