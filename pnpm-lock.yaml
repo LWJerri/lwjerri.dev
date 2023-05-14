@@ -1,12 +1,12 @@
 lockfileVersion: "6.0"
 
 dependencies:
+  "@upstash/redis":
+    specifier: ^1.20.6
+    version: 1.20.6
   "@vercel/analytics":
     specifier: ^1.0.1
     version: 1.0.1
-  "@vercel/kv":
-    specifier: 0.2.0
-    version: 0.2.0
   daisyui:
     specifier: ^2.51.6
     version: 2.51.6(autoprefixer@10.4.14)(postcss@8.4.23)
@@ -30,12 +30,6 @@ devDependencies:
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.23)
-  dotenv:
-    specifier: ^16.0.3
-    version: 16.0.3
-  dotenv-expand:
-    specifier: ^10.0.0
-    version: 10.0.0
   postcss:
     specifier: ^8.4.23
     version: 8.4.23
@@ -461,16 +455,6 @@ packages:
       { integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow== }
     dev: false
 
-  /@vercel/kv@0.2.0:
-    resolution:
-      { integrity: sha512-cMPpNGDtbqmSiELq3OhP6h8nhjmyyFj7yEcxisD0yCEHQvL38moS+xT105lwHbt/j42pBp9jcJsdx1wYfRERSg== }
-    engines: { node: ">=14.6" }
-    dependencies:
-      "@upstash/redis": 1.20.6
-    transitivePeerDependencies:
-      - encoding
-    dev: false
-
   /@vercel/nft@0.22.6:
     resolution:
       { integrity: sha512-gTsFnnT4mGxodr4AUlW3/urY+8JKKB452LwF3m477RFUJTAaDmcz2JqFuInzvdybYIeyIv1sSONEJxsxnbQ5JQ== }
@@ -802,18 +786,6 @@ packages:
   /dlv@1.1.3:
     resolution:
       { integrity: sha512-+HlytyjlPKnIG8XuRG8WvmBP8xs8P71y+SKKS6ZXWoEgLuePxtDoUEiH7WkdePWrQ5JBpE6aoVqfZfJUQkjXwA== }
-
-  /dotenv-expand@10.0.0:
-    resolution:
-      { integrity: sha512-GopVGCpVS1UKH75VKHGuQFqS1Gusej0z4FyQkPdwjil2gNIv+LNsqBlboOzpJFZKVT95GkCyWJbBSdFEFUWI2A== }
-    engines: { node: ">=12" }
-    dev: true
-
-  /dotenv@16.0.3:
-    resolution:
-      { integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ== }
-    engines: { node: ">=12" }
-    dev: true
 
   /electron-to-chromium@1.4.353:
     resolution:

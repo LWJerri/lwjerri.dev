@@ -23,8 +23,6 @@
     "@sveltejs/adapter-vercel": "^2.4.3",
     "@sveltejs/kit": "^1.16.3",
     "autoprefixer": "^10.4.14",
-    "dotenv": "^16.0.3",
-    "dotenv-expand": "^10.0.0",
     "postcss": "^8.4.23",
     "prettier": "^2.8.8",
     "prettier-plugin-svelte": "^2.10.0",
@@ -36,8 +34,8 @@
     "vite": "^4.3.5"
   },
   "dependencies": {
+    "@upstash/redis": "^1.20.6",
     "@vercel/analytics": "^1.0.1",
-    "@vercel/kv": "0.2.0",
     "daisyui": "^2.51.6",
     "dayjs": "^1.11.7",
     "svelte-confetti": "^1.2.2",
