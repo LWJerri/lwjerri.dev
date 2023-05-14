@@ -1,12 +1,12 @@
 lockfileVersion: "6.0"
 
 dependencies:
-  "@upstash/redis":
-    specifier: ^1.20.6
-    version: 1.20.6
   "@vercel/analytics":
     specifier: ^1.0.1
     version: 1.0.1
+  "@vercel/kv":
+    specifier: ^0.2.0
+    version: 0.2.0
   daisyui:
     specifier: ^2.51.6
     version: 2.51.6(autoprefixer@10.4.14)(postcss@8.4.23)
@@ -453,6 +453,16 @@ packages:
   /@vercel/analytics@1.0.1:
     resolution:
       { integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow== }
+    dev: false
+
+  /@vercel/kv@0.2.0:
+    resolution:
+      { integrity: sha512-cMPpNGDtbqmSiELq3OhP6h8nhjmyyFj7yEcxisD0yCEHQvL38moS+xT105lwHbt/j42pBp9jcJsdx1wYfRERSg== }
+    engines: { node: ">=14.6" }
+    dependencies:
+      "@upstash/redis": 1.20.6
+    transitivePeerDependencies:
+      - encoding
     dev: false
 
   /@vercel/nft@0.22.6:

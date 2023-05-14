@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "My personal website, which is powered by SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
@@ -34,8 +34,8 @@
     "vite": "^4.3.5"
   },
   "dependencies": {
-    "@upstash/redis": "^1.20.6",
     "@vercel/analytics": "^1.0.1",
+    "@vercel/kv": "^0.2.0",
     "daisyui": "^2.51.6",
     "dayjs": "^1.11.7",
     "svelte-confetti": "^1.2.2",
