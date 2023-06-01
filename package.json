@@ -36,7 +36,7 @@
   "dependencies": {
     "@vercel/analytics": "^1.0.1",
     "@vercel/kv": "^0.2.0",
-    "daisyui": "^2.51.6",
+    "daisyui": "^3.0.0",
     "dayjs": "^1.11.7",
     "svelte-confetti": "^1.2.2",
     "web-vitals": "^3.3.1"
