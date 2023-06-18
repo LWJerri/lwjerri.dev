@@ -4,6 +4,7 @@
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
   import { inject } from "@vercel/analytics";
+  // @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
@@ -25,11 +26,7 @@
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
   $: if (browser && analyticsId) {
-    webVitals({
-      path: $page.url.pathname,
-      params: $page.params,
-      analyticsId,
-    });
+    webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
   }
 
   export let data: LayoutData;
@@ -38,7 +35,7 @@
 <div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
   {#if new Date().getMonth() === 3 && new Date().getDate() === 28}
     <div
-      style="position:fixed;top:-50px;left:0;height:100vh;width:100vw;display:flex;justify-content:center;overflow:hidden;pointer-events:none;"
+      style="position: fixed; top: -50px; left: 0; height: 100vh; width: 100vw; display: flex; justify-content: center; overflow: hidden; pointer-events: none;"
     >
       <Confetti
         x={[-5, 5]}
