@@ -48,6 +48,8 @@ const technologies = {
     "Algolia",
     "React",
     "Flowbite",
+    "TravisCI",
+    "GitHub Pages",
   ],
   "Team communication tools": ["Slack*", "Trello", "Notion", "Linear*", "Obsidian"],
   "Payments providers": ["Stripe*", "bill_line"],
