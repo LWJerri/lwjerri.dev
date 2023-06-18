@@ -50,6 +50,7 @@ const technologies = {
     "Flowbite",
     "TravisCI",
     "GitHub Pages",
+    "Nginx",
   ],
   "Team communication tools": ["Slack*", "Trello", "Notion", "Linear*", "Obsidian"],
   "Payments providers": ["Stripe*", "bill_line"],
