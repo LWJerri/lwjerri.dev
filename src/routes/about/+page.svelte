@@ -3,6 +3,12 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
+  let usedTechnologies: Array<{ title: string; list: string[] }> = [];
+
+  for (let type in data.technologies) {
+    // @ts-ignore
+    usedTechnologies.push({ title: type, list: data.technologies[type] });
+  }
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -41,7 +47,7 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov - About me</title>
+  <title>Andrii Zontov - About me</title>
 </svelte:head>
 
 <div class="flex flex-col space-y-16 max-w-4xl px-5 mx-auto">
@@ -58,7 +64,7 @@
         >
       </h1>
 
-      <a class="hover:text-[#ED4245] text-xl duration-500" href="Andrey_Zontov.pdf">[Curriculum Vitae]</a>
+      <a class="hover:text-[#ED4245] text-xl duration-500" href="Andrii_Zontov.pdf">[Curriculum Vitae]</a>
     </div>
 
     <div class="group relative block">
@@ -92,7 +98,7 @@
         id="bio"
         on:click={(event) => handleAnchorClick(event, "bio")}>[#]</a
       >
-      Hello, traveler! <span class="text-[#22B8CF]">My name is Andrey, I was born in 2005 in Ukraine</span>, I graduated
+      Hello, traveler! <span class="text-[#22B8CF]">My name is Andrii, I was born in 2005 in Ukraine</span>, I graduated
       from high school in 11th grade and went to university in Kiev. I started my way to programming in the 5th grade,
       when I was playing servers in the popular game Minecraft and I was very curious to know how it all worked under
       the hood. One winter, I was walking with my friend Ilya and told him that I supposedly know how to write plugins,
@@ -199,14 +205,23 @@
 
     <div class="space-y-2">
       <h2 class="text-[#ED4245] text-xl">Languages</h2>
-      <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
-      <p class="text-right text-[#5865F2]">* - have a basic knowledge.</p>
+      <p class="text-[#22B8CF]">
+        {@html data.languages.join(", ").replaceAll("*", "<span class='text-white'>*</span>")}
+      </p>
     </div>
 
     <div class="space-y-2">
       <h2 class="text-[#ED4245] text-xl">Technologies</h2>
-      <p class="text-[#22B8CF]">{data.technologies.join(", ")}</p>
+      {#each usedTechnologies as techology}
+        <div>
+          {techology.title}: {@html `<span class="text-[#22B8CF]">${techology.list
+            .join(", ")
+            .replaceAll("*", "<span class='text-white'>*</span>")}</span>`}
+        </div>
+      {/each}
     </div>
+
+    <p class="text-right">* - have a basic knowledge.</p>
   </div>
 
   <div class="space-y-5">
