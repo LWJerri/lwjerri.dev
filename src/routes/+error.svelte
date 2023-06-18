@@ -1,5 +1,5 @@
 <svelte:head>
-  <title>Andrey Zontov - Backstage?...</title>
+  <title>Andrii Zontov - Backstage?...</title>
 </svelte:head>
 
 <div class="p-1 sm:p-5 flex flex-col flex-grow select-none">

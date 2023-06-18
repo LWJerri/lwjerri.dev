@@ -7,14 +7,14 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov aka. LWJerri</title>
+  <title>Andrii Zontov aka. LWJerri</title>
 </svelte:head>
 
 <div class="hero flex items-center justify-center">
   <div class="hero-content text-center">
     <div class="text-center">
       <h1 class="text-5xl text-[#5865F2] font-bold outline-none">
-        <p>Andrey Zontov <span class="hidden sm:inline">{emoji}</span></p>
+        <p>Andrii Zontov <span class="hidden sm:inline">{emoji}</span></p>
       </h1>
 
       <p class="mt-5 text-2xl">
