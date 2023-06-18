@@ -56,7 +56,7 @@
 </script>
 
 <svelte:head>
-  <title>Andrey Zontov - My projects</title>
+  <title>Andrii Zontov - My projects</title>
 </svelte:head>
 
 <div class="max-w-screen-md space-y-5 mx-auto">
