@@ -38,7 +38,7 @@
     "@vercel/kv": "^0.2.2",
     "daisyui": "^3.1.5",
     "dayjs": "^1.11.8",
-    "svelte-confetti": "^1.2.2",
+    "svelte-confetti": "^1.2.4",
     "web-vitals": "^3.3.2"
   }
 }

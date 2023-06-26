@@ -14,8 +14,8 @@ dependencies:
     specifier: ^1.11.8
     version: 1.11.8
   svelte-confetti:
-    specifier: ^1.2.2
-    version: 1.2.2
+    specifier: ^1.2.4
+    version: 1.2.4
   web-vitals:
     specifier: ^3.3.2
     version: 3.3.2
@@ -1461,8 +1461,8 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-confetti@1.2.2:
-    resolution: {integrity: sha512-LkvWO732jRNmYykWi0IOK7xoBX241p+p+tC7Ef1EcO3TK9b9lpB/vYqKkcwVya+onG2SgQsX2g+JVbVKxq5ixQ==}
+  /svelte-confetti@1.2.4:
+    resolution: {integrity: sha512-2ut7fEjfHIQ5foXuBaVwalUdl7JlyhgEkFbepGYpOx2dOGC2vjj4kkepcYr/Fl3+CyqfnVmXre1owM+3rpfJEg==}
     dev: false
 
   /svelte-hmr@0.15.1(svelte@3.59.2):
