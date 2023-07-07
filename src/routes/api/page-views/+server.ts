@@ -20,15 +20,15 @@ export const GET = (async () => {
   let getCacheData = await vercelKV.get<PageView[]>(REDIS_KEY);
 
   if (!getCacheData) {
-    const preOneYearAgo = new Date();
+    const preOneMonthAgo = new Date();
 
-    preOneYearAgo.setFullYear(preOneYearAgo.getFullYear() - 1);
+    preOneMonthAgo.setMonth(preOneMonthAgo.getMonth() - 1);
 
-    const [oneYearAgo] = preOneYearAgo.toISOString().split("T");
+    const [oneMonthAgo] = preOneMonthAgo.toISOString().split("T");
     const [currentDate] = new Date().toISOString().split("T");
 
     const URLQueryParams = new URLSearchParams({
-      from: oneYearAgo,
+      from: oneMonthAgo,
       to: currentDate,
       projectId: PROJECT_ID,
       environment: "production",
