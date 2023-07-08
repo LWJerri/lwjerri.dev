@@ -59,6 +59,22 @@ const projects: Project[] = [
     emoji: "🦾",
   },
   {
+    name: "SpotiGram",
+    description:
+      "SpotiGram is a script for the Telegram client to simplify the management of links leading to Spotify. Automatic addition to the playlist, queue and more!",
+    stack: ["TypeScript", "Git", "GitHub", "Telegram", "Spotify REST API"],
+    emoji: "🎶",
+    github: "https://github.com/LWJerri/SpotiGram",
+  },
+  {
+    name: "jj",
+    description:
+      "An application for student work that allows you to make an order to transport goods from one point to another",
+    stack: ["TypeScript", "Git", "GitHub", "NestJS", "MongoDB", "React", "Tailwind CSS", "daisyUI"],
+    emoji: "🚗",
+    github: "https://github.com/LWJerri/jj",
+  },
+  {
     name: "MyStorage",
     description:
       "A handy application for easy placement and management of files in S3 buckets. Easily upload, delete and search for files using the simple interface. Simplify file management tasks and unleash the full potential of S3 buckets. Perfect for all users and makes it easy to manage files with our intuitive interface. This app is designed to show you how easy it is to use S3 resources for your needs!",
