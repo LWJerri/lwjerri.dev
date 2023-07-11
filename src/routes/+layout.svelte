@@ -1,34 +1,31 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
-  import { beforeNavigate } from "$app/navigation";
-  import { page, updated } from "$app/stores";
-  import { webVitals } from "$lib/vitals";
-// import { inject } from "@vercel/analytics";
+  // import { inject } from "@vercel/analytics";
 // @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
+  import type { LayoutData } from "./$types";
 
   // inject({ mode: "auto" });
 
-  $: if ($updated) {
-    window.location.reload();
-  }
+  // $: if ($updated) {
+  //   window.location.reload();
+  // }
 
-  beforeNavigate(({ willUnload, to }) => {
-    if ($updated && !willUnload && to?.url) {
-      location.href = to.url.href;
-    }
-  });
+  // beforeNavigate(({ willUnload, to }) => {
+  //   if ($updated && !willUnload && to?.url) {
+  //     location.href = to.url.href;
+  //   }
+  // });
 
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  // let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-  $: if (browser && analyticsId) {
-    webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
-  }
+  // $: if (browser && analyticsId) {
+  //   webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
+  // }
 
-  // export let data: LayoutData;
+  export let data: LayoutData;
 </script>
 
 <div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
@@ -48,9 +45,9 @@
     </div>
   {/if}
 
-  <Navbar externalNavbarLinks={[]} />
+  <Navbar externalNavbarLinks={data.externalNavbarLinks} />
 
   <slot />
 
-  <Footer pageViews={0} />
+  <Footer pageViews={data.pageViews} />
 </div>
