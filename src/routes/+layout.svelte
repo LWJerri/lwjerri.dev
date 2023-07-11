@@ -3,7 +3,7 @@
   import { beforeNavigate } from "$app/navigation";
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
-  import { inject } from "@vercel/analytics";
+// import { inject } from "@vercel/analytics";
 // @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
@@ -11,7 +11,7 @@
   import Navbar from "../components/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  inject({ mode: "auto" });
+  // inject({ mode: "auto" });
 
   $: if ($updated) {
     window.location.reload();
