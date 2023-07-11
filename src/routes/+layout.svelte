@@ -1,10 +1,10 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
   import { beforeNavigate } from "$app/navigation";
   import { page, updated } from "$app/stores";
+  import { webVitals } from "$lib/vitals";
   import { inject } from "@vercel/analytics";
 // @ts-ignore
-  import { browser } from "$app/environment";
-  import { webVitals } from "$lib/vitals";
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
