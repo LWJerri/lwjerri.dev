@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { beforeNavigate } from "$app/navigation";
   import { updated } from "$app/stores";
   import { inject } from "@vercel/analytics";
 // @ts-ignore
@@ -14,11 +15,11 @@
     window.location.reload();
   }
 
-  // beforeNavigate(({ willUnload, to }) => {
-  //   if ($updated && !willUnload && to?.url) {
-  //     location.href = to.url.href;
-  //   }
-  // });
+  beforeNavigate(({ willUnload, to }) => {
+    if ($updated && !willUnload && to?.url) {
+      location.href = to.url.href;
+    }
+  });
 
   // let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
