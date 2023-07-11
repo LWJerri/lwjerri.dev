@@ -1,8 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import type { PageData } from "./$types";
-
+  
   export let data: PageData;
+  const PAGE_TITLE = "Andrii Zontov - About me"
+  
   let usedTechnologies: Array<{ title: string; list: string[] }> = [];
 
   for (let type in data.technologies) {
@@ -44,10 +46,12 @@
       }, 2000);
     }
   }
+
 </script>
 
 <svelte:head>
-  <title>Andrii Zontov - About me</title>
+  <title>{PAGE_TITLE}</title>
+  <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
 <div class="flex flex-col space-y-16 max-w-4xl px-5 mx-auto">

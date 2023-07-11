@@ -6,10 +6,6 @@
   let emoji = data.emojis[Math.floor(Math.random() * data.emojis.length)];
 </script>
 
-<svelte:head>
-  <title>Andrii Zontov aka. LWJerri</title>
-</svelte:head>
-
 <div class="hero flex items-center justify-center">
   <div class="hero-content text-center">
     <div class="text-center">
