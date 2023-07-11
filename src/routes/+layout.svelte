@@ -1,6 +1,7 @@
 <script lang="ts">
   // import { inject } from "@vercel/analytics";
 // @ts-ignore
+  import { updated } from "$app/stores";
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
@@ -9,9 +10,9 @@
 
   // inject({ mode: "auto" });
 
-  // $: if ($updated) {
-  //   window.location.reload();
-  // }
+  $: if ($updated) {
+    window.location.reload();
+  }
 
   // beforeNavigate(({ willUnload, to }) => {
   //   if ($updated && !willUnload && to?.url) {
