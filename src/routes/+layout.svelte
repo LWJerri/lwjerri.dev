@@ -1,8 +1,10 @@
 <script lang="ts">
   import { beforeNavigate } from "$app/navigation";
-  import { updated } from "$app/stores";
+  import { page, updated } from "$app/stores";
   import { inject } from "@vercel/analytics";
 // @ts-ignore
+  import { browser } from "$app/environment";
+  import { webVitals } from "$lib/vitals";
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
@@ -21,11 +23,13 @@
     }
   });
 
-  // let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-  // $: if (browser && analyticsId) {
-  //   webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
-  // }
+  console.log(analyticsId)
+
+  $: if (browser && analyticsId) {
+    webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
+  }
 
   export let data: LayoutData;
 </script>
