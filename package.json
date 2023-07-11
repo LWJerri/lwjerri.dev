@@ -39,6 +39,6 @@
     "daisyui": "^3.2.1",
     "dayjs": "^1.11.9",
     "svelte-confetti": "^1.2.4",
-    "web-vitals": "^3.3.2"
+    "web-vitals": "^3.4.0"
   }
 }
