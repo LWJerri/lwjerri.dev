@@ -9,7 +9,6 @@
   import "../app.css";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
-  import type { LayoutData } from "./$types";
 
   // inject({ mode: "auto" });
 
@@ -29,7 +28,7 @@
     webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
   }
 
-  export let data: LayoutData;
+  // export let data: LayoutData;
 </script>
 
 <div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
@@ -49,9 +48,9 @@
     </div>
   {/if}
 
-  <Navbar externalNavbarLinks={data.externalNavbarLinks} />
+  <Navbar externalNavbarLinks={[]} />
 
   <slot />
 
-  <Footer pageViews={data.pageViews} />
+  <Footer pageViews={0} />
 </div>
