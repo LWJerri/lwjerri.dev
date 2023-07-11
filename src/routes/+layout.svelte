@@ -1,14 +1,14 @@
 <script lang="ts">
-  // import { inject } from "@vercel/analytics";
-// @ts-ignore
   import { updated } from "$app/stores";
+  import { inject } from "@vercel/analytics";
+// @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  // inject({ mode: "auto" });
+  inject({ mode: "auto" });
 
   $: if ($updated) {
     window.location.reload();
