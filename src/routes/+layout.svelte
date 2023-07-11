@@ -1,17 +1,17 @@
 <script lang="ts">
-  import { browser, dev } from "$app/environment";
+  import { browser } from "$app/environment";
   import { beforeNavigate } from "$app/navigation";
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
   import { inject } from "@vercel/analytics";
-  // @ts-ignore
+// @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
   import Footer from "../components/Footer.svelte";
   import Navbar from "../components/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  inject({ mode: dev ? "development" : "production" });
+  inject({ mode: "auto" });
 
   $: if ($updated) {
     window.location.reload();
