@@ -30,7 +30,14 @@
   }
 
   export let data: LayoutData;
+  const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
 </script>
+
+<svelte:head>
+  <title>{PAGE_TITLE}</title>
+  <meta property="og:title" content={PAGE_TITLE} />
+  <meta name="og:site_name" content={PAGE_TITLE} />
+</svelte:head>
 
 <div class="min-h-screen bg-[#0C0E10] text-white scroll-smooth flex flex-col justify-between">
   {#if new Date().getMonth() === 3 && new Date().getDate() === 28}

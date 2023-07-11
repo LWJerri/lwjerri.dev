@@ -13,7 +13,7 @@
   }
 
   export let data: PageData;
-  const PAGE_TITLE = "Andrii Zontov - My projects"
+  const PAGE_TITLE = "Andrii Zontov - My projects";
 
   let projects: Project[] = data.projects;
 
@@ -58,6 +58,7 @@
 
 <svelte:head>
   <title>{PAGE_TITLE}</title>
+  <meta property="og:title" content={PAGE_TITLE} />
   <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
