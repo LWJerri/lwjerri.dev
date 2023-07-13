@@ -18,7 +18,7 @@ This repository contains code that relates to my personal website with informati
 2. Install packages: `pnpm i`.
 3. Rename `.env.example` to `.env` and configurate file.
 
-- Paste in `UMAMI_USERNAME` & `UMAMI_PASSWORD` variables your login credentials from [Umami](https://umami.is/docs/authentication).
+- Type into `UMAMI_USERNAME` & `UMAMI_PASSWORD` variables your login credentials from [Umami](https://umami.is/docs/authentication).
 - Take `UMAMI_SITE_ID` from Umami website settings.
 - To get `KV_REST_API_URL` & `KV_REST_API_TOKEN` you must create [Vercel KV](https://vercel.com/docs/storage/vercel-kv) for your project and retrive all tokens.
 
