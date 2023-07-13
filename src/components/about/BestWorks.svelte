@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../lib/handleAnchorAbout";
+  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
 </script>
 
 <div class="space-y-10">
