@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { handleAnchorProjects } from "$lib/handleAnchorProjects";
   import { onMount } from "svelte";
+  import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { Project } from "../../interfaces";
   import type { PageData } from "./$types";
 
