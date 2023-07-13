@@ -1,51 +1,47 @@
-import { KV_REST_API_TOKEN, KV_REST_API_URL, PROJECT_ID, VERCEL_TOKEN } from "$env/static/private";
+import { KV_REST_API_TOKEN, KV_REST_API_URL, UMAMI_SITE_ID } from "$env/static/private";
+import type { RequestEvent, RequestHandler } from "@sveltejs/kit";
 import { createClient } from "@vercel/kv";
-import type { RequestHandler } from "./$types";
+import { umamiAuth } from "../../../helpers/umamiAuth";
+import type { PageStat } from "../../../interfaces/PageStat";
 
-interface PageView {
-  key: string;
-  total: number;
-  devices: number;
-}
+const REDIS_KEY = "VIEWS_STATS";
 
-const VERCEL_URL = "https://vercel.com/api/web/insights/stats";
-const REDIS_KEY = "pagesViewsStats";
+export const GET = (async ({ url }: RequestEvent<Partial<Record<string, string>>, string | null>) => {
+  const UMAMI_URL = url.hostname === "localhost" ? "https://umami.lwjerri.ml" : `${url.origin}/stats`;
 
-export const GET = (async () => {
   const vercelKV = createClient({
     url: KV_REST_API_URL,
     token: KV_REST_API_TOKEN,
   });
 
-  let getCacheData = await vercelKV.get<PageView[]>(REDIS_KEY);
+  let vercelKVData = (await vercelKV.get<PageStat[]>(REDIS_KEY)) ?? [];
 
-  if (!getCacheData) {
-    const preOneMonthAgo = new Date();
+  if (!vercelKVData.length) {
+    const { isOk, token } = await umamiAuth(UMAMI_URL);
 
-    preOneMonthAgo.setMonth(preOneMonthAgo.getMonth() - 1);
-
-    const [oneMonthAgo] = preOneMonthAgo.toISOString().split("T");
-    const [currentDate] = new Date().toISOString().split("T");
+    if (!isOk) return new Response(JSON.stringify([]));
 
     const URLQueryParams = new URLSearchParams({
-      from: oneMonthAgo,
-      to: currentDate,
-      projectId: PROJECT_ID,
-      environment: "production",
+      type: "url",
+      startAt: "1689109200380", // 13.07.2023
+      endAt: Date.now().toString(),
+      timezone: "Europe/Kyiv",
     });
 
-    const vercelRequest = await fetch(`${VERCEL_URL}/path?${URLQueryParams}`, {
-      headers: { Authorization: `Bearer ${VERCEL_TOKEN}` },
+    const umamiMetricsRequest = await fetch(`${UMAMI_URL}/api/websites/${UMAMI_SITE_ID}/metrics?${URLQueryParams}`, {
+      headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
     });
 
-    const { data: vercelResponse }: { data: PageView[] } = await vercelRequest.json();
+    if (umamiMetricsRequest.status !== 200) return new Response(JSON.stringify([]));
 
-    const writableData: PageView[] = <any>JSON.stringify(vercelResponse);
+    const umamiMetricsResponse: PageStat[] = await umamiMetricsRequest.json();
 
-    await vercelKV.set<PageView[]>(REDIS_KEY, writableData, { ex: 60 * 60 });
+    const writableData: PageStat[] = <any>JSON.stringify(umamiMetricsResponse);
 
-    getCacheData = await vercelKV.get<PageView[]>(REDIS_KEY);
+    await vercelKV.set<PageStat[]>(REDIS_KEY, writableData, { ex: 60 * 60 });
   }
 
-  return new Response(JSON.stringify(getCacheData));
+  vercelKVData = (await vercelKV.get<PageStat[]>(REDIS_KEY)) ?? [];
+
+  return new Response(JSON.stringify(vercelKVData));
 }) satisfies RequestHandler;

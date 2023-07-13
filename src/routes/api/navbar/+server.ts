@@ -1,12 +1,11 @@
 import type { RequestHandler } from "@sveltejs/kit";
-
-interface Link {
-  name: string;
-  url: string;
-}
+import type { Link } from "../../../interfaces";
 
 export const GET = (() => {
-  const externalLinks: Link[] = [{ name: "Support me", url: "https://send.monobank.ua/8webyivBtV" }];
+  const externalLinks: Link[] = [
+    { name: "My GitHub", url: "https://github.com/LWJerri" },
+    { name: "Support me", url: "https://send.monobank.ua/8webyivBtV" },
+  ];
 
   return new Response(JSON.stringify(externalLinks));
 }) satisfies RequestHandler;

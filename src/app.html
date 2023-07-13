@@ -1,26 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%sveltekit.assets%/favicon.ico" />
     <link rel="canonical" href="https://lwjerri.dev" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Andrii Zontov aka. LWJerri</title>
 
-    <meta
-      name="keywords"
-      content="LWJerri, lwjerri, lwjerri.github.io, lwjerri.js.org, lwjerri.dev, Джерри, Джеррі, Andrii Zontov, Андрей Зонтов, Андрій Зонтов"
-    />
+    <!--
+      I'm ignore this lines, because Vercel (and probably search engines)
+      can't correct detect this meta's and I see errors in "Open Graph".
+    -->
 
-    <meta
-      name="description"
-      content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!"
-    />
-
-    <meta
-      name="og:description"
-      content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!"
-    />
+    <!-- prettier-ignore -->
+    <meta name="keywords" content="LWJerri, lwjerri, lwjerri.github.io, lwjerri.js.org, lwjerri.dev, Джерри, Джеррі, Andrii Zontov, Андрей Зонтов, Андрій Зонтов" />
+    <!-- prettier-ignore -->
+    <meta property="description" content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!" />
+    <!-- prettier-ignore -->
+    <meta property="og:description" content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!" />
 
     <meta name="robots" content="index, follow" />
     <meta name="author" content="LWJerri, hello@lwjerri.dev" />
@@ -29,8 +25,8 @@
     <meta name="identifier-URL" content="https://lwjerri.dev" />
     <meta name="revisit-after" content="7 days" />
 
-    <meta name="og:site_name" content="Andrii Zontov aka. LWJerri" />
     <meta name="og:image" content="https://www.lwjerri.dev/me.png" />
+    <meta property="og:url" content="https://lwjerri.dev" />
 
     <style>
       @font-face {
@@ -38,6 +34,19 @@
         src: url("%sveltekit.assets%/Monocraft.otf");
       }
     </style>
+
+    <script>
+      if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
+        let script = document.createElement("script");
+
+        script.async = true;
+        script.defer = true;
+        script.src = "/stats/script.js";
+        script.setAttribute("data-website-id", "4038b963-2924-43d0-bd35-905d463cefdb");
+
+        document.head.appendChild(script);
+      }
+    </script>
 
     %sveltekit.head%
   </head>

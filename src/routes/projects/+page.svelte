@@ -1,20 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
+  import type { Project } from "../../interfaces";
   import type { PageData } from "./$types";
 
-  interface Project {
-    name: string;
-    description: string;
-    stack: string[];
-    closed?: boolean;
-    emoji?: string;
-    url?: string;
-    github?: string;
-  }
-
   export let data: PageData;
+  const PAGE_TITLE = "Andrii Zontov - My projects";
 
-  let projects: Project[] = data.projects;
+  const projects: Project[] = data.projects.sort((a: Project, b: Project) => Number(a.closed) - Number(b.closed));
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -31,58 +24,43 @@
       }
     }
   });
-
-  function handleAnchorClick(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
-    event.preventDefault();
-
-    const link = event.currentTarget;
-    const anchor = new URL(link.href).hash;
-
-    const findByAnchor = document.getElementById(anchor.slice(1));
-
-    if (findByAnchor) {
-      const findBtns = findByAnchor.children[0].children[3];
-      const findShareBtn = findBtns.children[findBtns.children.length - 1];
-
-      navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
-
-      findShareBtn.innerHTML = "[Copied]";
-
-      setTimeout(() => {
-        findShareBtn.innerHTML = "[Share]";
-      }, 2000);
-    }
-  }
 </script>
 
 <svelte:head>
-  <title>Andrii Zontov - My projects</title>
+  <title>{PAGE_TITLE}</title>
+
+  <meta property="og:title" content="{PAGE_TITLE}" />
+  <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
-<div class="max-w-screen-md space-y-5 mx-auto">
-  <p class="text-center text-[#5865F2]">The 🔒 sign means that the project is closed.</p>
-
+<div class="mx-auto max-w-4xl space-y-5">
   <div class="flex flex-col place-items-center space-y-5">
     {#each projects as { name, description, stack, emoji, url, github, closed }, id}
       {@const isLongDescription = description.length > 45 && description.length > 48}
-
-      {@const shortDescription = !description.length
-        ? "Description will be added soon."
-        : isLongDescription
-        ? description.slice(0, 45) + "..."
-        : description}
-
+      {@const getShortDescription = isLongDescription ? description.slice(0, 45) + "..." : description}
       {@const longDescription = isLongDescription ? "..." + description.slice(45) : ""}
 
       <div id="project-{id}">
-        <details class="group rounded-md w-full p-2 bg-[#1D2123] [&_summary::-webkit-details-marker]:hidden">
-          <summary class="flex items-center justify-center cursor-pointer">
-            <div class="hidden sm:block text-4xl select-none">{closed ? "🔒" : emoji ?? "❓"}</div>
+        <details class="group w-full rounded-md bg-[#1D2123] p-2 [&_summary::-webkit-details-marker]:hidden">
+          <summary class="flex cursor-pointer items-center justify-center">
+            <div class="hidden select-none text-4xl sm:block">{emoji ?? "📃"}</div>
 
             <div class="flex flex-col">
-              <span>{name}</span>
+              <div class="flex space-x-2">
+                <span>{name}</span>
 
-              <span class="text-lg text-[#3F4549]">{shortDescription}</span>
+                {#if closed}
+                  <span
+                    class="inline-flex items-center justify-center rounded-md bg-[#0C0E10] px-2.5 py-0.5 text-[#ED4245]"
+                  >
+                    <p class="whitespace-nowrap text-sm uppercase">Closed</p>
+                  </span>
+                {/if}
+              </div>
+
+              <span class="text-lg text-[#3F4549]">
+                {!description.length ? "Description will be added soon." : getShortDescription}
+              </span>
             </div>
 
             <svg
@@ -92,29 +70,29 @@
               viewBox="0 0 24 24"
               stroke="currentColor"
             >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
             </svg>
           </summary>
 
           <p class="text-[#6e767c]">{longDescription}</p>
 
-          <div class="flex mt-6 text-[#22B8CF]">{stack.join(", ")}</div>
+          <div class="mt-6 flex text-[#22B8CF]">{stack.join(", ")}</div>
 
-          <div class="w-full flex flex-row justify-end space-x-2 text-xl select-none">
+          <div class="flex w-full select-none flex-row justify-end space-x-2 text-xl">
             {#if url}
-              <a class="hover:text-[#ED4245] duration-500" target="_blank" rel="noreferrer" href={url}>[URL]</a>
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{url}">[URL]</a>
             {/if}
 
             {#if github}
-              <a class="hover:text-[#ED4245] duration-500" target="_blank" rel="noreferrer" href={github}>[GitHub]</a>
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{github}">[GitHub]</a>
             {/if}
 
             <a
-              class="hover:text-[#ED4245] duration-500 outline-none"
+              class="outline-none duration-500 hover:text-[#ED4245]"
               target="_self"
               rel="noreferrer"
               href="#project-{id}"
-              on:click={(event) => handleAnchorClick(event)}>[Share]</a
+              on:click="{(event) => handleAnchorProjects(event)}">[Share]</a
             >
           </div>
         </details>

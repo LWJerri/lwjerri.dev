@@ -1,27 +1,24 @@
 import { onCLS, onFCP, onFID, onINP, onLCP, onTTFB, type Metric } from "web-vitals";
+import type { NavigatorWithConnection } from "../interfaces";
 
 const vitalsUrl = "https://vitals.vercel-analytics.com/v1/vitals";
 
-interface NavigatorWithConnection extends Navigator {
-  connection?: {
-    effectiveType?: string;
-  };
-}
-
 function getConnectionSpeed() {
   const customNavigator: NavigatorWithConnection = navigator;
-  const isGoodCheck = customNavigator?.connection && customNavigator.connection.effectiveType;
 
-  return isGoodCheck ? customNavigator?.connection?.effectiveType : "";
+  return customNavigator?.connection?.effectiveType ?? "";
 }
 
-function sendToAnalytics(metric: Metric, options: any) {
+function sendToAnalytics(
+  metric: Metric,
+  options: { path: string; params: Record<string, string>; analyticsId: string },
+) {
   const page = Object.entries(options.params).reduce(
     (acc, [key, value]) => acc.replace(value, `[${key}]`),
     options.path,
   );
 
-  const body: any = {
+  const body: Record<string, string> = {
     dsn: options.analyticsId,
     id: metric.id,
     page,
@@ -46,7 +43,7 @@ function sendToAnalytics(metric: Metric, options: any) {
     });
 }
 
-export function webVitals(options: any) {
+export function webVitals(options: { path: string; params: Record<string, string>; analyticsId: string }) {
   try {
     onFID((metric) => sendToAnalytics(metric, options));
     onTTFB((metric) => sendToAnalytics(metric, options));
