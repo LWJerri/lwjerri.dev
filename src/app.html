@@ -36,7 +36,7 @@
     </style>
 
     <script>
-      if (window.location.hostname === "lwjerri.dev") {
+      if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
         let script = document.createElement("script");
 
         script.async = true;
