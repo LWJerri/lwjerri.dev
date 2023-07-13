@@ -7,7 +7,7 @@ import type { PageStat } from "../../../interfaces/PageStat";
 const REDIS_KEY = "VIEWS_STATS";
 
 export const GET = (async ({ url }: RequestEvent<Partial<Record<string, string>>, string | null>) => {
-  const UMAMI_URL = url.hostname === "localhost" ? "https://umami.lwjerri.ml" : `${url.origin}/stats`;
+  const UMAMI_URL = url.hostname === "localhost" ? "https://umami.lwjerri.dev" : `${url.origin}/stats`;
 
   const vercelKV = createClient({
     url: KV_REST_API_URL,

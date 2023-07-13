@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/stats/:match*",
-      "destination": "https://umami.lwjerri.ml/:match*"
+      "destination": "https://umami.lwjerri.dev/:match*"
     }
   ]
 }
