@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  "@vercel/analytics":
-    specifier: ^1.0.1
-    version: 1.0.1
   "@vercel/kv":
     specifier: ^0.2.2
     version: 0.2.2
@@ -482,11 +479,6 @@ packages:
       isomorphic-fetch: 3.0.0
     transitivePeerDependencies:
       - encoding
-    dev: false
-
-  /@vercel/analytics@1.0.1:
-    resolution:
-      { integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow== }
     dev: false
 
   /@vercel/kv@0.2.2:

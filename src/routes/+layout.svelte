@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
-  import { beforeNavigate } from "$app/navigation";
-  import { page, updated } from "$app/stores";
-  import { webVitals } from "$lib/vitals";
-  import { inject } from "@vercel/analytics";
+  // import { browser } from "$app/environment";
+  // import { beforeNavigate } from "$app/navigation";
+  // import { page, updated } from "$app/stores";
+  // import { webVitals } from "$lib/vitals";
+  // import { inject } from "@vercel/analytics";
   // @ts-ignore
   import { Confetti } from "svelte-confetti";
   import "../app.css";
@@ -11,23 +11,23 @@
   import Navbar from "../components/navigation/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  inject({ mode: "auto" });
+  // inject({ mode: "auto" });
 
-  $: if ($updated) {
-    window.location.reload();
-  }
+  // $: if ($updated) {
+  //   window.location.reload();
+  // }
 
-  beforeNavigate(({ willUnload, to }) => {
-    if ($updated && !willUnload && to?.url) {
-      location.href = to.url.href;
-    }
-  });
+  // beforeNavigate(({ willUnload, to }) => {
+  //   if ($updated && !willUnload && to?.url) {
+  //     location.href = to.url.href;
+  //   }
+  // });
 
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+  // let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-  $: if (browser && analyticsId) {
-    webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
-  }
+  // $: if (browser && analyticsId) {
+  //   webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
+  // }
 
   export let data: LayoutData;
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
@@ -61,5 +61,5 @@
 
   <slot />
 
-  <Footer pageViews="{data.pageViews}" />
+  <Footer pageView="{data.pageView}" />
 </div>

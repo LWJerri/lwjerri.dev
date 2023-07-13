@@ -6,7 +6,7 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({
-      envVarsInUse: ["VERCEL_TOKEN", "PROJECT_ID", "KV_REST_API_URL", "KV_REST_API_TOKEN", "VERCEL_ANALYTICS_ID"],
+      envVarsInUse: ["UMAMI_USERNAME", "UMAMI_PASSWORD", "KV_REST_API_URL", "KV_REST_API_TOKEN", "VERCEL_ANALYTICS_ID"],
       runtime: "nodejs18.x",
       split: false,
     }),

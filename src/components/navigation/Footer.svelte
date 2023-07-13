@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import type { LynardAPI } from "../../interfaces";
 
-  export let pageViews = 0;
+  export let pageView = 0;
 
   $: lynardResponse = <LynardAPI>{};
   $: songText = "Loading...";
@@ -106,7 +106,7 @@
         </svg>
       </div>
 
-      <p>{pageViews} views</p>
+      <p>{pageView} views</p>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">

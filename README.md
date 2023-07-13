@@ -18,8 +18,8 @@ This repository contains code that relates to my personal website with informati
 2. Install packages: `pnpm i`.
 3. Rename `.env.example` to `.env` and configurate file.
 
-- Create token for `VERCEL_TOKEN` you can [here](https://vercel.com/account/tokens).
-- `PROJECT_ID` take from your project settings.
+- Paste in `UMAMI_USERNAME` & `UMAMI_PASSWORD` variables your login credentials from [Umami](https://umami.is/docs/authentication).
+- Take `UMAMI_SITE_ID` from Umami website settings.
 - To get `KV_REST_API_URL` & `KV_REST_API_TOKEN` you must create [Vercel KV](https://vercel.com/docs/storage/vercel-kv) for your project and retrive all tokens.
 
 > **NOTE:** I'm hosting my portfolio on [Vercel](https://vercel.com) and my website contains some unique features, like [Web Vitals](https://vercel.com/docs/concepts/speed-insights) or [Vercel KV](https://vercel.com/docs/storage/vercel-kv). If you wanna host this website on another platform, please, fork this repository and adapt unique features to your hosting platform.
