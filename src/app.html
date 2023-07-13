@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -6,16 +6,17 @@
     <link rel="canonical" href="https://lwjerri.dev" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!--
+      I'm ignore this lines, because Vercel (and probably search engines)
+      can't correct detect this meta's and I see errors in "Open Graph".
+    -->
+
     <!-- prettier-ignore -->
     <meta name="keywords" content="LWJerri, lwjerri, lwjerri.github.io, lwjerri.js.org, lwjerri.dev, Джерри, Джеррі, Andrii Zontov, Андрей Зонтов, Андрій Зонтов" />
     <!-- prettier-ignore -->
     <meta property="description" content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!" />
     <!-- prettier-ignore -->
     <meta property="og:description" content="Here you will find all the information you need to know about me, my projects and my achievements. Thank you for visiting my website and I look forward to working with you!" />
-    <!--
-      I'm ignore this lines, because Vercel (and probably search engines)
-      can't correct detect this meta's and I see errors in "Open Graph".
-    -->
 
     <meta name="robots" content="index, follow" />
     <meta name="author" content="LWJerri, hello@lwjerri.dev" />
@@ -33,6 +34,19 @@
         src: url("%sveltekit.assets%/Monocraft.otf");
       }
     </style>
+
+    <script>
+      if (window.location.hostname === "lwjerri.dev") {
+        let script = document.createElement("script");
+
+        script.async = true;
+        script.defer = true;
+        script.src = "/stats/script.js";
+        script.setAttribute("data-website-id", "5915c0e6-ab94-4059-8ae3-733587602238");
+
+        document.head.appendChild(script);
+      }
+    </script>
 
     %sveltekit.head%
   </head>
