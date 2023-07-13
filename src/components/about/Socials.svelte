@@ -11,7 +11,6 @@
   <a
     class="select-none outline-none duration-500 hover:text-[#ED4245]"
     href="#contact"
-    data-umami-event="Copy contact to clipboard"
     id="contact"
     on:click="{(event) => handleAnchorAbout(event, 'contact')}">[#]</a
   >
@@ -26,7 +25,7 @@
   {#each data.socialLinks as { name, icon, url }}
     <a
       href="{url}"
-      data-umami-event="{`Social ${name}`}"
+      data-umami-event="{`Copy social link to ${name}`}"
       target="_blank"
       rel="noreferrer"
       class="mx-auto duration-500 hover:text-[#ED4245]"

@@ -85,7 +85,7 @@
                 target="_blank"
                 rel="noreferrer"
                 href="{url}"
-                data-umami-event="{`Open URL for ${name} project`}">[URL]</a
+                data-umami-event="{`Open ${name} project main URL`}">[URL]</a
               >
             {/if}
 
@@ -95,7 +95,7 @@
                 target="_blank"
                 rel="noreferrer"
                 href="{github}"
-                data-umami-event="{`Open GitHub for ${name} project`}">[GitHub]</a
+                data-umami-event="{`Open ${name} project GitHub`}">[GitHub]</a
               >
             {/if}
 
@@ -104,7 +104,7 @@
               target="_self"
               rel="noreferrer"
               href="#project-{id}"
-              data-umami-event="{`Copy ${name} project to clipboard`}"
+              data-umami-event="{`Copy ${name} project URL to clipboard`}"
               on:click="{(event) => handleAnchorProjects(event)}">[Share]</a
             >
           </div>

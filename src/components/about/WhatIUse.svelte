@@ -14,7 +14,6 @@
   <a
     class="select-none outline-none duration-500 hover:text-[#ED4245]"
     href="#what-I-use"
-    data-umami-event="Copy what I use to clipboard"
     id="what-I-use"
     on:click="{(event) => handleAnchorAbout(event, 'what-I-use')}">[#]</a
   >

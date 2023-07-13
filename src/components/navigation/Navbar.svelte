@@ -29,9 +29,7 @@
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'} select-none">
   {#if !isMainPage}
-    <a class="text-2xl duration-500 hover:translate-x-2 hover:text-[#ED4245]" href="/" data-umami-event="Click home"
-      >> Home</a
-    >
+    <a class="text-2xl duration-500 hover:translate-x-2 hover:text-[#ED4245]" href="/">> Home</a>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this="{dropdownElement}">
@@ -60,7 +58,6 @@
               target="_blank"
               rel="noreferrer"
               href="{url}"
-              data-umami-event="{`Open ${name} link in navbar`}"
               on:click="{() => (isDropdownActive = !isDropdownActive)}">{name}</a
             >
           {/each}

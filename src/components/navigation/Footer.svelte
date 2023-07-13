@@ -37,9 +37,9 @@
 
         const songClass = "overflow-hidden text-ellipsis break-all duration-500 hover:text-[#ED4245]";
 
-        songText = `<a class="${songClass}" href="${songURL}" data-umami-event="Open Spotify track" target="_blank">${songTitle(
-          song,
-        )} [${songTitle(artist)}]</a>`;
+        songText = `<a class="${songClass}" href="${songURL}" target="_blank">${songTitle(song)} [${songTitle(
+          artist,
+        )}]</a>`;
       }
     }
   }
@@ -77,12 +77,8 @@
         </svg>
       </div>
 
-      <a
-        class="duration-500 hover:text-[#ED4245]"
-        href="{cityData.url}"
-        data-umami-event="Open city URL"
-        target="_blank"
-        rel="noreferrer">{cityData.name}</a
+      <a class="duration-500 hover:text-[#ED4245]" href="{cityData.url}" target="_blank" rel="noreferrer"
+        >{cityData.name}</a
       >
     </div>
 
@@ -109,12 +105,8 @@
         </svg>
       </div>
 
-      <a
-        class="duration-500 hover:text-[#ED4245]"
-        href="{umamiStatsURL}"
-        data-umami-event="Open stats URL"
-        target="_blank"
-        rel="noreferrer">{pageView} views</a
+      <a class="duration-500 hover:text-[#ED4245]" href="{umamiStatsURL}" target="_blank" rel="noreferrer"
+        >{pageView} views</a
       >
     </div>
 

@@ -7,7 +7,6 @@
     <a
       class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
       href="#best-projects"
-      data-umami-event="Copy best projects to clipboard"
       id="best-projects"
       on:click="{(event) => handleAnchorAbout(event, 'best-projects')}">[#]</a
     >
