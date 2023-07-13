@@ -1,12 +1,7 @@
 import { KV_REST_API_TOKEN, KV_REST_API_URL, PROJECT_ID, VERCEL_TOKEN } from "$env/static/private";
 import { createClient } from "@vercel/kv";
+import type { PageView } from "../../../interfaces/PageViews";
 import type { RequestHandler } from "./$types";
-
-interface PageView {
-  key: string;
-  total: number;
-  devices: number;
-}
 
 const VERCEL_URL = "https://vercel.com/api/web/insights/stats";
 const REDIS_KEY = "pagesViewsStats";
