@@ -1,14 +1,24 @@
+<script lang="ts">
+  const url = `/error/${Math.floor(Math.random() * 18 + 1)}.webp`;
+
+  const PAGE_TITLE = "Andrii Zontov - Backstage?...";
+</script>
+
 <svelte:head>
-  <title>Andrii Zontov - Backstage?...</title>
+  <title>{PAGE_TITLE}</title>
+
+  <meta property="og:title" content="{PAGE_TITLE}" />
+  <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
-<div class="p-1 sm:p-5 flex flex-col flex-grow select-none">
-  <div class="flex flex-col sm:flex-row items-center space-x-2 justify-center my-auto">
-    <h1 class="text-5xl font-bold uppercase my-auto text-center">Backstage room</h1>
-    <img src="/cry.webp" alt="ROFL_IMAGE" />
-  </div>
+<div class="grid place-content-center px-4">
+  <div class="text-center">
+    <div class="flex justify-center">
+      <h1 class="text-9xl font-black text-[#ED4245]">404</h1>
 
-  <div class="w-full mt-auto">
-    <img class="mr-auto" src="/peepo.webp" alt="ROFL_IMAGE" />
+      <img class="hidden sm:block" src="{url}" alt="ROFL_IMAGE" />
+    </div>
+
+    <p class="mt-4 text-xl">Requested page not found</p>
   </div>
 </div>
