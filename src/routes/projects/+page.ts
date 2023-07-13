@@ -1,14 +1,5 @@
+import type { Project } from "../../interfaces";
 import type { PageLoad } from "./$types";
-
-interface Project {
-  name: string;
-  description: string;
-  stack: string[];
-  closed?: boolean;
-  emoji?: string;
-  url?: string;
-  github?: string;
-}
 
 const projects: Project[] = [
   {
@@ -29,6 +20,7 @@ const projects: Project[] = [
       "Node.js",
       "NestJS",
     ],
+    closed: false,
     emoji: "📆",
     url: "https://dut-api.lwjerri.ml",
   },
@@ -49,6 +41,7 @@ const projects: Project[] = [
       "Node.js",
       "Notion",
     ],
+    closed: false,
     emoji: "🍾",
   },
   {
@@ -56,6 +49,7 @@ const projects: Project[] = [
     description:
       "Incredible Discord bot that enhances your server experience. It efficiently manages user orders and offers new YouTube video notifications, interactive tier rewards, entertaining commands, comprehensive moderation tools, real-time user data, and position rentals. Unlock a world of possibilities with this feature-packed and friendly Discord bot, a standout addition to my portfolio.",
     stack: ["TypeScript", "Git", "GitHub", "Oracle OCI", "PostgreSQL", "Docker", "Prisma", "Node.js"],
+    closed: false,
     emoji: "🦾",
   },
   {
@@ -63,6 +57,7 @@ const projects: Project[] = [
     description:
       "SpotiGram is a script for the Telegram client to simplify the management of links leading to Spotify. Automatic addition to the playlist, queue and more!",
     stack: ["TypeScript", "Git", "GitHub", "Telegram", "Spotify REST API"],
+    closed: false,
     emoji: "🎶",
     github: "https://github.com/LWJerri/SpotiGram",
   },
@@ -71,6 +66,7 @@ const projects: Project[] = [
     description:
       "An application for student work that allows you to make an order to transport goods from one point to another",
     stack: ["TypeScript", "Git", "GitHub", "NestJS", "MongoDB", "React", "Tailwind CSS", "daisyUI"],
+    closed: true,
     emoji: "🚗",
     github: "https://github.com/LWJerri/jj",
   },
@@ -98,6 +94,7 @@ const projects: Project[] = [
       "Express",
       "Figma",
     ],
+    closed: false,
     emoji: "💾",
     url: "https://storage.lwjerri.ml",
     github: "https://github.com/LWJerri/MyStorage",
@@ -122,6 +119,7 @@ const projects: Project[] = [
       "Tailwind CSS",
       "Express",
     ],
+    closed: false,
     emoji: "🔗",
     url: "https://pauperial.lwjerri.ml",
     github: "https://github.com/LWJerri/Pauperial",
@@ -131,6 +129,7 @@ const projects: Project[] = [
     description:
       "Delightful Discord bot, created with love for my brother. This bot takes role management to a whole new level, allowing users to easily select their preferred roles with a simple click of a button. No more hassle or confusion - this bot streamlines the process, making it a breeze to personalize your Discord experience. Whether you're a gamer, a music lover, or an anime enthusiast, our friendly bot ensures that you're always part of the right community.",
     stack: ["TypeScript", "Git", "GitHub", "Heroku", "PostgreSQL", "Docker", "Prisma", "Node.js"],
+    closed: false,
     emoji: "🥸",
   },
   {
@@ -138,6 +137,7 @@ const projects: Project[] = [
     description:
       "The script simplifies Telegram activities through the User API. This script efficiently listens to messages and provides automatic replies based on specific conditions. Additionally, it seamlessly integrates with the Spotify API, allowing for the automatic addition of Spotify links to a personal playlist. A remarkable addition to my portfolio, showcasing my inaugural project with the User API and the integration of Spotify functionality.",
     stack: ["TypeScript", "Git", "GitHub", "Heroku", "Docker", "Node.js"],
+    closed: false,
     emoji: "🤖",
   },
   {
@@ -157,6 +157,7 @@ const projects: Project[] = [
       "daisyUI",
       "Tailwind CSS",
     ],
+    closed: false,
     emoji: "✨",
     url: "https://lwjerri.dev",
     github: "https://github.com/LWJerri/lwjerri.dev",
