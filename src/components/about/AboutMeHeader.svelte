@@ -14,7 +14,7 @@
     >
   </h1>
 
-  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf">[Curriculum Vitae]</a>
+  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf">[CV]</a>
 </div>
 
 <div class="group relative block">
