@@ -8,6 +8,7 @@
   $: songText = "Loading...";
 
   let cityData = { name: "Planet Earth", url: "https://maps.google.com" };
+  const umamiStatsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 
   async function getLynardInfo() {
     try {
@@ -104,7 +105,9 @@
         </svg>
       </div>
 
-      <p>{pageView} views</p>
+      <a class="duration-500 hover:text-[#ED4245]" href="{umamiStatsURL}" target="_blank" rel="noreferrer"
+        >{pageView} views</a
+      >
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">
