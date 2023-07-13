@@ -9,12 +9,15 @@
     <a
       class="select-none outline-none duration-500 hover:text-[#ED4245]"
       href="#about"
+      data-umami-event="Copy about to clipboard"
       id="about"
       on:click="{(event) => handleAnchorAbout(event, 'about')}">[#]</a
     >
   </h1>
 
-  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf">[CV]</a>
+  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf" data-umami-event="Download my CV"
+    >[CV]</a
+  >
 </div>
 
 <div class="group relative block">

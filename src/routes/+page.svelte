@@ -18,8 +18,14 @@
       </p>
 
       <div class="mt-10">
-        <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/projects">[Projects]</a>
-        <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/about">[About]</a>
+        <a
+          class="text-2xl duration-500 hover:text-[#ED4245]"
+          href="/projects"
+          data-umami-event="Click Projects on main page">[Projects]</a
+        >
+        <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/about" data-umami-event="Click ABout on main page"
+          >[About]</a
+        >
       </div>
     </div>
   </div>
