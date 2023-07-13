@@ -9,7 +9,10 @@ function getConnectionSpeed() {
   return customNavigator?.connection?.effectiveType ?? "";
 }
 
-function sendToAnalytics(metric: Metric, options: { path: string; params: string; analyticsId: string }) {
+function sendToAnalytics(
+  metric: Metric,
+  options: { path: string; params: Record<string, string>; analyticsId: string },
+) {
   const page = Object.entries(options.params).reduce(
     (acc, [key, value]) => acc.replace(value, `[${key}]`),
     options.path,
@@ -40,7 +43,7 @@ function sendToAnalytics(metric: Metric, options: { path: string; params: string
     });
 }
 
-export function webVitals(options: { path: string; params: string; analyticsId: string }) {
+export function webVitals(options: { path: string; params: Record<string, string>; analyticsId: string }) {
   try {
     onFID((metric) => sendToAnalytics(metric, options));
     onTTFB((metric) => sendToAnalytics(metric, options));
