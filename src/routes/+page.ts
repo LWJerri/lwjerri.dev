@@ -6,7 +6,7 @@ import type { PageLoad } from "./$types";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-dayjs.tz.setDefault("Europe/Kiev");
+dayjs.tz.setDefault("Europe/Kyiv");
 
 export const prerender = false;
 

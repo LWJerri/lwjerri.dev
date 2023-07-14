@@ -10,7 +10,7 @@
     on:click="{(event) => handleAnchorAbout(event, 'bio')}">[#]</a
   >
   Hello, traveler! <span class="text-[#22B8CF]">My name is Andrii, I was born in 2005 in Ukraine</span>, I graduated
-  from high school in 11th grade and went to university in Kiev. I started my way to programming in the 5th grade, when
+  from high school in 11th grade and went to university in Kyiv. I started my way to programming in the 5th grade, when
   I was playing servers in the popular game Minecraft and I was very curious to know how it all worked under the hood.
   One winter, I was walking with my friend Ilya and told him that I supposedly know how to write plugins, and he said it
   was cool and would like to write them too, after coming home, I decided to learn how to do it in reality. That is how
