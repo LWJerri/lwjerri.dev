@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { browser } from "$app/environment";
+  import { browser, dev } from "$app/environment";
   import { beforeNavigate } from "$app/navigation";
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
@@ -10,19 +10,19 @@
   import Navbar from "../components/navigation/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  $: if ($updated) {
+  $: if ($updated && !dev) {
     window.location.reload();
   }
 
   beforeNavigate(({ willUnload, to }) => {
-    if ($updated && !willUnload && to?.url) {
+    if ($updated && !willUnload && to?.url && !dev) {
       location.href = to.url.href;
     }
   });
 
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
-  $: if (browser && analyticsId) {
+  $: if (browser && analyticsId && !dev) {
     webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
   }
 
