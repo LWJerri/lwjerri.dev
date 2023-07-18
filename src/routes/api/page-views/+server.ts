@@ -33,6 +33,8 @@ export const GET = (async (req: RequestEvent<Partial<Record<string, string>>, st
 
     if (!isOk) return new Response(JSON.stringify([]));
 
+    await vercelKV.set<string>(KV_UMAMI_KEY, token, { ex: 60 * 60 * 24 * 30 });
+
     umamiToken = token;
   } else {
     umamiToken = umamiAccessKey;
