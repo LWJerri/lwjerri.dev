@@ -22,7 +22,7 @@ const projects: Project[] = [
     ],
     closed: false,
     emoji: "📆",
-    url: "https://dut-api.lwjerri.ml",
+    url: "https://dut-api.p.lwjerri.dev",
   },
   {
     name: "PoruchBot",
@@ -96,7 +96,7 @@ const projects: Project[] = [
     ],
     closed: false,
     emoji: "💾",
-    url: "https://storage.lwjerri.ml",
+    url: "https://storage.p.lwjerri.dev",
     github: "https://github.com/LWJerri/MyStorage",
   },
   {
@@ -121,7 +121,7 @@ const projects: Project[] = [
     ],
     closed: false,
     emoji: "🔗",
-    url: "https://pauperial.lwjerri.ml",
+    url: "https://pauperial.p.lwjerri.dev",
     github: "https://github.com/LWJerri/Pauperial",
   },
   {
