@@ -20,7 +20,7 @@ const projects: Project[] = [
       "Node.js",
       "NestJS",
     ],
-    closed: false,
+    isClosed: false,
     emoji: "📆",
     url: "https://dut-api.p.lwjerri.dev",
   },
@@ -41,24 +41,24 @@ const projects: Project[] = [
       "Node.js",
       "Notion",
     ],
-    closed: false,
-    emoji: "🍾",
+    isClosed: false,
+    emoji: "🆘",
   },
   {
     name: "SimonBot",
     description:
       "Incredible Discord bot that enhances your server experience. It efficiently manages user orders and offers new YouTube video notifications, interactive tier rewards, entertaining commands, comprehensive moderation tools, real-time user data, and position rentals. Unlock a world of possibilities with this feature-packed and friendly Discord bot, a standout addition to my portfolio.",
     stack: ["TypeScript", "Git", "GitHub", "Oracle OCI", "PostgreSQL", "Docker", "Prisma", "Node.js"],
-    closed: false,
-    emoji: "🦾",
+    isClosed: false,
+    emoji: "🤖",
   },
   {
     name: "SpotiGram",
     description:
       "SpotiGram is a script for the Telegram client to simplify the management of links leading to Spotify. Automatic addition to the playlist, queue and more!",
     stack: ["TypeScript", "Git", "GitHub", "Telegram", "Spotify REST API"],
-    closed: false,
-    emoji: "🎶",
+    isClosed: false,
+    emoji: "🎷",
     github: "https://github.com/LWJerri/SpotiGram",
   },
   {
@@ -66,8 +66,7 @@ const projects: Project[] = [
     description:
       "An application for student work that allows you to make an order to transport goods from one point to another",
     stack: ["TypeScript", "Git", "GitHub", "NestJS", "MongoDB", "React", "Tailwind CSS", "daisyUI"],
-    closed: true,
-    emoji: "🚗",
+    isClosed: true,
     github: "https://github.com/LWJerri/jj",
   },
   {
@@ -94,8 +93,8 @@ const projects: Project[] = [
       "Express",
       "Figma",
     ],
-    closed: false,
-    emoji: "💾",
+    isClosed: false,
+    emoji: "🗃️",
     url: "https://storage.p.lwjerri.dev",
     github: "https://github.com/LWJerri/MyStorage",
   },
@@ -119,7 +118,7 @@ const projects: Project[] = [
       "Tailwind CSS",
       "Express",
     ],
-    closed: false,
+    isClosed: false,
     emoji: "🔗",
     url: "https://pauperial.p.lwjerri.dev",
     github: "https://github.com/LWJerri/Pauperial",
@@ -129,16 +128,16 @@ const projects: Project[] = [
     description:
       "Delightful Discord bot, created with love for my brother. This bot takes role management to a whole new level, allowing users to easily select their preferred roles with a simple click of a button. No more hassle or confusion - this bot streamlines the process, making it a breeze to personalize your Discord experience. Whether you're a gamer, a music lover, or an anime enthusiast, our friendly bot ensures that you're always part of the right community.",
     stack: ["TypeScript", "Git", "GitHub", "Heroku", "PostgreSQL", "Docker", "Prisma", "Node.js"],
-    closed: false,
-    emoji: "🥸",
+    isClosed: false,
+    emoji: "🤖",
   },
   {
     name: "UserBot",
     description:
       "The script simplifies Telegram activities through the User API. This script efficiently listens to messages and provides automatic replies based on specific conditions. Additionally, it seamlessly integrates with the Spotify API, allowing for the automatic addition of Spotify links to a personal playlist. A remarkable addition to my portfolio, showcasing my inaugural project with the User API and the integration of Spotify functionality.",
     stack: ["TypeScript", "Git", "GitHub", "Heroku", "Docker", "Node.js"],
-    closed: false,
-    emoji: "🤖",
+    isClosed: false,
+    emoji: "🎈",
   },
   {
     name: "lwjerri.dev",
@@ -157,8 +156,8 @@ const projects: Project[] = [
       "daisyUI",
       "Tailwind CSS",
     ],
-    closed: false,
-    emoji: "✨",
+    isClosed: false,
+    emoji: "🏆",
     url: "https://lwjerri.dev",
     github: "https://github.com/LWJerri/lwjerri.dev",
   },
@@ -167,7 +166,7 @@ const projects: Project[] = [
     description:
       "My old website project, hosted on GitHub Pages, showcases my first personal front-end development using Node.js as the foundation. It incorporates various tools for front-end development, resulting in an engaging and interactive website.",
     stack: ["JavaScript", "Git", "GitHub", "TravisCI", "GitHub Pages", "Svelte", "Vite", "HTML&CSS"],
-    closed: true,
+    isClosed: true,
     url: "https://lwjerri.github.io",
     github: "https://github.com/LWJerri/lwjerri.github.io",
   },
@@ -192,7 +191,7 @@ const projects: Project[] = [
       "Tailwind CSS",
       "Express",
     ],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "Riddea",
@@ -216,7 +215,7 @@ const projects: Project[] = [
       "NestJS",
       "Nginx",
     ],
-    closed: true,
+    isClosed: true,
     url: "https://riddea.ml",
     github: "https://github.com/LWJerri/Riddea",
   },
@@ -225,49 +224,49 @@ const projects: Project[] = [
     description:
       "Private Discord bot designed specifically for a classroom server and Telegram group. This bot plays a crucial role in linking the Discord and Telegram chats, facilitating seamless communication by sending messages, photos, videos, and more between the two platforms. Additionally, it features a tier system, creates voice channels, and offers a range of minor yet valuable features for enhanced functionality.",
     stack: ["TypeScript", "Git", "GitHub", "Oracle OCI", "PostgreSQL", "Docker", "Prisma", "Node.js"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "Modestal",
     description:
       "Introducing a private Discord bot specifically developed for Twitch streamer Modestal. This bot provides essential chat moderation features, sends stream start notifications, incorporates a ranking system, and offers additional functionalities. Please note that the project is currently not in active development.",
     stack: ["TypeScript", "Git", "GitHub", "Heroku", "MariaDB", "Docker", "TypeORM", "Node.js"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "AllStarz",
     description:
-      "A private Discord bot exclusively designed for a closed NFT trading community. This bot handles monthly user subscriptions for NFT creators, ensuring seamless management within the community.",
+      "A private Discord bot exclusively designed for a isClosed NFT trading community. This bot handles monthly user subscriptions for NFT creators, ensuring seamless management within the community.",
     stack: ["TypeScript", "Git", "GitHub", "DigitalOcean", "PostgreSQL", "Docker", "TypeORM", "Node.js", "Stripe"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "LoonaSoftBot",
     description:
       "The Telegram bot developed for the LoonaSoft channel. This bot serves as a subscription manager and efficiently processes join requests for the channel.",
     stack: ["TypeScript", "Git", "GitHub", "Oracle OCI", "PostgreSQL", "Docker", "Prisma", "Node.js", "Stripe"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "ManageGift",
     description:
       "Introducing a website design for a Discord bot, featuring essential information about the bot, its staff, a comprehensive team list, and dynamically loaded information. Additionally, a PHP website is available with detailed bot commands, bot developers, and more.",
     stack: ["JavaScript", "PHP", "Git", "GitHub", "HTML&CSS", "OpenServer", "Node.js", "MongoDB"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "VilStats",
     description:
       "Windows application designed for managing human statistics. This application offers a user-friendly interface for performing full CRUD operations on human data. Simplify the process of creating, reading, updating, and deleting human information with ease.",
     stack: ["PHP", "JavaScript", "Git", "GitHub", "HTML&CSS"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "Openner",
     description:
       "Introducing a Discord bot tailored for YouTube and Twitch streamer Oxyas. This bot tracks message statistics, moderates chat, and provides notifications for Twitch stream start and new YouTube videos. It also handles role assignments, private voice channel creation, and other miscellaneous tasks. This project marked one of my initial forays into programming as I began learning the ropes.",
     stack: ["JavaScript", "Git", "GitHub", "Heroku", "MySQL", "Docker", "TypeORM", "Node.js"],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "MagnifyAI",
@@ -287,7 +286,7 @@ const projects: Project[] = [
       "Node.js",
       "bill_line",
     ],
-    closed: true,
+    isClosed: true,
   },
   {
     name: "Sreality",
@@ -305,7 +304,7 @@ const projects: Project[] = [
       "daisyUI",
       "Tailwind CSS",
     ],
-    closed: true,
+    isClosed: true,
     github: "https://github.com/LWJerri/Sreality",
   },
 ];

@@ -7,7 +7,7 @@
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov - My projects";
 
-  const projects: Project[] = data.projects.sort((a: Project, b: Project) => Number(a.closed) - Number(b.closed));
+  const projects: Project[] = data.projects.sort((a: Project, b: Project) => Number(a.isClosed) - Number(b.isClosed));
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -35,7 +35,7 @@
 
 <div class="mx-auto max-w-4xl space-y-5">
   <div class="flex flex-col place-items-center space-y-5">
-    {#each projects as { name, description, stack, emoji, url, github, closed }, id}
+    {#each projects as { name, description, stack, emoji, url, github, isClosed }, id}
       {@const isLongDescription = description.length > 45 && description.length > 48}
       {@const getShortDescription = isLongDescription ? description.slice(0, 45) + "..." : description}
       {@const longDescription = isLongDescription ? "..." + description.slice(45) : ""}
@@ -43,13 +43,13 @@
       <div id="project-{id}">
         <details class="group w-full rounded-md bg-[#1D2123] p-2 [&_summary::-webkit-details-marker]:hidden">
           <summary class="flex cursor-pointer items-center justify-center">
-            <div class="hidden select-none text-4xl sm:block">{emoji ?? "📃"}</div>
+            <div class="hidden select-none text-4xl sm:block">{isClosed || !emoji ? "📃" : emoji}</div>
 
             <div class="flex flex-col">
-              <div class="flex space-x-2">
+              <div class="flex justify-between">
                 <span>{name}</span>
 
-                {#if closed}
+                {#if isClosed}
                   <span
                     class="inline-flex items-center justify-center rounded-md bg-[#0C0E10] px-2.5 py-0.5 text-[#ED4245]"
                   >
@@ -63,15 +63,17 @@
               </span>
             </div>
 
-            <svg
-              class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
-            </svg>
+            <div class="mx-2">
+              <svg
+                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
           </summary>
 
           <p class="text-[#6e767c]">{longDescription}</p>
