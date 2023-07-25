@@ -1,6 +1,5 @@
 <script lang="ts">
   import { browser, dev } from "$app/environment";
-  import { beforeNavigate } from "$app/navigation";
   import { page, updated } from "$app/stores";
   import { webVitals } from "$lib/vitals";
   // @ts-ignore
@@ -8,17 +7,8 @@
   import "../app.css";
   import Footer from "../components/navigation/Footer.svelte";
   import Navbar from "../components/navigation/Navbar.svelte";
+  import NewVersion from "../components/navigation/NewVersion.svelte";
   import type { LayoutData } from "./$types";
-
-  $: if ($updated && !dev) {
-    window.location.reload();
-  }
-
-  beforeNavigate(({ willUnload, to }) => {
-    if ($updated && !willUnload && to?.url && !dev) {
-      location.href = to.url.href;
-    }
-  });
 
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
 
@@ -54,7 +44,13 @@
     </div>
   {/if}
 
-  <Navbar navbarLinks="{data.navbarLinks}" />
+  <div>
+    <div class="{$updated && !dev ? 'block' : 'hidden'}">
+      <NewVersion />
+    </div>
+
+    <Navbar navbarLinks="{data.navbarLinks}" />
+  </div>
 
   <slot />
 
