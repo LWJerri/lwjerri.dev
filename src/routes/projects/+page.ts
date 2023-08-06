@@ -41,8 +41,7 @@ const projects: Project[] = [
       "Node.js",
       "Notion",
     ],
-    isClosed: false,
-    emoji: "🆘",
+    isClosed: true,
   },
   {
     name: "SimonBot",
