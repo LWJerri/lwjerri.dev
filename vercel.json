@@ -1,4 +1,11 @@
 {
+  "crons": [
+    {
+      "path": "/api/views",
+      "schedule": "@daily"
+    }
+  ],
+
   "rewrites": [
     {
       "source": "/stats/:match*",
