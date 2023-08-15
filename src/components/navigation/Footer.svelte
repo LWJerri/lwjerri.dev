@@ -118,13 +118,15 @@
             stroke="white"
             stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="round"></path>
+            stroke-linejoin="round"
+          ></path>
           <path
             d="M16.9889 8.21729C18.2707 10.54 18.2707 13.3746 16.9889 15.6891"
             stroke="white"
             stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="round"></path>
+            stroke-linejoin="round"
+          ></path>
           <path
             fill-rule="evenodd"
             clip-rule="evenodd"
@@ -132,7 +134,8 @@
             stroke="white"
             stroke-width="1.5"
             stroke-linecap="round"
-            stroke-linejoin="round"></path>
+            stroke-linejoin="round"
+          ></path>
         </svg>
       </div>
 

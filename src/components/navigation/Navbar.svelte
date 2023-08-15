@@ -3,22 +3,19 @@
   import { onMount } from "svelte";
   import type { Link } from "../../interfaces";
 
-  export let navbarLinks: Link[] = [];
-
-  const defaultURLs: Link[] = [
+  const dropdownURLs: Link[] = [
     { name: "My projects", url: "/projects" },
     { name: "About me ", url: "/about" },
+    { name: "My GitHub", url: "https://github.com/LWJerri", outside: true },
+    { name: "Support me", url: "https://send.monobank.ua/8webyivBtV", outside: true },
   ];
 
   $: isMainPage = $page.url.pathname === "/";
   $: isDropdownActive = false;
 
-  let customLinks: Link[] = [];
   let dropdownElement: HTMLDivElement;
 
   onMount(async () => {
-    navbarLinks.map(({ name, url }) => customLinks.push({ name, url }));
-
     document.addEventListener("click", function (event) {
       if (!dropdownElement?.contains(event?.target as any)) {
         isDropdownActive = false;
@@ -44,21 +41,12 @@
           class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1C2125] p-2 pl-3 shadow-2xl"
           role="menu"
         >
-          {#each defaultURLs as { name, url }}
+          {#each dropdownURLs as link}
             <a
               class="text-lg duration-500 hover:text-[#ED4245]"
-              href="{url}"
-              on:click="{() => (isDropdownActive = !isDropdownActive)}">{name}</a
-            >
-          {/each}
-
-          {#each customLinks as { name, url }}
-            <a
-              class="text-lg duration-500 hover:text-[#ED4245]"
-              target="_blank"
-              rel="noreferrer"
-              href="{url}"
-              on:click="{() => (isDropdownActive = !isDropdownActive)}">{name}</a
+              href="{link.url}"
+              target="{link.outside ? '_blank' : ''}"
+              on:click="{() => (isDropdownActive = !isDropdownActive)}">{link.name}</a
             >
           {/each}
         </div>
