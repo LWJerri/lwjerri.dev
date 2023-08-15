@@ -2,7 +2,7 @@
   "crons": [
     {
       "path": "/api/views",
-      "schedule": "@daily"
+      "schedule": "0 0 * * *"
     }
   ],
 
