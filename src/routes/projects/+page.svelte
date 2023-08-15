@@ -82,23 +82,11 @@
 
           <div class="flex w-full select-none flex-row justify-end space-x-2 text-xl">
             {#if url}
-              <a
-                class="duration-500 hover:text-[#ED4245]"
-                target="_blank"
-                rel="noreferrer"
-                href="{url}"
-                data-umami-event="{`Open ${name} project main URL`}">[URL]</a
-              >
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{url}">[URL]</a>
             {/if}
 
             {#if github}
-              <a
-                class="duration-500 hover:text-[#ED4245]"
-                target="_blank"
-                rel="noreferrer"
-                href="{github}"
-                data-umami-event="{`Open ${name} project GitHub`}">[GitHub]</a
-              >
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{github}">[GitHub]</a>
             {/if}
 
             <a
@@ -106,7 +94,6 @@
               target="_self"
               rel="noreferrer"
               href="#project-{id}"
-              data-umami-event="{`Copy ${name} project URL to clipboard`}"
               on:click="{(event) => handleAnchorProjects(event)}">[Share]</a
             >
           </div>

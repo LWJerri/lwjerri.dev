@@ -23,12 +23,7 @@
 
 <div class="grid select-none grid-flow-row grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
   {#each data.socialLinks as { name, icon, url }}
-    <a
-      href="{url}"
-      data-umami-event="{`Copy social link to ${name}`}"
-      target="_blank"
-      rel="noreferrer"
-      class="mx-auto duration-500 hover:text-[#ED4245]"
+    <a href="{url}" target="_blank" rel="noreferrer" class="mx-auto duration-500 hover:text-[#ED4245]"
       ><div class="flex items-center space-x-2 text-lg">
         {@html icon}<span>{name}</span>
       </div></a
