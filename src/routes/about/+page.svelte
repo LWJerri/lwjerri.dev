@@ -69,10 +69,10 @@
   </div>
 
   <div class="space-y-5">
-    <WhatIUse data="{data}" usedTechnologies="{usedTechnologies}" />
+    <WhatIUse {data} {usedTechnologies} />
   </div>
 
   <div class="space-y-5">
-    <Socials data="{data}" />
+    <Socials {data} />
   </div>
 </div>
