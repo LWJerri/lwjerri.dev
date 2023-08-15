@@ -29,7 +29,7 @@
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'} select-none">
   {#if !isMainPage}
-    <a class="text-2xl duration-500 hover:translate-x-2 hover:text-[#ED4245]" href="/">> Home</a>
+    <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/">[/]</a>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this="{dropdownElement}">
@@ -46,7 +46,7 @@
         >
           {#each defaultURLs as { name, url }}
             <a
-              class="text-lg duration-500 hover:translate-x-2 hover:text-[#ED4245]"
+              class="text-lg duration-500 hover:text-[#ED4245]"
               href="{url}"
               on:click="{() => (isDropdownActive = !isDropdownActive)}">{name}</a
             >
@@ -54,7 +54,7 @@
 
           {#each customLinks as { name, url }}
             <a
-              class="text-lg duration-500 hover:translate-x-2 hover:text-[#ED4245]"
+              class="text-lg duration-500 hover:text-[#ED4245]"
               target="_blank"
               rel="noreferrer"
               href="{url}"

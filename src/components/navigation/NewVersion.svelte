@@ -2,40 +2,53 @@
   $: isAlertVisible = true;
 </script>
 
-<div class="{isAlertVisible ? 'block' : 'hidden'} flex flex-row items-center justify-between bg-[#5865F2] px-4 py-2">
-  <p class="break-words text-base">New version available</p>
+<div
+  class="{isAlertVisible
+    ? 'block'
+    : 'hidden'} fixed bottom-0 flex w-full max-w-4xl flex-row items-center justify-between bg-[#5865F2] px-4 py-2 sm:mb-10 sm:w-4/5 sm:rounded-md"
+>
+  <div class="flex items-center space-x-2">
+    <span class="rounded-md bg-black/10 p-1 transition">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-alert-square"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"></path>
+        <path d="M12 8v4"></path>
+        <path d="M12 16h.01"></path>
+      </svg></span
+    >
+
+    <p class="break-words text-base">Update ready!</p>
+  </div>
 
   <div class="flex items-center space-x-2">
     <button class="rounded-md bg-black/10 p-1 transition hover:bg-black/20" on:click="{() => window.location.reload()}">
       <svg
-        width="24px"
-        height="24px"
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-refresh"
+        width="24"
+        height="24"
         viewBox="0 0 24 24"
         stroke-width="1.5"
+        stroke="currentColor"
         fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        color="#ffffff"
-        ><path
-          d="M11 21H4a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v7"
-          stroke="#ffffff"
-          stroke-width="1.5"
-          stroke-linecap="round"></path><path
-          d="M2 7h20M5 5.01l.01-.011M8 5.01l.01-.011M11 5.01l.01-.011M21.666 16.667C21.049 15.097 19.636 14 17.99 14c-1.758 0-3.252 1.255-3.793 3"
-          stroke="#ffffff"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path><path
-          d="M19.995 16.772H21.4a.6.6 0 00.6-.6V14.55M14.334 19.333C14.953 20.903 16.366 22 18.01 22c1.758 0 3.252-1.255 3.793-3"
-          stroke="#ffffff"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path><path
-          d="M16.005 19.228H14.6a.6.6 0 00-.6.6v1.622"
-          stroke="#ffffff"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"></path></svg
+        stroke-linecap="round"
+        stroke-linejoin="round"
       >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4"></path>
+        <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4"></path>
+      </svg>
     </button>
 
     <button class="rounded-md bg-black/10 p-1 transition hover:bg-black/20" on:click="{() => (isAlertVisible = false)}">
