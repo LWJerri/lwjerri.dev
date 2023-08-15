@@ -33,7 +33,7 @@
     <Confetti />
   {/if}
 
-  <Navbar navbarLinks="{data.navbarLinks}" />
+  <Navbar />
 
   <slot />
 
