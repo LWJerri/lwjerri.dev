@@ -1,15 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import AboutMe from "../../components/about/AboutMe.svelte";
   import AboutMeHeader from "../../components/about/AboutMeHeader.svelte";
-  import {
-    AboutMe,
-    AboutMyNickname,
-    BackgroundEducation,
-    BestWorks,
-    HobbiesAndInterests,
-    Socials,
-    WhatIUse,
-  } from "../../components/about/index";
+  import AboutMyNickname from "../../components/about/AboutMyNickname.svelte";
+  import BackgroundEducation from "../../components/about/BackgroundEducation.svelte";
+  import BestWorks from "../../components/about/BestWorks.svelte";
+  import HobbiesAndInterests from "../../components/about/HobbiesAndInterests.svelte";
+  import Socials from "../../components/about/Socials.svelte";
+  import WhatIUse from "../../components/about/WhatIUse.svelte";
   import type { PageData } from "./$types";
 
   export let data: PageData;
