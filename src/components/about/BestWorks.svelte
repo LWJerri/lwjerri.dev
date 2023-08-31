@@ -17,9 +17,9 @@
   </p>
 
   <p>
-    The second project is <span class="text-[#22B8CF]">DUTCalendarTracker</span>. A bot developed for my university to
-    make it easy to see a list of classes on days specified by the user acts as a reminder of classes for the next day
-    notifying me of schedule changes and more. More than 100 people are currently using the bot.
+    The second project is <span class="text-[#22B8CF]">DutTrackBot</span>. A bot developed for my university to make it
+    easy to see a list of classes on days specified by the user acts as a reminder of classes for the next day notifying
+    me of schedule changes and more. More than 100 people are currently using the bot.
   </p>
 </div>
 

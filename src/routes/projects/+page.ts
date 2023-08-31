@@ -3,9 +3,9 @@ import type { PageLoad } from "./$types";
 
 const projects: Project[] = [
   {
-    name: "DUTCalendarTracker",
+    name: "DutTrackBot",
     description:
-      "DUTCalendarTracker is a friendly companion that keeps effortlessly connected with university life. Stay in the loop with tomorrow's classes, anticipate any timetable adjustments, and receive timely notifications that make managing the schedule a breeze. With its user-friendly interface never miss a beat as you navigate through your academic journey. Let DUTCalendarTracker be your trusted sidekick, simplifying the university experience one notification at a time.",
+      "DutTrackBot is a friendly companion that keeps effortlessly connected with university life. Stay in the loop with tomorrow's classes, anticipate any timetable adjustments, and receive timely notifications that make managing the schedule a breeze. With its user-friendly interface never miss a beat as you navigate through your academic journey. Let DutTrackBot be your trusted sidekick, simplifying the university experience one notification at a time.",
     stack: [
       "TypeScript",
       "Git",
