@@ -8,10 +8,10 @@
     : 'hidden'} fixed bottom-0 flex w-full max-w-4xl flex-row items-center justify-between bg-[#5865F2] px-4 py-2 sm:mb-10 sm:w-4/5 sm:rounded-md"
 >
   <div class="flex items-center space-x-2">
-    <span class="rounded-md bg-black/10 p-1 transition">
+    <span class="group rounded-md bg-black/10 p-1 transition duration-500 hover:-rotate-45">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-alert-square"
+        class="icon icon-tabler icon-tabler-alert-square duration-500 group-hover:rotate-45 group-hover:scale-110"
         width="24"
         height="24"
         viewBox="0 0 24 24"
@@ -32,10 +32,13 @@
   </div>
 
   <div class="flex items-center space-x-2">
-    <button class="rounded-md bg-black/10 p-1 transition hover:bg-black/20" on:click="{() => window.location.reload()}">
+    <button
+      class="group rounded-md bg-black/10 p-1 transition hover:bg-black/20"
+      on:click="{() => window.location.reload()}"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="icon icon-tabler icon-tabler-refresh"
+        class="icon icon-tabler icon-tabler-refresh duration-500 group-hover:-rotate-180"
         width="24"
         height="24"
         viewBox="0 0 24 24"
