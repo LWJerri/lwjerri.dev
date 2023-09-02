@@ -7,8 +7,8 @@ export function handleAnchorProjects(event: MouseEvent & { currentTarget: EventT
   const findByAnchor = document.getElementById(anchor.slice(1));
 
   if (findByAnchor) {
-    const findBtns = findByAnchor.children[0].children[3];
-    const findShareBtn = findBtns.children[findBtns.children.length - 1];
+    const { children } = findByAnchor.children[0].children[3];
+    const findShareBtn = children[children.length - 1];
 
     navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
