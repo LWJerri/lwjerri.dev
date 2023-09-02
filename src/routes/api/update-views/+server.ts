@@ -2,10 +2,11 @@ import { umamiAuth } from "$lib/umamiAuth";
 import { umamiMetrics } from "$lib/umamiMetrics";
 import { vercelKV } from "$lib/vercelKv";
 import type { PageStat } from "../../../interfaces/PageStat";
+import type { RequestEvent } from "./$types";
 
 const KV_VIEWS_KEY = "VIEWS_STATS";
 
-export async function GET(event) {
+export async function GET(event: RequestEvent) {
   const UMAMI_URL = event.url.hostname === "localhost" ? "https://umami.lwjerri.dev" : `${event.url.origin}/stats`;
 
   let totalViewsStats: PageStat[] = [];
