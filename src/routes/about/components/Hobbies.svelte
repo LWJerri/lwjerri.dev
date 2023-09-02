@@ -5,8 +5,8 @@
 <p>
   <a
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
-    href="#hobbies-and-interests"
-    id="hobbies-and-interests"
+    href="#hobbies"
+    id="hobbies"
     on:click="{(event) => handleAnchorAbout(event, 'hobbies')}">[#]</a
   >
   I spend all my free time at my laptop because my hobby is the same as my main occupation - programming. Sometimes I watch

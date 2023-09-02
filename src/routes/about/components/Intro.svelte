@@ -5,8 +5,8 @@
 <p>
   <a
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
-    href="#bio"
-    id="bio"
+    href="#intro"
+    id="intro"
     on:click="{(event) => handleAnchorAbout(event, 'intro')}">[#]</a
   >
   Hello, traveler! <span class="text-[#22B8CF]">My name is Andrii, I was born in 2005 in Ukraine</span>, I graduated

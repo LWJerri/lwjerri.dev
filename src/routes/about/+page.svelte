@@ -24,13 +24,13 @@
     const anchor = window.location.hash.slice(1);
 
     if (anchor) {
-      const findElement = document.getElementById(anchor);
+      const getAnchorElement = document.getElementById(anchor);
 
-      if (findElement) {
-        findElement.getElementsByTagName("input")[0].checked = true;
+      if (getAnchorElement) {
+        getAnchorElement.getElementsByTagName("input")[0].checked = true;
 
-        if (findElement) {
-          window.scrollTo({ top: findElement.offsetTop, behavior: "auto" });
+        if (getAnchorElement) {
+          window.scrollTo({ top: getAnchorElement.offsetTop, behavior: "auto" });
         }
       }
     }

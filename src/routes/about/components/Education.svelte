@@ -5,8 +5,8 @@
 <p>
   <a
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
-    href="#school-knowledge"
-    id="school-knowledge"
+    href="#education"
+    id="education"
     on:click="{(event) => handleAnchorAbout(event, 'education')}">[#]</a
   >
   Went to school in 2011, where he completed the full 10th grade and the beginning of the 11th, was forced to change places
