@@ -14,7 +14,9 @@
     >
   </h1>
 
-  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf">[CV]</a>
+  <a class="text-xl duration-500 hover:text-[#ED4245]" href="Andrii_Zontov.pdf" data-umami-event="Click on CV button"
+    >[CV]</a
+  >
 </div>
 
 <div class="group relative block">
