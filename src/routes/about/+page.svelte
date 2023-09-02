@@ -1,14 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import AboutMe from "../../components/about/AboutMe.svelte";
-  import AboutMeHeader from "../../components/about/AboutMeHeader.svelte";
-  import AboutMyNickname from "../../components/about/AboutMyNickname.svelte";
-  import BackgroundEducation from "../../components/about/BackgroundEducation.svelte";
-  import BestWorks from "../../components/about/BestWorks.svelte";
-  import HobbiesAndInterests from "../../components/about/HobbiesAndInterests.svelte";
   import Socials from "../../components/about/Socials.svelte";
-  import WhatIUse from "../../components/about/WhatIUse.svelte";
   import type { PageData } from "./$types";
+  import Education from "./components/Education.svelte";
+  import Hobbies from "./components/Hobbies.svelte";
+  import Intro from "./components/Intro.svelte";
+  import Nickname from "./components/Nickname.svelte";
+  import PhotoIntro from "./components/PhotoIntro.svelte";
+  import Stack from "./components/Stack.svelte";
+  import Works from "./components/Works.svelte";
 
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov - About me";
@@ -46,28 +46,28 @@
 
 <div class="mx-auto flex max-w-4xl flex-col space-y-16 px-5">
   <div class="space-y-5">
-    <AboutMeHeader />
-    <AboutMe />
+    <PhotoIntro />
+    <Intro />
 
     <div class="divider uppercase text-[#5865F2]">Hobbies & Interests</div>
 
-    <HobbiesAndInterests />
+    <Hobbies />
 
-    <div class="divider uppercase text-[#5865F2]">Background education</div>
+    <div class="divider uppercase text-[#5865F2]">Background Education</div>
 
-    <BackgroundEducation />
+    <Education />
 
-    <div class="divider uppercase text-[#5865F2]">Best works</div>
+    <div class="divider uppercase text-[#5865F2]">Best Works</div>
 
-    <BestWorks />
+    <Works />
 
-    <div class="divider uppercase text-[#5865F2]">About my nickname</div>
+    <div class="divider uppercase text-[#5865F2]">About My Nickname</div>
 
-    <AboutMyNickname />
+    <Nickname />
   </div>
 
   <div class="space-y-5">
-    <WhatIUse {data} {usedTechnologies} />
+    <Stack {data} {usedTechnologies} />
   </div>
 
   <div class="space-y-5">

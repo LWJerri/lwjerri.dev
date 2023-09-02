@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
-  import type { PageData } from "../../routes/about/$types";
+  import type { PageData } from "../$types";
+  import { handleAnchorAbout } from "../../../helpers/handleAnchorAbout";
 
   export let data: PageData;
 </script>

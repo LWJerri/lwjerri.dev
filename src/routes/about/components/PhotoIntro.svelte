@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
+  import { handleAnchorAbout } from "../../../helpers/handleAnchorAbout";
 </script>
 
 <div class="flex flex-col items-center justify-between space-y-2 font-bold sm:flex-row sm:space-y-0">
