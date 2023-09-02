@@ -4,9 +4,9 @@
   import { webVitals } from "$lib/vitals";
   import "../app.css";
   import Confetti from "../components/Confetti.svelte";
+  import Update from "../components/Update.svelte";
   import Footer from "../components/navigation/Footer.svelte";
   import Navbar from "../components/navigation/Navbar.svelte";
-  import NewVersion from "../components/navigation/NewVersion.svelte";
   import type { LayoutData } from "./$types";
 
   let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
@@ -39,7 +39,7 @@
 
   <div>
     <div class="flex justify-center {$updated && !dev ? 'block' : 'hidden'}">
-      <NewVersion />
+      <Update />
     </div>
 
     <Footer pageView="{data.pageView}" />
