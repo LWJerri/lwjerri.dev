@@ -1,12 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Socials from "../../components/about/Socials.svelte";
   import type { PageData } from "./$types";
   import Education from "./components/Education.svelte";
   import Hobbies from "./components/Hobbies.svelte";
   import Intro from "./components/Intro.svelte";
   import Nickname from "./components/Nickname.svelte";
   import PhotoIntro from "./components/PhotoIntro.svelte";
+  import Socials from "./components/Socials.svelte";
   import Stack from "./components/Stack.svelte";
   import Works from "./components/Works.svelte";
 
