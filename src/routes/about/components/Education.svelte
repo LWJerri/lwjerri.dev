@@ -7,7 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#school-knowledge"
     id="school-knowledge"
-    on:click="{(event) => handleAnchorAbout(event, 'school-knowledge')}">[#]</a
+    on:click="{(event) => handleAnchorAbout(event, 'education')}">[#]</a
   >
   Went to school in 2011, where he completed the full 10th grade and the beginning of the 11th, was forced to change places
   through the war, finishing school at another institution. In 2022 I went to the

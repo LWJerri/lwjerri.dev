@@ -10,7 +10,7 @@
       class="select-none outline-none duration-500 hover:text-[#ED4245]"
       href="#about"
       id="about"
-      on:click="{(event) => handleAnchorAbout(event, 'about')}">[#]</a
+      on:click="{(event) => handleAnchorAbout(event, 'photo-intro')}">[#]</a
     >
   </h1>
 

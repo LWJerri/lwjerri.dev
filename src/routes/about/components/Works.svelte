@@ -8,7 +8,7 @@
       class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
       href="#best-projects"
       id="best-projects"
-      on:click="{(event) => handleAnchorAbout(event, 'best-projects')}">[#]</a
+      on:click="{(event) => handleAnchorAbout(event, 'works')}">[#]</a
     >
     A little about my outstanding projects. I would like to put <span class="text-[#22B8CF]">PoruchBot</span> at the top
     of the list, as this project was developed and supported by the charity organization Spilka Poruch. This project includes
