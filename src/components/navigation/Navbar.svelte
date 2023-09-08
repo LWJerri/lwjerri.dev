@@ -24,7 +24,7 @@
   });
 </script>
 
-<div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'} select-none">
+<div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'} select-none" role="navigation">
   {#if !isMainPage}
     <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/">[/]</a>
   {/if}
