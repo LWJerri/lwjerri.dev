@@ -23,7 +23,7 @@
   <div>
     <img
       alt="PHOTO_WITH_ME"
-      src="me.png"
+      src="me.webp"
       class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50"
     />
 

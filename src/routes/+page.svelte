@@ -4,7 +4,7 @@
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
 
-  let emoji = data.emojis[Math.floor(Math.random() * data.emojis.length)];
+  const emoji = data.emojis[Math.floor(Math.random() * data.emojis.length)];
 </script>
 
 <svelte:head>
