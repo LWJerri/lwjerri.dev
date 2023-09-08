@@ -8,7 +8,7 @@ dayjs.extend(timezone);
 
 dayjs.tz.setDefault("Europe/Kyiv");
 
-export const prerender = false;
+export const prerender = true;
 
 const today = dayjs();
 const birthdateObj = dayjs(new Date("2005-04-28").getTime()).utc().tz();
