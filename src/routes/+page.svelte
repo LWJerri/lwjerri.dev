@@ -17,9 +17,9 @@
 <div class="hero flex items-center justify-center">
   <div class="hero-content text-center">
     <div class="text-center">
-      <h1 class="text-5xl font-bold text-[#5865F2] outline-none">
-        <p>Andrii Zontov <span class="hidden sm:inline">{emoji}</span></p>
-      </h1>
+      <div class="text-5xl font-bold text-[#5865F2] outline-none">
+        <h1>Andrii Zontov <span class="hidden sm:inline">{emoji}</span></h1>
+      </div>
 
       <p class="mt-5 text-2xl">
         I am a <span style="color: #ED4245;">~15</span> years old backend developer
