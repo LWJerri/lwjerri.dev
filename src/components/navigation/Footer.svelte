@@ -52,7 +52,7 @@
 </script>
 
 <footer class="select-none py-2">
-  <div class="grid w-full grid-cols-1 items-center px-1 sm:px-5 md:grid-cols-3">
+  <div class="grid w-full grid-cols-1 items-center px-1 sm:px-5 md:grid-cols-3 gap-3">
     <div class="flex items-center space-x-2 text-left">
       <div>
         <svg
