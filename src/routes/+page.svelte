@@ -14,7 +14,7 @@
   <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
-<div class="hero flex items-center justify-center">
+<div class="hero flex items-center justify-center" role="main">
   <div class="hero-content text-center">
     <div class="text-center">
       <div class="text-5xl font-bold text-[#5865F2] outline-none">

@@ -44,7 +44,7 @@
   <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
-<div class="mx-auto flex max-w-4xl flex-col space-y-16 px-5">
+<div class="mx-auto flex max-w-4xl flex-col space-y-16 px-5" role="main">
   <div class="space-y-5">
     <PhotoIntro />
     <Intro />

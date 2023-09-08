@@ -33,7 +33,7 @@
   <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
-<div class="mx-auto max-w-4xl space-y-5">
+<div class="mx-auto max-w-4xl space-y-5" role="main">
   <div class="flex flex-col place-items-center space-y-5">
     {#each projects as { name, description, stack, emoji, url, github, isClosed }, id}
       {@const isLongDescription = description.length > 45 && description.length > 48}
