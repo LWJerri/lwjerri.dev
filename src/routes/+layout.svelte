@@ -24,7 +24,7 @@
 <svelte:head>
   <title>{PAGE_TITLE}</title>
 
-  <meta property="og:title" content="{PAGE_TITLE}" />
+  <meta name="og:title" content="{PAGE_TITLE}" />
   <meta name="og:site_name" content="{PAGE_TITLE}" />
 </svelte:head>
 
