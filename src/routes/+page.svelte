@@ -22,7 +22,7 @@
       </div>
 
       <p class="mt-5 text-2xl">
-        I am a <span style="color: #ED4245;">~{data.age}</span> years old backend developer
+        I am a <span style="color: #ED4245;">~{data.myAge}</span> years old backend developer
       </p>
 
       <div class="mt-10">
