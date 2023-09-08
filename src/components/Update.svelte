@@ -34,7 +34,7 @@
   <div class="flex items-center space-x-2">
     <button
       class="group rounded-md bg-black/10 p-1 transition hover:bg-black/20"
-      on:click="{() => window.location.reload()}"
+      on:click={() => window.location.reload()}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
       </svg>
     </button>
 
-    <button class="rounded-md bg-black/10 p-1 transition hover:bg-black/20" on:click="{() => (isAlertVisible = false)}">
+    <button class="rounded-md bg-black/10 p-1 transition hover:bg-black/20" on:click={() => (isAlertVisible = false)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         class="icon icon-tabler icon-tabler-x"

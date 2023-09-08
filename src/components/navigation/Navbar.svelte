@@ -29,10 +29,10 @@
     <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/">[/]</a>
   {/if}
 
-  <div class="inline-flex items-stretch" bind:this="{dropdownElement}">
+  <div class="inline-flex items-stretch" bind:this={dropdownElement}>
     <div class="relative">
       <button
-        on:click="{() => (isDropdownActive = !isDropdownActive)}"
+        on:click={() => (isDropdownActive = !isDropdownActive)}
         class="select-none text-2xl outline-none duration-500 hover:text-[#ED4245]">[Menu]</button
       >
 
@@ -44,9 +44,9 @@
           {#each dropdownURLs as link}
             <a
               class="text-lg duration-500 hover:text-[#ED4245]"
-              href="{link.url}"
-              target="{link.outside ? '_blank' : ''}"
-              on:click="{() => (isDropdownActive = !isDropdownActive)}">{link.name}</a
+              href={link.url}
+              target={link.outside ? '_blank' : ''}
+              on:click={() => (isDropdownActive = !isDropdownActive)}>{link.name}</a
             >
           {/each}
         </div>

@@ -10,8 +10,8 @@
 <svelte:head>
   <title>{PAGE_TITLE}</title>
 
-  <meta name="og:title" content="{PAGE_TITLE}" />
-  <meta name="og:site_name" content="{PAGE_TITLE}" />
+  <meta name="og:title" content={PAGE_TITLE} />
+  <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
 <div class="hero flex items-center justify-center" role="main">

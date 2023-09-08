@@ -24,8 +24,8 @@
 <svelte:head>
   <title>{PAGE_TITLE}</title>
 
-  <meta name="og:title" content="{PAGE_TITLE}" />
-  <meta name="og:site_name" content="{PAGE_TITLE}" />
+  <meta name="og:title" content={PAGE_TITLE} />
+  <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col justify-between scroll-smooth bg-[#0C0E10] text-white">
@@ -42,6 +42,6 @@
       <Update />
     </div>
 
-    <Footer pageView="{data.pageView}" />
+    <Footer pageView={data.pageView} />
   </div>
 </div>

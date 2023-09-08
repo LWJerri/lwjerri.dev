@@ -12,7 +12,7 @@
     class="select-none outline-none duration-500 hover:text-[#ED4245]"
     href="#socials"
     id="socials"
-    on:click="{(event) => handleAnchorAbout(event, 'socials')}">[#]</a
+    on:click={(event) => handleAnchorAbout(event, 'socials')}>[#]</a
   >
 </h1>
 
@@ -23,7 +23,7 @@
 
 <div class="grid select-none grid-flow-row grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
   {#each data.socialLinks as { name, icon, url }}
-    <a href="{url}" target="_blank" rel="noreferrer" class="mx-auto duration-500 hover:text-[#ED4245]"
+    <a href={url} target="_blank" rel="noreferrer" class="mx-auto duration-500 hover:text-[#ED4245]"
       ><div class="flex items-center space-x-2 text-lg">
         {@html icon}<span>{name}</span>
       </div></a
