@@ -18,7 +18,7 @@
   <div class="hero-content text-center">
     <div class="text-center">
       <div class="text-5xl font-bold text-[#5865F2] outline-none">
-        <h1>Andrii Zontov <span class="hidden sm:inline">{emoji}</span></h1>
+        <h1>Andrii Zontov <span class="hidden sm:inline">;)</span></h1>
       </div>
 
       <p class="mt-5 text-2xl">
