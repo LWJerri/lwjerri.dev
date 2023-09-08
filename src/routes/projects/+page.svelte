@@ -29,11 +29,11 @@
 <svelte:head>
   <title>{PAGE_TITLE}</title>
 
-  <meta name="og:title" content="{PAGE_TITLE}" />
-  <meta name="og:site_name" content="{PAGE_TITLE}" />
+  <meta name="og:title" content={PAGE_TITLE} />
+  <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
-<div class="mx-auto max-w-4xl space-y-5">
+<div class="mx-auto max-w-4xl space-y-5" role="main">
   <div class="flex flex-col place-items-center space-y-5">
     {#each projects as { name, description, stack, emoji, url, github, isClosed }, id}
       {@const isLongDescription = description.length > 45 && description.length > 48}
@@ -82,11 +82,11 @@
 
           <div class="flex w-full select-none flex-row justify-end space-x-2 text-xl">
             {#if url}
-              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{url}">[URL]</a>
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href={url}>[URL]</a>
             {/if}
 
             {#if github}
-              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href="{github}">[GitHub]</a>
+              <a class="duration-500 hover:text-[#ED4245]" target="_blank" rel="noreferrer" href={github}>[GitHub]</a>
             {/if}
 
             <a
@@ -94,7 +94,7 @@
               target="_self"
               rel="noreferrer"
               href="#project-{id}"
-              on:click="{(event) => handleAnchorProjects(event)}">[Share]</a
+              on:click={(event) => handleAnchorProjects(event)}>[Share]</a
             >
           </div>
         </details>

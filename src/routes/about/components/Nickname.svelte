@@ -7,7 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#nickname"
     id="nickname"
-    on:click="{(event) => handleAnchorAbout(event, 'nickname')}">[#]</a
+    on:click={(event) => handleAnchorAbout(event, 'nickname')}>[#]</a
   >
   A little history about my nickname <span class="text-[#22B8CF]">LWJerri</span>. It was in 2016, I had a weak computer
   at the time and I always logged into the game Minecraft, but that day I decided to install the latest version of the

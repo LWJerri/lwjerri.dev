@@ -7,7 +7,7 @@
   $: lynardResponse = <LynardAPI>{};
   $: songText = "Loading...";
 
-  let cityData = { name: "Planet Earth", url: "https://maps.google.com" };
+  const city = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
   const umamiStatsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 
   async function getLynardInfo() {
@@ -19,9 +19,6 @@
 
     if (lynardResponse?.success) {
       const { data } = lynardResponse;
-
-      cityData.name = data.kv.cityName;
-      cityData.url = data.kv.cityMapURL;
 
       if (!data.listening_to_spotify) {
         songText = "Not playing anything.";
@@ -51,8 +48,9 @@
   });
 </script>
 
-<footer class="select-none py-2">
-  <div class="grid w-full grid-cols-1 items-center px-1 sm:px-5 md:grid-cols-3">
+<!-- svelte-ignore a11y-no-redundant-roles -->
+<footer class="select-none py-2" role="contentinfo">
+  <div class="grid w-full grid-cols-1 items-center px-1 sm:px-5 md:grid-cols-3 gap-3">
     <div class="flex items-center space-x-2 text-left">
       <div>
         <svg
@@ -77,8 +75,8 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href="{cityData.url}" target="_blank" rel="noreferrer"
-        >{cityData.name}</a
+      <a class="duration-500 hover:text-[#ED4245]" href={city.url} target="_blank" rel="noreferrer"
+        >{city.name}</a
       >
     </div>
 
@@ -105,7 +103,7 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href="{umamiStatsURL}" target="_blank" rel="noreferrer"
+      <a class="duration-500 hover:text-[#ED4245]" href={umamiStatsURL} target="_blank" rel="noreferrer"
         >{pageView} views</a
       >
     </div>

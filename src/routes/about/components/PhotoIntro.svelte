@@ -10,7 +10,7 @@
       class="select-none outline-none duration-500 hover:text-[#ED4245]"
       href="#photo-intro"
       id="photo-intro"
-      on:click="{(event) => handleAnchorAbout(event, 'photo-intro')}">[#]</a
+      on:click={(event) => handleAnchorAbout(event, 'photo-intro')}>[#]</a
     >
   </h1>
 
@@ -23,7 +23,7 @@
   <div>
     <img
       alt="PHOTO_WITH_ME"
-      src="me.png"
+      src="me.webp"
       class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50"
     />
 

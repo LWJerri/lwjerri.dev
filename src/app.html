@@ -25,18 +25,18 @@
     <meta name="identifier-URL" content="https://lwjerri.dev" />
     <meta name="revisit-after" content="7 days" />
 
-    <meta name="og:image" content="https://www.lwjerri.dev/me.png" />
+    <meta name="og:image" content="https://www.lwjerri.dev/me.webp" />
     <meta name="og:url" content="https://lwjerri.dev" />
 
     <style>
       @font-face {
         font-family: Monocraft;
-        src: url("%sveltekit.assets%/Monocraft.otf");
-        font-display: auto;
+        src: url("%sveltekit.assets%/Monocraft.otf") format("otf");
+        font-display: swap;
       }
     </style>
 
-    <script async>
+    <script async defer>
       if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
         let script = document.createElement("script");
 
