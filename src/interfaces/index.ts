@@ -1,4 +1,4 @@
 export * from "./Link";
-export * from "./LynardApi";
+export * from "./LynardAPI";
 export * from "./NavigatorWithConnection";
 export * from "./Project";
