@@ -12,7 +12,7 @@
     class="select-none outline-none duration-500 hover:text-[#ED4245]"
     href="#socials"
     id="socials"
-    on:click={(event) => handleAnchorAbout(event, 'socials')}>[#]</a
+    on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a
   >
 </h1>
 

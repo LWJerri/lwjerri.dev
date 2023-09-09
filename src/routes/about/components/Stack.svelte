@@ -15,7 +15,7 @@
     class="select-none outline-none duration-500 hover:text-[#ED4245]"
     href="#stack"
     id="stack"
-    on:click={(event) => handleAnchorAbout(event, 'stack')}>[#]</a
+    on:click={(event) => handleAnchorAbout(event, "stack")}>[#]</a
   >
 </h1>
 
