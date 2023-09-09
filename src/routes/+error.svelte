@@ -1,5 +1,11 @@
 <script lang="ts">
-  const url = `/error/${Math.floor(Math.random() * 18 + 1)}.webp`;
+  import { onMount } from "svelte";
+
+  let url: string;
+
+  onMount(() => {
+    url = `/error/${Math.floor(Math.random() * 18 + 1)}.webp`;
+  });
 
   const PAGE_TITLE = "Andrii Zontov - Backstage?...";
 </script>
@@ -16,7 +22,7 @@
     <div class="flex justify-center">
       <h1 class="text-9xl font-black text-[#ED4245]">404</h1>
 
-      <img class="hidden sm:block" src={url} alt="ROFL_IMAGE" />
+      <img class="hidden sm:block" src={url} alt="" />
     </div>
 
     <p class="mt-4 text-xl">Requested page not found</p>
