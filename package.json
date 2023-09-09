@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.20.0",
+  "version": "2.20.1",
   "description": "My personal website, which is powered by Vite + SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
