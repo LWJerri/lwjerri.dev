@@ -7,7 +7,7 @@ export async function umamiAuth(apiUrl: string): Promise<{ token: string; isOk: 
     body: JSON.stringify({ username: UMAMI_USERNAME, password: UMAMI_PASSWORD }),
   });
 
-  let receivedToken: string = "";
+  let receivedToken = "";
   let isOk = umamiAuthRequest.status === 200;
 
   if (isOk) {
