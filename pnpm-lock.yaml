@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  "@tabler/icons-svelte":
+    specifier: ^2.31.0
+    version: 2.31.0(svelte@4.2.0)
   "@vercel/kv":
     specifier: ^0.2.2
     version: 0.2.2
@@ -461,6 +464,21 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@tabler/icons-svelte@2.31.0(svelte@4.2.0):
+    resolution:
+      { integrity: sha512-Q1j8mfY6TDCqcopcpMg7SsnqMr3UWHvOXkK3kC8kzhumZ3ErIjuxEmnRFhCkFm3YGwsQahPY7ZT0gKgepgu5jQ== }
+    peerDependencies:
+      svelte: ">=3 <5"
+    dependencies:
+      "@tabler/icons": 2.31.0
+      svelte: 4.2.0
+    dev: false
+
+  /@tabler/icons@2.31.0:
+    resolution:
+      { integrity: sha512-vueOF4rjM0wcYAHOq7gcQB3fU04EAfHIwP0i/DVQdopXv84uu62DvOFHhYj9d0OBiM4O0PPoXEvsT8IVZDrYXw== }
+    dev: false
 
   /@types/cookie@0.5.1:
     resolution:

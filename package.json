@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.19.0",
+  "version": "2.20.0",
   "description": "My personal website, which is powered by Vite + SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
@@ -34,6 +34,7 @@
     "vite": "^4.4.9"
   },
   "dependencies": {
+    "@tabler/icons-svelte": "^2.31.0",
     "@vercel/kv": "^0.2.2",
     "daisyui": "^3.7.3",
     "dayjs": "^1.11.9",

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { IconChevronDown } from "@tabler/icons-svelte";
   import { onMount } from "svelte";
   import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { Project } from "../../interfaces";
@@ -64,15 +65,11 @@
             </div>
 
             <div class="mx-2">
-              <svg
-                class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-500 group-open:-rotate-180"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7"></path>
-              </svg>
+              <IconChevronDown
+                size={24}
+                stroke={1.5}
+                class="flex-shrink-0 transition duration-500 group-open:-rotate-180"
+              />
             </div>
           </summary>
 
