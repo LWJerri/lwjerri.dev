@@ -1,5 +1,5 @@
 <script lang="ts">
-  $: isAlertVisible = true;
+  let isAlertVisible = true;
 </script>
 
 <div
