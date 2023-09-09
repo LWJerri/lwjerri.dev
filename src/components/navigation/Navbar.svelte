@@ -45,7 +45,7 @@
             <a
               class="text-lg duration-500 hover:text-[#ED4245]"
               href={link.url}
-              target={link.outside ? '_blank' : ''}
+              target={link?.outside ? "_blank" : ""}
               on:click={() => (isDropdownActive = !isDropdownActive)}>{link.name}</a
             >
           {/each}

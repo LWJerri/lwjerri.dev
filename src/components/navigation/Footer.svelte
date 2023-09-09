@@ -2,55 +2,49 @@
   import { onMount } from "svelte";
   import type { LynardAPI } from "../../interfaces";
 
-  export let pageView = 0;
+  export let pageView: number;
 
-  $: lynardResponse = <LynardAPI>{};
-  $: songText = "Loading...";
+  let lynardResponse: LynardAPI;
+  let spotifySong: HTMLAnchorElement;
 
   const city = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
   const umamiStatsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 
-  async function getLynardInfo() {
-    try {
-      const lynardRequest = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+  const fmtText = (text: string) => {
+    const short = text.slice(0, 10).trimEnd() + "*";
 
-      lynardResponse = await lynardRequest.json();
+    return text.length > 10 ? short : text;
+  };
+
+  async function getLynardStats() {
+    try {
+      const request = await fetch("https://api.lanyard.rest/v1/users/432085389948485633");
+      lynardResponse = await request.json();
     } catch {}
 
-    if (lynardResponse?.success) {
-      const { data } = lynardResponse;
+    if (!lynardResponse?.success || !lynardResponse.data.listening_to_spotify) return;
 
-      if (!data.listening_to_spotify) {
-        songText = "Not playing anything.";
-      } else {
-        const { song, artist, track_id: trackId } = data.spotify;
-        const songURL = `https://open.spotify.com/track/${trackId}`;
+    const { song, artist, track_id } = lynardResponse.data.spotify;
+    const spotifySongURL = `https://open.spotify.com/track/${track_id}`;
 
-        const songTitle = (text: string) => {
-          const shortText = `${text.slice(0, 10).trimEnd()}*`;
+    spotifySong = document.createElement("a");
 
-          return text.length > 10 ? shortText : text;
-        };
-
-        const songClass = "overflow-hidden text-ellipsis break-all duration-500 hover:text-[#ED4245]";
-
-        songText = `<a class="${songClass}" href="${songURL}" target="_blank">${songTitle(song)} [${songTitle(
-          artist,
-        )}]</a>`;
-      }
-    }
+    spotifySong.classList.add("overflow-hidden", "text-ellipsis", "break-all", "duration-500", "hover:text-[#ED4245]");
+    spotifySong.href = spotifySongURL;
+    spotifySong.target = "_blank";
+    spotifySong.textContent = `${fmtText(song)} [${fmtText(artist)}]`;
   }
 
   onMount(async () => {
-    await getLynardInfo();
+    await getLynardStats();
 
-    setInterval(async () => await getLynardInfo(), 1000 * 10);
+    setInterval(async () => await getLynardStats(), 1000 * 10);
   });
 </script>
 
 <!-- svelte-ignore a11y-no-redundant-roles -->
 <footer class="select-none py-2" role="contentinfo">
-  <div class="grid w-full grid-cols-1 items-center px-1 sm:px-5 md:grid-cols-3 gap-3">
+  <div class="grid w-full grid-cols-1 items-center gap-3 px-1 sm:px-5 md:grid-cols-3">
     <div class="flex items-center space-x-2 text-left">
       <div>
         <svg
@@ -75,9 +69,7 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href={city.url} target="_blank" rel="noreferrer"
-        >{city.name}</a
-      >
+      <a class="duration-500 hover:text-[#ED4245]" href={city.url} target="_blank">{city.name}</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-center">
@@ -103,9 +95,7 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href={umamiStatsURL} target="_blank" rel="noreferrer"
-        >{pageView} views</a
-      >
+      <a class="duration-500 hover:text-[#ED4245]" href={umamiStatsURL} target="_blank">{pageView ?? 0} views</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">
@@ -137,7 +127,7 @@
         </svg>
       </div>
 
-      <span>{@html songText}</span>
+      <span>{@html spotifySong?.outerHTML ?? "Not playing anything."}</span>
     </div>
   </div>
 </footer>
