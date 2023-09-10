@@ -5,8 +5,11 @@
 
   export let pageView: number;
 
+  const NOT_PLAYING_ANYTHING = "Not playing anything.";
+
   let lynardResponse: LynardAPI;
-  let spotifySong: HTMLAnchorElement;
+  let spotifySong: string;
+  let isSongPlaying = false;
 
   const city = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
   const umamiStatsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
@@ -23,17 +26,27 @@
       lynardResponse = await request.json();
     } catch {}
 
-    if (!lynardResponse?.success || !lynardResponse.data.listening_to_spotify) return;
+    if (!lynardResponse.data.spotify || !lynardResponse?.success) {
+      spotifySong = NOT_PLAYING_ANYTHING;
+      isSongPlaying = false;
+
+      return;
+    }
+
+    isSongPlaying = true;
 
     const { song, artist, track_id } = lynardResponse.data.spotify;
+
     const spotifySongURL = `https://open.spotify.com/track/${track_id}`;
 
-    spotifySong = document.createElement("a");
+    const tagBuilder = document.createElement("a");
 
-    spotifySong.classList.add("overflow-hidden", "text-ellipsis", "break-all", "duration-500", "hover:text-[#ED4245]");
-    spotifySong.href = spotifySongURL;
-    spotifySong.target = "_blank";
-    spotifySong.textContent = `${fmtText(song)} [${fmtText(artist)}]`;
+    tagBuilder.classList.add("overflow-hidden", "text-ellipsis", "break-all", "duration-500", "hover:text-[#ED4245]");
+    tagBuilder.href = spotifySongURL;
+    tagBuilder.target = "_blank";
+    tagBuilder.textContent = `${fmtText(song)} [${fmtText(artist)}]`;
+
+    spotifySong = tagBuilder.outerHTML;
   }
 
   onMount(async () => {
@@ -63,11 +76,17 @@
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">
-      <div>
-        <IconPlaylist size={24} stroke={1.5} />
-      </div>
+      {#if isSongPlaying}
+        <div class="avatar w-8">
+          <img class="rounded" src={lynardResponse.data.spotify?.album_art_url} alt="TRACK_IMAGE" />
+        </div>
+      {:else}
+        <div>
+          <IconPlaylist size={24} stroke={1.5} />
+        </div>
+      {/if}
 
-      <span>{@html spotifySong?.outerHTML ?? "Not playing anything."}</span>
+      <span>{@html spotifySong ?? NOT_PLAYING_ANYTHING}</span>
     </div>
   </div>
 </footer>
