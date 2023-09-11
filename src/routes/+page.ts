@@ -12,7 +12,7 @@ export const prerender = true;
 
 const today = dayjs();
 const birthdateObj = dayjs(new Date("2005-04-28").getTime()).utc().tz();
-const myAge = Math.trunc(today.diff(birthdateObj, "year", true) * Math.pow(10, 3)) / Math.pow(10, 3);
+const myAge = today.diff(birthdateObj, "year", true);
 // https://stackoverflow.com/a/48100007
 
 const emojis = [
