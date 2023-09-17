@@ -1,6 +1,8 @@
 import type { Project } from "../../interfaces";
 import type { PageLoad } from "./$types";
 
+export const prerender = true;
+
 const projects: Project[] = [
   {
     name: "DutTrackBot",

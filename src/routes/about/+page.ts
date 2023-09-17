@@ -1,5 +1,7 @@
 import type { PageLoad } from "./$types";
 
+export const prerender = true;
+
 const socialLinks: Array<{ name: string; icon: string; url: string }> = [
   {
     name: "Telegram",
