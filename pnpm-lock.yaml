@@ -13,7 +13,7 @@ dependencies:
     version: 0.2.3
   daisyui:
     specifier: ^3.7.5
-    version: 3.7.7
+    version: 3.8.0
   dayjs:
     specifier: ^1.11.9
     version: 1.11.10
@@ -685,8 +685,8 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
 
-  /daisyui@3.7.7:
-    resolution: {integrity: sha512-2/nFdW/6R9MMnR8tTm07jPVyPaZwpUSkVsFAADb7Oq8N2Ynbls57laDdNqxTCUmn0QvcZi01TKl8zQbAwRfw1w==}
+  /daisyui@3.8.0:
+    resolution: {integrity: sha512-VsWD//XlHkOBFSiRNTOZTxTJ/W8xI65erowErfbDWrPTkMYqf0ee/FTaqn4rquZoCcumENdFegAL8eELMnztxQ==}
     engines: {node: '>=16.9.0'}
     dependencies:
       colord: 2.9.3
