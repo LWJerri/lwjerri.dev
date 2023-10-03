@@ -1,18 +1,17 @@
 export function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {
   event.preventDefault();
 
-  const link = event.currentTarget;
-  const anchor = new URL(link.href).hash;
+  const anchor = new URL(event.currentTarget.href).hash;
 
-  const findElement = document.getElementById(id);
+  const getAnchor = document.getElementById(id);
 
-  if (findElement) {
+  if (getAnchor) {
     navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
-    findElement.innerHTML = "[Copied]";
+    getAnchor.innerHTML = "[Copied]";
 
     setTimeout(() => {
-      findElement.innerHTML = "[#]";
+      getAnchor.innerHTML = "[#]";
     }, 2000);
   }
 }

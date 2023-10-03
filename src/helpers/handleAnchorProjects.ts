@@ -4,18 +4,18 @@ export function handleAnchorProjects(event: MouseEvent & { currentTarget: EventT
   const link = event.currentTarget;
   const anchor = new URL(link.href).hash;
 
-  const findByAnchor = document.getElementById(anchor.slice(1));
+  const getAnchor = document.getElementById(anchor.slice(1));
 
-  if (findByAnchor) {
-    const { children } = findByAnchor.children[0].children[3];
-    const findShareBtn = children[children.length - 1];
+  if (getAnchor) {
+    const { children } = getAnchor.children[0].children[3];
+    const getShareBtn = children[children.length - 1];
 
     navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
-    findShareBtn.innerHTML = "[Copied]";
+    getShareBtn.innerHTML = "[Copied]";
 
     setTimeout(() => {
-      findShareBtn.innerHTML = "[Share]";
+      getShareBtn.innerHTML = "[Share]";
     }, 2000);
   }
 }
