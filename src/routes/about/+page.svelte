@@ -30,7 +30,7 @@
         getAnchorElement.getElementsByTagName("input")[0].checked = true;
 
         if (getAnchorElement) {
-          window.scrollTo({ top: getAnchorElement.offsetTop, behavior: "auto" });
+          window.scrollTo({ top: getAnchorElement.offsetTop, behavior: "smooth" });
         }
       }
     }
