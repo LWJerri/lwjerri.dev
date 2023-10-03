@@ -2,7 +2,7 @@ export interface Project {
   name: string;
   description: string;
   stack: string[];
-  isClosed: boolean;
+  isArchived: boolean;
   emoji?: string;
   url?: string;
   github?: string;
