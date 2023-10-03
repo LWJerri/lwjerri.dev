@@ -1,12 +1,4 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-
-  let url: string;
-
-  onMount(() => {
-    url = `/error/${Math.floor(Math.random() * 18 + 1)}.webp`;
-  });
-
   const PAGE_TITLE = "Andrii Zontov - Backstage?...";
 </script>
 
@@ -17,14 +9,8 @@
   <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
-<div class="grid place-content-center px-4">
-  <div class="text-center">
-    <div class="flex justify-center">
-      <h1 class="text-9xl font-black text-[#ED4245]">404</h1>
+<div class="mx-4 flex flex-col items-center">
+  <img src="/sticker.gif" width="256" alt="KITTY" />
 
-      <img class="hidden sm:block" src={url} alt="" />
-    </div>
-
-    <p class="mt-4 text-xl">Requested page not found</p>
-  </div>
+  <p class="mt-4 text-lg sm:text-xl">Requested page not found</p>
 </div>
