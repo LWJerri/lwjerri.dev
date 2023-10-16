@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { IconChevronDown, IconEggFried } from "@tabler/icons-svelte";
   import { onMount } from "svelte";
   import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { Project } from "../../interfaces";
@@ -69,11 +68,21 @@
               </div>
 
               <div class="mx-2">
-                <IconChevronDown
-                  size={24}
-                  stroke={1.5}
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
                   class="flex-shrink-0 transition duration-500 group-open:-rotate-180"
-                />
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                  <path d="M6 9l6 6l6 -6"></path>
+                </svg>
               </div>
             </summary>
 
@@ -103,7 +112,23 @@
       {/each}
     {:else}
       <div class="alert rounded-md bg-[#1C2125] text-white">
-        <IconEggFried size={24} stroke={1.5} />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+          <path
+            d="M14 3a5 5 0 0 1 4.872 6.13a3 3 0 0 1 .178 5.681a3 3 0 1 1 -4.684 3.626a5 5 0 1 1 -8.662 -5a5 5 0 1 1 4.645 -8.856a4.982 4.982 0 0 1 3.651 -1.585z"
+          ></path>
+        </svg>
 
         <p>At the moment the projects list is empty ;/</p>
       </div>
