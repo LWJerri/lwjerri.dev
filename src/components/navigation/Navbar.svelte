@@ -11,6 +11,7 @@
   ];
 
   $: isMainPage = $page.url.pathname === "/";
+  $: isProjectViewPage = $page.url.pathname.split("/").length === 3;
   $: isDropdownActive = false;
 
   let dropdownElement: HTMLDivElement;
@@ -25,7 +26,9 @@
 </script>
 
 <div class="navbar flex {isMainPage ? 'justify-end' : 'justify-between'} select-none" role="navigation">
-  {#if !isMainPage}
+  {#if isProjectViewPage}
+    <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/projects">[/projects]</a>
+  {:else}
     <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/">[/]</a>
   {/if}
 

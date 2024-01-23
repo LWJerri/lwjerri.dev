@@ -1,9 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { Project } from "../../interfaces";
   import type { PageData } from "./$types";
-  import AdditionalProjects from "./components/AdditionalProjects.svelte";
 
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov - My projects";
@@ -36,8 +34,15 @@
   <meta name="og:site_name" content={PAGE_TITLE} />
 </svelte:head>
 
-<div class="mx-auto max-w-4xl space-y-5" role="main">
+<div class="mx-auto">
+  {#each projects as project}
+    {project.name}
+  {/each}
+</div>
+
+<!-- <div class="mx-auto w-1/4 space-y-5" role="main">
   <div class="flex flex-col place-items-center space-y-5">
+    <div class="w-full bg-[#1D2123]">ewfregtewfregtewfregtewfregtewfregtewfregt</div>
     {#if projects.length}
       {#each projects as { name, description, stack, emoji, url, github, isArchived }, id}
         {@const isLongDescription = description.length > 45 && description.length > 48}
@@ -134,10 +139,4 @@
       </div>
     {/if}
   </div>
-
-  {#if data.additionalProjects.length}
-    <div class="divider my-5 uppercase text-[#5865F2]">Additional Projects</div>
-
-    <AdditionalProjects projects={data.additionalProjects} />
-  {/if}
-</div>
+</div> -->

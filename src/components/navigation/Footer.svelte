@@ -1,23 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { LIVE_LOCATION, NOT_PLAYING_ANYTHING, UMAMI_STATS_URL } from "../../helpers/constants";
+  import { fmtText } from "../../helpers/fmtText";
   import type { LynardAPI } from "../../interfaces";
 
   export let pageView: number;
 
-  const NOT_PLAYING_ANYTHING = "Not playing anything.";
-
   let lynardResponse: LynardAPI;
   let spotifySong: string;
   let isSongPlaying = false;
-
-  const city = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
-  const umamiStatsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
-
-  const fmtText = (text: string) => {
-    const short = text.slice(0, 10).trimEnd() + "*";
-
-    return text.length > 10 ? short : text;
-  };
 
   async function getLynardStats() {
     try {
@@ -81,7 +72,7 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href={city.url} target="_blank">{city.name}</a>
+      <a class="duration-500 hover:text-[#ED4245]" href={LIVE_LOCATION.url} target="_blank">{LIVE_LOCATION.name}</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-center">
@@ -103,7 +94,7 @@
         </svg>
       </div>
 
-      <a class="duration-500 hover:text-[#ED4245]" href={umamiStatsURL} target="_blank">{pageView ?? 0} views</a>
+      <a class="duration-500 hover:text-[#ED4245]" href={UMAMI_STATS_URL} target="_blank">{pageView ?? 0} views</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">
