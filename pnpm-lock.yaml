@@ -24,10 +24,10 @@ dependencies:
 devDependencies:
   '@sveltejs/adapter-vercel':
     specifier: ^5.1.0
-    version: 5.3.0(@sveltejs/kit@2.5.5)
+    version: 5.3.0(@sveltejs/kit@2.5.6)
   '@sveltejs/kit':
     specifier: ^2.5.1
-    version: 2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8)
+    version: 2.5.6(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8)
   autoprefixer:
     specifier: ^10.4.15
     version: 10.4.19(postcss@8.4.38)
@@ -476,12 +476,12 @@ packages:
     dev: true
     optional: true
 
-  /@sveltejs/adapter-vercel@5.3.0(@sveltejs/kit@2.5.5):
+  /@sveltejs/adapter-vercel@5.3.0(@sveltejs/kit@2.5.6):
     resolution: {integrity: sha512-JzTJVmAWmbyNe3pQU2l0M1ggt4FjIVnKHEQOrqW4XVxYtNGdq3znuMqFSdzsR+5LaIEFqZaLIpm82XZsZroBoQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
     dependencies:
-      '@sveltejs/kit': 2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8)
+      '@sveltejs/kit': 2.5.6(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8)
       '@vercel/nft': 0.26.4
       esbuild: 0.20.2
     transitivePeerDependencies:
@@ -489,8 +489,8 @@ packages:
       - supports-color
     dev: true
 
-  /@sveltejs/kit@2.5.5(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8):
-    resolution: {integrity: sha512-ULe3PB00q4+wYRL+IS5FDPsCEVnhEITofm7b9Yz8malcH3r1SAnW/JJ6T13hIMeu8QNRIuVQWo+P4+2VklbnLQ==}
+  /@sveltejs/kit@2.5.6(@sveltejs/vite-plugin-svelte@3.0.2)(svelte@4.2.14)(vite@5.2.8):
+    resolution: {integrity: sha512-AYb02Jm5MfNqJHc8zrj7ScQAFAKmTUCkpkfoi8EVaZZDdnjkvI7L2GtnTDhpiXSAZRVitZX4qm59sMS1FgL+lQ==}
     engines: {node: '>=18.13'}
     hasBin: true
     requiresBuild: true
