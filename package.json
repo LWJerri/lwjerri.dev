@@ -21,7 +21,7 @@
   "homepage": "https://github.com/LWJerri/lwjerri.dev#readme",
   "devDependencies": {
     "@sveltejs/adapter-vercel": "3.0.3",
-    "@sveltejs/kit": "1.24.1",
+    "@sveltejs/kit": "1.30.4",
     "autoprefixer": "10.4.19",
     "postcss": "8.4.38",
     "prettier": "3.2.5",
