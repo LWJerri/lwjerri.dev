@@ -34,7 +34,7 @@
     "vite": "4.4.9"
   },
   "dependencies": {
-    "@tabler/icons-svelte": "3.2.0",
+    "@tabler/icons-svelte": "3.3.0",
     "@vercel/kv": "1.0.1",
     "daisyui": "4.10.2",
     "dayjs": "1.11.11",
