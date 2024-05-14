@@ -38,7 +38,7 @@
     "@vercel/kv": "1.0.1",
     "daisyui": "4.10.2",
     "dayjs": "1.11.11",
-    "svelte-confetti": "1.4.0",
+    "svelte-confetti": "2.0.1",
     "web-vitals": "3.5.2"
   }
 }
