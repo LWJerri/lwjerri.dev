@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@tabler/icons-svelte':
-    specifier: 3.4.0
-    version: 3.4.0(svelte@4.2.15)
+    specifier: 3.5.0
+    version: 3.5.0(svelte@4.2.15)
   '@vercel/kv':
     specifier: 1.0.1
     version: 1.0.1
@@ -446,17 +446,17 @@ packages:
       - supports-color
     dev: true
 
-  /@tabler/icons-svelte@3.4.0(svelte@4.2.15):
-    resolution: {integrity: sha512-NEoLrIaRe7nXqdNnDpwq+ZMCwQrBzpNggikT7oFqFZfvpJNKBkgsk5SIUzx1SW0mDJW9Dazwqkhqrt/aW7rQrQ==}
+  /@tabler/icons-svelte@3.5.0(svelte@4.2.15):
+    resolution: {integrity: sha512-mc5ardGEM7cnUA4/q6Mz5bmW9B6t28vAAOf4Wl6+KXiTwG00EjImfnIr3pS3Ihi9sFIiXvJPYRl4H5IHlgvJvQ==}
     peerDependencies:
       svelte: '>=3 <5'
     dependencies:
-      '@tabler/icons': 3.4.0
+      '@tabler/icons': 3.5.0
       svelte: 4.2.15
     dev: false
 
-  /@tabler/icons@3.4.0:
-    resolution: {integrity: sha512-6gYHXG0xAJgt2KPcTYDqhe3xYoJMTgz/ZfYup4EUHsxzYsz6rBlt8WgavHsGaWckaqH7ApR/epYslfXZjK27yw==}
+  /@tabler/icons@3.5.0:
+    resolution: {integrity: sha512-I53dC3ZSHQ2MZFGvDYJelfXm91L2bTTixS4w5jTAulLhHbCZso5Bih4Rk/NYZxlngLQMKHvEYwZQ+6w/WluKiA==}
     dev: false
 
   /@types/cookie@0.5.4:
