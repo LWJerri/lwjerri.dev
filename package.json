@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@tabler/icons-svelte": "3.5.0",
-    "@vercel/kv": "1.0.1",
+    "@vercel/kv": "2.0.0",
     "daisyui": "4.10.2",
     "dayjs": "1.11.11",
     "svelte-confetti": "1.4.0",
