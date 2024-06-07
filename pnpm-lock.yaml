@@ -21,8 +21,8 @@ dependencies:
     specifier: 1.4.0
     version: 1.4.0(svelte@4.2.18)
   web-vitals:
-    specifier: 4.0.1
-    version: 4.0.1
+    specifier: 4.1.0
+    version: 4.1.0
 
 devDependencies:
   '@sveltejs/adapter-vercel':
@@ -1874,8 +1874,8 @@ packages:
       vite: 4.4.9
     dev: true
 
-  /web-vitals@4.0.1:
-    resolution: {integrity: sha512-AW6qT/vXK3pbf+WgVcEBXY//AWCpXjVKgdb6rt0cARSUdtT+NUtZCOeo+CSLUX7PjSQ275DmxfkAs7QlPbtR6w==}
+  /web-vitals@4.1.0:
+    resolution: {integrity: sha512-wz5ubPZK7DSKrlQvjsaCqdfa+9AjAYoUzj9GDzUmBTdfyfyl1fOIjfTh46DGKM8MdN+lcbNY8ObXo6TmHqRzVw==}
     dev: false
 
   /webidl-conversions@3.0.1:

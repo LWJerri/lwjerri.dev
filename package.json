@@ -39,6 +39,6 @@
     "daisyui": "4.12.2",
     "dayjs": "1.11.11",
     "svelte-confetti": "1.4.0",
-    "web-vitals": "4.0.1"
+    "web-vitals": "4.1.0"
   }
 }
