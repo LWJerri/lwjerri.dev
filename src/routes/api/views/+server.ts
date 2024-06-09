@@ -1,21 +1,20 @@
-import { vercelKV } from "$lib/vercelKv";
-import type { PageStat } from "../../../interfaces/PageStat";
-import type { RequestEvent } from "./$types";
+import { UMAMI_ENDPOINT, UMAMI_SECRET, UMAMI_SITE_ID, UMAMI_USER_ID } from "$env/static/private";
+import { getClient } from "@umami/api-client";
 
-const KV_VIEWS_KEY = "VIEWS_STATS";
+export async function GET() {
+  const client = getClient({
+    userId: UMAMI_USER_ID,
+    secret: UMAMI_SECRET,
+    apiEndpoint: UMAMI_ENDPOINT,
+  });
 
-export async function GET(event: RequestEvent) {
-  let totalViewsStats: PageStat[] = [];
+  const { ok, data } = await client.getWebsiteMetrics(UMAMI_SITE_ID, {
+    type: "url",
+    startAt: 1689109200380, // 13.07.2023
+    endAt: new Date().getTime(),
+  });
 
-  const getStatsFromKV = await vercelKV.get<PageStat[]>(KV_VIEWS_KEY);
+  const response = ok ? data : [];
 
-  if (!getStatsFromKV) {
-    const request = await event.fetch("/api/update-views");
-
-    totalViewsStats = await request.json();
-  } else {
-    totalViewsStats = getStatsFromKV;
-  }
-
-  return new Response(JSON.stringify(totalViewsStats));
+  return new Response(JSON.stringify(response));
 }
