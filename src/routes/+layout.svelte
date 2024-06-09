@@ -1,7 +1,8 @@
 <script lang="ts">
   import { browser, dev } from "$app/environment";
-  import { page, updated } from "$app/stores";
-  import { webVitals } from "$lib/vitals";
+  import { updated } from "$app/stores";
+  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+  import SvelteSeo from "svelte-seo";
   import "../app.css";
   import Confetti from "../components/Confetti.svelte";
   import Update from "../components/Update.svelte";
@@ -9,27 +10,20 @@
   import Navbar from "../components/navigation/Navbar.svelte";
   import type { LayoutData } from "./$types";
 
-  let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
-
-  $: if (browser && analyticsId && !dev) {
-    webVitals({ path: $page.url.pathname, params: $page.params, analyticsId });
+  $: if (browser && !dev) {
+    injectSpeedInsights();
   }
 
   export let data: LayoutData;
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
 
-  const currrentDate = new Date();
+  const date = new Date();
 </script>
 
-<svelte:head>
-  <title>{PAGE_TITLE}</title>
-
-  <meta name="og:title" content={PAGE_TITLE} />
-  <meta name="og:site_name" content={PAGE_TITLE} />
-</svelte:head>
+<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
 
 <div class="flex min-h-screen flex-col justify-between scroll-smooth bg-[#0C0E10] text-white">
-  {#if currrentDate.getMonth() === 3 && currrentDate.getDate() === 28}
+  {#if date.getMonth() === 3 && date.getDate() === 28}
     <Confetti />
   {/if}
 
@@ -42,6 +36,6 @@
       <Update />
     </div>
 
-    <Footer pageView={data.pageView} />
+    <Footer views={data.views} />
   </div>
 </div>
