@@ -1,37 +1,11 @@
-import dayjs from "dayjs";
-import timezone from "dayjs/plugin/timezone";
-import utc from "dayjs/plugin/utc";
+import humanizeDuration from "humanize-duration";
 import type { PageLoad } from "./$types";
 
-dayjs.extend(utc);
-dayjs.extend(timezone);
+const bornTime = new Date("2005-04-28").getTime();
+const actualTime = new Date().getTime();
 
-dayjs.tz.setDefault("Europe/Kyiv");
-
-export const prerender = true;
-
-const today = dayjs();
-const birthdateObj = dayjs(new Date("2005-04-28").getTime()).utc().tz();
-const myAge = today.diff(birthdateObj, "year");
-// https://stackoverflow.com/a/48100007
-
-const emojis = [
-  "(@_@)",
-  "(・o・)",
-  ":0",
-  "O_o",
-  "(*_*)",
-  ">.<",
-  "=_=",
-  ":-P",
-  ":-!",
-  ":-$",
-  "}:‑)",
-  "(^^)",
-  "^_^",
-  ":-)",
-];
+const age = humanizeDuration(actualTime - bornTime, { units: ["y"], round: true });
 
 export const load = (() => {
-  return { myAge, emojis };
+  return { age };
 }) satisfies PageLoad;
