@@ -1,4 +1,3 @@
-export * from "./Link";
-export * from "./LynardAPI";
-export * from "./NavigatorWithConnection";
+export * from "./LynardWS";
+export * from "./NavbarDropdownLink";
 export * from "./Project";
