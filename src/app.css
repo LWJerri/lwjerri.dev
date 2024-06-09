@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .box-decorator {
+    @apply inline-flex items-center space-x-2 rounded-sm bg-[#ED4245] px-1 align-middle;
+  }
+}
