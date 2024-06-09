@@ -5,9 +5,9 @@
 <p>
   <a
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
-    href="#hobbies"
-    id="hobbies"
-    on:click={(event) => handleAnchorAbout(event, "hobbies")}>[#]</a
+    href="#hobbies-and-interests"
+    id="hobbies-and-interests"
+    on:click={(event) => handleAnchorAbout(event, "hobbies-and-interests")}>[#]</a
   >
   I spend all my free time at my laptop because my hobby is the same as my main occupation - programming. Sometimes I watch
   informative videos about life, about handcrafts or explaining some things in life. I also listen to a lot of music, and
