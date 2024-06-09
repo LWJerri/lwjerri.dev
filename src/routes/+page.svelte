@@ -1,38 +1,27 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import SvelteSeo from "svelte-seo";
   import type { PageData } from "./$types";
 
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
-
-  let emoji: string;
-
-  onMount(() => {
-    emoji = data.emojis[Math.floor(Math.random() * data.emojis.length)];
-  });
 </script>
 
-<svelte:head>
-  <title>{PAGE_TITLE}</title>
+<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
 
-  <meta name="og:title" content={PAGE_TITLE} />
-  <meta name="og:site_name" content={PAGE_TITLE} />
-</svelte:head>
-
-<div class="hero flex items-center justify-center" role="main">
+<div class="hero flex justify-center">
   <div class="hero-content text-center">
-    <div class="text-center">
-      <div class="text-5xl font-bold text-[#5865F2] outline-none">
-        <h1>Andrii Zontov <span class="hidden sm:inline">{emoji ?? ""}</span></h1>
+    <div class="px-1 text-center sm:px-5">
+      <div class="font-bold text-[#5865F2] outline-none">
+        <h1 class="text-5xl">Andrii Zontov</h1>
       </div>
 
       <p class="mt-5 text-2xl">
-        I am a <span style="color: #ED4245;">{data.myAge}</span> years old backend developer
+        I am a <span style="color: #ED4245;">{data.age}</span> old backend developer
       </p>
 
-      <div class="mt-10">
-        <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/projects">[Projects]</a>
-        <a class="text-2xl duration-500 hover:text-[#ED4245]" href="/about">[About]</a>
+      <div class="mt-10 text-2xl">
+        <a class="duration-500 hover:text-[#ED4245]" href="/projects">[Projects]</a>
+        <a class="duration-500 hover:text-[#ED4245]" href="/about">[About]</a>
       </div>
     </div>
   </div>
