@@ -1,11 +1,11 @@
-import type { PageStat } from "../interfaces/PageStat";
+import type { UmamiWebsiteMetrics } from "../interfaces/UmamiWebsiteMetrics";
 import type { LayoutServerLoad } from "./$types";
 
 export const load = (async ({ fetch, route }) => {
-  const pageViewsRequest = await fetch("/api/views");
-  const pageViewsResponse: PageStat[] = await pageViewsRequest.json();
+  const viewsRequest = await fetch("/api/views");
+  const viewsResponse: UmamiWebsiteMetrics[] = await viewsRequest.json();
 
-  const pageView = pageViewsResponse.find(({ x }) => x === route.id)?.y ?? 0;
+  const views = viewsResponse.find(({ x }) => x === route.id)?.y ?? "🛸";
 
-  return { pageView };
+  return { views };
 }) satisfies LayoutServerLoad;
