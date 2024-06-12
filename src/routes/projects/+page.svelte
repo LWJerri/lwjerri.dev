@@ -82,8 +82,7 @@
                 target="_self"
                 rel="noreferrer"
                 href="#project-{id}"
-                on:click={(event) => handleAnchorProjects(event)}>[Share]</a
-              >
+                on:click={(event) => handleAnchorProjects(event)}>[Share]</a>
             </div>
           </details>
         </div>

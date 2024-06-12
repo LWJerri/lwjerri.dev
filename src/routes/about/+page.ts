@@ -8,7 +8,7 @@ const socials = {
 
 const languages = ["TypeScript", "JavaScript"];
 
-const technologies = {
+const technologies: Record<string, Array<string>> = {
   Frameworks: ["Svelte", "SvelteKit", "TailwindCSS", "NestJS", "Electron", "Nuxt", "Next.js"],
   "Development tools": ["Docker", "TypeORM", "Prisma", "Node.js", "Vite", "React", "Figma"],
   Databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],

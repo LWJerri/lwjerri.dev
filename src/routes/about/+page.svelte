@@ -2,6 +2,9 @@
   import { onMount } from "svelte";
   import SvelteSeo from "svelte-seo";
   import Divider from "../../components/Divider.svelte";
+  import IconDiscord from "../../components/svg/IconDiscord.svelte";
+  import IconTelegram from "../../components/svg/IconTelegram.svelte";
+  import IconTwitch from "../../components/svg/IconTwitch.svelte";
   import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
   import type { PageData } from "./$types";
   import BackgroundEducation from "./components/BackgroundEducation.svelte";
@@ -11,17 +14,6 @@
 
   export let data: PageData;
   const PAGE_TITLE = "Andrii Zontov - About me";
-
-  let technologies: Array<{ title: string; list: string[] }> = [];
-
-  const telegram = `<a href=${data.socials.telegram} target="_blank" class="box-decorator"><IconTelegram /><span>Telegram</span></a>`;
-  const discord = `<a href=${data.socials.discord} target="_blank" class="box-decorator"><IconDiscord /><span>Discord</span></a>`;
-  const twitch = `<a href=${data.socials.twitch} class="box-decorator"><IconTwitch /><span>Twitch</span></a>`;
-
-  for (let type in data.technologies) {
-    // @ts-ignore
-    technologies.push({ title: type, list: data.technologies[type] });
-  }
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -48,27 +40,23 @@
       <h1 class="text-[#ED4245] outline-none">About</h1>
 
       <!-- <a class="duration-500 hover:text-[#ED4245]" href="cv.pdf" data-umami-event="Click on CV button"
-        >[CV]</a
+      >[CV]</a
       > -->
     </div>
 
-    <div class="group relative block">
-      <div>
-        <img
-          alt="PHOTO_WITH_ME"
-          src="me.webp"
-          class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50"
-        />
+    <div class="group relative block h-full select-none">
+      <img
+        alt="PHOTO_WITH_ME"
+        src="me.webp"
+        class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50" />
 
-        <div class="relative p-8">
-          <p class="font-bold">Me, but very young ;)</p>
+      <div class="relative p-8">
+        <p class="font-bold">Me in my happy childhood 💖</p>
 
-          <div class="mt-96">
-            <div
-              class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-            >
-              <p>This photo was taken in kindergarten for the new year, where I played the role of a clown.</p>
-            </div>
+        <div class="mt-96">
+          <div
+            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            <p>This photo was taken in kindergarten for the new year, where I played the role of a clown.</p>
           </div>
         </div>
       </div>
@@ -99,8 +87,7 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#my-stack"
         id="my-stack"
-        on:click={(event) => handleAnchorAbout(event, "my-stack")}>[#]</a
-      >
+        on:click={(event) => handleAnchorAbout(event, "my-stack")}>[#]</a>
     </h1>
 
     <p>
@@ -119,9 +106,9 @@
     <div class="space-y-2">
       <h2 class="text-lg text-[#ED4245]">Technologies</h2>
 
-      {#each technologies as techology}
+      {#each Object.keys(data.technologies) as technology}
         <div>
-          {techology.title}: {@html `<span class="text-[#22B8CF]">${techology.list.join(", ")}</span>`}
+          {technology}: <span class="text-[#22B8CF]">{data.technologies[technology].join(", ")}</span>
         </div>
       {/each}
     </div>
@@ -135,14 +122,17 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#socials"
         id="socials"
-        on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a
-      >
+        on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a>
     </h1>
 
     <p>
-      If you have any questions you can contact with me via {@html telegram} or through
-      {@html discord}. Also, I sometimes stream on my
-      {@html twitch}, so feel free to join and ask me about some thing in chat.
+      If you have any questions you can contact with me in
+      <a href={data.socials.telegram} target="_blank" class="box-decorator"><IconTelegram /><span>Telegram</span></a>
+      or via
+      <a href={data.socials.discord} target="_blank" class="box-decorator"><IconDiscord /><span>Discord</span></a>.
+      Also, I sometimes stream on my
+      <a href={data.socials.twitch} class="box-decorator"><IconTwitch /><span>Twitch</span></a>, so feel free to join
+      and ask me about some thing in chat.
     </p>
   </div>
 </div>

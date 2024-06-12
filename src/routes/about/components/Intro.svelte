@@ -7,8 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#intro"
     id="intro"
-    on:click={(event) => handleAnchorAbout(event, "intro")}>[#]</a
-  >
+    on:click={(event) => handleAnchorAbout(event, "intro")}>[#]</a>
   Hello, stranger! <span class="text-[#22B8CF]">My name is Andrii, I was born in 2005 in Ukraine</span>, I graduated
   from high school in 11th grade and went to university in Kyiv. I started my way to programming in the 5th grade, when
   I was playing servers in the popular game Minecraft and I was very curious to know how it all worked under the hood.

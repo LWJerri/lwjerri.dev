@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.22.0",
+  "version": "2.23.0",
   "description": "My personal website, which is powered by Vite + SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/LWJerri/lwjerri.dev#readme",
   "dependencies": {
-    "@umami/api-client": "0.68.0",
-    "@vercel/speed-insights": "1.0.11",
+    "@umami/api-client": "0.69.0",
+    "@vercel/speed-insights": "1.0.12",
     "humanize-duration": "3.32.1",
     "svelte-confetti": "2.0.1"
   },
@@ -31,9 +31,9 @@
     "@types/humanize-duration": "3.27.4",
     "autoprefixer": "10.4.19",
     "postcss": "8.4.38",
-    "prettier": "3.3.1",
+    "prettier": "3.3.2",
     "prettier-plugin-svelte": "3.2.4",
-    "prettier-plugin-tailwindcss": "0.6.2",
+    "prettier-plugin-tailwindcss": "0.6.4",
     "svelte": "4.2.18",
     "svelte-seo": "1.6.1",
     "tailwindcss": "3.4.4",

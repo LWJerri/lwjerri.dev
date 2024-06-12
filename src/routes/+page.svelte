@@ -19,7 +19,7 @@
         I am a <span style="color: #ED4245;">{data.age}</span> old backend developer
       </p>
 
-      <div class="mt-10 text-2xl">
+      <div class="mt-5 text-2xl">
         <a class="duration-500 hover:text-[#ED4245]" href="/projects">[Projects]</a>
         <a class="duration-500 hover:text-[#ED4245]" href="/about">[About]</a>
       </div>
