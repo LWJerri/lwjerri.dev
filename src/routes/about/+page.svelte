@@ -23,13 +23,7 @@
     if (anchor) {
       const getAnchorElement = document.getElementById(anchor);
 
-      if (getAnchorElement) {
-        getAnchorElement.getElementsByTagName("input")[0].checked = true;
-
-        if (getAnchorElement) {
-          window.scrollTo({ top: getAnchorElement.offsetTop, behavior: "auto" });
-        }
-      }
+      if (getAnchorElement) return window.scrollTo({ top: getAnchorElement.offsetTop });
     }
   });
 </script>
@@ -41,12 +35,18 @@
 
 <div class="mx-auto flex max-w-4xl flex-col space-y-16 px-1 sm:px-5">
   <div class="space-y-5">
-    <div class="flex flex-row items-center justify-between text-2xl font-bold">
-      <h1 class="text-[#ED4245] outline-none">About</h1>
+    <div class="flex flex-row items-center justify-between text-2xl">
+      <h1 class="flex items-center space-x-2 text-2xl outline-none">
+        <span class="text-[#ED4245]">About</span>
 
-      <!-- <a class="duration-500 hover:text-[#ED4245]" href="cv.pdf" data-umami-event="Click on CV button"
-      >[CV]</a
-      > -->
+        <a
+          class="select-none outline-none duration-500 hover:text-[#ED4245]"
+          href="#about"
+          id="about"
+          on:click={(event) => handleAnchorAbout(event, "about")}>[#]</a>
+      </h1>
+
+      <a class="duration-500 hover:text-[#ED4245]" href="cv.pdf" data-umami-event="Click on CV button">[CV]</a>
     </div>
 
     <div class="group relative block h-full select-none">
@@ -103,9 +103,7 @@
     <div class="space-y-2">
       <h2 class="text-lg text-[#ED4245]">Languages</h2>
 
-      <p class="text-[#22B8CF]">
-        {@html data.languages.join(", ").replaceAll("*", "<span class='text-white'>*</span>")}
-      </p>
+      <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
     </div>
 
     <div class="space-y-2">
