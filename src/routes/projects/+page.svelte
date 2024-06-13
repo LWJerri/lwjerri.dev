@@ -7,7 +7,9 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
+
   const PAGE_TITLE = "Andrii Zontov - My projects";
+  const PAGE_DESCRIPTION = "This page contains information about my projects, their descriptions, technologies, etc.";
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -26,7 +28,10 @@
   });
 </script>
 
-<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
+<SvelteSeo
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
 
 {#if !data.projects.length}
   <Fallback title="So silent here..." details="More projects will be added soon." />

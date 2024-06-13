@@ -13,7 +13,9 @@
   import MyNickname from "./components/MyNickname.svelte";
 
   export let data: PageData;
+
   const PAGE_TITLE = "Andrii Zontov - About me";
+  const PAGE_DESCRIPTION = "This page contains all information about my backgroud education, tech stack, hobbies, etc.";
 
   onMount(async () => {
     const anchor = window.location.hash.slice(1);
@@ -32,7 +34,10 @@
   });
 </script>
 
-<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
+<SvelteSeo
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
 
 <div class="mx-auto flex max-w-4xl flex-col space-y-16 px-1 sm:px-5">
   <div class="space-y-5">

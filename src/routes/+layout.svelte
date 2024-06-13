@@ -2,7 +2,6 @@
   import { browser, dev } from "$app/environment";
   import { updated } from "$app/stores";
   import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
-  import SvelteSeo from "svelte-seo";
   import "../app.css";
   import Confetti from "../components/Confetti.svelte";
   import Update from "../components/Update.svelte";
@@ -15,12 +14,9 @@
   }
 
   export let data: LayoutData;
-  const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
 
   const date = new Date();
 </script>
-
-<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
 
 <div class="flex min-h-screen flex-col justify-between scroll-smooth bg-[#0C0E10] text-white">
   {#if date.getMonth() === 3 && date.getDate() === 28}

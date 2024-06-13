@@ -3,10 +3,15 @@
   import type { PageData } from "./$types";
 
   export let data: PageData;
+
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
+  const PAGE_DESCRIPTION = "Welcome! Here you'll find information about me, my projects, and my achievements.";
 </script>
 
-<SvelteSeo title={PAGE_TITLE} openGraph={{ title: PAGE_TITLE, site_name: PAGE_TITLE }} />
+<SvelteSeo
+  title={PAGE_TITLE}
+  description={PAGE_DESCRIPTION}
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
 
 <div class="hero flex justify-center">
   <div class="hero-content text-center">
