@@ -7,7 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#backgroud-education"
     id="background-education"
-    on:click={(event) => handleAnchorAbout(event, "backgorund-education")}>[#]</a>
+    on:click={(event) => handleAnchorAbout(event, "background-education")}>[#]</a>
   Went to school in 2011, where he completed the full 10th grade and the beginning of the 11th, was forced to change places
   through the war, finishing school at another institution. In 2022 I went to the
   <span class="text-[#22B8CF]">University of Information & CT</span> in Kyiv to study
