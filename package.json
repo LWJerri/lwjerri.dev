@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.23.0",
+  "version": "2.24.0",
   "description": "My personal website, which is powered by Vite + SvelteKit, uses TailwindCSS & daisyUI for design.",
   "type": "module",
   "scripts": {
@@ -22,8 +22,10 @@
   "dependencies": {
     "@umami/api-client": "0.69.0",
     "@vercel/speed-insights": "1.0.12",
+    "clsx": "2.1.1",
     "humanize-duration": "3.32.1",
-    "svelte-confetti": "2.0.1"
+    "svelte-confetti": "2.0.1",
+    "tailwind-merge": "2.3.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "3.0.3",

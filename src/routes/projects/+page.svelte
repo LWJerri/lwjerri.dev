@@ -3,6 +3,7 @@
   import SvelteSeo from "svelte-seo";
   import Fallback from "../../components/Fallback.svelte";
   import IconChevronDown from "../../components/svg/IconChevronDown.svelte";
+  import { cn } from "../../helpers/cn";
   import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { PageData } from "./$types";
 
@@ -21,7 +22,7 @@
         findElement.getElementsByTagName("details")[0].open = true;
 
         if (findElement) {
-          window.scrollTo({ top: findElement.offsetTop, behavior: "auto" });
+          window.scrollTo({ top: findElement.offsetTop });
         }
       }
     }
@@ -52,11 +53,9 @@
                 <div class="flex items-center justify-between">
                   <span class="text-lg">{name}</span>
 
-                  {#if isClosed}
-                    <span class="whitespace-nowrap rounded-md bg-[#0C0E10] px-2.5 py-0.5 uppercase text-[#ED4245]">
-                      Closed
-                    </span>
-                  {/if}
+                  <span
+                    class={cn("whitespace-nowrap rounded-md px-2.5 py-0.5 uppercase", isClosed ? "hidden" : "block")}
+                    >Closed</span>
                 </div>
 
                 <span class="text-[#3F4549]">

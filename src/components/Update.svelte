@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { cn } from "../helpers/cn";
   import IconAlertSquare from "./svg/IconAlertSquare.svelte";
   import IconReload from "./svg/IconReload.svelte";
   import IconX from "./svg/IconX.svelte";
@@ -7,9 +8,10 @@
 </script>
 
 <div
-  class="{isAlertVisible
-    ? 'block'
-    : 'hidden'} fixed bottom-0 flex w-full max-w-5xl flex-row items-center justify-between bg-[#5865F2] px-4 py-2 sm:mb-10 sm:w-4/5 sm:rounded-md">
+  class={cn(
+    "fixed bottom-0 flex w-full max-w-5xl flex-row items-center justify-between bg-[#5865F2] px-4 py-2 sm:mb-10 sm:w-4/5 sm:rounded-md",
+    isAlertVisible ? "block" : "hidden",
+  )}>
   <div class="flex items-center space-x-2">
     <span class="group rounded-md bg-black/10 p-1 transition duration-500 hover:-rotate-45">
       <IconAlertSquare className="duration-500 group-hover:rotate-45 group-hover:scale-110" />
