@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import { onMount } from "svelte";
   import { cn } from "../../helpers/cn";
-  import { navbarDropdownLinks } from "../../helpers/constants";
+  import { headerDropdownLinks } from "../../helpers/constants";
 
   $: isRootPage = $page.url.pathname === "/";
   $: isDropdownActive = false;
@@ -19,7 +19,10 @@
 </script>
 
 <header
-  class={cn("flex select-none items-center px-1 py-2 text-lg sm:px-5", isRootPage ? "justify-end" : "justify-between")}>
+  class={cn(
+    "mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5",
+    isRootPage ? "justify-end" : "justify-between",
+  )}>
   {#if !isRootPage}
     <a class="duration-500 hover:text-[#ED4245]" href="/">[🏠]</a>
   {/if}
@@ -33,7 +36,7 @@
       {#if isDropdownActive}
         <div
           class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1C2125] p-2 pl-3 shadow-2xl">
-          {#each navbarDropdownLinks as link}
+          {#each headerDropdownLinks as link}
             <a
               class="duration-500 hover:text-[#ED4245]"
               href={link.url}

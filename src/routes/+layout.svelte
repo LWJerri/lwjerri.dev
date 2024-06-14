@@ -6,7 +6,7 @@
   import Confetti from "../components/Confetti.svelte";
   import Update from "../components/Update.svelte";
   import Footer from "../components/navigation/Footer.svelte";
-  import Navbar from "../components/navigation/Navbar.svelte";
+  import Header from "../components/navigation/Header.svelte";
   import { cn } from "../helpers/cn";
   import type { LayoutData } from "./$types";
 
@@ -24,7 +24,7 @@
     <Confetti />
   {/if}
 
-  <Navbar />
+  <Header />
 
   <slot />
 

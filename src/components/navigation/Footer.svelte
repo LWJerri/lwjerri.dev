@@ -6,7 +6,7 @@
   export let views: number | string;
 </script>
 
-<footer class="select-none py-2 text-lg">
+<footer class="select-none pb-2 pt-5 text-lg">
   <div class="grid w-full grid-cols-1 items-center gap-3 px-1 sm:px-5 md:grid-cols-3">
     <div class="flex items-center space-x-2 text-left">
       <div>
