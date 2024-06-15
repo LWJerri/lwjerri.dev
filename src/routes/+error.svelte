@@ -12,6 +12,7 @@
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
   nofollow={true}
   noindex={true}
-  nositelinkssearchbox={true} />
+  nositelinkssearchbox={true}
+/>
 
 <Fallback title="Umm..." details="Requested page not found" />

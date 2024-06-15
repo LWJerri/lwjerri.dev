@@ -31,7 +31,8 @@
 <SvelteSeo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
-  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
+/>
 
 <div class="mx-auto flex max-w-4xl flex-col space-y-16 px-1 sm:px-5">
   <div class="space-y-5">
@@ -43,7 +44,8 @@
           class="select-none outline-none duration-500 hover:text-[#ED4245]"
           href="#about"
           id="about"
-          on:click={(event) => handleAnchorAbout(event, "about")}>[#]</a>
+          on:click={(event) => handleAnchorAbout(event, "about")}>[#]</a
+        >
       </h1>
 
       <a class="duration-500 hover:text-[#ED4245]" href="/api/pdf" data-umami-event="Click on CV button">[CV]</a>
@@ -53,14 +55,16 @@
       <img
         alt="PHOTO_WITH_ME"
         src="me.webp"
-        class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50" />
+        class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50"
+      />
 
       <div class="relative p-8">
         <p class="font-bold">Me in my happy childhood 💖</p>
 
         <div class="mt-96">
           <div
-            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+          >
             <p>This photo was taken in kindergarten for the new year, where I played the role of a clown.</p>
           </div>
         </div>
@@ -92,7 +96,8 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#my-stack"
         id="my-stack"
-        on:click={(event) => handleAnchorAbout(event, "my-stack")}>[#]</a>
+        on:click={(event) => handleAnchorAbout(event, "my-stack")}>[#]</a
+      >
     </h1>
 
     <p>
@@ -125,7 +130,8 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#socials"
         id="socials"
-        on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a>
+        on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a
+      >
     </h1>
 
     <p>

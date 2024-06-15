@@ -12,4 +12,5 @@
   stroke-width="1.5"
   stroke-linecap="round"
   stroke-linejoin="round"
-  class={className}><path d="M6 9l6 6l6 -6"></path></svg>
+  class={className}><path d="M6 9l6 6l6 -6"></path></svg
+>

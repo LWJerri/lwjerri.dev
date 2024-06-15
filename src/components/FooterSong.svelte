@@ -37,7 +37,8 @@
   </div>
 
   <a href={trackUrl} target="_blank" class="overflow-hidden text-ellipsis break-all duration-500 hover:text-[#ED4245]"
-    >{prepSong} [{prepArtist}]</a>
+    >{prepSong} [{prepArtist}]</a
+  >
 {:else}
   <span>{NOT_PLAYING_ANYTHING}</span>
 {/if}

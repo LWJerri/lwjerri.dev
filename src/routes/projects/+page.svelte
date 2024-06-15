@@ -31,7 +31,8 @@
 <SvelteSeo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
-  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
+/>
 
 {#if !data.projects.length}
   <Fallback title="So silent here..." details="More projects will be added soon." />
@@ -53,7 +54,8 @@
                   <span class="text-lg">{name}</span>
 
                   <span class="whitespace-nowrap rounded-md px-2.5 py-0.5 uppercase {isClosed ? 'hidden' : 'block'}"
-                    >Closed</span>
+                    >Closed</span
+                  >
                 </div>
 
                 <span class="text-[#3F4549]">
@@ -84,7 +86,8 @@
                 target="_self"
                 rel="noreferrer"
                 href="#project-{id}"
-                on:click={(event) => handleAnchorProjects(event)}>[Share]</a>
+                on:click={(event) => handleAnchorProjects(event)}>[Share]</a
+              >
             </div>
           </details>
         </div>

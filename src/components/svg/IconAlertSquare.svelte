@@ -12,7 +12,8 @@
   stroke-width="1.5"
   stroke-linecap="round"
   stroke-linejoin="round"
-  class={className}>
+  class={className}
+>
   <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"></path>
   <path d="M12 8v4"></path>
   <path d="M12 16h.01"></path>

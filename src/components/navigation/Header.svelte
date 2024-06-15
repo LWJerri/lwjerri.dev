@@ -18,7 +18,8 @@
 </script>
 
 <header
-  class="mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5 {isRootPage ? 'justify-end' : 'justify-between'}">
+  class="mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5 {isRootPage ? 'justify-end' : 'justify-between'}"
+>
   {#if !isRootPage}
     <a class="duration-500 hover:text-[#ED4245]" href="/">[Home]</a>
   {/if}
@@ -27,17 +28,20 @@
     <div class="relative">
       <button
         on:click={() => (isDropdownActive = !isDropdownActive)}
-        class="select-none outline-none duration-500 hover:text-[#ED4245]">[Menu]</button>
+        class="select-none outline-none duration-500 hover:text-[#ED4245]">[Menu]</button
+      >
 
       {#if isDropdownActive}
         <div
-          class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1C2125] p-2 pl-3 shadow-2xl">
+          class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1C2125] p-2 pl-3 shadow-2xl"
+        >
           {#each headerDropdownLinks as link}
             <a
               class="duration-500 hover:text-[#ED4245]"
               href={link.url}
               target={link?.external ? "_blank" : ""}
-              on:click={() => (isDropdownActive = !isDropdownActive)}>{link.name}</a>
+              on:click={() => (isDropdownActive = !isDropdownActive)}>{link.name}</a
+            >
           {/each}
         </div>
       {/if}

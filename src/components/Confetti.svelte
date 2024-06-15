@@ -22,5 +22,6 @@
     amount={100}
     size={30}
     fallDistance="100vh"
-    colorArray={["url(/birthday_pepe.webp)", "url(/birthday_krabsos.webp)"]} />
+    colorArray={["url(/birthday_pepe.webp)", "url(/birthday_krabsos.webp)"]}
+  />
 </div>

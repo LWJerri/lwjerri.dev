@@ -12,7 +12,8 @@
 <SvelteSeo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
-  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }} />
+  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
+/>
 
 <div class="hero flex justify-center">
   <div class="hero-content text-center">
