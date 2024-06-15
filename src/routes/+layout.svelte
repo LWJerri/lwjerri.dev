@@ -18,7 +18,7 @@
   const date = new Date();
 </script>
 
-<div class="flex min-h-screen flex-col justify-between bg-[#0C0E10] text-white">
+<div class="flex min-h-screen flex-col justify-between bg-gradient-to-br from-[#121212] to-[#0C0E10] text-white">
   {#if date.getMonth() === 3 && date.getDate() === 28}
     <Confetti />
   {/if}
