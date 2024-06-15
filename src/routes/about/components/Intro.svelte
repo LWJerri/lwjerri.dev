@@ -9,6 +9,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#intro"
     id="intro"
+    data-umami-event="Share 'Intro'"
     on:click={(event) => handleAnchorAbout(event, "intro")}>[#]</a
   >
   {@html text.join(" ")}

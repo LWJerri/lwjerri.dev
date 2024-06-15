@@ -7,6 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#backgroud-education"
     id="background-education"
+    data-umami-event="Share 'Background Education'"
     on:click={(event) => handleAnchorAbout(event, "background-education")}>[#]</a
   >
   Went to school in 2011, where he completed the full 10th grade and the beginning of the 11th, was forced to change places

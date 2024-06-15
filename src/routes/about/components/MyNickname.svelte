@@ -7,6 +7,7 @@
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
     href="#my-nickname"
     id="my-nickname"
+    data-umami-event="Share 'My Nickname'"
     on:click={(event) => handleAnchorAbout(event, "my-nickname")}>[#]</a
   >
   A little history about my nickname <span class="text-[#22B8CF]">LWJerri</span>. It was in 2016, I had a weak computer

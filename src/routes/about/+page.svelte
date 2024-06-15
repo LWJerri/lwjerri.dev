@@ -44,11 +44,12 @@
           class="select-none outline-none duration-500 hover:text-[#ED4245]"
           href="#about"
           id="about"
+          data-umami-event="Share 'About'"
           on:click={(event) => handleAnchorAbout(event, "about")}>[#]</a
         >
       </h1>
 
-      <a class="duration-500 hover:text-[#ED4245]" href="/api/pdf" data-umami-event="Click on CV button">[CV]</a>
+      <a class="duration-500 hover:text-[#ED4245]" href="/api/pdf" data-umami-event="Download CV">[CV]</a>
     </div>
 
     <div class="group relative block h-full select-none">
@@ -96,6 +97,7 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#my-stack"
         id="my-stack"
+        data-umami-event="Share 'My stack'"
         on:click={(event) => handleAnchorAbout(event, "my-stack")}>[#]</a
       >
     </h1>
@@ -130,6 +132,7 @@
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
         href="#socials"
         id="socials"
+        data-umami-event="Share 'Socials'"
         on:click={(event) => handleAnchorAbout(event, "socials")}>[#]</a
       >
     </h1>
