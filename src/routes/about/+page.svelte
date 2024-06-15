@@ -46,7 +46,7 @@
           on:click={(event) => handleAnchorAbout(event, "about")}>[#]</a>
       </h1>
 
-      <a class="duration-500 hover:text-[#ED4245]" href="cv.pdf" data-umami-event="Click on CV button">[CV]</a>
+      <a class="duration-500 hover:text-[#ED4245]" href="/api/pdf" data-umami-event="Click on CV button">[CV]</a>
     </div>
 
     <div class="group relative block h-full select-none">
@@ -67,7 +67,7 @@
       </div>
     </div>
 
-    <Intro />
+    <Intro text={data.introduce} />
 
     <Divider text="Hobbies & Interests" />
 
@@ -103,15 +103,15 @@
     <div class="space-y-2">
       <h2 class="text-lg text-[#ED4245]">Languages</h2>
 
-      <p class="text-[#22B8CF]">{data.languages.join(", ")}</p>
+      <p class="text-[#22B8CF]">{data.stack.languages.join(", ")}</p>
     </div>
 
     <div class="space-y-2">
       <h2 class="text-lg text-[#ED4245]">Technologies</h2>
 
-      {#each Object.keys(data.technologies) as technology}
+      {#each Object.keys(data.stack.technologies) as technology}
         <div>
-          {technology}: <span class="text-[#22B8CF]">{data.technologies[technology].join(", ")}</span>
+          {technology}: <span class="text-[#22B8CF]">{data.stack.technologies[technology].join(", ")}</span>
         </div>
       {/each}
     </div>
