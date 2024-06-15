@@ -20,7 +20,7 @@
 <header
   class="mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5 {isRootPage ? 'justify-end' : 'justify-between'}">
   {#if !isRootPage}
-    <a class="duration-500 hover:text-[#ED4245]" href="/">[🏠]</a>
+    <a class="duration-500 hover:text-[#ED4245]" href="/">[Home]</a>
   {/if}
 
   <div class="inline-flex items-stretch" bind:this={dropdownElement}>
