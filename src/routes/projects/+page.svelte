@@ -3,7 +3,6 @@
   import SvelteSeo from "svelte-seo";
   import Fallback from "../../components/Fallback.svelte";
   import IconChevronDown from "../../components/svg/IconChevronDown.svelte";
-  import { cn } from "../../helpers/cn";
   import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
   import type { PageData } from "./$types";
 
@@ -53,8 +52,7 @@
                 <div class="flex items-center justify-between">
                   <span class="text-lg">{name}</span>
 
-                  <span
-                    class={cn("whitespace-nowrap rounded-md px-2.5 py-0.5 uppercase", isClosed ? "hidden" : "block")}
+                  <span class="whitespace-nowrap rounded-md px-2.5 py-0.5 uppercase {isClosed ? 'hidden' : 'block'}"
                     >Closed</span>
                 </div>
 

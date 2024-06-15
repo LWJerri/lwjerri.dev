@@ -1,7 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { onMount } from "svelte";
-  import { cn } from "../../helpers/cn";
   import { headerDropdownLinks } from "../../helpers/constants";
 
   $: isRootPage = $page.url.pathname === "/";
@@ -19,10 +18,7 @@
 </script>
 
 <header
-  class={cn(
-    "mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5",
-    isRootPage ? "justify-end" : "justify-between",
-  )}>
+  class="mb-5 flex select-none items-center px-1 py-2 text-lg sm:px-5 {isRootPage ? 'justify-end' : 'justify-between'}">
   {#if !isRootPage}
     <a class="duration-500 hover:text-[#ED4245]" href="/">[🏠]</a>
   {/if}

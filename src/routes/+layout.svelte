@@ -7,7 +7,6 @@
   import Update from "../components/Update.svelte";
   import Footer from "../components/navigation/Footer.svelte";
   import Header from "../components/navigation/Header.svelte";
-  import { cn } from "../helpers/cn";
   import type { LayoutData } from "./$types";
 
   $: if (browser && !dev) {
@@ -29,7 +28,7 @@
   <slot />
 
   <div>
-    <div class={cn("mx-auto max-w-5xl px-1 sm:px-5", $updated && !dev ? "block" : "hidden")}>
+    <div class="px-1 sm:px-5 {$updated && !dev ? 'block' : 'block'}">
       <Update />
     </div>
 
