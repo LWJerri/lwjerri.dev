@@ -11,3 +11,5 @@ export const headerDropdownLinks: HeaderDropdownLink[] = [
   { name: "My GitHub", url: "https://github.com/LWJerri", external: true },
   { name: "Support me", url: "https://send.monobank.ua/8webyivBtV", external: true },
 ];
+
+export const OWNER = "Andrii Zontov";

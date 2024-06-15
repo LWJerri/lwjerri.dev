@@ -1,5 +1,6 @@
 <script lang="ts">
   import SvelteSeo from "svelte-seo";
+  import { OWNER } from "../helpers/constants";
   import type { PageData } from "./$types";
 
   export let data: PageData;
@@ -17,7 +18,7 @@
   <div class="hero-content text-center">
     <div class="px-1 text-center sm:px-5">
       <div class="font-bold text-[#5865F2] outline-none">
-        <h1 class="text-5xl">Andrii Zontov</h1>
+        <h1 class="text-5xl">{OWNER}</h1>
       </div>
 
       <p class="mt-5 text-2xl">
