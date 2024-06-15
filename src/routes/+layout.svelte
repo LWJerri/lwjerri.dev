@@ -28,7 +28,7 @@
   <slot />
 
   <div>
-    <div class="px-1 sm:px-5 {$updated && !dev ? 'block' : 'block'}">
+    <div class="px-1 sm:px-5 {$updated && !dev ? 'block' : 'hidden'}">
       <Update />
     </div>
 
