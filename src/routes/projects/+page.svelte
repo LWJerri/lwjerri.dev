@@ -27,7 +27,7 @@
 {:else}
   <div class="mx-auto grid w-full max-w-4xl gap-4 px-1 sm:px-5">
     {#each projects as project, id}
-      <div class="rounded-md bg-[#1D2123] p-4" id="project-{id}">
+      <div class="pointer-events-none rounded-md bg-[#1D2123] p-4" id="project-{id}">
         <div class="space-y-5">
           <div class="flex items-center justify-between">
             <h1 class="text-lg">{project.name}</h1>
@@ -45,7 +45,7 @@
             {/each}
           </div>
 
-          <div class="flex items-center justify-end gap-2">
+          <div class="pointer-events-auto flex items-center justify-end gap-2">
             {#if project.urls}
               {#each project.urls as url, i}
                 {@const title = `[URL #${i + 1}]`}
