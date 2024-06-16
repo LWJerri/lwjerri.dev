@@ -41,7 +41,7 @@
 
           <div class="flex flex-wrap gap-2">
             {#each project.stack as technology}
-              <div class="box-decorator bg-[#22B8CF]">{technology}</div>
+              <div class="box-decorator bg-[#5862F2]">{technology}</div>
             {/each}
           </div>
 

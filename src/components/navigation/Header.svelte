@@ -33,7 +33,7 @@
 
       {#if isDropdownActive}
         <div
-          class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1C2125] p-2 pl-3 shadow-2xl"
+          class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1D2123] p-2 pl-3 shadow-2xl"
         >
           {#each headerDropdownLinks as link}
             <a
