@@ -3,6 +3,7 @@
   import SvelteSeo from "svelte-seo";
   import Divider from "../../components/Divider.svelte";
   import Social from "../../components/Social.svelte";
+  import { anchorGo } from "../../helpers/anchorGo";
   import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
   import type { PageData } from "./$types";
   import BackgroundEducation from "./components/BackgroundEducation.svelte";
@@ -15,15 +16,7 @@
   const PAGE_TITLE = "Andrii Zontov - About me";
   const PAGE_DESCRIPTION = "This page contains all information about my backgroud education, tech stack, hobbies, etc.";
 
-  onMount(async () => {
-    const anchor = window.location.hash.slice(1);
-
-    if (anchor) {
-      const getAnchorElement = document.getElementById(anchor);
-
-      if (getAnchorElement) return window.scrollTo({ top: getAnchorElement.offsetTop });
-    }
-  });
+  onMount(async () => anchorGo());
 </script>
 
 <SvelteSeo
