@@ -91,7 +91,7 @@ export async function GET() {
       for (const project of projects) {
         doc.moveDown().text(project.name, { stroke: true });
 
-        doc.moveDown().text(project.description);
+        doc.moveDown().text(project.description.length ? project.description : "Description will be added soon...");
 
         doc.moveDown().list([project.stack.join(", ")]);
       }
