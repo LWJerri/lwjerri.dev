@@ -21,10 +21,9 @@ export async function GET() {
 
       for (const social of Object.keys(socials)) {
         const name = social[0].toUpperCase() + social.slice(1);
-        const url = socials[social].replace(/^(http|https):\/\//, "");
 
         doc.font("Courier-Oblique").text(`${name}: `, { continued: true });
-        doc.font("Courier").fillColor("#ED4245").text(url, { link: socials[social] }).fillColor("black");
+        doc.font("Courier").fillColor("#ED4245").text(socials[social]).fillColor("black");
       }
 
       // Background Education Section
