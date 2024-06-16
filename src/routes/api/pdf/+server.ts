@@ -19,11 +19,11 @@ export async function GET() {
 
       doc.moveDown().text(preparedBio).moveDown();
 
-      for (const social of Object.keys(socials)) {
+      for (const social of Object.keys(socials) as (keyof typeof socials)[]) {
         const name = social[0].toUpperCase() + social.slice(1);
 
         doc.font("Courier-Oblique").text(`${name}: `, { continued: true });
-        doc.font("Courier").fillColor("#ED4245").text(socials[social]).fillColor("black");
+        doc.font("Courier").fillColor("#ED4245").text(socials[social].url).fillColor("black");
       }
 
       // Background Education Section

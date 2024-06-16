@@ -2,9 +2,7 @@
   import { onMount } from "svelte";
   import SvelteSeo from "svelte-seo";
   import Divider from "../../components/Divider.svelte";
-  import IconDiscord from "../../components/svg/IconDiscord.svelte";
-  import IconTelegram from "../../components/svg/IconTelegram.svelte";
-  import IconTwitch from "../../components/svg/IconTwitch.svelte";
+  import Social from "../../components/Social.svelte";
   import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
   import type { PageData } from "./$types";
   import BackgroundEducation from "./components/BackgroundEducation.svelte";
@@ -138,13 +136,9 @@
     </h1>
 
     <p>
-      If you have any questions you can contact with me in
-      <a href={data.socials.telegram} target="_blank" class="box-decorator"><IconTelegram /><span>Telegram</span></a>
-      or via
-      <a href={data.socials.discord} target="_blank" class="box-decorator"><IconDiscord /><span>Discord</span></a>.
-      Also, I sometimes stream on my
-      <a href={data.socials.twitch} class="box-decorator"><IconTwitch /><span>Twitch</span></a>, so feel free to join
-      and ask me about some thing in chat.
+      If you have any questions you can contact with me in <Social social="telegram" /> or via
+      <Social social="discord" />. Also, I sometimes stream on my <Social social="twitch" />, so feel free to join and
+      ask me about some thing in chat.
     </p>
   </div>
 </div>

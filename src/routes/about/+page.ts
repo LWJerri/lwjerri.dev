@@ -1,3 +1,6 @@
+import IconDiscord from "../../components/svg/IconDiscord.svelte";
+import IconTelegram from "../../components/svg/IconTelegram.svelte";
+import IconTwitch from "../../components/svg/IconTwitch.svelte";
 import type { Education, Job } from "../../interfaces";
 import type { PageLoad } from "./$types";
 
@@ -32,10 +35,10 @@ const languages: { name: string; grade: "A1" | "A2" | "B1" | "B2" | "C1" | "C2" 
   { name: "Russian", grade: "Native" },
 ];
 
-const socials: Record<string, string> = {
-  telegram: "https://t.me/LWJerri",
-  discord: "https://discordlookup.com/user/432085389948485633",
-  twitch: "https://www.twitch.tv/LWGerry",
+const socials: Record<"telegram" | "discord" | "twitch", { icon: any; url: string }> = {
+  telegram: { icon: IconTelegram, url: "https://t.me/LWJerri" },
+  discord: { icon: IconDiscord, url: "https://discordlookup.com/user/432085389948485633" },
+  twitch: { icon: IconTwitch, url: "https://www.twitch.tv/LWGerry" },
 };
 
 const jobs: Job[] = [
