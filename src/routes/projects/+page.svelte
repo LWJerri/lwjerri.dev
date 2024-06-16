@@ -8,8 +8,6 @@
 
   export let data: PageData;
 
-  const projects = data.projects.sort((project) => (project.isClosed ? 1 : -1));
-
   const PAGE_TITLE = "Andrii Zontov - My projects";
   const PAGE_DESCRIPTION = "This page contains information about my projects, their descriptions, technologies, etc.";
 
@@ -22,11 +20,11 @@
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
 />
 
-{#if !projects.length}
+{#if !data.projects.length}
   <Fallback title="So silent here..." details="More projects will be added soon." />
 {:else}
   <div class="mx-auto grid w-full max-w-4xl gap-4 px-1 sm:px-5">
-    {#each projects as project, id}
+    {#each data.projects as project, id}
       <div class="pointer-events-none rounded-md bg-[#1D2123] p-4" id="project-{id}">
         <div class="space-y-5">
           <div class="flex items-center justify-between">
@@ -37,7 +35,7 @@
             {/if}
           </div>
 
-          <p>{project.description}</p>
+          <p>{project.description.length ? project.description : "Description will be added soon..."}</p>
 
           <div class="flex flex-wrap gap-2">
             {#each project.stack as technology}
