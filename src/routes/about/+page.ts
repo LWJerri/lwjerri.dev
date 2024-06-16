@@ -61,9 +61,21 @@ const jobs: Job[] = [
 const stack: { languages: string[]; technologies: Record<string, Array<string>> } = {
   languages: ["TypeScript", "JavaScript"],
   technologies: {
-    Frameworks: ["Svelte", "SvelteKit", "TailwindCSS", "NestJS", "Electron", "Nuxt", "Next.js"],
+    Frameworks: [
+      "Svelte",
+      "SvelteKit",
+      "TailwindCSS",
+      "NestJS",
+      "Electron",
+      "Nuxt",
+      "Next.js",
+      "Tauri",
+      "Storybook",
+      "Chromatic",
+    ],
     "Development tools": ["Docker", "TypeORM", "Prisma", "Node.js", "Vite", "React", "Figma"],
     Databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    Queue: ["RabbitMQ", "Kafka"],
     "API development & Testing": ["Postman", "Insomnia"],
     VCS: ["Git", "GitHub", "GitLab"],
   },
