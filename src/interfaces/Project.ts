@@ -3,7 +3,6 @@ export interface Project {
   description: string;
   stack: string[];
   isClosed: boolean;
-  emoji?: string;
-  url?: string;
+  urls?: string[];
   github?: string;
 }
