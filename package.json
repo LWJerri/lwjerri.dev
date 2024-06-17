@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "4.0.5",
-    "@sveltejs/kit": "1.30.3",
+    "@sveltejs/kit": "2.5.16",
     "@types/humanize-duration": "3.27.4",
     "@types/pdfkit": "0.13.4",
     "autoprefixer": "10.4.19",
