@@ -54,7 +54,7 @@ devDependencies:
     version: 4.2.18
   svelte-seo:
     specifier: 1.6.1
-    version: 1.6.1(typescript@5.4.5)
+    version: 1.6.1(typescript@5.5.2)
   tailwindcss:
     specifier: 3.4.4
     version: 3.4.4
@@ -62,8 +62,8 @@ devDependencies:
     specifier: 2.6.3
     version: 2.6.3
   typescript:
-    specifier: 5.4.5
-    version: 5.4.5
+    specifier: 5.5.2
+    version: 5.5.2
   vite:
     specifier: 5.3.1
     version: 5.3.1
@@ -2590,12 +2590,12 @@ packages:
       loose-envify: 1.4.0
     dev: false
 
-  /schema-dts@1.1.2(typescript@5.4.5):
+  /schema-dts@1.1.2(typescript@5.5.2):
     resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
     peerDependencies:
       typescript: '>=4.1.0'
     dependencies:
-      typescript: 5.4.5
+      typescript: 5.5.2
     dev: true
 
   /semver@6.3.1:
@@ -2782,10 +2782,10 @@ packages:
     dependencies:
       svelte: 4.2.18
 
-  /svelte-seo@1.6.1(typescript@5.4.5):
+  /svelte-seo@1.6.1(typescript@5.5.2):
     resolution: {integrity: sha512-vTKvOA0rl3HVhgbyoMhwz0P1s+18ldOT+lHlTlrQn7Mn0SBx7Ia7MB+llF4O/mYoiV5idmNu8i3xWsam8COsbw==}
     dependencies:
-      schema-dts: 1.1.2(typescript@5.4.5)
+      schema-dts: 1.1.2(typescript@5.5.2)
     transitivePeerDependencies:
       - typescript
     dev: true
@@ -2896,8 +2896,8 @@ packages:
   /tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
-  /typescript@5.4.5:
-    resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
+  /typescript@5.5.2:
+    resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
     engines: {node: '>=14.17'}
     hasBin: true
     dev: true
