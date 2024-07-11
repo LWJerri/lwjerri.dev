@@ -116,8 +116,10 @@
   </div>
 
   <div class="space-y-5">
-    <h1 class="flex items-center space-x-2 text-center text-2xl">
-      <span class="text-[#ED4245]">Socials</span>
+    <h1 class="flex items-center space-x-2 text-2xl">
+      <div class="break-words">
+        <span class="text-[#ED4245]">Socials</span>
+      </div>
 
       <a
         class="select-none outline-none duration-500 hover:text-[#ED4245]"
