@@ -315,7 +315,7 @@ const projects: Project[] = [
   {
     name: "dogttpbot",
     description:
-      "An incredibly simple Telegram bot I developed to learn how to work with webhooks. This bot responds to inline requests with pictures of cats that respond to a certain HTTP code.",
+      "An incredibly simple Telegram bot I developed to learn how to work with webhooks. This bot responds to inline requests with pictures of dogs that respond to a certain HTTP code.",
     stack: ["TypeScript", "Vercel", "grammY", "Express", "ngrok"],
     isClosed: false,
     github: "https://github.com/LWJerri/dogttpbot",
