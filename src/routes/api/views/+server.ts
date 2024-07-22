@@ -10,7 +10,7 @@ export async function GET() {
 
   const { ok, data } = await client.getWebsiteMetrics(UMAMI_SITE_ID, {
     type: "url",
-    startAt: 1689109200380, // 13.07.2023
+    startAt: new Date("2023-07-13").getTime(),
     endAt: new Date().getTime(),
   });
 
