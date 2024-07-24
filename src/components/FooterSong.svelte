@@ -1,29 +1,45 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
   import { NOT_PLAYING_ANYTHING } from "../helpers/constants";
   import { fmtText } from "../helpers/fmtText";
   import type { LynardWS } from "../interfaces";
 
+  let socket: WebSocket;
   let spotify: LynardWS["d"]["spotify"];
+  let lynardPingInverval: NodeJS.Timeout;
+
+  function openLynardConnection() {
+    socket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: "432085389948485633" } }));
+  }
+
+  function listenLynardIncominMessages(event: MessageEvent<LynardWS>) {
+    try {
+      const { d }: LynardWS = JSON.parse(event.data.toString());
+
+      spotify = d.spotify;
+    } catch (err) {
+      console.error(err);
+    }
+  }
 
   onMount(() => {
-    const socket = new WebSocket("wss://api.lanyard.rest/socket");
+    socket = new WebSocket("wss://api.lanyard.rest/socket");
 
-    socket.addEventListener("open", () => {
-      socket.send(JSON.stringify({ op: 2, d: { subscribe_to_id: "432085389948485633" } }));
-    });
+    socket.addEventListener("open", openLynardConnection);
+    socket.addEventListener("message", listenLynardIncominMessages);
 
-    socket.addEventListener("message", (event) => {
-      try {
-        const { d }: LynardWS = JSON.parse(event.data.toString("utf-8"));
+    lynardPingInverval = setInterval(() => socket.send(JSON.stringify({ op: 3 })), 1000 * 30);
+  });
 
-        spotify = d.spotify;
-      } catch (err) {
-        console.error(err);
-      }
-    });
+  onDestroy(() => {
+    if (!socket || socket.readyState !== 1) return;
 
-    setInterval(() => socket.send(JSON.stringify({ op: 3 })), 1000 * 30);
+    socket.close();
+
+    clearInterval(lynardPingInverval);
+
+    socket.removeEventListener("open", openLynardConnection);
+    socket.removeEventListener("message", listenLynardIncominMessages);
   });
 </script>
 
