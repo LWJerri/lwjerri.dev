@@ -24,7 +24,7 @@
     "@vercel/speed-insights": "1.0.12",
     "humanize-duration": "3.32.1",
     "pdfkit": "0.15.0",
-    "svelte-confetti": "2.0.1"
+    "svelte-confetti": "2.1.1"
   },
   "devDependencies": {
     "@sveltejs/adapter-vercel": "4.0.5",
