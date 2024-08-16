@@ -5,7 +5,7 @@
 <p>
   <a
     class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
-    href="#backgroud-education"
+    href="#background-education"
     id="background-education"
     data-umami-event="Share 'Background Education'"
     on:click={(event) => handleAnchorAbout(event, "background-education")}>[#]</a
