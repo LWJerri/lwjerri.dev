@@ -21,8 +21,8 @@ importers:
         specifier: 0.15.0
         version: 0.15.0
       svelte-confetti:
-        specifier: 2.1.1
-        version: 2.1.1(svelte@4.2.18)
+        specifier: 2.1.2
+        version: 2.1.2(svelte@4.2.18)
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: 4.0.5
@@ -1698,10 +1698,10 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  svelte-confetti@2.1.1:
-    resolution: {integrity: sha512-pjmxXm/BoO5Th2ojIOFqdMMFuUSmDFnq/mdDx/JZ49yLTl6eBshLu4fMLbR9Z/ROrctyFoGqsn7cZPkKoI9cAA==}
+  svelte-confetti@2.1.2:
+    resolution: {integrity: sha512-2hZUSmogOkeoKJEuUL75tAmyQQ8J9FEcNq19yzDpL4njBOEpl+cFA97sX9i6okBIhTccsRV1M9FZOkEyTZAMnQ==}
     peerDependencies:
-      svelte: ^5.0.0
+      svelte: '>=5.0.0'
 
   svelte-hmr@0.15.3:
     resolution: {integrity: sha512-41snaPswvSf8TJUhlkoJBekRrABDXDMdpNpT2tfHIv4JuhgvHqLMhEPGtaQn0BmbNSTkuz2Ed20DF2eHw0SmBQ==}
@@ -3337,7 +3337,7 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  svelte-confetti@2.1.1(svelte@4.2.18):
+  svelte-confetti@2.1.2(svelte@4.2.18):
     dependencies:
       svelte: 4.2.18
 
