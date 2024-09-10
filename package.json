@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/LWJerri/lwjerri.dev#readme",
   "dependencies": {
-    "@umami/api-client": "0.73.0",
+    "@umami/api-client": "0.75.0",
     "@vercel/speed-insights": "1.0.12",
     "humanize-duration": "3.32.1",
     "pdfkit": "0.15.0",
