@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@umami/api-client':
-        specifier: 0.75.0
-        version: 0.75.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: 0.76.0
+        version: 0.76.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vercel/speed-insights':
         specifier: 1.0.12
         version: 1.0.12(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.4(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)
@@ -601,8 +601,8 @@ packages:
   '@types/pdfkit@0.13.4':
     resolution: {integrity: sha512-ixGNDHYJCCKuamY305wbfYSphZ2WPe8FPkjn8oF4fHV+PgPV4V+hecPh2VOS2h4RNtpSB3zQcR4sCpNvvrEb1A==}
 
-  '@umami/api-client@0.75.0':
-    resolution: {integrity: sha512-vxFJsue988kvKqqsBR4v8eck5wmMzM7t2kWcU0RnWuK9da3NFvqY0ZMyd5YkxeevVETpOTfphuyQ4eOlKeCogw==}
+  '@umami/api-client@0.76.0':
+    resolution: {integrity: sha512-c27Diz0bPRGL98+udLHN9I+id2Un82WcKsRHaSDOLRonUe4YMRljvbhxippIpvtdCLaLnhBM9Vz3AY3J2pKqLg==}
 
   '@vercel/nft@0.26.5':
     resolution: {integrity: sha512-NHxohEqad6Ra/r4lGknO52uc/GrWILXAMs1BB4401GTqww0fw1bAqzpG1XHuDO+dprg4GvsD9ZLLSsdo78p9hQ==}
@@ -2247,7 +2247,7 @@ snapshots:
     dependencies:
       '@types/node': 20.14.4
 
-  '@umami/api-client@0.75.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@umami/api-client@0.76.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
       cross-fetch: 3.1.8
       debug: 4.3.5
