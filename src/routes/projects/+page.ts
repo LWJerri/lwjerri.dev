@@ -219,11 +219,7 @@ const projects: Project[] = [
       "CapRover CI/CD",
     ],
     isClosed: false,
-    urls: [
-      "https://tta-duikt-api.oracle-1.lwjerri.dev/swagger-stats",
-      "https://tta-duikt-api.oracle-1.lwjerri.dev",
-      "https://t.me/DuiktTrackBot",
-    ],
+    urls: ["https://tta-duikt.main.lwjerri.dev/docs", "https://t.me/DuiktTrackBot"],
   },
   {
     name: "CSharpBoard",
