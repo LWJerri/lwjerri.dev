@@ -12,8 +12,8 @@ importers:
         specifier: 0.76.0
         version: 0.76.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vercel/speed-insights':
-        specifier: 1.0.12
-        version: 1.0.12(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.10(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)
+        specifier: 1.0.13
+        version: 1.0.13(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.10(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)
       humanize-duration:
         specifier: 3.32.1
         version: 3.32.1
@@ -609,13 +609,13 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  '@vercel/speed-insights@1.0.12':
-    resolution: {integrity: sha512-ZGQ+a7bcfWJD2VYEp2R1LHvRAMyyaFBYytZXsfnbOMkeOvzGNVxUL7aVUvisIrTZjXTSsxG45DKX7yiw6nq2Jw==}
+  '@vercel/speed-insights@1.0.13':
+    resolution: {integrity: sha512-3iuOMB/M0WE3Zeuoo2mnlD7Eo7fGH7RBGi92Vq4qO7Kp+BwNbpwFqkjuPQDEeBxoGQLJFRICrsx5/IluHZVCZA==}
     peerDependencies:
       '@sveltejs/kit': ^1 || ^2
       next: '>= 13'
       react: ^18 || ^19
-      svelte: ^4
+      svelte: '>= 4'
       vue: ^3
       vue-router: ^4
     peerDependenciesMeta:
@@ -2275,7 +2275,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/speed-insights@1.0.12(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.10(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)':
+  '@vercel/speed-insights@1.0.13(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.10(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)':
     optionalDependencies:
       '@sveltejs/kit': 1.30.3(svelte@4.2.19)(vite@5.4.10(@types/node@20.14.12))
       next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
