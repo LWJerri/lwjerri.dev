@@ -18,8 +18,8 @@ importers:
         specifier: 3.32.1
         version: 3.32.1
       pdfkit:
-        specifier: 0.15.0
-        version: 0.15.0
+        specifier: 0.15.1
+        version: 0.15.1
       svelte-confetti:
         specifier: 2.1.2
         version: 2.1.2(svelte@4.2.19)
@@ -1387,8 +1387,8 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  pdfkit@0.15.0:
-    resolution: {integrity: sha512-Z0dx0sEPKLW2kbThS1SWZ0iSHlRPoFMpP+oSjNrtwRjsfGivwE+r6emyEFwQG/fx1Ri0AGUHmDcGOSMMlLLnSg==}
+  pdfkit@0.15.1:
+    resolution: {integrity: sha512-sleaMQXbQ/Dk+38HlxdiMT6Lmw5+HoNc4vkJR1Tb9XGALuB1xrfdWYbDFta70F3jCrVkhA2DiQ52D7jbysGZrw==}
 
   periscopic@3.1.0:
     resolution: {integrity: sha512-vKiQ8RRtkl9P+r/+oefh25C3fhybptkHKCZSPlcXiJux2tJF55GnEj3BVn4A5gKfq9NWWXXrxkHBwVPUfH0opw==}
@@ -3072,7 +3072,7 @@ snapshots:
       lru-cache: 10.2.2
       minipass: 7.1.2
 
-  pdfkit@0.15.0:
+  pdfkit@0.15.1:
     dependencies:
       crypto-js: 4.2.0
       fontkit: 1.9.0
