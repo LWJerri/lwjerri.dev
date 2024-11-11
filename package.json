@@ -32,7 +32,7 @@
     "@types/humanize-duration": "3.27.4",
     "@types/pdfkit": "0.13.5",
     "autoprefixer": "10.4.20",
-    "postcss": "8.4.47",
+    "postcss": "8.4.48",
     "prettier": "3.3.3",
     "prettier-plugin-svelte": "3.2.7",
     "prettier-plugin-tailwindcss": "0.6.8",
