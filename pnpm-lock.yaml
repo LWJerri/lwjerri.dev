@@ -34,8 +34,8 @@ importers:
         specifier: 3.27.4
         version: 3.27.4
       '@types/pdfkit':
-        specifier: 0.13.7
-        version: 0.13.7
+        specifier: 0.13.8
+        version: 0.13.8
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.4.49)
@@ -598,8 +598,8 @@ packages:
   '@types/node@20.14.12':
     resolution: {integrity: sha512-r7wNXakLeSsGT0H1AU863vS2wa5wBOK4bWMjZz2wj+8nBx+m5PeIn0k8AloSLpRuiwdRQZwarZqHE4FNArPuJQ==}
 
-  '@types/pdfkit@0.13.7':
-    resolution: {integrity: sha512-qIV2V2cnunHEVa51ISkoXlTsAnuQpTXhE7is3CWvV5lKSItRDLL7VLg/j0AkvAr3lG5ZBK2IWIl5iTfqf+obuA==}
+  '@types/pdfkit@0.13.8':
+    resolution: {integrity: sha512-lX+wmG9KNisFQXCC/facEw+rljSkMyo6Eh+W4gp/uPZzzmA7TTchKkCp5tMrXDY+lQjqzoxt8rGKRlpxf1c3hw==}
 
   '@umami/api-client@0.76.0':
     resolution: {integrity: sha512-c27Diz0bPRGL98+udLHN9I+id2Un82WcKsRHaSDOLRonUe4YMRljvbhxippIpvtdCLaLnhBM9Vz3AY3J2pKqLg==}
@@ -2232,7 +2232,7 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/pdfkit@0.13.7':
+  '@types/pdfkit@0.13.8':
     dependencies:
       '@types/node': 20.14.12
 
