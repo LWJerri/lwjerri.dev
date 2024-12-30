@@ -23,7 +23,7 @@
     "@umami/api-client": "0.76.0",
     "@vercel/speed-insights": "1.1.0",
     "humanize-duration": "3.32.1",
-    "pdfkit": "0.15.2",
+    "pdfkit": "0.16.0",
     "svelte-confetti": "2.2.0"
   },
   "devDependencies": {
