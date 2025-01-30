@@ -13,7 +13,7 @@ importers:
         version: 0.76.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@vercel/speed-insights':
         specifier: 1.1.0
-        version: 1.1.0(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)
+        version: 1.1.0(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)
       humanize-duration:
         specifier: 3.32.1
         version: 3.32.1
@@ -26,16 +26,16 @@ importers:
     devDependencies:
       '@sveltejs/adapter-vercel':
         specifier: 4.0.5
-        version: 4.0.5(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))
+        version: 4.0.5(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))
       '@sveltejs/kit':
         specifier: 1.30.3
-        version: 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+        version: 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       '@types/humanize-duration':
         specifier: 3.27.4
         version: 3.27.4
       '@types/pdfkit':
-        specifier: 0.13.8
-        version: 0.13.8
+        specifier: 0.13.9
+        version: 0.13.9
       autoprefixer:
         specifier: 10.4.20
         version: 10.4.20(postcss@8.5.1)
@@ -68,7 +68,7 @@ importers:
         version: 5.7.3
       vite:
         specifier: 5.4.12
-        version: 5.4.12(@types/node@20.14.12)
+        version: 5.4.12(@types/node@22.12.0)
 
 packages:
 
@@ -610,11 +610,11 @@ packages:
   '@types/humanize-duration@3.27.4':
     resolution: {integrity: sha512-yaf7kan2Sq0goxpbcwTQ+8E9RP6HutFBPv74T/IA/ojcHKhuKVlk2YFYyHhWZeLvZPzzLE3aatuQB4h0iqyyUA==}
 
-  '@types/node@20.14.12':
-    resolution: {integrity: sha512-r7wNXakLeSsGT0H1AU863vS2wa5wBOK4bWMjZz2wj+8nBx+m5PeIn0k8AloSLpRuiwdRQZwarZqHE4FNArPuJQ==}
+  '@types/node@22.12.0':
+    resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
 
-  '@types/pdfkit@0.13.8':
-    resolution: {integrity: sha512-lX+wmG9KNisFQXCC/facEw+rljSkMyo6Eh+W4gp/uPZzzmA7TTchKkCp5tMrXDY+lQjqzoxt8rGKRlpxf1c3hw==}
+  '@types/pdfkit@0.13.9':
+    resolution: {integrity: sha512-RDG8Yb1zT7I01FfpwK7nMSA433XWpblMqSCtA5vJlSyavWZb303HUYPCel6JTiDDFqwGLvtAnYbH8N/e0Cb89g==}
 
   '@umami/api-client@0.76.0':
     resolution: {integrity: sha512-c27Diz0bPRGL98+udLHN9I+id2Un82WcKsRHaSDOLRonUe4YMRljvbhxippIpvtdCLaLnhBM9Vz3AY3J2pKqLg==}
@@ -765,6 +765,9 @@ packages:
 
   caniuse-lite@1.0.30001695:
     resolution: {integrity: sha512-vHyLade6wTgI2u1ec3WQBxv+2BrTERV28UXQu9LO6lZ9pYeMk34vjXFLOxo1A4UBA8XTL4njRQZdno/yYaSmWw==}
+
+  caniuse-lite@1.0.30001696:
+    resolution: {integrity: sha512-pDCPkvzfa39ehJtJ+OwGT/2yvT2SbjfHhiIW2LWOAcMQ7BzwxT/XuyUp4OTOd0XFWA6BKw0JalnBHgSi5DGJBQ==}
 
   chokidar@3.6.0:
     resolution: {integrity: sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==}
@@ -1606,8 +1609,8 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.20.0:
+    resolution: {integrity: sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg==}
 
   undici@5.26.5:
     resolution: {integrity: sha512-cSb4bPFd5qgR7qr2jYAi0hlX9n5YKK2ONKkLFkxl+v/9BvC0sOpZjBHDBSXc5lWAf5ty9oZdRXytBIHzgUcerw==}
@@ -2002,18 +2005,18 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.31.0':
     optional: true
 
-  '@sveltejs/adapter-vercel@4.0.5(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))':
+  '@sveltejs/adapter-vercel@4.0.5(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))':
     dependencies:
-      '@sveltejs/kit': 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+      '@sveltejs/kit': 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       '@vercel/nft': 0.26.5
       esbuild: 0.19.12
     transitivePeerDependencies:
       - encoding
       - supports-color
 
-  '@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))':
+  '@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       '@types/cookie': 0.5.4
       cookie: 0.5.0
       devalue: 4.3.3
@@ -2027,30 +2030,30 @@ snapshots:
       svelte: 4.2.19
       tiny-glob: 0.2.9
       undici: 5.26.5
-      vite: 5.4.12(@types/node@20.14.12)
+      vite: 5.4.12(@types/node@22.12.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))':
+  '@sveltejs/vite-plugin-svelte-inspector@1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+      '@sveltejs/vite-plugin-svelte': 2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       debug: 4.3.5
       svelte: 4.2.19
-      vite: 5.4.12(@types/node@20.14.12)
+      vite: 5.4.12(@types/node@22.12.0)
     transitivePeerDependencies:
       - supports-color
 
-  '@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))':
+  '@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+      '@sveltejs/vite-plugin-svelte-inspector': 1.0.4(@sveltejs/vite-plugin-svelte@2.5.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       debug: 4.3.5
       deepmerge: 4.3.1
       kleur: 4.1.5
       magic-string: 0.30.10
       svelte: 4.2.19
       svelte-hmr: 0.15.3(svelte@4.2.19)
-      vite: 5.4.12(@types/node@20.14.12)
-      vitefu: 0.2.5(vite@5.4.12(@types/node@20.14.12))
+      vite: 5.4.12(@types/node@22.12.0)
+      vitefu: 0.2.5(vite@5.4.12(@types/node@22.12.0))
     transitivePeerDependencies:
       - supports-color
 
@@ -2073,13 +2076,13 @@ snapshots:
 
   '@types/humanize-duration@3.27.4': {}
 
-  '@types/node@20.14.12':
+  '@types/node@22.12.0':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.20.0
 
-  '@types/pdfkit@0.13.8':
+  '@types/pdfkit@0.13.9':
     dependencies:
-      '@types/node': 20.14.12
+      '@types/node': 22.12.0
 
   '@umami/api-client@0.76.0(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -2112,9 +2115,9 @@ snapshots:
       - encoding
       - supports-color
 
-  '@vercel/speed-insights@1.1.0(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)':
+  '@vercel/speed-insights@1.1.0(@sveltejs/kit@1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0)))(next@14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)(svelte@4.2.19)':
     optionalDependencies:
-      '@sveltejs/kit': 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@20.14.12))
+      '@sveltejs/kit': 1.30.3(svelte@4.2.19)(vite@5.4.12(@types/node@22.12.0))
       next: 14.2.5(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react: 18.3.1
       svelte: 4.2.19
@@ -2226,6 +2229,8 @@ snapshots:
   camelcase-css@2.0.1: {}
 
   caniuse-lite@1.0.30001695: {}
+
+  caniuse-lite@1.0.30001696: {}
 
   chokidar@3.6.0:
     dependencies:
@@ -2664,7 +2669,7 @@ snapshots:
       '@next/env': 14.2.5
       '@swc/helpers': 0.5.5
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001695
+      caniuse-lite: 1.0.30001696
       graceful-fs: 4.2.11
       postcss: 8.4.31
       react: 18.3.1
@@ -3062,7 +3067,7 @@ snapshots:
 
   typescript@5.7.3: {}
 
-  undici-types@5.26.5: {}
+  undici-types@6.20.0: {}
 
   undici@5.26.5:
     dependencies:
@@ -3088,18 +3093,18 @@ snapshots:
 
   uuid@9.0.1: {}
 
-  vite@5.4.12(@types/node@20.14.12):
+  vite@5.4.12(@types/node@22.12.0):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.5.1
       rollup: 4.31.0
     optionalDependencies:
-      '@types/node': 20.14.12
+      '@types/node': 22.12.0
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.4.12(@types/node@20.14.12)):
+  vitefu@0.2.5(vite@5.4.12(@types/node@22.12.0)):
     optionalDependencies:
-      vite: 5.4.12(@types/node@20.14.12)
+      vite: 5.4.12(@types/node@22.12.0)
 
   webidl-conversions@3.0.1: {}
 
