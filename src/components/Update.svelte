@@ -16,7 +16,7 @@
       <IconAlertSquare className="duration-500 group-hover:rotate-45 group-hover:scale-110" />
     </span>
 
-    <p class="break-words">Available update</p>
+    <p class="break-words">New changes available</p>
   </div>
 
   <div class="flex items-center space-x-2">

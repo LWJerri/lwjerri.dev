@@ -18,7 +18,7 @@
   const date = new Date();
 </script>
 
-<div class="flex min-h-dvh flex-col justify-between bg-linear-to-br from-[#121212] to-[#0C0E10] text-white">
+<div class="relative flex min-h-dvh flex-col justify-between bg-linear-to-br from-[#121212] to-[#0C0E10] text-white">
   {#if date.getMonth() === 3 && date.getDate() === 28}
     <Confetti />
   {/if}
@@ -27,11 +27,9 @@
 
   <slot />
 
-  <div>
-    <div class="px-1 sm:px-5 {$updated && !dev ? 'block' : 'hidden'}">
-      <Update />
-    </div>
-
-    <Footer views={data.views} />
+  <div class="fixed right-0 bottom-10 left-0 z-10 {$updated && !dev ? 'block' : 'hidden'}">
+    <Update />
   </div>
+
+  <Footer views={data.views} />
 </div>
