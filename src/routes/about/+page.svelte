@@ -28,11 +28,11 @@
 <div class="mx-auto flex max-w-4xl flex-col space-y-16 px-1 sm:px-5">
   <div class="space-y-5">
     <div class="flex flex-row items-center justify-between text-2xl">
-      <h1 class="flex items-center space-x-2 text-2xl outline-none">
+      <h1 class="flex items-center space-x-2 text-2xl outline-hidden">
         <span class="text-[#ED4245]">About</span>
 
         <a
-          class="select-none outline-none duration-500 hover:text-[#ED4245]"
+          class="outline-hidden duration-500 select-none hover:text-[#ED4245]"
           href="#about"
           id="about"
           data-umami-event="Share 'About'"
@@ -47,7 +47,7 @@
       <img
         alt="PHOTO_WITH_ME"
         src="me.webp"
-        class="absolute inset-0 h-full w-full select-none rounded-md object-cover opacity-75 transition-opacity group-hover:opacity-50"
+        class="absolute inset-0 h-full w-full rounded-md object-cover opacity-75 transition-opacity select-none group-hover:opacity-50"
       />
 
       <div class="relative p-8">
@@ -85,7 +85,7 @@
       </div>
 
       <a
-        class="select-none outline-none duration-500 hover:text-[#ED4245]"
+        class="outline-hidden duration-500 select-none hover:text-[#ED4245]"
         href="#my-stack"
         id="my-stack"
         data-umami-event="Share 'My stack'"
@@ -122,7 +122,7 @@
       </div>
 
       <a
-        class="select-none outline-none duration-500 hover:text-[#ED4245]"
+        class="outline-hidden duration-500 select-none hover:text-[#ED4245]"
         href="#socials"
         id="socials"
         data-umami-event="Share 'Socials'"

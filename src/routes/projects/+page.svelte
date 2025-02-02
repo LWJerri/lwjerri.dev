@@ -59,7 +59,7 @@
             {/if}
 
             <a
-              class="outline-none duration-500 hover:text-[#ED4245]"
+              class="outline-hidden duration-500 hover:text-[#ED4245]"
               target="_self"
               rel="noreferrer"
               href="#project-{id}"

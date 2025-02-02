@@ -17,7 +17,7 @@
 
 <div class="hero flex justify-center">
   <div class="hero-content px-1 text-center sm:px-5">
-    <div class="font-bold text-[#5865F2] outline-none">
+    <div class="font-bold text-[#5865F2] outline-hidden">
       <h1 class="text-5xl">{OWNER}</h1>
     </div>
 

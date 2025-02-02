@@ -49,10 +49,10 @@
   {@const prepArtist = fmtText(spotify.artist)}
 
   <div class="avatar w-8">
-    <img class="rounded" src={spotify.album_art_url} alt="ALBUM_ART_IMAGE" />
+    <img class="rounded-sm" src={spotify.album_art_url} alt="ALBUM_ART_IMAGE" />
   </div>
 
-  <a href={trackUrl} target="_blank" class="overflow-hidden text-ellipsis break-all duration-500 hover:text-[#ED4245]"
+  <a href={trackUrl} target="_blank" class="overflow-hidden break-all text-ellipsis duration-500 hover:text-[#ED4245]"
     >{prepSong} [{prepArtist}]</a
   >
 {:else}

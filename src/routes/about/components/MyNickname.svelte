@@ -4,7 +4,7 @@
 
 <p>
   <a
-    class="inline-flex select-none items-baseline font-bold outline-none duration-500 hover:text-[#ED4245]"
+    class="inline-flex items-baseline font-bold outline-hidden duration-500 select-none hover:text-[#ED4245]"
     href="#my-nickname"
     id="my-nickname"
     data-umami-event="Share 'My Nickname'"
