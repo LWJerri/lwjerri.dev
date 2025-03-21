@@ -58,8 +58,8 @@ importers:
         specifier: 1.6.1
         version: 1.6.1(typescript@5.8.2)
       tailwindcss:
-        specifier: 4.0.14
-        version: 4.0.14
+        specifier: 4.0.15
+        version: 4.0.15
       tslib:
         specifier: 2.8.1
         version: 2.8.1
