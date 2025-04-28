@@ -5,7 +5,7 @@ import { vitePreprocess } from "@sveltejs/kit/vite";
 const config = {
   preprocess: vitePreprocess(),
   kit: {
-    adapter: adapter({ runtime: "nodejs18.x", split: false }),
+    adapter: adapter({ runtime: "nodejs22.x", split: false }),
     version: { name: String(Date.now()), pollInterval: 1000 * 10 },
   },
 };
