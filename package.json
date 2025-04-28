@@ -8,6 +8,17 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "packageManager": "pnpm@10.5.0",
+  "engines": {
+    "node": "^18.20.2 || >=20.9.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@sveltejs/kit",
+      "@vercel/speed-insights",
+      "esbuild"
+    ]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LWJerri/lwjerri.dev.git"
