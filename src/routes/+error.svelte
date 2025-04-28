@@ -1,12 +1,12 @@
 <script lang="ts">
-  import SvelteSeo from "svelte-seo";
+  import { Seo } from "@svelte-bin/seo";
   import Fallback from "../components/Fallback.svelte";
 
   const PAGE_TITLE = "Andrii Zontov - Backstage?...";
   const PAGE_DESCRIPTION = "Sorry, but the page you are looking for is not found.";
 </script>
 
-<SvelteSeo
+<Seo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}

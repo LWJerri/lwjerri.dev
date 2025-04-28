@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { Seo } from "@svelte-bin/seo";
   import { onMount } from "svelte";
-  import SvelteSeo from "svelte-seo";
   import Fallback from "../../components/Fallback.svelte";
   import { anchorGo } from "../../helpers/anchorGo";
   import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
@@ -14,7 +14,7 @@
   onMount(async () => anchorGo());
 </script>
 
-<SvelteSeo
+<Seo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}

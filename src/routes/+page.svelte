@@ -1,5 +1,5 @@
 <script lang="ts">
-  import SvelteSeo from "svelte-seo";
+  import { Seo } from "@svelte-bin/seo";
   import { OWNER } from "../helpers/constants";
   import type { PageData } from "./$types";
 
@@ -9,7 +9,7 @@
   const PAGE_DESCRIPTION = "Welcome! Here you'll find information about me, my projects, and my achievements.";
 </script>
 
-<SvelteSeo
+<Seo
   title={PAGE_TITLE}
   description={PAGE_DESCRIPTION}
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
