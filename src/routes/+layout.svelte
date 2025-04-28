@@ -1,7 +1,7 @@
 <script lang="ts">
   import { browser, dev } from "$app/environment";
   import { updated } from "$app/stores";
-  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+  import { injectSpeedInsights } from "@vercel/speed-insights";
   import "../app.css";
   import Confetti from "../components/Confetti.svelte";
   import Update from "../components/Update.svelte";
@@ -10,7 +10,7 @@
   import type { LayoutData } from "./$types";
 
   $: if (browser && !dev) {
-    injectSpeedInsights();
+    injectSpeedInsights({ framework: "sveltekit" });
   }
 
   export let data: LayoutData;
