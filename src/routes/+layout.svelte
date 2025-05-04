@@ -27,7 +27,7 @@
 
   <slot />
 
-  {#if updated && !dev}
+  {#if updated.current && !dev}
     <div class="fixed right-0 bottom-10 left-0 z-10 block text-center">
       <Update />
     </div>
