@@ -1,19 +1,5 @@
-import IconDiscord from "../../components/svg/IconDiscord.svelte";
-import IconTelegram from "../../components/svg/IconTelegram.svelte";
-import IconTwitch from "../../components/svg/IconTwitch.svelte";
 import type { Education, Job } from "../../interfaces";
 import type { PageLoad } from "./$types";
-
-const introduction = [
-  'Hello, stranger! <span class="text-[#5862F2]">My name is Andrii, I was born in 2005 in Ukraine</span>,',
-  "I graduated from high school in 11th grade and went to university in Kyiv.",
-  "I started my way to programming in the 5th grade, when I was playing servers in the popular game Minecraft",
-  "and I was very curious to know how it all worked under the hood. One winter, I was walking with my friend Illia and told him",
-  "that I supposedly know how to write plugins, and he said it was cool and would like to write them too, after coming home,",
-  "I decided to learn how to do it in reality. That is how out of sheer interest I started writing code and I love it so much!",
-  'I chose backend development because <span class="text-[#5862F2]">I am interested in knowing how the product works "behind the scenes"</span>,',
-  "in a place where the user sees nothing and does not know how the information is processed, how it is stored, etc.",
-];
 
 const educations: Education[] = [
   {
@@ -35,10 +21,10 @@ const languages: { name: string; grade: "A1" | "A2" | "B1" | "B2" | "C1" | "C2" 
   { name: "Russian", grade: "Native" },
 ];
 
-const socials: Record<"telegram" | "discord" | "twitch", { icon: any; url: string }> = {
-  telegram: { icon: IconTelegram, url: "https://t.me/LWJerri" },
-  discord: { icon: IconDiscord, url: "https://discordlookup.com/user/432085389948485633" },
-  twitch: { icon: IconTwitch, url: "https://www.twitch.tv/LWGerry" },
+const socials: Record<"telegram" | "discord" | "twitch", { url: string }> = {
+  telegram: { url: "https://t.me/LWJerri" },
+  discord: { url: "https://discordlookup.com/user/432085389948485633" },
+  twitch: { url: "https://www.twitch.tv/LWGerry" },
 };
 
 const jobs: Job[] = [
@@ -82,5 +68,5 @@ const stack: { languages: string[]; technologies: Record<string, Array<string>> 
 };
 
 export const load = (() => {
-  return { socials, stack, introduce: introduction, languages, educations, jobs };
+  return { socials, stack, languages, educations, jobs };
 }) satisfies PageLoad;

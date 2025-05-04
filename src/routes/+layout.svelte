@@ -1,12 +1,12 @@
 <script lang="ts">
   import { browser, dev } from "$app/environment";
-  import { updated } from "$app/stores";
+  import { updated } from "$app/state";
   import { injectSpeedInsights } from "@vercel/speed-insights";
   import "../app.css";
-  import Confetti from "../components/Confetti.svelte";
-  import Update from "../components/Update.svelte";
   import Footer from "../components/navigation/Footer.svelte";
   import Header from "../components/navigation/Header.svelte";
+  import Confetti from "../components/ui/Confetti.svelte";
+  import Update from "../components/ui/Update.svelte";
   import type { LayoutData } from "./$types";
 
   $: if (browser && !dev) {
@@ -27,9 +27,11 @@
 
   <slot />
 
-  <div class="fixed right-0 bottom-10 left-0 z-10 {$updated && !dev ? 'block' : 'hidden'}">
-    <Update />
-  </div>
+  {#if updated && !dev}
+    <div class="fixed right-0 bottom-10 left-0 z-10 block text-center">
+      <Update />
+    </div>
+  {/if}
 
   <Footer views={data.views} />
 </div>

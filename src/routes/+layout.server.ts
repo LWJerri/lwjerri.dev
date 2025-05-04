@@ -1,14 +1,14 @@
-import type { UmamiWebsiteMetric } from "../interfaces/UmamiWebsiteMetric";
+import type { UmamiMetric } from "../interfaces/umamiMetric";
 import type { LayoutServerLoad } from "./$types";
 
 export const load = (async ({ fetch, route }) => {
-  let views: string | number = "🤖";
+  let views: number = 0;
 
   try {
     const request = await fetch("/api/views");
-    const response: UmamiWebsiteMetric[] = await request.json();
+    const response: UmamiMetric[] = await request.json();
 
-    views = response.find(({ x }) => x === route.id)?.y ?? "🛸";
+    views = response.find(({ x }) => x === route.id)?.y ?? 0;
   } catch (err) {
     console.error(err);
   }

@@ -1,15 +1,13 @@
-import type { HeaderDropdownLink } from "../interfaces";
+import type { HeaderLink } from "../interfaces";
 
-export const NOT_PLAYING_ANYTHING = "Not playing anything.";
+const GEO_INFO = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
+const UMAMI_STATS_URL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 
-export const location = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
-export const statsURL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
-
-export const headerDropdownLinks: HeaderDropdownLink[] = [
-  { name: "My projects", url: "/projects" },
-  { name: "About me ", url: "/about" },
-  { name: "My GitHub", url: "https://github.com/LWJerri", external: true },
-  { name: "Support me", url: "https://send.monobank.ua/8webyivBtV", external: true },
+const HEADER_LINKS: HeaderLink[] = [
+  { title: "My projects", url: "/projects" },
+  { title: "About me ", url: "/about" },
+  { title: "My GitHub", url: "https://github.com/LWJerri" },
+  { title: "Support me", url: "https://send.monobank.ua/8webyivBtV" },
 ];
 
-export const OWNER = "Andrii Zontov";
+export { GEO_INFO, HEADER_LINKS, UMAMI_STATS_URL };

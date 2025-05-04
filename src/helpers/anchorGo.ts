@@ -1,9 +1,11 @@
-export function anchorGo() {
+function anchorGo() {
   const anchor = window.location.hash.slice(1);
 
-  if (anchor) {
-    const findElement = document.getElementById(anchor);
+  if (!anchor) return;
 
-    if (findElement) return window.scrollTo({ top: findElement.offsetTop });
-  }
+  const anchorElement = document.getElementById(anchor);
+
+  if (anchorElement) return window.scrollTo({ top: anchorElement.offsetTop });
 }
+
+export { anchorGo };

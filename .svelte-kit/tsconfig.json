@@ -5,22 +5,21 @@
 			"..",
 			"./types"
 		],
-		"importsNotUsedAsValues": "error",
+		"verbatimModuleSyntax": true,
 		"isolatedModules": true,
-		"preserveValueImports": true,
 		"lib": [
 			"esnext",
 			"DOM",
 			"DOM.Iterable"
 		],
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 		"module": "esnext",
 		"noEmit": true,
-		"target": "esnext",
-		"ignoreDeprecations": "5.0"
+		"target": "esnext"
 	},
 	"include": [
 		"ambient.d.ts",
+		"non-ambient.d.ts",
 		"./types/**/$types.d.ts",
 		"../vite.config.js",
 		"../vite.config.ts",
@@ -33,9 +32,11 @@
 	],
 	"exclude": [
 		"../node_modules/**",
-		"./[!ambient.d.ts]**",
 		"../src/service-worker.js",
+		"../src/service-worker/**/*.js",
 		"../src/service-worker.ts",
-		"../src/service-worker.d.ts"
+		"../src/service-worker/**/*.ts",
+		"../src/service-worker.d.ts",
+		"../src/service-worker/**/*.d.ts"
 	]
 }

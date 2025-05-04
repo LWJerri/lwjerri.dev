@@ -1,18 +1,20 @@
-export function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {
+function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {
   event.preventDefault();
 
   const link = event.currentTarget;
   const anchor = new URL(link.href).hash;
 
-  const findElement = document.getElementById(id);
+  const shareElement = document.getElementById(id);
 
-  if (findElement) {
-    navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
+  if (!shareElement) return;
 
-    findElement.innerHTML = "[Copied]";
+  navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
-    setTimeout(() => {
-      findElement.innerHTML = "[#]";
-    }, 2000);
-  }
+  shareElement.innerHTML = "[Copied]";
+
+  setTimeout(() => {
+    shareElement.innerHTML = "[Share]";
+  }, 2000);
 }
+
+export { handleAnchorAbout };

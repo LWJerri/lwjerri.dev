@@ -1,4 +1,4 @@
-export interface Project {
+interface Project {
   name: string;
   description: string;
   stack: string[];
@@ -6,3 +6,5 @@ export interface Project {
   urls?: string[];
   github?: string;
 }
+
+export { type Project };

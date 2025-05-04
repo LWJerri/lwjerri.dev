@@ -1,50 +1,56 @@
 <script lang="ts">
-  import { page } from "$app/stores";
+  import { page } from "$app/state";
   import { onMount } from "svelte";
-  import { headerDropdownLinks } from "../../helpers/constants";
+  import { cn } from "../../helpers/cn";
+  import { HEADER_LINKS } from "../../helpers/constants";
 
-  $: isRootPage = $page.url.pathname === "/";
-  $: isDropdownActive = false;
+  let isDropdownVisible = $state(false);
+  let dropdownElement: HTMLElement;
 
-  let dropdownElement: HTMLDivElement;
+  const isMainPage = $derived(page.url.pathname === "/");
+
+  function toggleDropdown() {
+    isDropdownVisible = !isDropdownVisible;
+  }
 
   onMount(() => {
-    document.addEventListener("click", function (event) {
-      if (!dropdownElement?.contains(event?.target as any)) {
-        isDropdownActive = false;
+    document.addEventListener("click", (event) => {
+      if (dropdownElement && event.target instanceof Node && !dropdownElement.contains(event.target)) {
+        isDropdownVisible = false;
       }
     });
   });
 </script>
 
 <header
-  class="mb-5 flex items-center px-1 py-2 text-lg select-none sm:px-5 {isRootPage ? 'justify-end' : 'justify-between'}"
+  class={cn(
+    "mb-5 flex items-center px-1 py-2 text-lg select-none sm:px-5",
+    isMainPage ? "justify-end" : "justify-between",
+  )}
 >
-  {#if !isRootPage}
-    <a class="duration-500 hover:text-[#ED4245]" href="/">[Home]</a>
-  {/if}
+  <a class={cn("transition-colors duration-300 hover:text-[#ED4245]", isMainPage ? "hidden" : "")} href="/">[Home]</a>
 
-  <div class="inline-flex items-stretch" bind:this={dropdownElement}>
-    <div class="relative">
-      <button
-        on:click={() => (isDropdownActive = !isDropdownActive)}
-        class="outline-hidden duration-500 select-none hover:text-[#ED4245]">[Menu]</button
-      >
+  <nav class="relative" bind:this={dropdownElement}>
+    <button class="transition-colors duration-300 hover:cursor-pointer hover:text-[#ED4245]" onclick={toggleDropdown}
+      >[Menu]</button
+    >
 
-      {#if isDropdownActive}
-        <div
-          class="absolute right-0 z-10 flex w-48 origin-top-right flex-col space-y-0.5 rounded-md bg-[#1D2123] p-2 pl-3 shadow-2xl"
+    <div
+      class={cn(
+        "absolute right-0 z-10 mt-2 flex w-48 origin-top-right transform flex-col space-y-1 rounded-md bg-[#2A2929] p-2 pl-3 shadow-2xl transition-all duration-300 ease-in-out",
+        isDropdownVisible ? "scale-100 opacity-100" : "pointer-events-none hidden scale-95 opacity-0",
+      )}
+    >
+      {#each HEADER_LINKS as link (link.url)}
+        {@const isExternal = link.url.startsWith("http")}
+
+        <a
+          class="transition-colors duration-300 hover:text-[#ED4245]"
+          href={link.url}
+          target={isExternal ? "_blank" : undefined}
+          onclick={toggleDropdown}>{link.title}</a
         >
-          {#each headerDropdownLinks as link}
-            <a
-              class="duration-500 hover:text-[#ED4245]"
-              href={link.url}
-              target={link?.external ? "_blank" : ""}
-              on:click={() => (isDropdownActive = !isDropdownActive)}>{link.name}</a
-            >
-          {/each}
-        </div>
-      {/if}
+      {/each}
     </div>
-  </div>
+  </nav>
 </header>

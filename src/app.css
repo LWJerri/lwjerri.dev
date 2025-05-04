@@ -1,13 +1,5 @@
 @import "tailwindcss";
 
-/*
-  The default border color has changed to `currentColor` in Tailwind CSS v4,
-  so we've added these compatibility styles to make sure everything still
-  looks the same as it did with Tailwind CSS v3.
-
-  If we ever want to remove these styles, we need to add an explicit border
-  color utility to any element that depends on these defaults.
-*/
 @layer base {
   *,
   ::after,
@@ -15,6 +7,29 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #252925f2;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #2a2929;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #595552;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #6f6b67;
   }
 }
 

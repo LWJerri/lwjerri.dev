@@ -1,6 +1,6 @@
 <script lang="ts">
   export let title: string;
-  export let details: string;
+  export let message: string;
 </script>
 
 <div class="grid place-content-center px-4">
@@ -9,6 +9,6 @@
       <h1 class="text-5xl font-bold text-[#ED4245]">{title}</h1>
     </div>
 
-    <p class="mt-4 text-2xl">{details}</p>
+    <p class="mt-4 text-2xl">{message}</p>
   </div>
 </div>

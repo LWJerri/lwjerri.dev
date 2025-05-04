@@ -1,23 +1,21 @@
 <script lang="ts">
-  import { location, statsURL } from "../../helpers/constants";
-  import FooterSong from "../FooterSong.svelte";
-  import IconPlanet from "../svg/IconPlanet.svelte";
+  import { EarthIcon } from "@lucide/svelte";
+  import { GEO_INFO, UMAMI_STATS_URL } from "../../helpers/constants";
+  import FooterSong from "../ui/FooterSong.svelte";
 
-  export let views: number | string;
+  export let views: number;
 </script>
 
 <footer class="pt-5 pb-2 text-lg select-none">
   <div class="grid w-full grid-cols-1 items-center gap-2 px-1 sm:px-5 md:grid-cols-3">
     <div class="flex items-center space-x-2 text-left">
-      <div>
-        <IconPlanet />
-      </div>
+      <EarthIcon />
 
-      <a class="duration-500 hover:text-[#ED4245]" href={location.url} target="_blank">{location.name}</a>
+      <a class="duration-300 hover:text-[#ED4245]" href={GEO_INFO.url} target="_blank">{GEO_INFO.name}</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-center">
-      <a class="duration-500 hover:text-[#ED4245]" href={statsURL} target="_blank">{views} views</a>
+      <a class="duration-300 hover:text-[#ED4245]" href={UMAMI_STATS_URL} target="_blank">{views} views</a>
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">

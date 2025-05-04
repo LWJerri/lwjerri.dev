@@ -25,27 +25,20 @@ This repository contains code that relates to my personal website with informati
 
 > **NOTE:** I'm hosting my portfolio on [Vercel](https://vercel.com) and my website contains some unique features, like [Speed Insights](https://vercel.com/docs/speed-insights). If you wanna host this website on another platform, please, fork this repository and adapt these features to your hosting platform.
 
+## Color Palette
+
+| Color HEX                                  | Usage                                        |
+| ------------------------------------------ | -------------------------------------------- |
+| `#ED4245`                                  | Used when user hover on interactive element. |
+| `#5862F2`                                  | Highlight important text, etc.               |
+| `#121212`, `#0C0E10`                       | Background gradient.                         |
+| `#6F6B67`, `#2A2929`, `#252925`, `#595552` | Custom scrollbar colors                      |
+
 ## Screenshots
 
-### Main Page
-
-![Screenshot #1](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/main.png)
-
-### Projects Page
-
-![Screenshot #2](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/projects_filled.png)
-![Screenshot #3](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/projects_empty.png)
-
-### About Page
-
-![Screenshot #4](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/about_top.png)
-![Screenshot #5](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/about_bottom.png)
-
-### Generated PDF
-
-![Screenshot #6](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/pdf_top.png)
-![Screenshot #7](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/pdf_middle.png)
-![Screenshot #8](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/pdf_bottom.png)
+![Main Page Screenshot](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/main.png)
+![About Page Screenshot](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/about.png)
+![Projects Page Screenshot](https://raw.githubusercontent.com/LWJerri/lwjerri.dev/master/screenshot/projects.png)
 
 ## LICENSE
 

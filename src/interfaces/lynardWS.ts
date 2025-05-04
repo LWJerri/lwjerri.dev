@@ -23,7 +23,7 @@ interface User {
   username: string;
 }
 
-export interface LynardWS {
+interface LynardWS {
   op: number;
   d: {
     active_on_discord_desktop: boolean;
@@ -37,3 +37,5 @@ export interface LynardWS {
   };
   t: "INIT_STATE" | "PRESENCE_UPDATE";
 }
+
+export { type LynardWS };
