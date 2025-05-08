@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@lucide/svelte':
-        specifier: 0.507.0
-        version: 0.507.0(svelte@5.28.2)
+        specifier: 0.508.0
+        version: 0.508.0(svelte@5.28.2)
       '@umami/api-client':
         specifier: 0.78.0
         version: 0.78.0(next@13.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@10.0.0)
@@ -265,8 +265,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@lucide/svelte@0.507.0':
-    resolution: {integrity: sha512-kXIg/2IHEo1bAwZG94fjA9O6+E3Sv5aQrW2yyPf4JvCYIUIF8DGLIQI4vfjoUyNq2dEX4cI33pZarzGOHr0npg==}
+  '@lucide/svelte@0.508.0':
+    resolution: {integrity: sha512-yJZz7QMP4VvtyHlnjSIvM+DGyeCoZJlWMJJDm9K7op4Vf41Q5kguq25uXH8t9I5y0xT2aWpRlxbpvK9L0K1uRA==}
     peerDependencies:
       svelte: ^5
 
@@ -685,8 +685,8 @@ packages:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
     engines: {node: '>=10.16.0'}
 
-  caniuse-lite@1.0.30001716:
-    resolution: {integrity: sha512-49/c1+x3Kwz7ZIWt+4DvK3aMJy9oYXXG6/97JKsnjdCk/6n9vVyWL8NAwVt95Lwt9eigI10Hl782kDfZUUlRXw==}
+  caniuse-lite@1.0.30001717:
+    resolution: {integrity: sha512-auPpttCq6BDEG8ZAuHJIplGw6GODhjw+/11e7IjpnYCxZcW/ONgPs0KVBJ0d1bY3e2+7PRe5RCLyP+PfwVgkYw==}
 
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
@@ -1445,7 +1445,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lucide/svelte@0.507.0(svelte@5.28.2)':
+  '@lucide/svelte@0.508.0(svelte@5.28.2)':
     dependencies:
       svelte: 5.28.2
 
@@ -1785,7 +1785,7 @@ snapshots:
     dependencies:
       streamsearch: 1.1.0
 
-  caniuse-lite@1.0.30001716: {}
+  caniuse-lite@1.0.30001717: {}
 
   chownr@3.0.0: {}
 
@@ -2065,7 +2065,7 @@ snapshots:
       '@next/env': 13.5.11
       '@swc/helpers': 0.5.2
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001716
+      caniuse-lite: 1.0.30001717
       postcss: 8.4.31
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
