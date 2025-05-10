@@ -44,6 +44,19 @@
       }
     </script>
 
+    <script async defer>
+      if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
+        let script = document.createElement("script");
+
+        script.async = true;
+        script.defer = true;
+        script.src = "https://rybbit.lwjerri.dev/api/script.js";
+        script.setAttribute("data-site-id", "1");
+
+        document.head.appendChild(script);
+      }
+    </script>
+
     %sveltekit.head%
   </head>
 
