@@ -67,8 +67,8 @@ importers:
         specifier: 5.28.2
         version: 5.28.2
       tailwindcss:
-        specifier: 4.1.5
-        version: 4.1.5
+        specifier: 4.1.7
+        version: 4.1.7
       tslib:
         specifier: 2.8.1
         version: 2.8.1
@@ -1371,9 +1371,6 @@ packages:
   tailwind-merge@3.3.0:
     resolution: {integrity: sha512-fyW/pEfcQSiigd5SNn0nApUOxx0zB/dm6UDU/rEwc2c3sX2smWUNbapHv+QRqLGVp9GWX3THIa7MUGPo+YkDzQ==}
 
-  tailwindcss@4.1.5:
-    resolution: {integrity: sha512-nYtSPfWGDiWgCkwQG/m+aX83XCwf62sBgg3bIlNiiOcggnS1x3uVRDAuyelBFL+vJdOPPCGElxv9DjHJjRHiVA==}
-
   tailwindcss@4.1.7:
     resolution: {integrity: sha512-kr1o/ErIdNhTz8uzAYL7TpaUuzKIE6QPQ4qmSdxnoX/lo+5wmUHQA6h3L5yIqEImSRnAAURDirLu/BgiXGPAhg==}
 
@@ -2521,8 +2518,6 @@ snapshots:
       zimmerframe: 1.1.2
 
   tailwind-merge@3.3.0: {}
-
-  tailwindcss@4.1.5: {}
 
   tailwindcss@4.1.7: {}
 
