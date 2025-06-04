@@ -24,7 +24,7 @@ const languages: { name: string; grade: "A1" | "A2" | "B1" | "B2" | "C1" | "C2" 
 const socials: Record<"telegram" | "discord" | "twitch", { url: string }> = {
   telegram: { url: "https://t.me/LWJerri" },
   discord: { url: "https://discordlookup.com/user/432085389948485633" },
-  twitch: { url: "https://www.twitch.tv/LWGerry" },
+  twitch: { url: "https://www.twitch.tv/LWJerry" },
 };
 
 const jobs: Job[] = [
