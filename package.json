@@ -15,6 +15,7 @@
   "pnpm": {
     "onlyBuiltDependencies": [
       "@sveltejs/kit",
+      "@tailwindcss/oxide",
       "@vercel/speed-insights",
       "esbuild"
     ]
