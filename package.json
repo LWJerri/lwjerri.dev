@@ -39,7 +39,7 @@
     "humanize-duration": "3.33.0",
     "supports-color": "10.0.0",
     "svelte-confetti": "2.3.1",
-    "tailwind-merge": "3.3.0"
+    "tailwind-merge": "3.3.1"
   },
   "devDependencies": {
     "@svelte-bin/seo": "0.0.1",
