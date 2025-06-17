@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/LWJerri/lwjerri.dev#readme",
   "dependencies": {
-    "@lucide/svelte": "0.515.0",
+    "@lucide/svelte": "0.516.0",
     "@umami/api-client": "0.79.0",
     "@vercel/speed-insights": "1.2.0",
     "clsx": "2.1.1",
