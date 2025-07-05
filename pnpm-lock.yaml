@@ -27,8 +27,8 @@ importers:
         specifier: 10.0.0
         version: 10.0.0
       svelte-confetti:
-        specifier: 2.3.1
-        version: 2.3.1(svelte@5.35.2)
+        specifier: 2.3.2
+        version: 2.3.2(svelte@5.35.2)
       tailwind-merge:
         specifier: 3.3.1
         version: 3.3.1
@@ -1367,8 +1367,8 @@ packages:
     resolution: {integrity: sha512-HRVVSbCCMbj7/kdWF9Q+bbckjBHLtHMEoJWlkmYzzdwhYMkjkOwubLM6t7NbWKjgKamGDrWL1++KrjUO1t9oAQ==}
     engines: {node: '>=18'}
 
-  svelte-confetti@2.3.1:
-    resolution: {integrity: sha512-bKd8etTOeBQyeS9LDPuSd7Oqy5msf0xvxItzsHPajKaarr/LWFzqPq7rp6QQO5rGTzLgM0fmjovOvLkRbrd2gg==}
+  svelte-confetti@2.3.2:
+    resolution: {integrity: sha512-cfIwoGqMPYWRYDUz2g7mG1uHYWy7VBepelQdzCC3j/M42UrAqaBYmIi9xaoQfow4fbINHO9WuARnTyK2bjjGQg==}
     peerDependencies:
       svelte: '>=5.0.0'
 
@@ -2507,7 +2507,7 @@ snapshots:
 
   supports-color@10.0.0: {}
 
-  svelte-confetti@2.3.1(svelte@5.35.2):
+  svelte-confetti@2.3.2(svelte@5.35.2):
     dependencies:
       svelte: 5.35.2
 
