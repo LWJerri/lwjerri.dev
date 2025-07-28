@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@lucide/svelte':
-        specifier: 0.525.0
-        version: 0.525.0(svelte@5.36.7)
+        specifier: 0.526.0
+        version: 0.526.0(svelte@5.36.7)
       '@umami/api-client':
         specifier: 0.79.0
         version: 0.79.0(next@13.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@10.0.0)
@@ -410,8 +410,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.29':
     resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
-  '@lucide/svelte@0.525.0':
-    resolution: {integrity: sha512-dyUxkXzepagLUzL8jHQNdeH286nC66ClLACsg+Neu/bjkRJWPWMzkT+H0DKlE70QdkicGCfs1ZGmXCc351hmZA==}
+  '@lucide/svelte@0.526.0':
+    resolution: {integrity: sha512-D0pRA/tTLajPFok7gr5+bMeGeEsszAJOSx02i/jPuiGiakj1DHj3D+OEjTyYLeSHAYOmRu5AdWZB/Ft01tdAUQ==}
     peerDependencies:
       svelte: ^5
 
@@ -1686,7 +1686,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.4
 
-  '@lucide/svelte@0.525.0(svelte@5.36.7)':
+  '@lucide/svelte@0.526.0(svelte@5.36.7)':
     dependencies:
       svelte: 5.36.7
 
