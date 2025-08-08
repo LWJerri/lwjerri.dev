@@ -37,7 +37,7 @@
     "@vercel/speed-insights": "1.2.0",
     "clsx": "2.1.1",
     "humanize-duration": "3.33.0",
-    "supports-color": "10.0.0",
+    "supports-color": "10.1.0",
     "svelte-confetti": "2.3.2",
     "tailwind-merge": "3.3.1"
   },
