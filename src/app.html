@@ -31,32 +31,6 @@
       rel="stylesheet"
     />
 
-    <script async defer>
-      if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
-        let script = document.createElement("script");
-
-        script.async = true;
-        script.defer = true;
-        script.src = "https://umami.lwjerri.dev/script.js";
-        script.setAttribute("data-website-id", "e107c898-1d93-45b4-b9e8-f8e488489b6b");
-
-        document.head.appendChild(script);
-      }
-    </script>
-
-    <script async defer>
-      if (window.location.hostname.toLocaleLowerCase().startsWith("lwjerri")) {
-        let script = document.createElement("script");
-
-        script.async = true;
-        script.defer = true;
-        script.src = "https://rybbit.lwjerri.dev/api/script.js";
-        script.setAttribute("data-site-id", "1");
-
-        document.head.appendChild(script);
-      }
-    </script>
-
     %sveltekit.head%
   </head>
 
