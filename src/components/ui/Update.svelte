@@ -1,5 +1,7 @@
 <script lang="ts">
-  import { AlertCircleIcon, RefreshCcwIcon, XIcon } from "@lucide/svelte";
+  import { default as AlertCircleIcon } from "@lucide/svelte/icons/circle-alert";
+  import { default as RefreshCcwIcon } from "@lucide/svelte/icons/refresh-ccw";
+  import { default as XIcon } from "@lucide/svelte/icons/x";
   import { cn } from "../../helpers/cn";
 
   let isAlertVisible = true;

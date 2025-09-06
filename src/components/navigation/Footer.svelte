@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { EarthIcon } from "@lucide/svelte";
+  import { default as EarthIcon } from "@lucide/svelte/icons/earth";
   import { GEO_INFO, UMAMI_STATS_URL } from "../../helpers/constants";
   import FooterSong from "../ui/FooterSong.svelte";
 
