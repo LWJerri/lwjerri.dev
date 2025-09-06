@@ -6,7 +6,7 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({ runtime: "nodejs22.x", split: false }),
-    version: { name: String(Date.now()), pollInterval: 1000 * 10 },
+    version: { name: process.env.npm_package_version, pollInterval: 1000 * 10 },
   },
 };
 
