@@ -23,6 +23,9 @@ importers:
       humanize-duration:
         specifier: 3.33.0
         version: 3.33.0
+      rollup-plugin-analyzer:
+        specifier: 4.0.0
+        version: 4.0.0
       supports-color:
         specifier: 10.2.0
         version: 10.2.0
@@ -1287,6 +1290,10 @@ packages:
     resolution: {integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==}
     engines: {node: '>=8'}
 
+  rollup-plugin-analyzer@4.0.0:
+    resolution: {integrity: sha512-LL9GEt3bkXp6Wa19SNR5MWcvHNMvuTFYg+eYBZN2OIFhSWN+pEJUQXEKu5BsOeABob3x9PDaLKW7w5iOJnsESQ==}
+    engines: {node: '>=8.0.0'}
+
   rollup@4.40.1:
     resolution: {integrity: sha512-C5VvvgCCyfyotVITIAv+4efVytl5F7wt+/I2i9q9GZcEXW9BP52YYOXC58igUi+LFZVHukErIIqQSWwv/M3WRw==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -2424,6 +2431,8 @@ snapshots:
       loose-envify: 1.4.0
 
   resolve-from@5.0.0: {}
+
+  rollup-plugin-analyzer@4.0.0: {}
 
   rollup@4.40.1:
     dependencies:
