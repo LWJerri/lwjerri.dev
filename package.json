@@ -38,7 +38,7 @@
     "clsx": "2.1.1",
     "humanize-duration": "3.33.0",
     "rollup-plugin-analyzer": "4.0.0",
-    "supports-color": "10.2.0",
+    "supports-color": "10.2.2",
     "svelte-confetti": "2.3.2",
     "tailwind-merge": "3.3.1"
   },
