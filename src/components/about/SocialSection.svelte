@@ -5,7 +5,7 @@
 
 <div class="space-y-5">
   <h1 class="flex items-center space-x-2 text-2xl">
-    <div class="break-words">
+    <div class="wrap-break-word">
       <span class="text-[#ED4245]">Socials</span>
     </div>
 

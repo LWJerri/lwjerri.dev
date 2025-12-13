@@ -1,4 +1,4 @@
-function handleAnchorProjects(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+async function handleAnchorProjects(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
   event.preventDefault();
 
   const link = event.currentTarget;
@@ -11,7 +11,7 @@ function handleAnchorProjects(event: MouseEvent & { currentTarget: EventTarget &
   const { children } = anchorElement.children[0].children[3];
   const findShareBtn = children[children.length - 1];
 
-  navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
+  await navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
   findShareBtn.innerHTML = "[Copied]";
 

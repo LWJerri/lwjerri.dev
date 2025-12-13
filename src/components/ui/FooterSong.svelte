@@ -56,7 +56,9 @@
       socket.removeEventListener("message", handleMessage);
       socket.removeEventListener("error", handleError);
       socket.removeEventListener("close", handleClose);
+
       socket.close();
+
       socket = null;
     }
 

@@ -1,4 +1,4 @@
-function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {
+async function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }, id: string) {
   event.preventDefault();
 
   const link = event.currentTarget;
@@ -8,7 +8,7 @@ function handleAnchorAbout(event: MouseEvent & { currentTarget: EventTarget & HT
 
   if (!shareElement) return;
 
-  navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
+  await navigator.clipboard.writeText(`${origin}${window.location.pathname}${anchor}`);
 
   shareElement.innerHTML = "[Copied]";
 
