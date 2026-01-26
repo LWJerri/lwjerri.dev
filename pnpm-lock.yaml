@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@lucide/svelte':
-        specifier: 0.562.0
-        version: 0.562.0(svelte@5.46.1)
+        specifier: 0.563.1
+        version: 0.563.1(svelte@5.46.1)
       '@umami/api-client':
         specifier: 0.80.0
         version: 0.80.0(next@13.5.11(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(supports-color@10.2.2)
@@ -428,8 +428,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@lucide/svelte@0.562.0':
-    resolution: {integrity: sha512-wDMULwtTFN2Sc/TFBm6gfuVCNb4Y5P9LDrwxNnUbV52+IEU7NXZmvxwXoz+vrrpad6Xupq+Hw5eUlqIHEGhouw==}
+  '@lucide/svelte@0.563.1':
+    resolution: {integrity: sha512-Kt+MbnE5D9RsuI/csmf7M+HWxALe57x3A0DhQ8pPnnUpneh7zuldrYjlT+veWtk+tVnp5doQtaAAxLujzIlhBw==}
     peerDependencies:
       svelte: ^5
 
@@ -855,8 +855,8 @@ packages:
     resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==}
     engines: {node: '>=10.16.0'}
 
-  caniuse-lite@1.0.30001763:
-    resolution: {integrity: sha512-mh/dGtq56uN98LlNX9qdbKnzINhX0QzhiWBFEkFfsFO4QyCvL8YegrJAazCwXIeqkIob8BlZPGM3xdnY+sgmvQ==}
+  caniuse-lite@1.0.30001766:
+    resolution: {integrity: sha512-4C0lfJ0/YPjJQHagaE9x2Elb69CIqEPZeG0anQt9SIvIoOH4a4uaRl73IavyO+0qZh6MDLH//DrXThEYKHkmYA==}
 
   chownr@3.0.0:
     resolution: {integrity: sha512-+IxzY9BZOQd/XuYPRmrvEVjF/nqj5kgT4kEq7VofrDoM1MxoRjEWkrCC3EtLi59TVawxTAn+orJwFQcrqEN1+g==}
@@ -1353,6 +1353,7 @@ packages:
   tar@7.5.2:
     resolution: {integrity: sha512-7NyxrTE4Anh8km8iEy7o0QYPs+0JKBTj5ZaqHg6B39erLg0qYXN3BijtShwbsNSvQ+LN75+KV+C4QR/f6Gwnpg==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tinyglobby@0.2.15:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
@@ -1634,7 +1635,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@lucide/svelte@0.562.0(svelte@5.46.1)':
+  '@lucide/svelte@0.563.1(svelte@5.46.1)':
     dependencies:
       svelte: 5.46.1
 
@@ -1972,7 +1973,7 @@ snapshots:
     dependencies:
       streamsearch: 1.1.0
 
-  caniuse-lite@1.0.30001763: {}
+  caniuse-lite@1.0.30001766: {}
 
   chownr@3.0.0: {}
 
@@ -2252,7 +2253,7 @@ snapshots:
       '@next/env': 13.5.11
       '@swc/helpers': 0.5.2
       busboy: 1.6.0
-      caniuse-lite: 1.0.30001763
+      caniuse-lite: 1.0.30001766
       postcss: 8.4.31
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
