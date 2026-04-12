@@ -1,26 +1,46 @@
 <script lang="ts">
+  import Autoplay from "embla-carousel-autoplay";
+  import useEmblaCarousel from "embla-carousel-svelte";
+  import { cn } from "../../helpers/cn";
+  import { load as aboutLoad } from "../../routes/about/+page";
   import Divider from "../ui/Divider.svelte";
   import Section from "./Section.svelte";
+
+  const { imagesCarousel } = aboutLoad();
 </script>
 
 <div>
   <Section title="Intro">
-    <div slot="title" class="group relative mb-5 block h-full select-none">
-      <img
-        alt="PHOTO_WITH_ME"
-        src="me.webp"
-        class="absolute inset-0 h-full w-full rounded-md object-cover opacity-75 transition-opacity select-none group-hover:opacity-50"
-      />
+    <div slot="title" class="embla">
+      <div
+        class="embla__viewport"
+        use:useEmblaCarousel={{
+          options: { loop: true },
+          plugins: [Autoplay({ stopOnMouseEnter: true, stopOnInteraction: false })],
+        }}
+      >
+        <div class="embla__container">
+          {#each imagesCarousel as slide}
+            <div class="embla__slide group relative mr-2 mb-5 block h-full select-none">
+              <img
+                alt="Something with me in it"
+                src={slide.image}
+                class="absolute inset-0 h-full w-full rounded-md object-cover opacity-75 transition-opacity select-none group-hover:opacity-50"
+              />
 
-      <div class="relative p-8">
-        <p class="font-bold">Me in my happy childhood 💖</p>
+              <div class="relative p-8">
+                <p class={cn("font-bold", slide.titlePosition === "right" && "text-right")}>{slide.title}</p>
 
-        <div class="mt-96">
-          <div
-            class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-          >
-            <p>This photo was taken in kindergarten for the new year, where I played the role of a clown.</p>
-          </div>
+                <div class="mt-96">
+                  <div
+                    class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                  >
+                    <p>{slide.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          {/each}
         </div>
       </div>
     </div>

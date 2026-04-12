@@ -38,6 +38,8 @@
     "@umami/api-client": "0.80.0",
     "@vercel/speed-insights": "2.0.0",
     "clsx": "2.1.1",
+    "embla-carousel-autoplay": "8.6.0",
+    "embla-carousel-svelte": "8.6.0",
     "humanize-duration": "3.33.2",
     "rollup-plugin-analyzer": "4.0.0",
     "supports-color": "10.2.2",

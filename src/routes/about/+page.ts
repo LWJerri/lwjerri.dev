@@ -1,5 +1,20 @@
-import type { Education, Job } from "../../interfaces";
+import type { Education, ImageCarousel, Job } from "../../interfaces";
 import type { PageLoad } from "./$types";
+
+const imagesCarousel: ImageCarousel[] = [
+  {
+    title: "My happy childhood 💖",
+    titlePosition: "left",
+    description: "This photo was taken in kindergarten for the new year, where I played the role of a clown, lol.",
+    image: "me.webp",
+  },
+  {
+    title: "Czech Republic Trip",
+    titlePosition: "right",
+    description: "This photo was taken by my friend in Prague during our trip across Czech Republic.",
+    image: "prague.webp",
+  },
+];
 
 const educations: Education[] = [
   {
@@ -68,5 +83,5 @@ const stack: { languages: string[]; technologies: Record<string, Array<string>> 
 };
 
 export const load = (() => {
-  return { socials, stack, languages, educations, jobs };
+  return { socials, stack, languages, educations, jobs, imagesCarousel };
 }) satisfies PageLoad;

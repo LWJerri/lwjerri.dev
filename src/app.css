@@ -31,6 +31,20 @@
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: #6f6b67;
   }
+
+  .embla__viewport {
+    overflow: hidden;
+  }
+
+  .embla__container {
+    display: flex;
+    touch-action: pan-y pinch-zoom;
+  }
+
+  .embla__slide {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
 }
 
 @utility box-decorator {
