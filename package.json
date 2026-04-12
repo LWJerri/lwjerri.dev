@@ -1,12 +1,14 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.5.2",
+  "version": "2.6.0",
   "description": "My personal website, which is powered by Vite + SvelteKit and TailwindCSS.",
   "type": "module",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ci:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "prepare": "husky"
   },
   "packageManager": "pnpm@10.33.0",
   "engines": {
@@ -49,14 +51,17 @@
     "@sveltejs/vite-plugin-svelte": "7.0.0",
     "@tailwindcss/postcss": "4.2.2",
     "@types/humanize-duration": "3.27.4",
+    "@types/node": "25.6.0",
+    "husky": "9.1.7",
     "postcss": "8.5.9",
     "prettier": "3.8.2",
     "prettier-plugin-svelte": "3.5.1",
     "prettier-plugin-tailwindcss": "0.7.2",
     "svelte": "5.55.3",
+    "svelte-check": "4.4.6",
     "tailwindcss": "4.2.2",
     "tslib": "2.8.1",
-    "typescript": "5.9.3",
+    "typescript": "6.0.2",
     "vite": "8.0.8"
   }
 }
