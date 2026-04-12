@@ -1,6 +1,6 @@
 import type { HeaderLink } from "../interfaces";
 
-const GEO_INFO = { name: "Ukraine", url: "https://www.google.com/maps/place/Ukraine" };
+const GEO_INFO = { name: "Czech Republic", url: "https://www.google.com/maps/place/Czechia" };
 const UMAMI_STATS_URL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 const DISCORD_USERNAME = "LWJerri";
 
