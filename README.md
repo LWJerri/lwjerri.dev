@@ -6,7 +6,7 @@ This repository contains code that relates to my personal website with informati
 
 ### Requirements
 
-- Installed [Node.js](https://nodejs.org).
+- Installed v24 [Node.js](https://nodejs.org) version.
 - Enabled [corepack](https://nodejs.org/api/corepack.html) or installed `pnpm` manually.
 - Be a member of [Lynard](https://github.com/phineas/lanyard) Discord server to receive presence updates for footer.
 - Vercel account (Optional if you plane use another hosting).
