@@ -1,7 +1,7 @@
 <script lang="ts">
   import { browser, dev } from "$app/environment";
   import { updated } from "$app/state";
-  import { injectSpeedInsights } from "@vercel/speed-insights";
+  import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
   import { onMount } from "svelte";
   import "../app.css";
   import Footer from "../components/navigation/Footer.svelte";
@@ -39,7 +39,7 @@
   });
 
   $: if (browser && !dev) {
-    injectSpeedInsights({ framework: "sveltekit" });
+    injectSpeedInsights();
   }
 
   export let data: LayoutData;
