@@ -1,2 +1,1 @@
-pnpm ci:format:check
-pnpm ci:types:check
+pnpm ci:check
