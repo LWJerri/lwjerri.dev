@@ -1,7 +1,7 @@
 import type { UmamiMetric } from "../interfaces/umamiMetric";
 import type { LayoutServerLoad } from "./$types";
 
-export const load = (async ({ fetch, route }) => {
+export const load = (async ({ fetch, route, url }) => {
   let views: number = 0;
 
   try {
@@ -13,5 +13,7 @@ export const load = (async ({ fetch, route }) => {
     console.error(err);
   }
 
-  return { views };
+  const enableAnalytics = url.hostname.toLowerCase().startsWith("lwjerri");
+
+  return { views, enableAnalytics };
 }) satisfies LayoutServerLoad;
