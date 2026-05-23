@@ -7,12 +7,12 @@
 
 <Page centered>
   <div class="text-center">
-    <div class="font-bold text-[#60A5FA] outline-hidden">
+    <div class="font-bold text-[#ED4245] outline-hidden">
       <h1 class="cursor-default text-5xl">Andrii Zontov</h1>
     </div>
 
     <p class="mt-5 cursor-default text-2xl">
-      I am a <span class="text-[#ED4245]">{data.age}</span> old backend engineer
+      I am a <span class="text-[#60A5FA]">{data.age}</span> old backend engineer
     </p>
 
     <div class="mt-5 text-2xl">
