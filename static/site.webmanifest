@@ -1,0 +1,27 @@
+{
+  "name": "Andrii Zontov aka. LWJerri",
+  "short_name": "LWJerri",
+  "description": "Welcome! Here you'll find information about me, my projects, and my achievements.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "en",
+  "dir": "ltr",
+  "background_color": "#0C0E10",
+  "theme_color": "#0C0E10",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "256x256",
+      "type": "image/x-icon",
+      "purpose": "maskable"
+    }
+  ]
+}
