@@ -46,7 +46,6 @@
     "svelte-confetti": "2.3.2",
     "tailwind-merge": "3.6.0",
     "rollup-plugin-analyzer": "4.0.0",
-    "@svelte-bin/seo": "0.0.1",
     "@sveltejs/adapter-vercel": "6.3.3",
     "@sveltejs/kit": "2.61.0",
     "@sveltejs/vite-plugin-svelte": "7.1.2",

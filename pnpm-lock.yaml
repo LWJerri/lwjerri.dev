@@ -30,9 +30,6 @@ importers:
         specifier: 3.33.2
         version: 3.33.2
     devDependencies:
-      '@svelte-bin/seo':
-        specifier: 0.0.1
-        version: 0.0.1(svelte@5.55.9)
       '@sveltejs/adapter-vercel':
         specifier: 6.3.3
         version: 6.3.3(@sveltejs/kit@2.61.0(@sveltejs/vite-plugin-svelte@7.1.2(svelte@5.55.9)(vite@8.0.14(@types/node@25.9.1)(jiti@2.7.0)))(svelte@5.55.9)(typescript@6.0.3)(vite@8.0.14(@types/node@25.9.1)(jiti@2.7.0)))
@@ -474,11 +471,6 @@ packages:
 
   '@standard-schema/spec@1.1.0':
     resolution: {integrity: sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==}
-
-  '@svelte-bin/seo@0.0.1':
-    resolution: {integrity: sha512-ah/p5q1HyE+HzzNesWR22mX8TqqOogLsnKxykLPTczclTna1gxWnkwWZRc2lwvmcc00o9JfydM9Qo7P9khP4gw==}
-    peerDependencies:
-      svelte: ^4.0.0
 
   '@sveltejs/acorn-typescript@1.0.10':
     resolution: {integrity: sha512-4WfKk68eTih+MiJD4fSbxN7E8kVBmTMPWHUPYjvl2N0rMs53YLTT8/YjKU5Dtnz5LqDjl7LEw4U7lXR2W3J5WA==}
@@ -1567,10 +1559,6 @@ snapshots:
       picomatch: 4.0.4
 
   '@standard-schema/spec@1.1.0': {}
-
-  '@svelte-bin/seo@0.0.1(svelte@5.55.9)':
-    dependencies:
-      svelte: 5.55.9
 
   '@sveltejs/acorn-typescript@1.0.10(acorn@8.16.0)':
     dependencies:
