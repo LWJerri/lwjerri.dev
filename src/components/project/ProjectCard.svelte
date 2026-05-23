@@ -1,5 +1,6 @@
 <script lang="ts">
   import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
+  import LockKeyholeIcon from "@lucide/svelte/icons/lock-keyhole";
   import type { Project } from "../../interfaces";
 
   let { project }: { project: Project } = $props();
@@ -21,11 +22,13 @@
 
 <div class="cursor-default rounded-md bg-[#2A2929] p-4" id={project.name}>
   <div class="space-y-5">
-    <div class="flex items-center justify-between">
-      <h1 class="text-lg font-bold">{project.name}</h1>
+    <div class="flex items-center gap-0.5">
+      <span class="text-lg font-bold">{project.name}</span>
 
       {#if project.isClosed}
-        <p class="box-decorator bg-[#ED4245] font-bold">Closed</p>
+        <sup class="text-lg font-semibold">
+          <LockKeyholeIcon size={16} />
+        </sup>
       {/if}
     </div>
 
