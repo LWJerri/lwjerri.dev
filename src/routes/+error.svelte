@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Seo } from "@svelte-bin/seo";
+  import Page from "../components/layout/Page.svelte";
   import Fallback from "../components/ui/Fallback.svelte";
 
   const PAGE_TITLE = "Andrii Zontov - Backstage?...";
@@ -15,6 +16,6 @@
   nositelinkssearchbox={true}
 />
 
-<div class="flex flex-1 flex-col items-center justify-center">
-  <Fallback title="Umm..." message="Requested page not found" />
-</div>
+<Page centered>
+  <Fallback title="Umm..." message="Requested page not found." />
+</Page>

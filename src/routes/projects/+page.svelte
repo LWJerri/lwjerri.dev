@@ -2,6 +2,7 @@
   import { afterNavigate } from "$app/navigation";
   import { scrollToHash } from "$lib/navigation/scrollToHash";
   import { Seo } from "@svelte-bin/seo";
+  import Page from "../../components/layout/Page.svelte";
   import ProjectCard from "../../components/project/ProjectCard.svelte";
   import Fallback from "../../components/ui/Fallback.svelte";
   import type { PageData } from "./$types";
@@ -20,16 +21,14 @@
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
 />
 
-<div class="flex flex-1 flex-col px-1 sm:px-5">
+<Page centered={!data.projects.length}>
   {#if !data.projects.length}
-    <div class="flex flex-1 flex-col items-center justify-center">
-      <Fallback title="So silent here..." message="More projects will be added soon." />
-    </div>
+    <Fallback title="So silent here..." message="More projects will be added soon." />
   {:else}
-    <div class="mx-auto grid w-full max-w-4xl grow content-start gap-4">
+    <div class="grid w-full content-start gap-4">
       {#each data.projects as project}
         <ProjectCard {project} />
       {/each}
     </div>
   {/if}
-</div>
+</Page>

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { Seo } from "@svelte-bin/seo";
+  import Page from "../components/layout/Page.svelte";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
@@ -14,8 +15,8 @@
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
 />
 
-<div class="flex flex-1 flex-col items-center justify-center">
-  <div class="px-1 text-center sm:px-5">
+<Page centered>
+  <div class="text-center">
     <div class="font-bold text-[#5862F2] outline-hidden">
       <h1 class="cursor-default text-5xl">Andrii Zontov</h1>
     </div>
@@ -29,4 +30,4 @@
       <a class="duration-300 hover:text-[#ED4245]" href="/about">[About]</a>
     </div>
   </div>
-</div>
+</Page>
