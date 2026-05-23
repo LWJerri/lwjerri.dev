@@ -14,8 +14,8 @@
   openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
 />
 
-<div class="hero flex justify-center">
-  <div class="hero-content px-1 text-center sm:px-5">
+<div class="flex flex-1 flex-col items-center justify-center">
+  <div class="px-1 text-center sm:px-5">
     <div class="font-bold text-[#5862F2] outline-hidden">
       <h1 class="cursor-default text-5xl">Andrii Zontov</h1>
     </div>

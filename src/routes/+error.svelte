@@ -15,4 +15,6 @@
   nositelinkssearchbox={true}
 />
 
-<Fallback title="Umm..." message="Requested page not found" />
+<div class="flex flex-1 flex-col items-center justify-center">
+  <Fallback title="Umm..." message="Requested page not found" />
+</div>

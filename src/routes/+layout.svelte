@@ -32,14 +32,16 @@
   {/if}
 </svelte:head>
 
-<div class="relative flex min-h-dvh flex-col justify-between bg-linear-to-br from-[#121212] to-[#0C0E10] text-white">
+<div class="relative flex min-h-dvh flex-col bg-linear-to-br from-[#121212] to-[#0C0E10] text-white">
   {#if date.getMonth() === 3 && date.getDate() === 28}
     <Confetti />
   {/if}
 
   <Header />
 
-  {@render children()}
+  <main class="flex grow flex-col">
+    {@render children()}
+  </main>
 
   {#if updated.current && !dev}
     <div class="fixed right-0 bottom-10 left-0 z-10 block text-center">
