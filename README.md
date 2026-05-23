@@ -30,7 +30,7 @@ This repository contains code that relates to my personal website with informati
 | Color HEX                                  | Usage                                        |
 | ------------------------------------------ | -------------------------------------------- |
 | `#ED4245`                                  | Used when user hover on interactive element. |
-| `#5862F2`                                  | Highlight important text, etc.               |
+| `#60A5FA`                                  | Highlight important text, etc.               |
 | `#121212`, `#0C0E10`                       | Background gradient.                         |
 | `#6F6B67`, `#2A2929`, `#252925`, `#595552` | Custom scrollbar colors                      |
 

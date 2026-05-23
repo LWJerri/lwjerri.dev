@@ -9,7 +9,7 @@
 
 <div
   class={cn(
-    "flex w-full max-w-2xl items-center justify-between rounded-md bg-[#5862F2] px-5 py-2",
+    "flex w-full max-w-2xl items-center justify-between rounded-md bg-[#60A5FA] px-5 py-2",
     isAlertVisible ? "inline-flex" : "hidden",
   )}
 >

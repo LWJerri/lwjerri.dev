@@ -7,7 +7,7 @@
 
 <Page centered>
   <div class="text-center">
-    <div class="font-bold text-[#5862F2] outline-hidden">
+    <div class="font-bold text-[#60A5FA] outline-hidden">
       <h1 class="cursor-default text-5xl">Andrii Zontov</h1>
     </div>
 

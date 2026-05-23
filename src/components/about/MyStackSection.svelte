@@ -42,7 +42,7 @@
   <div class="space-y-2">
     <h2 class="text-lg text-[#ED4245]">Languages</h2>
 
-    <p class="text-[#5862F2]">{stack.languages.join(", ")}</p>
+    <p class="text-[#60A5FA]">{stack.languages.join(", ")}</p>
   </div>
 
   <div class="space-y-2">
@@ -50,7 +50,7 @@
 
     {#each Object.keys(stack.technologies) as technology}
       <div>
-        {technology}: <span class="text-[#5862F2]">{stack.technologies[technology].join(", ")}</span>
+        {technology}: <span class="text-[#60A5FA]">{stack.technologies[technology].join(", ")}</span>
       </div>
     {/each}
   </div>
