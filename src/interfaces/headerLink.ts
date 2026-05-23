@@ -3,4 +3,4 @@ interface HeaderLink {
   url: string;
 }
 
-export { type HeaderLink };
+export type { HeaderLink };

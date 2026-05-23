@@ -5,4 +5,4 @@ interface ImageCarousel {
   image: string;
 }
 
-export { type ImageCarousel };
+export type { ImageCarousel };

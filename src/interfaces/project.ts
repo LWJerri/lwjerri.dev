@@ -7,4 +7,4 @@ interface Project {
   github?: string;
 }
 
-export { type Project };
+export type { Project };

@@ -5,4 +5,4 @@ interface Job {
   description: string;
 }
 
-export { type Job };
+export type { Job };

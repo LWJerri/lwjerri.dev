@@ -38,4 +38,4 @@ interface LynardWS {
   t: "INIT_STATE" | "PRESENCE_UPDATE";
 }
 
-export { type LynardWS };
+export type { LynardWS };

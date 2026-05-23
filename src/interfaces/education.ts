@@ -5,4 +5,4 @@ interface Education {
   apprentice?: number;
 }
 
-export { type Education };
+export type { Education };
