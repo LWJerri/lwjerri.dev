@@ -10,9 +10,14 @@
   import Confetti from "../components/ui/Confetti.svelte";
   import Update from "../components/ui/Update.svelte";
   import { OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "../helpers/constants";
-  import type { LayoutData } from "./$types";
 
-  let { data, children }: { data: LayoutData; children: Snippet } = $props();
+  let { children }: { children: Snippet } = $props();
+
+  const isAnalyticsEnabled = $derived.by(() => {
+    if (!browser || dev) return false;
+
+    return window.location.hostname.startsWith("lwjerri");
+  });
 
   $effect(() => {
     if (browser && !dev) injectSpeedInsights();
@@ -33,7 +38,7 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="description" content={data.isAnalyticsEnabled ? "YES" : "NO"} />
+  <meta name="description" content={description} />
 
   <meta name="robots" content={robots} />
   <link rel="canonical" href={canonical} />
@@ -50,7 +55,7 @@
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={OG_IMAGE} />
 
-  {#if data.isAnalyticsEnabled}
+  {#if isAnalyticsEnabled}
     <script
       async
       defer
