@@ -62,7 +62,12 @@
   {/if}
 </svelte:head>
 
-<div class="relative flex min-h-dvh flex-col bg-linear-to-br from-[#121212] to-[#0C0E10] text-white">
+<div
+  class="pointer-events-none fixed inset-0 -z-10 bg-linear-to-br from-[#121212] to-[#0C0E10]"
+  aria-hidden="true"
+></div>
+
+<div class="relative flex min-h-dvh flex-col text-white">
   {#if date.getMonth() === 3 && date.getDate() === 28}
     <Confetti />
   {/if}
