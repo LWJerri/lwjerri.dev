@@ -1,8 +1,0 @@
-@import "tailwindcss/index.css" source(none);
-
-@source "../../routes/projects";
-@source "../../components/project";
-
-@utility box-decorator {
-  @apply inline-flex items-center space-x-2 rounded-xs px-1 align-middle;
-}

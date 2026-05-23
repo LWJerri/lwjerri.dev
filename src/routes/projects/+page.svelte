@@ -1,7 +1,6 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
   import { scrollToHash } from "$lib/navigation/scrollToHash";
-  import "$lib/styles/projects.css";
   import Page from "../../components/layout/Page.svelte";
   import ProjectCard from "../../components/project/ProjectCard.svelte";
   import Fallback from "../../components/ui/Fallback.svelte";

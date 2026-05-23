@@ -1,8 +1,6 @@
 <script lang="ts">
   import { afterNavigate } from "$app/navigation";
   import { scrollToHash } from "$lib/navigation/scrollToHash";
-  import "$lib/styles/about.css";
-  import "$lib/styles/embla.css";
   import AboutSection from "../../components/about/AboutSection.svelte";
   import MyStackSection from "../../components/about/MyStackSection.svelte";
   import SocialSection from "../../components/about/SocialSection.svelte";
