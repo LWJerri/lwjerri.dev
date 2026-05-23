@@ -21,11 +21,13 @@
           }}
         >
           <div class="embla__container">
-            {#each imagesCarousel as slide}
+            {#each imagesCarousel as slide, index}
               <div class="embla__slide group relative mr-2 mb-5 block h-full select-none">
-                <img
-                  alt="Something with me in it"
+                <enhanced:img
                   src={slide.image}
+                  alt={slide.title}
+                  sizes="(min-width: 640px) 896px, 100vw"
+                  loading={index === 0 ? "eager" : "lazy"}
                   class="absolute inset-0 h-full w-full rounded-md object-cover opacity-75 transition-opacity select-none group-hover:opacity-50"
                 />
 
