@@ -1,10 +1,10 @@
 import type { Education, ImageCarousel, Job } from "../../interfaces";
 
-export type LanguageGrade = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
+type LanguageGrade = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 
-export type SocialService = "telegram" | "discord" | "twitch";
+type SocialService = "telegram" | "discord" | "twitch";
 
-export type AboutData = {
+type AboutData = {
   imagesCarousel: ImageCarousel[];
   educations: Education[];
   languages: { name: string; grade: LanguageGrade }[];
@@ -94,11 +94,6 @@ const stack: AboutData["stack"] = {
   },
 };
 
-export const aboutData: AboutData = {
-  imagesCarousel,
-  educations,
-  languages,
-  socials,
-  jobs,
-  stack,
-};
+const aboutData: AboutData = { imagesCarousel, educations, languages, socials, jobs, stack };
+
+export { aboutData };
