@@ -51,14 +51,9 @@
   <meta name="twitter:image" content={OG_IMAGE} />
 
   {#if data.isAnalyticsEnabled}
-    <script
-      async
-      defer
-      src="https://umami.lwjerri.dev/script.js"
-      data-website-id="e107c898-1d93-45b4-b9e8-f8e488489b6b"
-    ></script>
+    <script async defer src="/api/analytics/umami.js" data-website-id="e107c898-1d93-45b4-b9e8-f8e488489b6b"></script>
 
-    <script async defer src="https://rybbit.lwjerri.dev/api/script.js" data-site-id="1"></script>
+    <script async defer src="/api/analytics/rybbit.js" data-site-id="1"></script>
   {/if}
 </svelte:head>
 
