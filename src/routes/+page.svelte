@@ -1,19 +1,9 @@
 <script lang="ts">
-  import { Seo } from "@svelte-bin/seo";
   import Page from "../components/layout/Page.svelte";
   import type { PageData } from "./$types";
 
   let { data }: { data: PageData } = $props();
-
-  const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
-  const PAGE_DESCRIPTION = "Welcome! Here you'll find information about me, my projects, and my achievements.";
 </script>
-
-<Seo
-  title={PAGE_TITLE}
-  description={PAGE_DESCRIPTION}
-  openGraph={{ title: PAGE_TITLE, description: PAGE_DESCRIPTION }}
-/>
 
 <Page centered>
   <div class="text-center">

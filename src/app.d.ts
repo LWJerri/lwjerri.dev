@@ -8,6 +8,8 @@ declare global {
     }
 
     interface PageData extends Partial<AboutData> {
+      title?: string;
+      description?: string;
       age?: string;
       projects?: Project[];
     }
