@@ -4,7 +4,7 @@
   import { default as XIcon } from "@lucide/svelte/icons/x";
   import { cn } from "../../helpers/cn";
 
-  let isAlertVisible = true;
+  let isAlertVisible = $state(true);
 </script>
 
 <div

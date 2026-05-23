@@ -1,8 +1,22 @@
 <script lang="ts">
-  import { handleAnchorProjects } from "../../helpers/handleAnchorProjects";
+  import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
   import type { Project } from "../../interfaces";
 
-  export let project: Project;
+  let { project }: { project: Project } = $props();
+
+  let copied = $state(false);
+
+  async function handleShare(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+    event.preventDefault();
+
+    await copyAnchorShareUrl(project.name);
+
+    copied = true;
+
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  }
 </script>
 
 <div class="cursor-default rounded-md bg-[#2A2929] p-4" id={project.name}>
@@ -41,7 +55,7 @@
         target="_self"
         rel="noreferrer"
         href="#{project.name}"
-        onclick={(event) => handleAnchorProjects(event)}>[Share]</a
+        onclick={handleShare}>{copied ? "[Copied]" : "[Share]"}</a
       >
     </div>
   </div>

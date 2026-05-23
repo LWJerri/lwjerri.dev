@@ -2,6 +2,7 @@
   import { browser, dev } from "$app/environment";
   import { updated } from "$app/state";
   import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
+  import type { Snippet } from "svelte";
   import "../app.css";
   import Footer from "../components/navigation/Footer.svelte";
   import Header from "../components/navigation/Header.svelte";
@@ -9,11 +10,11 @@
   import Update from "../components/ui/Update.svelte";
   import type { LayoutData } from "./$types";
 
-  $: if (browser && !dev) {
-    injectSpeedInsights();
-  }
+  let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
-  export let data: LayoutData;
+  $effect(() => {
+    if (browser && !dev) injectSpeedInsights();
+  });
 
   const date = new Date();
 </script>
@@ -38,7 +39,7 @@
 
   <Header />
 
-  <slot />
+  {@render children()}
 
   {#if updated.current && !dev}
     <div class="fixed right-0 bottom-10 left-0 z-10 block text-center">
@@ -46,5 +47,5 @@
     </div>
   {/if}
 
-  <Footer views={data.views} />
+  <Footer />
 </div>

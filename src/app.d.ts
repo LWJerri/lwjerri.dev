@@ -1,5 +1,17 @@
+import type { AboutData } from "$lib/data/about";
+import type { Project } from "../../interfaces/project";
+
 declare global {
-  namespace App {}
+  namespace App {
+    interface LayoutData {
+      enableAnalytics: boolean;
+    }
+
+    interface PageData extends Partial<AboutData> {
+      age?: string;
+      projects?: Project[];
+    }
+  }
 }
 
 export {};

@@ -1,31 +1,33 @@
 <script lang="ts">
+  import type { AboutData } from "$lib/data/about";
   import { DISCORD_USERNAME } from "../../helpers/constants";
-  import { load as aboutLoad } from "../../routes/about/+page";
 
-  const { socials } = aboutLoad();
+  let {
+    socials,
+    service,
+  }: {
+    socials: AboutData["socials"];
+    service: keyof AboutData["socials"];
+  } = $props();
 
-  export let service: keyof typeof socials;
+  let copied = $state(false);
 
   async function clickOnDiscord(event: MouseEvent & { currentTarget: EventTarget & HTMLButtonElement }) {
     event.preventDefault();
 
-    const socialElement = document.getElementById(service);
-
-    if (!socialElement) return;
-
     await navigator.clipboard.writeText(DISCORD_USERNAME);
 
-    socialElement.innerHTML = "[Copied]";
+    copied = true;
 
     setTimeout(() => {
-      socialElement.innerHTML = "[Discord]";
+      copied = false;
     }, 2000);
   }
 </script>
 
 {#if service === "discord"}
-  <button type="button" id={service} class="cursor-pointer capitalize hover:text-[#ED4245]" on:click={clickOnDiscord}>
-    [{service}]
+  <button type="button" id={service} class="cursor-pointer capitalize hover:text-[#ED4245]" onclick={clickOnDiscord}>
+    [{copied ? "Copied" : service}]
   </button>
 {:else}
   <a href={socials[service].url} target="_blank" id={service} class="capitalize hover:text-[#ED4245]">

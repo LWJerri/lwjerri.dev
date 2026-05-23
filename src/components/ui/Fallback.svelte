@@ -1,6 +1,5 @@
 <script lang="ts">
-  export let title: string;
-  export let message: string;
+  let { title, message }: { title: string; message: string } = $props();
 </script>
 
 <div class="grid place-content-center px-4">

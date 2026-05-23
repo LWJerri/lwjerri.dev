@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import { onMount } from "svelte";
   import { cn } from "../../helpers/cn";
   import { HEADER_LINKS } from "../../helpers/constants";
 
@@ -12,15 +11,17 @@
   function toggleDropdown() {
     isDropdownVisible = !isDropdownVisible;
   }
-
-  onMount(() => {
-    document.addEventListener("click", (event) => {
-      if (dropdownElement && event.target instanceof Node && !dropdownElement.contains(event.target)) {
-        isDropdownVisible = false;
-      }
-    });
-  });
 </script>
+
+<svelte:window
+  onclick={(event) => {
+    if (!dropdownElement) return;
+
+    if (event.target instanceof Node && !dropdownElement.contains(event.target)) {
+      isDropdownVisible = false;
+    }
+  }}
+/>
 
 <header
   class={cn(

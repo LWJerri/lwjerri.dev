@@ -1,17 +1,17 @@
 <script lang="ts">
+  import { afterNavigate } from "$app/navigation";
+  import { scrollToHash } from "$lib/navigation/scrollToHash";
   import { Seo } from "@svelte-bin/seo";
-  import { onMount } from "svelte";
   import ProjectCard from "../../components/project/ProjectCard.svelte";
   import Fallback from "../../components/ui/Fallback.svelte";
-  import { anchorGo } from "../../helpers/anchorGo";
   import type { PageData } from "./$types";
 
-  export let data: PageData;
+  let { data }: { data: PageData } = $props();
 
   const PAGE_TITLE = "Andrii Zontov - My projects";
   const PAGE_DESCRIPTION = "This page contains information about my projects, their descriptions, technologies, etc.";
 
-  onMount(async () => anchorGo());
+  afterNavigate(() => scrollToHash());
 </script>
 
 <Seo

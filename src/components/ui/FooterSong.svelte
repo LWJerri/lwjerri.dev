@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { onDestroy, onMount } from "svelte";
   import { fmtText } from "../../helpers/fmtText";
   import type { LynardWS } from "../../interfaces";
 
   let socket: WebSocket | null = null;
-  let spotify: LynardWS["d"]["spotify"] | null = null;
-  let pingInterval: NodeJS.Timeout | null = null;
+  let spotify = $state<LynardWS["d"]["spotify"] | null>(null);
+  let pingInterval: ReturnType<typeof setInterval> | null = null;
   let reconnectAttempts = 0;
 
   function initializeWebSocket() {
@@ -69,7 +68,7 @@
     }
   }
 
-  onMount(() => {
+  $effect(() => {
     initializeWebSocket();
 
     pingInterval = setInterval(() => {
@@ -80,8 +79,6 @@
 
     return cleanup;
   });
-
-  onDestroy(cleanup);
 </script>
 
 <div class="flex items-center gap-2">

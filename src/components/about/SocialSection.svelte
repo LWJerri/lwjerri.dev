@@ -1,6 +1,23 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
+  import type { AboutData } from "$lib/data/about";
+  import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
   import Social from "../ui/Social.svelte";
+
+  let { socials }: { socials: AboutData["socials"] } = $props();
+
+  let copied = $state(false);
+
+  async function shareSocials(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+    event.preventDefault();
+
+    await copyAnchorShareUrl("socials");
+
+    copied = true;
+
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  }
 </script>
 
 <div class="space-y-5">
@@ -14,13 +31,13 @@
       href="#socials"
       id="socials"
       data-umami-event="Share 'Socials'"
-      onclick={(event) => handleAnchorAbout(event, "socials")}>[Share]</a
+      onclick={shareSocials}>{copied ? "[Copied]" : "[Share]"}</a
     >
   </h1>
 
   <p>
-    If you have any questions you can contact with me in <Social service="telegram" /> or via
-    <Social service="discord" />. Also, I sometimes stream on my <Social service="twitch" />, so feel free to join and
-    ask me about some thing in chat.
+    If you have any questions you can contact with me in <Social {socials} service="telegram" /> or via
+    <Social {socials} service="discord" />. Also, I sometimes stream on my <Social {socials} service="twitch" />, so
+    feel free to join and ask me about some thing in chat.
   </p>
 </div>
