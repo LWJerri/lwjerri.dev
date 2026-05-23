@@ -2,9 +2,11 @@
   import { browser, dev } from "$app/environment";
   import { page, updated } from "$app/state";
   import * as seo from "$lib/seo/pages";
+  import "$lib/styles/core.css";
+  import "$lib/styles/fonts.css";
+  import "$lib/styles/scrollbar.css";
   import { injectSpeedInsights } from "@vercel/speed-insights/sveltekit";
   import type { Snippet } from "svelte";
-  import "../app.css";
   import Footer from "../components/navigation/Footer.svelte";
   import Header from "../components/navigation/Header.svelte";
   import Confetti from "../components/ui/Confetti.svelte";
