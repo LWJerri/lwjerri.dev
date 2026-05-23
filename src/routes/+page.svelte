@@ -11,9 +11,7 @@
       <h1 class="cursor-default text-5xl">Andrii Zontov</h1>
     </div>
 
-    <p class="mt-5 cursor-default text-2xl">
-      I am a <span class="text-[#60A5FA]">{data.age}</span> old backend engineer
-    </p>
+    <p class="mt-5 cursor-default text-2xl">I am a {data.age} old backend engineer</p>
 
     <div class="mt-5 text-2xl">
       <a class="duration-300 hover:text-[#ED4245]" href="/projects">[Projects]</a>
