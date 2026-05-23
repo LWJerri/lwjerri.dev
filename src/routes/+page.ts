@@ -1,4 +1,4 @@
-import { bornTime } from "$lib/data/home";
+import { bornTime } from "$lib/data/bornTime";
 import humanizeDuration from "humanize-duration";
 import type { PageLoad } from "./$types";
 
