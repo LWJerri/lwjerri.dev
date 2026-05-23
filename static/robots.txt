@@ -1,2 +1,5 @@
 User-agent: *
-Allow: /
+Allow: /$
+Allow: /projects
+Allow: /about
+Disallow: /
