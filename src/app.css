@@ -1,5 +1,21 @@
 @import "tailwindcss/index.css";
 
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/fonts/ibm-plex-mono-latin-700-normal.woff2") format("woff2");
+}
+
 @layer base {
   :root {
     color-scheme: dark;
@@ -20,6 +36,7 @@
   body {
     margin: 0;
     background-color: var(--page-bg-to);
+    font-family: "IBM Plex Mono", ui-monospace, monospace;
   }
 
   *,
