@@ -1,3 +1,5 @@
+/// <reference types="@sveltejs/enhanced-img/types" />
+
 import type { AboutData } from "$lib/data/about";
 import type { Project } from "../../interfaces/project";
 

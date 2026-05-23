@@ -1,3 +1,6 @@
+import meImage from "$lib/assets/carousel/me.webp?enhanced";
+import pragueImage from "$lib/assets/carousel/prague.webp?enhanced";
+
 import type { Education, ImageCarousel, Job } from "../../interfaces";
 
 type LanguageGrade = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
@@ -18,13 +21,13 @@ const imagesCarousel: ImageCarousel[] = [
     title: "My happy childhood 💖",
     titlePosition: "left",
     description: "This photo was taken in kindergarten for the new year, where I played the role of a clown, lol.",
-    image: "me.webp",
+    image: meImage,
   },
   {
     title: "Czech Republic Trip",
     titlePosition: "right",
     description: "This photo was taken by my friend in Prague during our trip across Czech Republic.",
-    image: "prague.webp",
+    image: pragueImage,
   },
 ];
 

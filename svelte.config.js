@@ -6,6 +6,7 @@ const config = {
   preprocess: vitePreprocess(),
   kit: {
     adapter: adapter({ runtime: "nodejs24.x", split: false }),
+    inlineStyleThreshold: Infinity,
     version: { name: String(Date.now()), pollInterval: 1000 * 10 },
   },
 };
