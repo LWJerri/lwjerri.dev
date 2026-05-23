@@ -2,8 +2,8 @@
   import { browser } from "$app/environment";
   import { page } from "$app/state";
   import { default as EarthIcon } from "@lucide/svelte/icons/earth";
+  import type { WebsiteMetric } from "@umami/api-client";
   import { GEO_INFO, UMAMI_STATS_URL } from "../../helpers/constants";
-  import type { UmamiMetric } from "../../interfaces/umamiMetric";
   import FooterSong from "../ui/FooterSong.svelte";
 
   let views = $state(0);
@@ -15,7 +15,7 @@
       try {
         const request = await fetch("/api/views");
 
-        const response: UmamiMetric[] = await request.json();
+        const response: WebsiteMetric[] = await request.json();
 
         views = response.find(({ x }) => x === page.route.id)?.y ?? 0;
       } catch (err) {
