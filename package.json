@@ -40,13 +40,12 @@
     "clsx": "2.1.1",
     "embla-carousel-autoplay": "8.6.0",
     "embla-carousel-svelte": "8.6.0",
-    "humanize-duration": "3.33.2",
-    "rollup-plugin-analyzer": "4.0.0",
-    "supports-color": "10.2.2",
-    "svelte-confetti": "2.3.2",
-    "tailwind-merge": "3.6.0"
+    "humanize-duration": "3.33.2"
   },
   "devDependencies": {
+    "svelte-confetti": "2.3.2",
+    "tailwind-merge": "3.6.0",
+    "rollup-plugin-analyzer": "4.0.0",
     "@svelte-bin/seo": "0.0.1",
     "@sveltejs/adapter-vercel": "6.3.3",
     "@sveltejs/kit": "2.61.0",
@@ -62,7 +61,6 @@
     "svelte": "5.55.9",
     "svelte-check": "4.4.8",
     "tailwindcss": "4.3.0",
-    "tslib": "2.8.1",
     "typescript": "6.0.3",
     "vite": "8.0.14"
   }
