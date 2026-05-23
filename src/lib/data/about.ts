@@ -96,4 +96,4 @@ const stack: AboutData["stack"] = {
 
 const aboutData: AboutData = { imagesCarousel, educations, languages, socials, jobs, stack };
 
-export { aboutData };
+export { aboutData, type AboutData };
