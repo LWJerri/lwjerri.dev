@@ -18,7 +18,7 @@
       <AlertCircleIcon />
     </span>
 
-    <p class="break-words">New changes available</p>
+    <p class="wrap-break-word">New changes available</p>
   </div>
 
   <div class="flex items-center space-x-2">
