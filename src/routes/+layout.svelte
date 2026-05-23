@@ -20,7 +20,7 @@
 </script>
 
 <svelte:head>
-  {#if data.enableAnalytics}
+  {#if data.isAnalyticsEnabled}
     <script
       async
       defer
