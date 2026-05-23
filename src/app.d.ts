@@ -5,6 +5,10 @@ import type { Project } from "../../interfaces/project";
 
 declare global {
   namespace App {
+    interface LayoutData {
+      isAnalyticsEnabled: boolean;
+    }
+
     interface PageData extends Partial<AboutData> {
       title?: string;
       description?: string;
