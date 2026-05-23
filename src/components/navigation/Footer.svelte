@@ -6,10 +6,14 @@
   import { GEO_INFO, UMAMI_STATS_URL } from "../../helpers/constants";
   import FooterSong from "../ui/FooterSong.svelte";
 
-  let views = $state(0);
+  let metrics = $state<WebsiteMetric[]>([]);
+
+  const views = $derived(metrics.find(({ x }) => x === page.route.id)?.y ?? 0);
 
   $effect(() => {
     if (!browser) return;
+
+    let cancelled = false;
 
     async function getPageViews() {
       try {
@@ -17,13 +21,17 @@
 
         const response: WebsiteMetric[] = await request.json();
 
-        views = response.find(({ x }) => x === page.route.id)?.y ?? 0;
+        if (!cancelled) metrics = response;
       } catch (err) {
         console.error(err);
       }
     }
 
     getPageViews();
+
+    return () => {
+      cancelled = true;
+    };
   });
 </script>
 
