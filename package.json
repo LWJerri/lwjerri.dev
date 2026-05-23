@@ -1,6 +1,6 @@
 {
   "name": "lwjerri.dev",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "description": "My personal website, which is powered by Vite + SvelteKit and TailwindCSS.",
   "type": "module",
   "scripts": {
