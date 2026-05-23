@@ -25,7 +25,7 @@
       <h1 class="text-lg font-bold">{project.name}</h1>
 
       {#if project.isClosed}
-        <p class="box-decorator bg-[#ED4245]">Closed</p>
+        <p class="box-decorator bg-[#ED4245] font-bold">Closed</p>
       {/if}
     </div>
 
@@ -33,7 +33,7 @@
 
     <div class="flex flex-wrap gap-2">
       {#each project.stack as technology}
-        <div class="box-decorator bg-[#60A5FA]">{technology}</div>
+        <div class="box-decorator bg-[#6F6B67]">{technology}</div>
       {/each}
     </div>
 
