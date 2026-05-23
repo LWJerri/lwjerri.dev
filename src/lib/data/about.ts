@@ -1,0 +1,99 @@
+import type { Education, ImageCarousel, Job } from "../../interfaces";
+
+type LanguageGrade = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
+
+type SocialService = "telegram" | "discord" | "twitch";
+
+type AboutData = {
+  imagesCarousel: ImageCarousel[];
+  educations: Education[];
+  languages: { name: string; grade: LanguageGrade }[];
+  socials: Record<SocialService, { url: string }>;
+  jobs: Job[];
+  stack: { languages: string[]; technologies: Record<string, string[]> };
+};
+
+const imagesCarousel: ImageCarousel[] = [
+  {
+    title: "My happy childhood 💖",
+    titlePosition: "left",
+    description: "This photo was taken in kindergarten for the new year, where I played the role of a clown, lol.",
+    image: "me.webp",
+  },
+  {
+    title: "Czech Republic Trip",
+    titlePosition: "right",
+    description: "This photo was taken by my friend in Prague during our trip across Czech Republic.",
+    image: "prague.webp",
+  },
+];
+
+const educations: Education[] = [
+  {
+    name: '"Harmony" - Taras Shevchenko Gymnasium',
+    description: "An ordinary average grammar school, where I completed all 11 grades.",
+    years: "September 2011 - May 2022",
+    apprentice: 9.25,
+  },
+  {
+    name: "University of Information & CT",
+    description: "Technological university located in Kyiv. I am studing at the department of Software Engineering.",
+    years: "September 2022 - now",
+  },
+];
+
+const languages: AboutData["languages"] = [
+  { name: "English", grade: "A2" },
+  { name: "Ukrainian", grade: "Native" },
+  { name: "Russian", grade: "Native" },
+];
+
+const socials: AboutData["socials"] = {
+  telegram: { url: "https://t.me/LWJerri" },
+  discord: { url: "https://discordlookup.com/user/432085389948485633" },
+  twitch: { url: "https://www.twitch.tv/LWJerry" },
+};
+
+const jobs: Job[] = [
+  {
+    name: "ManageGift",
+    postion: "FullStack Engineer",
+    years: "January 2021 - February 2024",
+    description:
+      "Expertly building and sustaining a dynamic website while also overseeing aspects of a cutting-edge Discord bot. Using PHP and learning more about how users should work with the site, working with data, and more.",
+  },
+  {
+    name: "Bandapixels",
+    postion: "Backend Engineer",
+    years: "June 2022 - September 2022",
+    description:
+      "My first job with the company. I did an intership as a Node.js developer, developed a Telegram bot to monitor user time, and also design the backend part of the internal application. First of all, I gained experience in teamwork, meeting deadlines, and improving my communication skills.",
+  },
+];
+
+const stack: AboutData["stack"] = {
+  languages: ["TypeScript", "JavaScript"],
+  technologies: {
+    Frameworks: [
+      "Svelte",
+      "SvelteKit",
+      "TailwindCSS",
+      "NestJS",
+      "Electron",
+      "Nuxt",
+      "Next.js",
+      "Tauri",
+      "Storybook",
+      "Chromatic",
+    ],
+    "Development tools": ["Docker", "TypeORM", "Prisma", "Node.js", "Vite", "React", "Figma"],
+    Databases: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    Queue: ["RabbitMQ", "Kafka"],
+    "API development & Testing": ["Postman", "Insomnia"],
+    VCS: ["Git", "GitHub", "GitLab"],
+  },
+};
+
+const aboutData: AboutData = { imagesCarousel, educations, languages, socials, jobs, stack };
+
+export { aboutData, type AboutData };

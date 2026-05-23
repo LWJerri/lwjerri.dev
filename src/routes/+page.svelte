@@ -1,9 +1,8 @@
 <script lang="ts">
   import { Seo } from "@svelte-bin/seo";
-
   import type { PageData } from "./$types";
 
-  export let data: PageData;
+  let { data }: { data: PageData } = $props();
 
   const PAGE_TITLE = "Andrii Zontov aka. LWJerri";
   const PAGE_DESCRIPTION = "Welcome! Here you'll find information about me, my projects, and my achievements.";

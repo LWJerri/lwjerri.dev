@@ -1,9 +1,30 @@
 <script lang="ts">
+  import { browser } from "$app/environment";
+  import { page } from "$app/state";
   import { default as EarthIcon } from "@lucide/svelte/icons/earth";
   import { GEO_INFO, UMAMI_STATS_URL } from "../../helpers/constants";
+  import type { UmamiMetric } from "../../interfaces/umamiMetric";
   import FooterSong from "../ui/FooterSong.svelte";
 
-  export let views: number;
+  let views = $state(0);
+
+  $effect(() => {
+    if (!browser) return;
+
+    async function getPageViews() {
+      try {
+        const request = await fetch("/api/views");
+
+        const response: UmamiMetric[] = await request.json();
+
+        views = response.find(({ x }) => x === page.route.id)?.y ?? 0;
+      } catch (err) {
+        console.error(err);
+      }
+    }
+
+    getPageViews();
+  });
 </script>
 
 <footer class="pt-5 pb-2 text-lg select-none">
@@ -19,7 +40,7 @@
     </div>
 
     <div class="flex items-center justify-start space-x-2 md:justify-end">
-      <FooterSong />
+      <svelte:boundary><FooterSong /></svelte:boundary>
     </div>
   </div>
 </footer>

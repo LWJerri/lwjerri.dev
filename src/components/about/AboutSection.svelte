@@ -1,6 +1,23 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
+  import type { AboutData } from "$lib/data/about";
+  import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
   import AboutInfo from "./AboutInfo.svelte";
+
+  let { imagesCarousel }: { imagesCarousel: AboutData["imagesCarousel"] } = $props();
+
+  let copied = $state(false);
+
+  async function shareAbout(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+    event.preventDefault();
+
+    await copyAnchorShareUrl("about");
+
+    copied = true;
+
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  }
 </script>
 
 <div>
@@ -13,10 +30,10 @@
         href="#about"
         id="about"
         data-umami-event="Share 'About'"
-        onclick={(event) => handleAnchorAbout(event, "about")}>[Share]</a
+        onclick={shareAbout}>{copied ? "[Copied]" : "[Share]"}</a
       >
     </h1>
   </div>
 
-  <AboutInfo />
+  <AboutInfo {imagesCarousel} />
 </div>

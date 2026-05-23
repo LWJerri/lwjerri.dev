@@ -1,13 +1,27 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
-  import { load as aboutLoad } from "../../routes/about/+page";
+  import type { AboutData } from "$lib/data/about";
+  import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
 
-  const { stack } = aboutLoad();
+  let { stack }: { stack: AboutData["stack"] } = $props();
+
+  let copied = $state(false);
+
+  async function shareStack(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+    event.preventDefault();
+
+    await copyAnchorShareUrl("my-stack");
+
+    copied = true;
+
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  }
 </script>
 
 <div class="space-y-5">
   <h1 class="flex items-center space-x-2 text-2xl">
-    <div class="break-words">
+    <div class="wrap-break-word">
       <span class="text-[#ED4245]">My stack</span>
     </div>
 
@@ -16,7 +30,7 @@
       href="#my-stack"
       id="my-stack"
       data-umami-event="Share 'My stack'"
-      onclick={(event) => handleAnchorAbout(event, "my-stack")}>[Share]</a
+      onclick={shareStack}>{copied ? "[Copied]" : "[Share]"}</a
     >
   </h1>
 

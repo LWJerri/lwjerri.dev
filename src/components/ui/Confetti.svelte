@@ -2,7 +2,7 @@
   import { Confetti } from "svelte-confetti";
 </script>
 
-<div class="pointer-events-none fixed -top-[50px] left-0 flex min-h-screen w-full justify-center overflow-hidden">
+<div class="pointer-events-none fixed -top-12.5 left-0 flex min-h-screen w-full justify-center overflow-hidden">
   <Confetti
     x={[-50, 50]}
     y={[0, 0]}

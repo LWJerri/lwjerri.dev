@@ -1,13 +1,36 @@
 <script lang="ts">
-  import { handleAnchorAbout } from "../../helpers/handleAnchorAbout";
+  import { copyAnchorShareUrl } from "$lib/navigation/scrollToHash";
+  import type { Snippet } from "svelte";
 
-  export let title: string;
+  let {
+    title,
+    titleSnippet,
+    bodySnippet,
+  }: {
+    title: string;
+    titleSnippet: Snippet;
+    bodySnippet: Snippet;
+  } = $props();
 
-  const titleId = title.toLowerCase().replaceAll(" ", "-");
+  const titleId = $derived(title.toLowerCase().replaceAll(" ", "-"));
+
+  let copied = $state(false);
+
+  async function handleShare(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
+    event.preventDefault();
+
+    await copyAnchorShareUrl(titleId);
+
+    copied = true;
+
+    setTimeout(() => {
+      copied = false;
+    }, 2000);
+  }
 </script>
 
 <div>
-  <slot name="title" />
+  {@render titleSnippet()}
 
   <div>
     <a
@@ -15,8 +38,8 @@
       href="#{titleId}"
       id={titleId}
       data-umami-event="Share '{title}'"
-      on:click={(event) => handleAnchorAbout(event, titleId)}>[Share]</a
+      onclick={handleShare}>{copied ? "[Copied]" : "[Share]"}</a
     >
-    <slot name="body" />
+    {@render bodySnippet()}
   </div>
 </div>

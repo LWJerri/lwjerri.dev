@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let text: string;
+  let { text }: { text: string } = $props();
 </script>
 
 <div class="my-5 flex items-center">
