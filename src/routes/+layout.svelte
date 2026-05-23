@@ -33,7 +33,7 @@
 
 <svelte:head>
   <title>{title}</title>
-  <meta name="description" content={description} />
+  <meta name="description" content={data.isAnalyticsEnabled ? "YES" : "NO"} />
 
   <meta name="robots" content={robots} />
   <link rel="canonical" href={canonical} />
