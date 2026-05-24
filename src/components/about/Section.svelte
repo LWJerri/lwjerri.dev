@@ -16,9 +16,7 @@
 
   let copied = $state(false);
 
-  async function handleShare(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
-    event.preventDefault();
-
+  async function handleShare() {
     await copyAnchorShareUrl(titleId);
 
     copied = true;
@@ -29,16 +27,15 @@
   }
 </script>
 
-<div>
+<div id={titleId}>
   {@render titleSnippet()}
 
   <div>
-    <a
-      class="float-left mr-2 items-baseline font-bold outline-hidden duration-300 select-none hover:text-[#ED4245]"
-      href="#{titleId}"
-      id={titleId}
+    <button
+      type="button"
+      class="float-left mr-2 items-baseline font-bold outline-hidden duration-300 select-none hover:cursor-pointer hover:text-[#ED4245]"
       data-umami-event="Share '{title}'"
-      onclick={handleShare}>{copied ? "[Copied]" : "[Share]"}</a
+      onclick={handleShare}>{copied ? "[Copied]" : "[Share]"}</button
     >
     {@render bodySnippet()}
   </div>

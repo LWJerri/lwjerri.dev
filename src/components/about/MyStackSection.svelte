@@ -6,9 +6,7 @@
 
   let copied = $state(false);
 
-  async function shareStack(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
-    event.preventDefault();
-
+  async function shareStack() {
     await copyAnchorShareUrl("my-stack");
 
     copied = true;
@@ -22,15 +20,14 @@
 <div class="space-y-5">
   <h1 class="flex items-center space-x-2 text-2xl">
     <div class="wrap-break-word">
-      <span class="text-[#ED4245]">My stack</span>
+      <span id="my-stack" class="text-[#ED4245]">My stack</span>
     </div>
 
-    <a
-      class="outline-hidden duration-300 select-none hover:text-[#ED4245]"
-      href="#my-stack"
-      id="my-stack"
+    <button
+      type="button"
+      class="outline-hidden duration-300 select-none hover:cursor-pointer hover:text-[#ED4245]"
       data-umami-event="Share 'My stack'"
-      onclick={shareStack}>{copied ? "[Copied]" : "[Share]"}</a
+      onclick={shareStack}>{copied ? "[Copied]" : "[Share]"}</button
     >
   </h1>
 

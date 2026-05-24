@@ -7,9 +7,7 @@
 
   let copied = $state(false);
 
-  async function shareSocials(event: MouseEvent & { currentTarget: EventTarget & HTMLAnchorElement }) {
-    event.preventDefault();
-
+  async function shareSocials() {
     await copyAnchorShareUrl("socials");
 
     copied = true;
@@ -23,15 +21,14 @@
 <div class="space-y-5">
   <h1 class="flex items-center space-x-2 text-2xl">
     <div class="wrap-break-word">
-      <span class="text-[#ED4245]">Socials</span>
+      <span id="socials" class="text-[#ED4245]">Socials</span>
     </div>
 
-    <a
-      class="outline-hidden duration-300 select-none hover:text-[#ED4245]"
-      href="#socials"
-      id="socials"
+    <button
+      type="button"
+      class="outline-hidden duration-300 select-none hover:cursor-pointer hover:text-[#ED4245]"
       data-umami-event="Share 'Socials'"
-      onclick={shareSocials}>{copied ? "[Copied]" : "[Share]"}</a
+      onclick={shareSocials}>{copied ? "[Copied]" : "[Share]"}</button
     >
   </h1>
 
