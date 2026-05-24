@@ -8,16 +8,12 @@
   let reconnectAttempts = 0;
 
   function initializeWebSocket() {
-    try {
-      socket = new WebSocket("wss://api.lanyard.rest/socket");
+    socket = new WebSocket("wss://api.lanyard.rest/socket");
 
-      socket.addEventListener("open", handleOpen);
-      socket.addEventListener("message", handleMessage);
-      socket.addEventListener("error", handleError);
-      socket.addEventListener("close", handleClose);
-    } catch {
-      // Ignore possible WebSocket errors, this is not something critical.
-    }
+    socket.addEventListener("open", handleOpen);
+    socket.addEventListener("message", handleMessage);
+    socket.addEventListener("error", handleError);
+    socket.addEventListener("close", handleClose);
   }
 
   function handleOpen() {
