@@ -3,11 +3,11 @@
   import { DISCORD_USERNAME } from "../../helpers/constants";
 
   let {
-    socials,
+    contacts,
     service,
   }: {
-    socials: AboutData["socials"];
-    service: keyof AboutData["socials"];
+    contacts: AboutData["contacts"];
+    service: keyof AboutData["contacts"];
   } = $props();
 
   let copied = $state(false);
@@ -30,7 +30,7 @@
     [{copied ? "Copied" : service}]
   </button>
 {:else}
-  <a href={socials[service].url} target="_blank" id={service} class="capitalize hover:text-[#ED4245]">
+  <a href={contacts[service].url} target="_blank" id={service} class="capitalize hover:text-[#ED4245]">
     [{service}]
   </a>
 {/if}

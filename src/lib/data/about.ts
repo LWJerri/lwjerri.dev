@@ -4,13 +4,13 @@ import type { Education, ImageCarousel, Job } from "../../interfaces";
 
 type LanguageGrade = "A1" | "A2" | "B1" | "B2" | "C1" | "C2" | "Native";
 
-type SocialService = "telegram" | "discord" | "twitch";
+type ContactService = "telegram" | "discord" | "twitch";
 
 type AboutData = {
   imagesCarousel: ImageCarousel[];
   educations: Education[];
   languages: { name: string; grade: LanguageGrade }[];
-  socials: Record<SocialService, { url: string }>;
+  contacts: Record<ContactService, { url: string }>;
   jobs: Job[];
   stack: { languages: string[]; technologies: Record<string, string[]> };
 };
@@ -50,7 +50,7 @@ const languages: AboutData["languages"] = [
   { name: "Russian", grade: "Native" },
 ];
 
-const socials: AboutData["socials"] = {
+const contacts: AboutData["contacts"] = {
   telegram: { url: "https://t.me/LWJerri" },
   discord: { url: "https://discordlookup.com/user/432085389948485633" },
   twitch: { url: "https://www.twitch.tv/LWJerry" },
@@ -96,6 +96,6 @@ const stack: AboutData["stack"] = {
   },
 };
 
-const aboutData: AboutData = { imagesCarousel, educations, languages, socials, jobs, stack };
+const aboutData: AboutData = { imagesCarousel, educations, languages, contacts, jobs, stack };
 
 export { aboutData, type AboutData };
