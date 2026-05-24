@@ -13,25 +13,13 @@
   $effect(() => {
     if (!browser) return;
 
-    let cancelled = false;
-
     async function getPageViews() {
-      try {
-        const request = await fetch("/api/views");
+      const request = await fetch("/api/views");
 
-        const response: WebsiteMetric[] = await request.json();
-
-        if (!cancelled) metrics = response;
-      } catch (err) {
-        console.error(err);
-      }
+      metrics = await request.json();
     }
 
     getPageViews();
-
-    return () => {
-      cancelled = true;
-    };
   });
 </script>
 
