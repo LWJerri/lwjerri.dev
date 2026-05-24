@@ -24,13 +24,9 @@
   }
 
   function handleMessage(event: MessageEvent) {
-    try {
-      const { d }: LynardWS = JSON.parse(event.data);
+    const { d }: LynardWS = JSON.parse(event.data) || {};
 
-      spotify = d.spotify || null;
-    } catch (err) {
-      console.error(err);
-    }
+    spotify = d.spotify || null;
   }
 
   function handleError(event: Event) {
