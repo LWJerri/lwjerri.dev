@@ -11,6 +11,7 @@
   import Update from "../components/ui/Update.svelte";
   import { OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "../helpers/constants";
   import type { LayoutData } from "./$types";
+
   let { data, children }: { data: LayoutData; children: Snippet } = $props();
 
   $effect(() => {
