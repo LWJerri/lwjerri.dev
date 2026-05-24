@@ -1,8 +1,6 @@
 import { UMAMI_ENDPOINT, UMAMI_SECRET, UMAMI_SITE_ID, UMAMI_USER_ID } from "$env/static/private";
 import { getClient } from "@umami/api-client";
 
-export const prerender = false;
-
 const client = getClient({ userId: UMAMI_USER_ID, secret: UMAMI_SECRET, apiEndpoint: UMAMI_ENDPOINT });
 
 export async function GET() {
