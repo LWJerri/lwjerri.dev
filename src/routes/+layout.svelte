@@ -9,7 +9,6 @@
   import Header from "../components/navigation/Header.svelte";
   import Confetti from "../components/ui/Confetti.svelte";
   import Update from "../components/ui/Update.svelte";
-  import { OG_IMAGE, SITE_NAME, SITE_ORIGIN } from "../helpers/constants";
   import type { LayoutData } from "./$types";
 
   let { data, children }: { data: LayoutData; children: Snippet } = $props();
@@ -28,7 +27,7 @@
     page.status !== 200 ? seo.error.description : (page.data.description ?? seo.home.description),
   );
 
-  const canonical = $derived(`${SITE_ORIGIN}${page.url.pathname}`);
+  const canonical = $derived(`${window.location.origin}${page.url.pathname}`);
 </script>
 
 <svelte:head>
@@ -40,15 +39,15 @@
 
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={OG_IMAGE} />
+  <meta property="og:image" content={`${window.location.origin}/me.webp`} />
   <meta property="og:url" content={canonical} />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:site_name" content={window.location.hostname} />
 
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={OG_IMAGE} />
+  <meta name="twitter:image" content={`${window.location.origin}/me.webp`} />
 
   {#if data.isAnalyticsEnabled}
     <script

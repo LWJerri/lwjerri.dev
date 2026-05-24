@@ -1,9 +1,5 @@
 import type { HeaderLink } from "../interfaces";
 
-const SITE_ORIGIN = "https://lwjerri.dev";
-const SITE_NAME = "lwjerri.dev";
-const OG_IMAGE = "https://www.lwjerri.dev/me.webp";
-
 const GEO_INFO = { name: "Czech Republic", url: "https://www.google.com/maps/place/Czechia" };
 const UMAMI_STATS_URL = "https://umami.lwjerri.dev/share/jV8DPlSgY0nXu0GL/lwjerri.dev";
 const DISCORD_USERNAME = "LWJerri";
@@ -15,4 +11,4 @@ const HEADER_LINKS: HeaderLink[] = [
   { title: "Support me", url: "https://send.monobank.ua/8webyivBtV" },
 ];
 
-export { DISCORD_USERNAME, GEO_INFO, HEADER_LINKS, OG_IMAGE, SITE_NAME, SITE_ORIGIN, UMAMI_STATS_URL };
+export { DISCORD_USERNAME, GEO_INFO, HEADER_LINKS, UMAMI_STATS_URL };
