@@ -48,7 +48,7 @@
     "@sveltejs/enhanced-img": "0.10.4",
     "@sveltejs/kit": "2.61.0",
     "@sveltejs/vite-plugin-svelte": "7.1.2",
-    "@tailwindcss/postcss": "4.3.0",
+    "@tailwindcss/postcss": "4.3.1",
     "@types/humanize-duration": "3.27.4",
     "@types/node": "26.0.0",
     "husky": "9.1.7",
