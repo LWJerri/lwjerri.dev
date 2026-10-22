@@ -2,4 +2,9 @@ User-agent: *
 Allow: /$
 Allow: /projects
 Allow: /about
+Allow: /favicon.ico
+Allow: /site.webmanifest
+Allow: /me.webp
+Allow: /_app/
+Allow: /fonts/
 Disallow: /
